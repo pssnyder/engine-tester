@@ -1,0 +1,42 @@
+id name SlowMate 0.4.01 Professional
+id author SlowMate Development Team
+option name Hash type spin default 16 min 1 max 1024
+option name Threads type spin default 1 min 1 max 16
+option name MultiPV type spin default 1 min 1 max 10
+option name Move Overhead type spin default 10 min 0 max 5000
+option name Minimum Thinking Time type spin default 20 min 0 max 5000
+option name UCI_ShowWDL type check default false
+option name UCI_Chess960 type check default false
+option name Ponder type check default true
+option name Debug Log File type string default 
+option name UCI_AnalyseMode type check default false
+option name UCI_LimitStrength type check default false
+option name UCI_Elo type spin default 1350 min 1350 max 2850
+option name Enable Checkmate Detection type check default true
+option name Enable Stalemate Avoidance type check default true
+option name Show Evaluation Details type check default true
+option name Show Material Count type check default true
+option name Verbose Output type check default false
+uciok
+readyok
+readyok
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 20 nps 20000 time 0 pv b1a3
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 60 nps 588 time 102 pv g2g4 g8h6
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 120 nps 588 time 204 pv g2g3 a7a6 g3g4
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+bestmove b1a3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 20 nps 20000 time 0 pv d2d3
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 60 nps 594 time 101 pv g2g4 h7h5
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 120 nps 591 time 203 pv h2h4 h7h6 e2e4
+info string Material evaluation: 0.00
+info string Material count: W=39.0 B=39.0
+bestmove d2d3

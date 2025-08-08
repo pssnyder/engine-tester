@@ -1,0 +1,73 @@
+id name SlowMate 0.4.01 Professional
+id author SlowMate Development Team
+option name Hash type spin default 16 min 1 max 1024
+option name Threads type spin default 1 min 1 max 16
+option name MultiPV type spin default 1 min 1 max 10
+option name Move Overhead type spin default 10 min 0 max 5000
+option name Minimum Thinking Time type spin default 20 min 0 max 5000
+option name UCI_ShowWDL type check default false
+option name UCI_Chess960 type check default false
+option name Ponder type check default true
+option name Debug Log File type string default 
+option name UCI_AnalyseMode type check default false
+option name UCI_LimitStrength type check default false
+option name UCI_Elo type spin default 1350 min 1350 max 2850
+option name Enable Checkmate Detection type check default true
+option name Enable Stalemate Avoidance type check default true
+option name Show Evaluation Details type check default true
+option name Show Material Count type check default true
+option name Verbose Output type check default false
+option name Time Allocation Base type spin default 4 min 1 max 20
+option name Opening Time Factor type spin default 80 min 50 max 150
+option name Middlegame Time Factor type spin default 120 min 80 max 200
+option name Critical Position Bonus type spin default 200 min 100 max 400
+option name Emergency Reserve type spin default 10 min 5 max 25
+option name Minimum Move Time type spin default 50 min 10 max 500
+uciok
+readyok
+readyok
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 20 nps 20000 time 0 pv b2b4
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 61 nps 1173 time 52 pv g2g4 b8a6
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 133 nps 1291 time 103 pv g2g4 e7e5 f2f4
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 215 nps 1396 time 154 pv h2h4 g8h6 b2b4 b7b5
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 328 nps 1600 time 205 pv b1c3 f7f5 c3a4 e7e6 a4b6
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 462 nps 1804 time 256 pv e2e3 h7h6 f2f3 b8a6 f1a6 b7a6
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 621 nps 2016 time 308 pv d2d3 b8c6 f2f3 c6a5 h2h3 a5b3 a2b3
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 822 nps 2289 time 359 pv h2h3 c7c6 d2d3 g8f6 e2e4 f6e4 d3e4 f7f5
+bestmove h2h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 20 nps 20000 time 0 pv g1h3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 61 nps 1196 time 51 pv a2a4 g8h6
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 123 nps 1205 time 102 pv c2c4 c7c5 h2h3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 231 nps 1509 time 153 pv e2e3 d7d6 b2b3 d8d7
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 334 nps 1637 time 204 pv b1a3 b8c6 h2h3 b7b5 a3b5
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 470 nps 1843 time 255 pv c2c3 c7c6 d1a4 b8a6 a4c6 d7c6
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 641 nps 2094 time 306 pv d2d4 b8c6 b1d2 c6d4 d2b1 d4e2 g1e2
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 822 nps 2296 time 358 pv g1h3 a7a5 b1c3 g7g6 b2b4 a5b4 h3f4 a8a2
+bestmove g1h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 20 nps 20000 time 0 pv b2b3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 59 nps 1156 time 51 pv h2h3 g7g5
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 126 nps 1235 time 102 pv d2d3 b8a6 a2a3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 218 nps 1424 time 153 pv c2c4 d7d5 c4d5 d8d5
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 289 nps 1416 time 204 pv g2g4 e7e5 f2f3 d8h4
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 415 nps 1627 time 255 pv g2g4 g7g5 g1f3 g8h6 f3g5 h6g4
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 585 nps 1911 time 306 pv b2b3 h7h5 d2d4 g7g5 c1g5 h8h6 g5e7
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 763 nps 2131 time 358 pv c2c4 f7f5 g2g3 h7h5 f1h3 d7d5 c4d5 d8d5
+bestmove c2c4
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 29 nps 29000 time 0 pv c2c3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 88 nps 1725 time 51 pv g2g3 f8d6
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 177 nps 1735 time 102 pv a2a4 a7a6 f1a6
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 284 nps 1856 time 153 pv b1a3 f8a3 b2a3 b8a6
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 422 nps 2058 time 205 pv f2f3 g8h6 a2a4 b8c6 e1e2
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 577 nps 2253 time 256 pv f1d3 g8e7 b2b4 c7c6 d3a6 b8a6
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 735 nps 2386 time 308 pv d1f3 b7b6 f3f7 e8f7 g1f3 f7g6 f3e5
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 987 nps 2741 time 360 pv c2c3 f7f6 b2b3 d7d5 e4d5 d8d5 g1h3 d5g2
+bestmove c2c3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 27 nps 27000 time 0 pv h7h6
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 84 nps 1647 time 51 pv c7c6 f3e5
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 167 nps 1637 time 102 pv f8d6 f3e5 d6e5
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 290 nps 1895 time 153 pv f7f5 f3e5 f5e4 e5d7
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 439 nps 2151 time 204 pv a7a5 f3e5 c7c6 e5f7 e8f7
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 615 nps 2411 time 255 pv g7g6 f3e5 f8a3 e5d7 e8d7 b1a3
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 831 nps 2706 time 307 pv f8a3 f3e5 a3b2 c1b2 b8c6 e5d7 e8d7
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 1057 nps 2944 time 359 pv b8a6 f3e5 a6c5 e5d7 e8d7 f1b5 d7d6 g2g3
+bestmove b8a6

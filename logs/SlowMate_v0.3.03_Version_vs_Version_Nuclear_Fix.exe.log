@@ -1,0 +1,71 @@
+SlowMate engine initialized with knowledge base (data: C:\Users\patss\AppData\Local\Temp\_MEI34802\data)
+Opening book: True
+Endgame patterns: True (0 mate patterns)
+Endgame tactics: True
+Knowledge base ready
+SlowMate Chess Engine v0.2.01 by Pat Snyder
+id name SlowMate
+id author Pat Snyder
+option name Debug type check default false
+option name Threads type spin default 1 min 1 max 1
+option name Hash type spin default 16 min 1 max 128
+option name Move Overhead type spin default 50 min 0 max 5000
+option name EvalDebug type check default false
+option name EvalScaling type spin default 1 min 1 max 10
+option name EvalMaxCap type spin default 200 min 50 max 500
+option name CheckmateDetection type check default true
+option name StalemateDetection type check default true
+option name DrawPrevention type check default true
+option name MaterialCalculation type check default true
+option name PositionalEvaluation type check default true
+option name GamePhaseDetection type check default true
+option name KingSafety type check default true
+option name ThreatAwareness type check default true
+option name ThreatDefense type check default true
+option name CaptureCalculation type check default true
+option name TacticalCombinations type check default true
+option name AttackPatterns type check default true
+option name PinDetection type check default true
+option name ForkDetection type check default true
+option name DiscoveredAttacks type check default true
+option name SkewerDetection type check default true
+option name DoubleAttackPatterns type check default true
+option name PieceCoordination type check default true
+option name RookCoordination type check default true
+option name BatteryAttacks type check default true
+option name KnightCoordination type check default true
+option name BishopCoordination type check default true
+option name PawnStructure type check default true
+option name QueenDevelopment type check default true
+option name QueenTradeAvoidance type check default true
+option name MinorPieceDevelopment type check default true
+option name OpeningBook type check default false
+uciok
+readyok
+readyok
+info depth 1 score cp -2500 time 15 nodes 20 nps 1333 pv g1f3
+info depth 2 score cp -2500 time 69 nodes 40 nps 579 pv g1f3
+info depth 3 score cp -2500 time 106 nodes 60 nps 566 pv g1f3
+info depth 4 score cp -2500 time 152 nodes 80 nps 526 pv b1c3
+info depth 5 score cp -2500 time 185 nodes 100 nps 540 pv b1c3
+info depth 6 score cp -2500 time 223 nodes 120 nps 538 pv b1c3
+info depth 7 score cp -2500 time 263 nodes 140 nps 532 pv g1f3
+info depth 8 score cp -2500 time 304 nodes 160 nps 526 pv g1f3
+bestmove g1f3
+info depth 1 score cp -2500 time 31 nodes 20 nps 645 pv g1f3
+info depth 2 score cp -2500 time 72 nodes 40 nps 555 pv b1c3
+info depth 3 score cp -2500 time 99 nodes 60 nps 606 pv b1c3
+info depth 4 score cp -2500 time 154 nodes 80 nps 519 pv b1c3
+bestmove b1c3
+info depth 1 score cp -2500 time 15 nodes 20 nps 1333 pv b1c3
+info depth 2 score cp -2500 time 69 nodes 40 nps 579 pv g1f3
+info depth 3 score cp -2500 time 108 nodes 60 nps 555 pv b1c3
+bestmove b1c3
+info depth 1 score cp 18000 time 35 nodes 29 nps 828 pv f1c4
+info depth 2 score cp 18000 time 94 nodes 58 nps 617 pv f1c4
+info depth 3 score cp 18000 time 139 nodes 87 nps 625 pv f1c4
+bestmove f1c4
+info depth 1 score cp 7100 time 45 nodes 29 nps 644 pv f8a3
+info depth 2 score cp 7100 time 100 nodes 58 nps 580 pv f8a3
+info depth 3 score cp 7100 time 151 nodes 87 nps 576 pv f8a3
+bestmove f8a3

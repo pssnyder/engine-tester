@@ -1,0 +1,79 @@
+id name SlowMate 0.5.0 Professional
+id author SlowMate Development Team
+option name Hash type spin default 64 min 1 max 1024
+option name Threads type spin default 1 min 1 max 16
+option name MultiPV type spin default 1 min 1 max 10
+option name Clear Hash type button
+option name Contempt type spin default 0 min -100 max 100
+option name NullMove type check default true
+option name QuiescenceSearch type check default true
+option name QuiescenceDepth type spin default 6 min 0 max 16
+option name NullMoveReduction type spin default 2 min 1 max 4
+option name Move Overhead type spin default 10 min 0 max 5000
+option name Minimum Thinking Time type spin default 20 min 0 max 5000
+option name UCI_ShowWDL type check default false
+option name UCI_Chess960 type check default false
+option name Ponder type check default true
+option name Debug Log File type string default 
+option name UCI_AnalyseMode type check default false
+option name UCI_LimitStrength type check default false
+option name UCI_Elo type spin default 1350 min 1350 max 2850
+option name Enable Checkmate Detection type check default true
+option name Enable Stalemate Avoidance type check default true
+option name Show Evaluation Details type check default true
+option name Show Material Count type check default true
+option name Verbose Output type check default false
+option name Time Allocation Base type spin default 4 min 1 max 20
+option name Opening Time Factor type spin default 80 min 50 max 150
+option name Middlegame Time Factor type spin default 120 min 80 max 200
+option name Critical Position Bonus type spin default 200 min 100 max 400
+option name Emergency Reserve type spin default 10 min 5 max 25
+option name Minimum Move Time type spin default 50 min 10 max 500
+uciok
+readyok
+readyok
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 1 nps 1000 hashfull 0 time 0 pv g1h3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 2 nps 181 hashfull 0 time 11 pv g1h3
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 3 nps 142 hashfull 0 time 21 pv g1h3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 4 nps 125 hashfull 0 time 32 pv g1h3
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 5 nps 119 hashfull 0 time 42 pv g1h3
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 6 nps 113 hashfull 0 time 53 pv g1h3
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7 nps 109 hashfull 0 time 64 pv g1h3
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 8 nps 108 hashfull 0 time 74 pv g1h3
+bestmove g1h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 1 nps 1000 hashfull 0 time 0 pv g1h3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 2 nps 181 hashfull 0 time 11 pv g1h3
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 3 nps 142 hashfull 0 time 21 pv g1h3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 4 nps 125 hashfull 0 time 32 pv g1h3
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 5 nps 119 hashfull 0 time 42 pv g1h3
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 6 nps 115 hashfull 0 time 52 pv g1h3
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7 nps 111 hashfull 0 time 63 pv g1h3
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 8 nps 109 hashfull 0 time 73 pv g1h3
+bestmove g1h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 1 nps 1000 hashfull 0 time 0 pv g1h3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 2 nps 200 hashfull 0 time 10 pv g1h3
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 3 nps 142 hashfull 0 time 21 pv g1h3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 4 nps 129 hashfull 0 time 31 pv g1h3
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 5 nps 121 hashfull 0 time 41 pv g1h3
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 6 nps 117 hashfull 0 time 51 pv g1h3
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7 nps 112 hashfull 0 time 62 pv g1h3
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 8 nps 111 hashfull 0 time 72 pv g1h3
+bestmove g1h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 1 nps 1000 hashfull 0 time 0 pv g1h3
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 2 nps 181 hashfull 0 time 11 pv g1h3
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 3 nps 142 hashfull 0 time 21 pv g1h3
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 4 nps 129 hashfull 0 time 31 pv g1h3
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 5 nps 119 hashfull 0 time 42 pv g1h3
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 6 nps 115 hashfull 0 time 52 pv g1h3
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7 nps 112 hashfull 0 time 62 pv g1h3
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 8 nps 111 hashfull 0 time 72 pv g1h3
+bestmove g1h3
+info depth 1 seldepth 1 multipv 1 score cp 0 nodes 1 nps 1000 hashfull 0 time 0 pv g8e7
+info depth 2 seldepth 2 multipv 1 score cp 0 nodes 2 nps 181 hashfull 0 time 11 pv g8e7
+info depth 3 seldepth 3 multipv 1 score cp 0 nodes 3 nps 142 hashfull 0 time 21 pv g8e7
+info depth 4 seldepth 4 multipv 1 score cp 0 nodes 4 nps 129 hashfull 0 time 31 pv g8e7
+info depth 5 seldepth 5 multipv 1 score cp 0 nodes 5 nps 119 hashfull 0 time 42 pv g8e7
+info depth 6 seldepth 6 multipv 1 score cp 0 nodes 6 nps 115 hashfull 0 time 52 pv g8e7
+info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7 nps 112 hashfull 0 time 62 pv g8e7
+info depth 8 seldepth 8 multipv 1 score cp 0 nodes 8 nps 111 hashfull 0 time 72 pv g8e7
+bestmove g8e7

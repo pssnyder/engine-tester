@@ -1,0 +1,20 @@
+SlowMate v0.0.1 - Pure Random Engine
+Educational baseline with no strategic knowledge
+Perfect for measuring incremental improvements
+--------------------------------------------------
+id name SlowMate 0.1.0
+id author Pat Snyder
+option name Intelligence type check default true
+uciok
+readyok
+readyok
+info depth 1 score cp -20
+bestmove b1c3
+info depth 1 score cp -20
+bestmove g1f3
+info depth 1 score cp -20
+bestmove g1f3
+info depth 1 score cp 660
+bestmove d1h5
+info depth 1 score cp 60
+bestmove g8f6

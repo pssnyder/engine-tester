@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "opening_random_opponent.py", line 11, in <module>
+ModuleNotFoundError: No module named 'opponent_engine'
+[PYI-16968:ERROR] Failed to execute script 'opening_random_opponent' due to unhandled exception!
