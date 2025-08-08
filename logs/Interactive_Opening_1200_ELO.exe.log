@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "opening_elo_1200_opponent.py", line 11, in <module>
-ModuleNotFoundError: No module named 'opponent_engine'
-[PYI-17924:ERROR] Failed to execute script 'opening_elo_1200_opponent' due to unhandled exception!

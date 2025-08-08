@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "uci_elo_400.py", line 10, in <module>
-ModuleNotFoundError: No module named 'uci_interface'
-[PYI-11044:ERROR] Failed to execute script 'uci_elo_400' due to unhandled exception!

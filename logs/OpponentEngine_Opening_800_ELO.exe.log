@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "uci_opening_plus_elo_800.py", line 10, in <module>
-ModuleNotFoundError: No module named 'uci_interface'
-[PYI-19656:ERROR] Failed to execute script 'uci_opening_plus_elo_800' due to unhandled exception!

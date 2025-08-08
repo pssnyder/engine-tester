@@ -1,0 +1,9 @@
+# Production branch - exclude development files
+engine_tester.py
+tournament_analyzer.py
+appendix_analyzer.py
+Functioning_Engines_20250807/
+logs/
+logging/
+tournament_results/
+*.log
