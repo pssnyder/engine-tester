@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "uci_opening_only_random.py", line 10, in <module>
-ModuleNotFoundError: No module named 'uci_interface'
-[PYI-2508:ERROR] Failed to execute script 'uci_opening_only_random' due to unhandled exception!
