@@ -13,7 +13,10 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
 import re
-from typing import Dict, List, Any
+import os
+import glob
+import datetime
+from typing import Dict, List, Any, Tuple, Optional
 
 # Page configuration
 st.set_page_config(
@@ -24,22 +27,95 @@ st.set_page_config(
 )
 
 @st.cache_data
-def load_data():
+def get_available_tournaments(results_dir='results'):
+    """Find available tournament folders and their analysis files"""
+    import os
+    import glob
+    
+    tournaments = []
+    
+    # Look for tournament folders matching 'Engine Battle *' pattern
+    tournament_dirs = glob.glob(os.path.join(results_dir, 'Engine Battle *'))
+    tournament_dirs += glob.glob(os.path.join(results_dir, 'SlowMate Tournament *'))
+    
+    for dir_path in tournament_dirs:
+        folder_name = os.path.basename(dir_path)
+        
+        # Look for tournament analysis files in this directory
+        analysis_files = glob.glob(os.path.join(dir_path, 'tournament_analysis_*.json'))
+        
+        if analysis_files:
+            # Extract date from folder name
+            date_match = re.search(r'(\d{8})', folder_name)
+            date_str = date_match.group(1) if date_match else "Unknown"
+            
+            # Format date for display
+            if date_str != "Unknown":
+                display_date = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+            else:
+                display_date = "Unknown Date"
+                
+            tournaments.append({
+                'folder': folder_name,
+                'path': dir_path,
+                'analysis_file': analysis_files[0],  # Use first analysis file
+                'date': date_str,
+                'display_date': display_date
+            })
+    
+    # Sort by date (newest first)
+    return sorted(tournaments, key=lambda t: t['date'], reverse=True)
+
+@st.cache_data
+def load_data(tournament_folder=None):
     """Load all analysis data files"""
     try:
-        with open('results/tournament_analysis.json', 'r') as f:
+        results_dir = 'results'
+        
+        # Get available tournaments
+        available_tournaments = get_available_tournaments(results_dir)
+        
+        if not available_tournaments:
+            st.error("No tournament data found in the results directory")
+            return None, None, None, []
+        
+        # Use specified tournament or default to most recent
+        selected_tournament = None
+        if tournament_folder:
+            for tournament in available_tournaments:
+                if tournament['folder'] == tournament_folder:
+                    selected_tournament = tournament
+                    break
+        
+        # If no match found or none specified, use the first (most recent)
+        if not selected_tournament:
+            selected_tournament = available_tournaments[0]
+            
+        # Load tournament data
+        with open(selected_tournament['analysis_file'], 'r') as f:
             tournament_data = json.load(f)
         
-        with open('results/engine_test_report.json', 'r') as f:
-            engine_test_data = json.load(f)
+        # Find most recent engine test report
+        test_reports = sorted(glob.glob(os.path.join(results_dir, 'engine_test_report_*.json')), reverse=True)
+        if test_reports:
+            with open(test_reports[0], 'r') as f:
+                engine_test_data = json.load(f)
+        else:
+            engine_test_data = []
             
-        with open('results/results_appendix.json', 'r') as f:
-            appendix_data = json.load(f)
+        # Load appendix data (persistent across tournaments)
+        appendix_path = os.path.join(results_dir, 'results_appendix.json')
+        if os.path.exists(appendix_path):
+            with open(appendix_path, 'r') as f:
+                appendix_data = json.load(f)
+        else:
+            appendix_data = {"engine_insights": {}}
             
-        return tournament_data, engine_test_data, appendix_data
+        return tournament_data, engine_test_data, appendix_data, available_tournaments
+    
     except Exception as e:
         st.error(f"Error loading data: {e}")
-        return None, None, None
+        return None, None, None, []
 
 def parse_engine_family(engine_name):
     """Extract engine family for grouping"""
@@ -73,19 +149,29 @@ def create_tournament_overview(tournament_data):
     """Create tournament performance overview"""
     st.header("🏆 Tournament Performance Overview")
     
+    # Tournament date display
+    if 'date' in tournament_data:
+        st.subheader(f"Tournament Date: {tournament_data['date']}")
+    
     # Key metrics
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("Total Games", tournament_data['total_games'])
+        st.metric("Total Games", tournament_data.get('total_games', 0))
     with col2:
-        st.metric("Total Engines", tournament_data['total_engines'])
+        st.metric("Total Engines", len(tournament_data.get('all_engines', {})))
     with col3:
         # Top performer
-        top_engine = tournament_data['rankings_by_points'][0]
-        st.metric("Top Performer", top_engine['name'].replace('_', ' '))
+        if 'rankings_by_points' in tournament_data and tournament_data['rankings_by_points']:
+            top_engine = tournament_data['rankings_by_points'][0]
+            st.metric("Top Performer", top_engine['name'].replace('_', ' '))
+        else:
+            st.metric("Top Performer", "N/A")
     with col4:
-        st.metric("Top Win Rate", f"{tournament_data['rankings_by_win_rate'][0]['win_rate']:.1f}%")
+        if 'rankings_by_win_rate' in tournament_data and tournament_data['rankings_by_win_rate']:
+            st.metric("Top Win Rate", f"{tournament_data['rankings_by_win_rate'][0]['win_rate']:.1f}%")
+        else:
+            st.metric("Top Win Rate", "N/A")
     
     # Tournament points ranking chart
     st.subheader("Tournament Points Rankings")
@@ -352,7 +438,7 @@ def main():
     st.markdown("Comprehensive analysis of chess engine performance and UCI compliance")
     
     # Load data
-    tournament_data, engine_test_data, appendix_data = load_data()
+    tournament_data, engine_test_data, appendix_data, available_tournaments = load_data()
     
     if not all([tournament_data, engine_test_data, appendix_data]):
         st.error("Failed to load required data files. Please ensure all JSON files are present in the results/ directory.")
@@ -360,6 +446,33 @@ def main():
     
     # Sidebar navigation
     st.sidebar.title("Navigation")
+    
+    # Tournament selection
+    st.sidebar.subheader("Tournament Selection")
+    
+    # Format tournament options for the selectbox
+    tournament_options = [f"{t['folder']} ({t['display_date']})" for t in available_tournaments]
+    selected_tournament_idx = st.sidebar.selectbox(
+        "Select Tournament",
+        range(len(tournament_options)),
+        format_func=lambda i: tournament_options[i]
+    )
+    
+    selected_tournament = available_tournaments[selected_tournament_idx]
+    
+    # If tournament selection changed, reload data
+    if "current_tournament" not in st.session_state or st.session_state.current_tournament != selected_tournament['folder']:
+        st.session_state.current_tournament = selected_tournament['folder']
+        tournament_data, engine_test_data, appendix_data, _ = load_data(selected_tournament['folder'])
+        
+        if not all([tournament_data, engine_test_data, appendix_data]):
+            st.error(f"Failed to load data for tournament {selected_tournament['folder']}.")
+            return
+    
+    # Display selected tournament info
+    st.sidebar.info(f"📅 Tournament Date: {selected_tournament['display_date']}")
+    
+    # Page selection
     page = st.sidebar.selectbox(
         "Choose Analysis View",
         [
@@ -410,9 +523,12 @@ def main():
     # Footer
     st.sidebar.markdown("---")
     st.sidebar.markdown("**Data Sources:**")
-    st.sidebar.markdown("- Tournament Analysis")
-    st.sidebar.markdown("- UCI Engine Tests") 
-    st.sidebar.markdown("- Manual Insights")
+    st.sidebar.markdown(f"- Tournament: {selected_tournament['folder']}")
+    if engine_test_data:
+        st.sidebar.markdown("- UCI Engine Tests")
+    if appendix_data:
+        st.sidebar.markdown("- Results Appendix") 
+    st.sidebar.markdown(f"- Analysis Date: {datetime.datetime.now().strftime('%Y-%m-%d')}")
 
 if __name__ == "__main__":
     main()
