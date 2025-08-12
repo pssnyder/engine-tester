@@ -1,0 +1,34 @@
+{
+  "total_games": 714,
+  "wins": 312,
+  "losses": 365,
+  "draws": 37,
+  "avg_game_length": 68.10084033613445,
+  "favorite_openings": {
+    "Unknown": 714
+  },
+  "decisiveness_distribution": {
+    "abandoned": 16,
+    "checkmate": 455,
+    "resignation": 157,
+    "draw": 6,
+    "timeout": 80
+  },
+  "time_control_distribution": {
+    "classical": 714
+  },
+  "performance_by_color": {
+    "white": {
+      "games": 362,
+      "wins": 158,
+      "losses": 185,
+      "draws": 19
+    },
+    "black": {
+      "games": 352,
+      "wins": 154,
+      "losses": 180,
+      "draws": 18
+    }
+  }
+}
