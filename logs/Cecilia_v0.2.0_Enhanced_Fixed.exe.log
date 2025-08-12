@@ -1,0 +1,17 @@
+id name Cecilia Enhanced v0.2.0
+id author GitHub Copilot
+option name Hash type spin default 64 min 1 max 2048
+option name Threads type spin default 4 min 1 max 32
+option name Depth type spin default 3 min 1 max 10
+option name AIType type combo default simple var simple var minimax var negamax
+option name Logging type check default false
+option name TranspositionTable type check default false
+option name OpeningBook type check default false
+uciok
+readyok
+readyok
+bestmove g1h3
+bestmove g1h3
+bestmove g1h3
+bestmove g1h3
+bestmove g8e7

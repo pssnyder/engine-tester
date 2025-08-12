@@ -1,0 +1,16 @@
+id name SlowMate 0.1.01
+id author Pat Snyder
+option name Intelligence type check default true
+uciok
+readyok
+readyok
+info depth 1 score cp -25
+bestmove g1f3
+info depth 1 score cp -25
+bestmove b1c3
+info depth 1 score cp -25
+bestmove b1c3
+info depth 1 score cp 180
+bestmove f1c4
+info depth 1 score cp 71
+bestmove f8a3

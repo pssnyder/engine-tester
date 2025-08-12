@@ -1,0 +1,23 @@
+info string init complete
+SlowMate UCI ready. Type 'uci' to begin.
+id name SlowMate
+id author Pat Snyder
+option name Hash type spin default 64 min 1 max 1024
+option name Debug type check default false
+uciok
+readyok
+readyok
+bestmove g1f3
+bestmove g1f3
+bestmove g1f3
+bestmove g1f3
+Traceback (most recent call last):
+  File "slowmate_uci.py", line 31, in <module>
+  File "slowmate_uci.py", line 22, in main
+  File "slowmate\uci\protocol.py", line 42, in process_command
+  File "slowmate\uci\protocol.py", line 79, in _handle_position
+  File "slowmate\engine.py", line 58, in make_move
+  File "slowmate\core\board.py", line 26, in make_move
+  File "chess\__init__.py", line 2235, in push
+AssertionError: push() expects move to be pseudo-legal, but got g1f3 in rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R
+[3608] Failed to execute script 'slowmate_uci' due to unhandled exception!

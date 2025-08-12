@@ -1,0 +1,25 @@
+SlowMate v0.1.03 Beta - Endgame Pattern Enhanced
+Features: Opening Book + Endgame Patterns + Strategic Conversion
+Compatible with Arena and UCI protocol
+------------------------------------------------------------
+SlowMate engine initialized with knowledge base (data: C:\Users\patss\AppData\Local\Temp\_MEI231162\data)
+Opening book: True
+Endgame patterns: True (0 mate patterns)
+Endgame tactics: True
+Knowledge base ready
+id name SlowMate 0.1.01
+id author Pat Snyder
+option name Intelligence type check default true
+uciok
+readyok
+readyok
+info depth 1 score cp -25
+bestmove g1f3
+info depth 1 score cp -25
+bestmove g1f3
+info depth 1 score cp -25
+bestmove g1f3
+info depth 1 score cp 180
+bestmove f1c4
+info depth 1 score cp 71
+bestmove f8a3
