@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Tuple, Optional, Any
 import chess.pgn
 import math
+from name_mapper import load_name_mapping, normalize_engine_name_with_mapping
 
 # Configuration
 RESULTS_DIR = "results"
@@ -292,15 +293,18 @@ class UnifiedTournamentAnalyzer:
         self.engines: Dict[str, EnginePerformance] = {}  # Using canonical names as keys
         self.tournaments: Dict[str, Dict] = {}
         self.engine_ratings: Dict[str, float] = {}
-        self.name_mapping: Dict[str, str] = {}  # Maps raw names to canonical names
+        self.manual_name_mapping: Dict[str, str] = {}  # Manual mapping from file
+        self.rating_overrides: Dict[str, float] = {}  # Manual rating overrides
+        
+        # Load manual name mapping and rating overrides
+        self.manual_name_mapping, self.rating_overrides = load_name_mapping()
+        print(f"📋 Loaded manual name mapping with {len(self.manual_name_mapping)} variants")
+        if self.rating_overrides:
+            print(f"📊 Loaded {len(self.rating_overrides)} rating overrides: {', '.join(self.rating_overrides.keys())}")
         
     def get_canonical_name(self, raw_name: str) -> str:
-        """Get canonical name for a raw engine name"""
-        if raw_name not in self.name_mapping:
-            identity = normalize_engine_name(raw_name)
-            canonical = identity.canonical_name
-            self.name_mapping[raw_name] = canonical
-        return self.name_mapping[raw_name]
+        """Get canonical name for a raw engine name using manual mapping"""
+        return normalize_engine_name_with_mapping(raw_name, self.manual_name_mapping)
         
     def find_all_pgn_files(self) -> List[Tuple[str, str]]:
         """Find all PGN files in tournament directories"""
@@ -463,9 +467,16 @@ class UnifiedTournamentAnalyzer:
             engine.reliability_score = (game_factor * 0.5 + opponent_factor * 0.3 + tournament_factor * 0.2)
     
     def estimate_engine_ratings(self):
-        """Estimate engine ratings using iterative ELO-like calculation"""
+        """Estimate engine ratings using manual overrides and iterative ELO-like calculation"""
         # Start with baseline ratings using canonical names
         for canonical_name in self.engines:
+            # First check for manual rating override
+            if canonical_name in self.rating_overrides:
+                self.engine_ratings[canonical_name] = self.rating_overrides[canonical_name]
+                print(f"🎯 Using manual rating override for '{canonical_name}': {self.rating_overrides[canonical_name]} ELO")
+                continue
+                
+            # Otherwise calculate baseline using identity parsing
             identity = normalize_engine_name(canonical_name)
             
             # Check if this is a baseline engine
@@ -495,6 +506,10 @@ class UnifiedTournamentAnalyzer:
             new_ratings = self.engine_ratings.copy()
             
             for engine_name, engine in self.engines.items():
+                # Skip engines with manual rating overrides - they are fixed
+                if engine_name in self.rating_overrides:
+                    continue
+                    
                 if engine.total_games < 5:  # Skip engines with too few games
                     continue
                 
@@ -590,31 +605,33 @@ class UnifiedTournamentAnalyzer:
     def generate_comprehensive_report(self) -> Dict[str, Any]:
         """Generate comprehensive analysis report"""
         
-        # Create name mapping report to show what was consolidated
-        name_consolidation = {}
-        for raw_name, canonical_name in self.name_mapping.items():
-            if canonical_name not in name_consolidation:
-                name_consolidation[canonical_name] = []
-            name_consolidation[canonical_name].append(raw_name)
-        
-        # Only show consolidations where multiple names map to one canonical name
-        meaningful_consolidations = {
-            canonical: raw_names for canonical, raw_names in name_consolidation.items()
-            if len(raw_names) > 1
-        }
-        
+        # Load consolidation info from the manual mapping file
+        try:
+            with open(os.path.join(self.results_dir, "name_consolidation.json"), 'r') as f:
+                mapping_data = json.load(f)
+            consolidations = mapping_data.get('name_consolidation', {}).get('consolidations', {})
+            
+            consolidation_summary = {
+                "consolidated_engines": len(consolidations),
+                "total_raw_names": sum(len(variants) for variants in consolidations.values()),
+                "consolidated_groups": consolidations
+            }
+        except Exception as e:
+            print(f"Warning: Could not load consolidation info: {e}")
+            consolidation_summary = {
+                "consolidated_engines": 0,
+                "total_raw_names": 0,
+                "consolidated_groups": {}
+            }
+
         return {
             "analysis_date": datetime.datetime.now().isoformat(),
-            "name_consolidation": {
-                "consolidated_engines": len(meaningful_consolidations),
-                "total_raw_names": len(self.name_mapping),
-                "consolidations": meaningful_consolidations
-            },
+            "consolidation_summary": consolidation_summary,
             "summary": {
                 "total_games": len(self.games),
                 "total_engines": len(self.engines),
                 "total_tournaments": len(self.tournaments),
-                "engines_with_sufficient_data": len([e for e in self.engines.values() if e.total_games >= 5])
+                "engines_with_sufficient_data": len([e for e in self.engines.values() if e.total_games >= 3])
             },
             "tournaments": {
                 name: {
@@ -712,13 +729,13 @@ def main():
     
     # Display consolidation summary
     report = analyzer.generate_comprehensive_report()
-    consolidation_info = report["name_consolidation"]
+    consolidation_info = report["consolidation_summary"]
     
     print(f"\n📝 ENGINE NAME CONSOLIDATION:")
     print("=" * 60)
     print(f"Consolidated {consolidation_info['consolidated_engines']} engine groups from {consolidation_info['total_raw_names']} raw names")
     
-    for canonical_name, raw_names in consolidation_info["consolidations"].items():
+    for canonical_name, raw_names in consolidation_info["consolidated_groups"].items():
         print(f"\n{canonical_name}:")
         for raw_name in raw_names:
             print(f"  ← {raw_name}")

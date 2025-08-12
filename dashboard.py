@@ -136,28 +136,74 @@ def create_unified_overview(unified_data):
     # Top Rankings
     rankings = unified_data.get('unified_rankings', [])
     if rankings:
-        st.subheader("🏅 Top Engine Rankings by Estimated ELO")
+        st.subheader("🏅 Complete Engine Rankings by Estimated ELO")
         
-        # Create DataFrame for top engines
-        top_engines = rankings[:15]
-        df_rankings = pd.DataFrame(top_engines)
+        # Show engine family distribution first
+        families = {}
+        for engine in rankings:
+            family = engine['name'].split('_')[0]
+            families[family] = families.get(family, 0) + 1
         
-        # Add family classification
-        df_rankings['family'] = df_rankings['name'].apply(parse_engine_family)
-        df_rankings['display_name'] = df_rankings['name'].str.replace('_', ' ')
+        st.write("**Engine Family Distribution:**")
+        col1, col2, col3, col4 = st.columns(4)
+        family_items = list(families.items())
+        for i, (family, count) in enumerate(family_items):
+            col = [col1, col2, col3, col4][i % 4]
+            if family == "SlowMate":
+                col.metric(f"🚀 {family}", count)
+            else:
+                col.metric(f"⭐ {family}", count)
         
-        # Rating vs Games scatter plot
-        fig_scatter = px.scatter(
-            df_rankings,
-            x='games',
-            y='estimated_rating',
-            color='family',
-            size='reliability_score',
-            hover_data=['name', 'win_rate', 'tournaments', 'stockfish_games'],
-            title="Engine Rating vs Experience",
-            labels={
-                'games': 'Total Games Played',
-                'estimated_rating': 'Estimated ELO Rating',
+        # Filter options
+        st.subheader("📊 Rankings Display Options")
+        show_option = st.radio(
+            "Choose view:",
+            ["Top 20 Engines", "All Non-SlowMate Engines", "Full Rankings (Top 50)", "SlowMate Only"],
+            index=0
+        )
+        
+        # Apply filter based on selection
+        if show_option == "Top 20 Engines":
+            display_engines = rankings[:20]
+            title_suffix = " (Top 20)"
+        elif show_option == "All Non-SlowMate Engines":
+            display_engines = [e for e in rankings if not e['name'].startswith('SlowMate')]
+            title_suffix = " (Non-SlowMate Only)"
+        elif show_option == "SlowMate Only":
+            display_engines = [e for e in rankings if e['name'].startswith('SlowMate')]
+            title_suffix = " (SlowMate Only)"
+        else:  # Full Rankings
+            display_engines = rankings[:50]
+            title_suffix = " (Top 50)"
+        
+        if display_engines:
+            df_rankings = pd.DataFrame(display_engines)
+            
+            # Add family classification and consolidation indicators
+            df_rankings['family'] = df_rankings['name'].apply(parse_engine_family)
+            df_rankings['display_name'] = df_rankings['name'].str.replace('_', ' ')
+            
+            # Add consolidation indicators
+            consolidation_info = unified_data.get('consolidation_summary', {})
+            consolidated_groups = consolidation_info.get('consolidated_groups', {})
+            df_rankings['consolidated'] = df_rankings['name'].apply(
+                lambda x: "🔗" if x in consolidated_groups else ""
+            )
+            
+            st.write(f"**Showing {len(display_engines)} engines{title_suffix}**")
+            
+            # Rating vs Games scatter plot
+            fig_scatter = px.scatter(
+                df_rankings,
+                x='games',
+                y='estimated_rating',
+                color='family',
+                size='reliability_score',
+                hover_data=['name', 'win_rate', 'tournaments', 'stockfish_games'],
+                title=f"Engine Rating vs Experience{title_suffix}",
+                labels={
+                    'games': 'Total Games Played',
+                    'estimated_rating': 'Estimated ELO Rating',
                 'reliability_score': 'Reliability Score'
             },
             color_discrete_map={'SlowMate': '#1f77b4', 'Cece': '#ff7f0e', 'Cecilia': '#2ca02c', 'Other': '#d62728'}
