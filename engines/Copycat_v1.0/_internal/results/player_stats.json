@@ -1,0 +1,20 @@
+{
+  "total_games": 714,
+  "wins": 312,
+  "losses": 365,
+  "draws": 37,
+  "avg_game_length": 34.01680672268912,
+  "favorite_openings": {},
+  "performance_by_color": {
+    "white": {
+      "wins": 158,
+      "losses": 185,
+      "draws": 19
+    },
+    "black": {
+      "wins": 154,
+      "losses": 180,
+      "draws": 18
+    }
+  }
+}
