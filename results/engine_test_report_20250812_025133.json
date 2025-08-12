@@ -1,0 +1,1403 @@
+[
+  {
+    "engine": "Cece_v1.0.exe",
+    "path": "engines\\Cece_v1.0.exe",
+    "critical_pass": true,
+    "total_duration": 5.209634304046631,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5035758018493652,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 1.8829023838043213,
+        "detail": "id name Cece\nid author Pat Snyder\noption name Debug type check default false\noption name Hash type spin default 64 min 1 max 1024\noption name Threads type spin default 1 min 1 max 8\noption name MaterialWeight type spin default 100 min 50 max 200\noption name PositionalWeight type spin default 30 min 0 max 100\noption name TacticalWeight type spin default 20 min 0 max 100\noption name SafetyWeight type spin default 15 min 0 max 100\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0002238750457763672,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0002288818359375,
+        "detail": "Initialized Cece v1.0;Author: Pat Snyder;Attribution: Built on python-chess by Niklas Fiekas;readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 1.0012168884277344,
+        "detail": "bestmove h2h4",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.06677651405334473,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 1.5028438568115234,
+        "detail": "Moves=e2e4,e7e5,g1f3,d2d3,g1h3,d8f6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.25174379348754883,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cece_v1.1.exe",
+    "path": "engines\\Cece_v1.1.exe",
+    "critical_pass": true,
+    "total_duration": 3.1857151985168457,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5026884078979492,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.06164288520812988,
+        "detail": "id name Cece\nid author Pat Snyder\noption name Debug type check default false\noption name Hash type spin default 64 min 1 max 1024\noption name Threads type spin default 1 min 1 max 8\noption name MaterialWeight type spin default 100 min 50 max 200\noption name PositionalWeight type spin default 30 min 0 max 100\noption name TacticalWeight type spin default 20 min 0 max 100\noption name SafetyWeight type spin default 15 min 0 max 100\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00021982192993164062,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0002579689025878906,
+        "detail": "Initialized Cece v1.1;Author: Pat Snyder;Attribution: Built on python-chess by Niklas Fiekas;readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 1.0019123554229736,
+        "detail": "bestmove h2h4",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.06689143180847168,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 1.5018911361694336,
+        "detail": "Moves=e2e4,e7e5,g1f3,e2e3,g1h3,d7d6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.05010986328125,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cece_v1.2.exe",
+    "path": "engines\\Cece_v1.2.exe",
+    "critical_pass": true,
+    "total_duration": 3.538029193878174,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.503394365310669,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05675959587097168,
+        "detail": "id name Cece\nid author Pat Snyder\noption name Debug type check default false\noption name Hash type spin default 64 min 1 max 1024\noption name Threads type spin default 1 min 1 max 8\noption name MaterialWeight type spin default 100 min 50 max 200\noption name PositionalWeight type spin default 30 min 0 max 100\noption name TacticalWeight type spin default 20 min 0 max 100\noption name SafetyWeight type spin default 15 min 0 max 100\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00018072128295898438,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0003974437713623047,
+        "detail": "Initialized Cece v1.1;Author: Pat Snyder;Attribution: Built on python-chess by Niklas Fiekas;readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 1.0024855136871338,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.06749439239501953,
+        "detail": "bestmove e2e4",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 1.5033674240112305,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,g1f3,g8h6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.4038431644439697,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cece_v1.3.exe",
+    "path": "engines\\Cece_v1.3.exe",
+    "critical_pass": true,
+    "total_duration": 5.245786905288696,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5040545463562012,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 1.9155354499816895,
+        "detail": "id name Cece\nid author Pat Snyder\noption name Debug type check default false\noption name Hash type spin default 64 min 1 max 1024\noption name Threads type spin default 1 min 1 max 8\noption name MaterialWeight type spin default 100 min 50 max 200\noption name PositionalWeight type spin default 30 min 0 max 100\noption name TacticalWeight type spin default 20 min 0 max 100\noption name SafetyWeight type spin default 15 min 0 max 100\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00017118453979492188,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00020885467529296875,
+        "detail": "Initialized Cece v1.3;Author: Pat Snyder;Attribution: Built on python-chess by Niklas Fiekas;readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 1.0005466938018799,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.06793355941772461,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 1.505171298980713,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,g1f3,g8h6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.25204968452453613,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cece_v2.0.exe",
+    "path": "engines\\Cece_v2.0.exe",
+    "critical_pass": true,
+    "total_duration": 3.182363986968994,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.502669095993042,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05522918701171875,
+        "detail": "id name Cece\nid author Pat Snyder\noption name Debug type check default false\noption name Hash type spin default 64 min 1 max 1024\noption name Threads type spin default 1 min 1 max 8\noption name MaterialWeight type spin default 100 min 50 max 200\noption name PositionalWeight type spin default 30 min 0 max 100\noption name TacticalWeight type spin default 20 min 0 max 100\noption name SafetyWeight type spin default 15 min 0 max 100\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00028204917907714844,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0002923011779785156,
+        "detail": "Initialized Cece v2.0;Author: Pat Snyder;Attribution: Built on python-chess by Niklas Fiekas;readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 1.0011022090911865,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.06875491142272949,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 1.503608226776123,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,d2d4,d7d5",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.050324440002441406,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cecilia_v0.1.0_Basic.exe",
+    "path": "engines\\Cecilia_v0.1.0_Basic.exe",
+    "critical_pass": true,
+    "total_duration": 0.9733078479766846,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5032138824462891,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05945944786071777,
+        "detail": "id name Viper Basic v0.1.0\nid author GitHub Copilot\noption name Hash type spin default 64 min 1 max 2048\noption name Threads type spin default 4 min 1 max 16\noption name Depth type spin default 4 min 1 max 10\noption name UseLookahead type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0002968311309814453,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00020599365234375,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.011353015899658203,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.011027336120605469,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.0337824821472168,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1h3,g1h3,g8e7",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.353867769241333,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cecilia_v0.2.0_Enhanced_Fixed.exe",
+    "path": "engines\\Cecilia_v0.2.0_Enhanced_Fixed.exe",
+    "critical_pass": true,
+    "total_duration": 0.9655511379241943,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5042026042938232,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05148649215698242,
+        "detail": "id name Cecilia Enhanced v0.2.0\nid author GitHub Copilot\noption name Hash type spin default 64 min 1 max 2048\noption name Threads type spin default 4 min 1 max 32\noption name Depth type spin default 3 min 1 max 10\noption name AIType type combo default simple var simple var minimax var negamax\noption name Logging type check default false\noption name TranspositionTable type check default false\noption name OpeningBook type check default false\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00012111663818359375,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 9.989738464355469e-05,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.011383056640625,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.011322259902954102,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.0337982177734375,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1h3,g1h3,g8e7",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.3530144691467285,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Cecilia_v0.3.0_Advanced_Fixed.exe",
+    "path": "engines\\Cecilia_v0.3.0_Advanced_Fixed.exe",
+    "critical_pass": true,
+    "total_duration": 0.9703099727630615,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5027997493743896,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.06070733070373535,
+        "detail": "id name Cecilia Advanced v0.3.0\nid author GitHub Copilot\noption name Hash type spin default 64 min 1 max 2048\noption name Threads type spin default 4 min 1 max 32\noption name Depth type spin default 4 min 1 max 12\noption name AIType type combo default minimax var deepsearch var lookahead var minimax var negamax var negascout var simple_search var random\noption name Logging type check default false\noption name TranspositionTable type check default false\noption name OpeningBook type check default false\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00023412704467773438,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00021028518676757812,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.011125564575195312,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.010651826858520508,
+        "detail": "bestmove g1h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.03224897384643555,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1h3,g1h3,g8e7",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.3522365093231201,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "Random_Opponent.exe",
+    "path": "engines\\Random_Opponent.exe",
+    "critical_pass": true,
+    "total_duration": 0.9146842956542969,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5033140182495117,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05516934394836426,
+        "detail": "id name Random Opponent\nid author OpponentEngine\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00032019615173339844,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00018024444580078125,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.0003628730773925781,
+        "detail": "bestmove b2b4",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.00025272369384765625,
+        "detail": "bestmove h2h3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.0007631778717041016,
+        "detail": "Moves=e2e4,e7e5,g1f3,e2e3,h2h4,d8h4",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.3542327880859375,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.0.0.exe",
+    "path": "engines\\SlowMate_v0.0.0.exe",
+    "critical_pass": true,
+    "total_duration": 1.9533898830413818,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5033936500549316,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05663132667541504,
+        "detail": "SlowMate v0.0.1 - Pure Random Engine\nEducational baseline with no strategic knowledge\nPerfect for measuring incremental improvements\n--------------------------------------------------\nid name SlowMate 0.1.0\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0002410411834716797,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00017547607421875,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.16320133209228516,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.1622755527496338,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.7149710655212402,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,d1h5,g8f6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.35239624977111816,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.0.1.exe",
+    "path": "engines\\SlowMate_v0.0.1.exe",
+    "critical_pass": true,
+    "total_duration": 1.0556206703186035,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5034704208374023,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.054955482482910156,
+        "detail": "SlowMate v0.0.2 - Enhanced Intelligence Engine\nFeatures: Tactical awareness + Move intelligence\nNotable improvement over pure random baseline\n--------------------------------------------------\nid name SlowMate 0.1.01\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00029587745666503906,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00017404556274414062,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.028560638427734375,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.030778884887695312,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.1342778205871582,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.3030049800872803,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.1.0.exe",
+    "path": "engines\\SlowMate_v0.1.0.exe",
+    "critical_pass": true,
+    "total_duration": 1.7395191192626953,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5030181407928467,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05655241012573242,
+        "detail": "id name SlowMate 0.1.0\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0001971721649169922,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0001125335693359375,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.19363856315612793,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.18667364120483398,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.7484984397888184,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,d1h5,g8f6",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.050744056701660156,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.1.1.exe",
+    "path": "engines\\SlowMate_v0.1.1.exe",
+    "critical_pass": true,
+    "total_duration": 1.0840539932250977,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.503321647644043,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.055769920349121094,
+        "detail": "id name SlowMate 0.1.01\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0001971721649169922,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0001633167266845703,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.029704809188842773,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.027836322784423828,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.11339521408081055,
+        "detail": "Moves=e2e4,e7e5,g1f3,b1c3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.3535444736480713,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.1.2.exe",
+    "path": "engines\\SlowMate_v0.1.2.exe",
+    "critical_pass": true,
+    "total_duration": 1.0927767753601074,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5029480457305908,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.06491708755493164,
+        "detail": "------------------------------------------------------------\nSlowMate engine initialized with knowledge base (data: C:\\Users\\patss\\AppData\\Local\\Temp\\_MEI231162\\data)\nOpening book: True\nEndgame patterns: True (0 mate patterns)\nEndgame tactics: True\nKnowledge base ready\nid name SlowMate 0.1.01\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0002741813659667969,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0002002716064453125,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.028783082962036133,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.029636859893798828,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.11252260208129883,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.35338497161865234,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.1.3.exe",
+    "path": "engines\\SlowMate_v0.1.3.exe",
+    "critical_pass": true,
+    "total_duration": 1.1018445491790771,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5034434795379639,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05580925941467285,
+        "detail": "SlowMate engine initialized with knowledge base (data: C:\\Users\\patss\\AppData\\Local\\Temp\\_MEI201202\\data)\nOpening book: True\nEndgame patterns: True (0 mate patterns)\nEndgame tactics: True\nKnowledge base ready\nid name SlowMate 0.1.03\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00016164779663085938,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 9.822845458984375e-05,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.03963017463684082,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.030260562896728516,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.11811184883117676,
+        "detail": "Moves=e2e4,e7e5,g1f3,b1c3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.35422658920288086,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.2.0.exe",
+    "path": "engines\\SlowMate_v0.2.0.exe",
+    "critical_pass": true,
+    "total_duration": 1.1014814376831055,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.502781867980957,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05431532859802246,
+        "detail": "SlowMate engine initialized with knowledge base (data: C:\\Users\\patss\\AppData\\Local\\Temp\\_MEI231682\\data)\nOpening book: True\nEndgame patterns: True (0 mate patterns)\nEndgame tactics: True\nKnowledge base ready\nid name SlowMate 0.1.03\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00014328956604003906,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 7.843971252441406e-05,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.03100275993347168,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.03050684928894043,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.12898683547973633,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.35357189178466797,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.2.1.exe",
+    "path": "engines\\SlowMate_v0.2.1.exe",
+    "critical_pass": true,
+    "total_duration": 0.7996969223022461,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5029194355010986,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.06339836120605469,
+        "detail": "SlowMate engine initialized with knowledge base (data: C:\\Users\\patss\\AppData\\Local\\Temp\\_MEI209122\\data)\nOpening book: True\nEndgame patterns: True (0 mate patterns)\nEndgame tactics: True\nKnowledge base ready\nid name SlowMate 0.2.01\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00024056434631347656,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0002071857452392578,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.030802249908447266,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.029169321060180664,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.12232494354248047,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.05054306983947754,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.2.2.exe",
+    "path": "engines\\SlowMate_v0.2.2.exe",
+    "critical_pass": true,
+    "total_duration": 0.7854928970336914,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5031988620758057,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05132174491882324,
+        "detail": "SlowMate engine initialized with knowledge base (data: C:\\Users\\patss\\AppData\\Local\\Temp\\_MEI41562\\data)\nOpening book: True\nEndgame patterns: True (0 mate patterns)\nEndgame tactics: True\nKnowledge base ready\nid name SlowMate 0.2.01\nid author Pat Snyder\noption name Intelligence type check default true\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0002129077911376953,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00018453598022460938,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.03119683265686035,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.029204130172729492,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.11929464340209961,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.05078601837158203,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.3.0.exe",
+    "path": "engines\\SlowMate_v0.3.0.exe",
+    "critical_pass": true,
+    "total_duration": 1.4581964015960693,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5031032562255859,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.050548553466796875,
+        "detail": "Endgame tactics: True\nKnowledge base ready\nSlowMate Chess Engine v0.2.01 by Pat Snyder\nid name SlowMate\nid author Pat Snyder\noption name Debug type check default false\noption name Threads type spin default 1 min 1 max 1\noption name Hash type spin default 16 min 1 max 128\noption name Move Overhead type spin default 50 min 0 max 5000\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00023055076599121094,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0001938343048095703,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.3224985599517822,
+        "detail": "bestmove b1c3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.11186456680297852,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.4191606044769287,
+        "detail": "Moves=e2e4,e7e5,g1f3,b1c3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.05049753189086914,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v0.3.3.exe",
+    "path": "engines\\SlowMate_v0.3.3.exe",
+    "critical_pass": true,
+    "total_duration": 1.5484771728515625,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5027225017547607,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05451846122741699,
+        "detail": "option name RookCoordination type check default true\noption name BatteryAttacks type check default true\noption name KnightCoordination type check default true\noption name BishopCoordination type check default true\noption name PawnStructure type check default true\noption name QueenDevelopment type check default true\noption name QueenTradeAvoidance type check default true\noption name MinorPieceDevelopment type check default true\noption name OpeningBook type check default false\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.0001800060272216797,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.0001723766326904297,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.3499314785003662,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.11992311477661133,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.47038865089416504,
+        "detail": "Moves=e2e4,e7e5,g1f3,b1c3,f1c4,f8a3",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.05052351951599121,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  },
+  {
+    "engine": "SlowMate_v1.0.exe",
+    "path": "engines\\SlowMate_v1.0.exe",
+    "critical_pass": true,
+    "total_duration": 4.302294015884399,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5037970542907715,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 0.05132794380187988,
+        "detail": "info string init complete\nSlowMate UCI ready. Type 'uci' to begin.\nid name SlowMate\nid author Pat Snyder\noption name Hash type spin default 64 min 1 max 1024\noption name Debug type check default false\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00027680397033691406,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 0.00020837783813476562,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.2376573085784912,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.0012650489807128906,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": false,
+        "duration": 3.5076708793640137,
+        "detail": "Missing move 3",
+        "fail_type": "NO_BESTMOVE"
+      }
+    ]
+  },
+  {
+    "engine": "V7P3RAI_v1.0.exe",
+    "path": "engines\\V7P3RAI_v1.0.exe",
+    "critical_pass": true,
+    "total_duration": 2.9093124866485596,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": true,
+        "duration": 0.5032384395599365,
+        "detail": "",
+        "fail_type": null
+      },
+      {
+        "name": "uci_handshake",
+        "ok": true,
+        "duration": 2.064222812652588,
+        "detail": "Error loading config: [Errno 2] No such file or directory: 'config.json'\nNo model found at models/v7p3r_model.pkl, using static evaluation\nid name V7P3R Chess AI\nid author pssnyder\nuciok",
+        "fail_type": null
+      },
+      {
+        "name": "isready",
+        "ok": true,
+        "duration": 0.00011754035949707031,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "newgame",
+        "ok": true,
+        "duration": 7.891654968261719e-05,
+        "detail": "readyok",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_movetime",
+        "ok": true,
+        "duration": 0.010482311248779297,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "first_move_timecontrol",
+        "ok": true,
+        "duration": 0.010423421859741211,
+        "detail": "bestmove g1f3",
+        "fail_type": null
+      },
+      {
+        "name": "multi_sequence",
+        "ok": true,
+        "duration": 0.0680394172668457,
+        "detail": "Moves=e2e4,e7e5,g1f3,g1f3,d1h5,e8e7",
+        "fail_type": null
+      },
+      {
+        "name": "graceful_quit",
+        "ok": true,
+        "duration": 0.2526102066040039,
+        "detail": "Exit code 0",
+        "fail_type": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+Initialized Cece v1.0
+Author: Pat Snyder
+Attribution: Built on python-chess by Niklas Fiekas
+id name Cece
+id author Pat Snyder
+option name Debug type check default false
+option name Hash type spin default 64 min 1 max 1024
+option name Threads type spin default 1 min 1 max 8
+option name MaterialWeight type spin default 100 min 50 max 200
+option name PositionalWeight type spin default 30 min 0 max 100
+option name TacticalWeight type spin default 20 min 0 max 100
+option name SafetyWeight type spin default 15 min 0 max 100
+uciok
+readyok
+Initialized Cece v1.0
+Author: Pat Snyder
+Attribution: Built on python-chess by Niklas Fiekas
+readyok
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 10, time: 1.0s)...
+Searching position to depth 10...
+Depth 1: f2f4 (score: 26) PV: f2f4
+Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
+Depth 3: h2h4 (score: 21) PV: h2h4 f7f5 f2f4
+Search completed:
+  Nodes searched: 5,991
+  Time taken: 1.000s
+  NPS: 5,988
+  Evaluation: 21
+  Thoughts collected: 2873
+  Ideas formed: 3
+  Principal variation: h2h4 f7f5 f2f4
+bestmove h2h4
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 10, time: 0.06666666666666667s)...
+Searching position to depth 10...
+Depth 1: f2f4 (score: 26) PV: f2f4
+Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
+Depth 3: g1h3 (score: -34) PV: g1h3 e7e6 h3g5
+Search completed:
+  Nodes searched: 381
+  Time taken: 0.066s
+  NPS: 5,700
+  Evaluation: -34
+  Thoughts collected: 176
+  Ideas formed: 3
+  Principal variation: g1h3 e7e6 h3g5
+bestmove g1h3
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 10, time: 0.5s)...
+Searching position to depth 10...
+Depth 1: f2f4 (score: 26) PV: f2f4
+Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
+Depth 3: d2d3 (score: 25) PV: d2d3 g8h6 e1d2
+Search completed:
+  Nodes searched: 2,852
+  Time taken: 0.500s
+  NPS: 5,700
+  Evaluation: 25
+  Thoughts collected: 1361
+  Ideas formed: 3
+  Principal variation: d2d3 g8h6 e1d2
+bestmove d2d3
+Position set: rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2
+\nSearching position (depth: 10, time: 0.5s)...
+Searching position to depth 10...
+Depth 1: f2f4 (score: 26) PV: f2f4
+Depth 2: b1c3 (score: 0) PV: b1c3 b8c6
+Depth 3: g1h3 (score: -3) PV: g1h3 f7f6 f2f4
+Search completed:
+  Nodes searched: 2,511
+  Time taken: 0.500s
+  NPS: 5,019
+  Evaluation: -3
+  Thoughts collected: 1206
+  Ideas formed: 3
+  Principal variation: g1h3 f7f6 f2f4
+bestmove g1h3
+Position set: rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2
+\nSearching position (depth: 10, time: 0.5s)...
+Searching position to depth 10...
+Depth 1: b8c6 (score: 2) PV: b8c6
+Depth 2: f7f5 (score: 26) PV: f7f5 f3g1
+Depth 3: d8f6 (score: 142) PV: d8f6 f3g1 f6f2
+Search completed:
+  Nodes searched: 2,616
+  Time taken: 0.500s
+  NPS: 5,228
+  Evaluation: 142
+  Thoughts collected: 1212
+  Ideas formed: 3
+  Principal variation: d8f6 f3g1 f6f2
+bestmove d8f6

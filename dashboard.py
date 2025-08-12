@@ -50,7 +50,7 @@ def load_unified_data(results_dir='results'):
         st.error(f"Error loading unified data: {e}")
         return None, None
 
-@st.cache_data  
+@st.cache_data
 def load_data(tournament_folder=None):
     """Legacy function for backward compatibility - redirects to unified data"""
     return load_unified_data()
@@ -141,7 +141,7 @@ def create_unified_overview(unified_data):
         # Show engine family distribution first
         families = {}
         for engine in rankings:
-            family = engine['name'].split('_')[0]
+            family = parse_engine_family(engine['name'])  # Use proper family parsing
             families[family] = families.get(family, 0) + 1
         
         st.write("**Engine Family Distribution:**")
