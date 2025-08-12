@@ -16,6 +16,7 @@ import re
 import os
 import glob
 import datetime
+import numpy as np
 from typing import Dict, List, Any, Tuple, Optional
 
 # Page configuration
@@ -25,6 +26,20 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+@st.cache_data
+def load_behavioral_data(results_dir='results'):
+    """Load behavioral analysis data"""
+    try:
+        behavioral_path = os.path.join(results_dir, 'behavioral_analysis.json')
+        if os.path.exists(behavioral_path):
+            with open(behavioral_path, 'r') as f:
+                return json.load(f)
+        else:
+            return None
+    except Exception as e:
+        st.error(f"Error loading behavioral data: {e}")
+        return None
 
 @st.cache_data
 def load_unified_data(results_dir='results'):
@@ -507,12 +522,266 @@ def create_engine_deep_dive(unified_data):
             df_tournaments = pd.DataFrame(tournament_data)
             st.dataframe(df_tournaments, use_container_width=True, hide_index=True)
 
+def create_behavioral_analysis():
+    """Create the behavioral analysis page"""
+    st.header("🧠 Engine Behavioral Analysis")
+    st.markdown("Deep dive into engine playing styles, patterns, and behavioral characteristics")
+    
+    # Load behavioral data
+    behavioral_data = load_behavioral_data()
+    
+    if not behavioral_data:
+        st.error("No behavioral analysis data found. Please run `analysis/behavioral_analyzer.py` first.")
+        return
+    
+    profiles = behavioral_data.get('behavioral_profiles', {})
+    categories = behavioral_data.get('engine_categories', {})
+    
+    if not profiles:
+        st.warning("No engine profiles found in behavioral analysis.")
+        return
+    
+    # Summary metrics
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.metric("Engines Analyzed", len(profiles))
+    
+    with col2:
+        total_games = sum(p.get('total_games', 0) for p in profiles.values())
+        st.metric("Total Games", f"{total_games:,}")
+    
+    with col3:
+        avg_aggression = np.mean([p.get('behavioral_scores', {}).get('aggression', 0) for p in profiles.values()])
+        st.metric("Avg Aggression", f"{avg_aggression:.1f}")
+    
+    with col4:
+        avg_win_rate = np.mean([p.get('performance_metrics', {}).get('win_rate', 0) for p in profiles.values()])
+        st.metric("Avg Win Rate", f"{avg_win_rate:.1f}%")
+    
+    # Engine categories
+    st.subheader("🏷️ Engine Playing Style Categories")
+    
+    if categories:
+        # Create tabs for each category
+        category_tabs = st.tabs(list(categories.keys()))
+        
+        for tab, (category_name, engines) in zip(category_tabs, categories.items()):
+            with tab:
+                if engines:
+                    st.write(f"**{len(engines)} engines** in this category:")
+                    for engine in engines:
+                        if engine in profiles:
+                            profile = profiles[engine]
+                            scores = profile.get('behavioral_scores', {})
+                            perf = profile.get('performance_metrics', {})
+                            
+                            col1, col2, col3 = st.columns([2, 1, 1])
+                            with col1:
+                                st.write(f"**{engine}**")
+                            with col2:
+                                st.write(f"Aggression: {scores.get('aggression', 0):.1f}")
+                            with col3:
+                                st.write(f"Win Rate: {perf.get('win_rate', 0):.1f}%")
+                else:
+                    st.write("No engines in this category")
+    
+    # Detailed engine profiles
+    st.subheader("🔍 Detailed Engine Profiles")
+    
+    selected_engine = st.selectbox("Select an engine for detailed analysis:", 
+                                  options=list(profiles.keys()))
+    
+    if selected_engine and selected_engine in profiles:
+        profile = profiles[selected_engine]
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.subheader(f"📊 {selected_engine} - Behavioral Scores")
+            scores = profile.get('behavioral_scores', {})
+            
+            metrics_data = {
+                'Metric': ['Aggression', 'Decisiveness', 'Piece Diversity', 'Opening Diversity'],
+                'Score': [scores.get('aggression', 0), scores.get('decisiveness', 0), 
+                         scores.get('piece_diversity', 0), scores.get('opening_diversity', 0)]
+            }
+            
+            fig_metrics = px.bar(pd.DataFrame(metrics_data), x='Metric', y='Score',
+                               title=f'{selected_engine} Behavioral Metrics')
+            fig_metrics.update_layout(height=400)
+            st.plotly_chart(fig_metrics, use_container_width=True)
+        
+        with col2:
+            st.subheader(f"🎯 {selected_engine} - Performance Metrics")
+            perf = profile.get('performance_metrics', {})
+            
+            for metric, value in perf.items():
+                if metric in ['win_rate', 'draw_rate', 'capture_rate', 'check_rate']:
+                    st.metric(metric.replace('_', ' ').title(), f"{value:.1f}%")
+                else:
+                    st.metric(metric.replace('_', ' ').title(), f"{value:.1f}")
+        
+        # Signature patterns
+        st.subheader(f"🔄 {selected_engine} - Signature Patterns")
+        
+        patterns = profile.get('signature_patterns', {})
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.write("**Favorite Moves:**")
+            favorite_moves = patterns.get('favorite_moves', {})
+            if favorite_moves:
+                for move, count in list(favorite_moves.items())[:5]:
+                    st.write(f"• {move}: {count}")
+            else:
+                st.write("No data available")
+        
+        with col2:
+            st.write("**Favorite Pieces:**")
+            favorite_pieces = patterns.get('favorite_pieces', {})
+            if favorite_pieces:
+                for piece, count in list(favorite_pieces.items())[:5]:
+                    piece_name = {'K': 'King', 'Q': 'Queen', 'R': 'Rook', 
+                                 'B': 'Bishop', 'N': 'Knight', 'P': 'Pawn'}.get(piece, piece)
+                    st.write(f"• {piece_name}: {count}")
+            else:
+                st.write("No data available")
+        
+        with col3:
+            st.write("**Preferred Openings:**")
+            openings = patterns.get('preferred_openings', {})
+            if openings:
+                for opening, count in list(openings.items())[:5]:
+                    st.write(f"• {opening}: {count}")
+            else:
+                st.write("No data available")
+
+def create_engine_landscape():
+    """Create the engine landscape visualization page"""
+    st.header("🗺️ Engine Landscape & Relationships")
+    st.markdown("Visual exploration of engine relationships, styles, and performance patterns")
+    
+    # Load data
+    behavioral_data = load_behavioral_data()
+    
+    if not behavioral_data:
+        st.error("No behavioral analysis data found. Please run `analysis/behavioral_analyzer.py` first.")
+        return
+    
+    # Import visualization functions
+    try:
+        from analysis.landscape_visualizer import EngineLandscapeVisualizer
+        visualizer = EngineLandscapeVisualizer()
+    except ImportError as e:
+        st.error(f"Could not import landscape visualizer: {e}")
+        return
+    
+    # Create tabs for different visualizations
+    tabs = st.tabs(["Style Clustering", "Performance Correlations", "Family Progression", 
+                   "Strength vs Style", "Territorial Analysis"])
+    
+    with tabs[0]:
+        st.subheader("🎯 Engine Style Clustering")
+        st.markdown("Engines clustered by behavioral similarity using machine learning")
+        
+        try:
+            fig_landscape = visualizer.create_engine_style_landscape()
+            st.plotly_chart(fig_landscape, use_container_width=True)
+            
+            st.markdown("""
+            **How to read this chart:**
+            - Each point represents an engine
+            - Similar engines cluster together
+            - Colors indicate behavioral clusters
+            - Hover for detailed engine information
+            """)
+        except Exception as e:
+            st.error(f"Error creating style landscape: {e}")
+    
+    with tabs[1]:
+        st.subheader("🔗 Performance Correlations")
+        st.markdown("Correlation matrix showing relationships between engine characteristics")
+        
+        try:
+            fig_corr = visualizer.create_performance_correlation_matrix()
+            st.plotly_chart(fig_corr, use_container_width=True)
+            
+            st.markdown("""
+            **How to read this chart:**
+            - Red indicates positive correlation
+            - Blue indicates negative correlation
+            - Darker colors = stronger correlation
+            """)
+        except Exception as e:
+            st.error(f"Error creating correlation matrix: {e}")
+    
+    with tabs[2]:
+        st.subheader("📈 Engine Family Development")
+        st.markdown("Evolution of engine performance within families")
+        
+        try:
+            fig_progression = visualizer.create_engine_family_progression()
+            st.plotly_chart(fig_progression, use_container_width=True)
+            
+            st.markdown("""
+            **How to read this chart:**
+            - Each line represents an engine family
+            - X-axis shows version progression
+            - Y-axis shows estimated rating
+            - Upward trends indicate improvement
+            """)
+        except Exception as e:
+            st.error(f"Error creating family progression: {e}")
+    
+    with tabs[3]:
+        st.subheader("⚔️ Strength vs Playing Style")
+        st.markdown("Relationship between engine strength and behavioral characteristics")
+        
+        try:
+            fig_strength = visualizer.create_engine_strength_vs_style_plot()
+            st.plotly_chart(fig_strength, use_container_width=True)
+            
+            st.markdown("""
+            **How to read this chart:**
+            - X-axis: Aggression score
+            - Y-axis: Estimated ELO rating
+            - Colors: Playing style categories
+            - Size: Number of games played
+            """)
+        except Exception as e:
+            st.error(f"Error creating strength vs style plot: {e}")
+    
+    with tabs[4]:
+        st.subheader("🏰 Territorial Analysis")
+        st.markdown("Heatmaps showing piece movement preferences across all engines")
+        
+        piece_type = st.selectbox("Select piece type:", 
+                                 options=['K', 'Q', 'R', 'B', 'N', 'P'],
+                                 format_func=lambda x: {'K': 'King', 'Q': 'Queen', 'R': 'Rook', 
+                                                        'B': 'Bishop', 'N': 'Knight', 'P': 'Pawn'}[x])
+        
+        try:
+            fig_territory = visualizer.create_territorial_heatmap(piece_type)
+            st.plotly_chart(fig_territory, use_container_width=True)
+            
+            piece_names = {'K': 'King', 'Q': 'Queen', 'R': 'Rook', 'B': 'Bishop', 'N': 'Knight', 'P': 'Pawn'}
+            st.markdown(f"""
+            **{piece_names[piece_type]} Movement Heatmap:**
+            - Darker squares indicate higher usage frequency
+            - Averaged across all engines in the analysis
+            - Shows typical movement patterns for this piece
+            """)
+        except Exception as e:
+            st.error(f"Error creating territorial heatmap: {e}")
+
 # Remove old functions that are no longer needed
 # (keeping parse_engine_family and parse_version_number as they're still used)
 
 def main():
     st.title("♞ Chess Engine Analysis Dashboard")
-    st.markdown("Comprehensive analysis of chess engine performance across all tournaments")
+    st.markdown("Comprehensive analysis of chess engine performance, behavior, and relationships")
     
     # Load unified data
     unified_data, appendix_data = load_unified_data()
@@ -535,9 +804,11 @@ def main():
         "Choose Analysis View",
         [
             "Unified Rankings",
-            "Stockfish Achievements",
+            "Stockfish Achievements", 
+            "Engine Behavioral Analysis",
+            "Engine Landscape",
             "Rating Progression",
-            "Tournament Breakdown", 
+            "Tournament Breakdown",
             "Engine Deep Dive"
         ]
     )
@@ -584,6 +855,10 @@ def main():
         create_unified_overview(unified_data)
     elif page == "Stockfish Achievements":
         create_stockfish_analysis(unified_data)
+    elif page == "Engine Behavioral Analysis":
+        create_behavioral_analysis()
+    elif page == "Engine Landscape":
+        create_engine_landscape()
     elif page == "Rating Progression":
         create_rating_progression(unified_data)
     elif page == "Tournament Breakdown":
