@@ -1,0 +1,11 @@
+id name Random Opponent
+id author OpponentEngine
+uciok
+readyok
+readyok
+bestmove b2b4
+bestmove h2h3
+bestmove e2e3
+bestmove h2h4
+info string Error: push() expects move to be pseudo-legal, but got e2e3 in rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R
+bestmove d8h4
