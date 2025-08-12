@@ -36,6 +36,149 @@ BASELINE_ENGINES = {
 }
 
 @dataclass
+class EngineIdentity:
+    """Normalized engine identity for grouping variants"""
+    family: str
+    version: str
+    variant: str = ""
+    
+    @property
+    def canonical_name(self) -> str:
+        """Generate canonical display name"""
+        if self.variant and self.variant not in ["RELEASE", "STABLE"]:
+            return f"{self.family}_v{self.version}_{self.variant}"
+        else:
+            return f"{self.family}_v{self.version}"
+    
+    @property
+    def sort_key(self) -> tuple:
+        """Generate sort key for version ordering"""
+        # Split version into parts for proper sorting
+        parts = self.version.split('.')
+        try:
+            version_tuple = tuple(int(p) for p in parts)
+        except ValueError:
+            # Handle non-numeric version parts
+            version_tuple = (0, 0, 0)
+        
+        # Variant priority (RELEASE > STABLE > BETA > ALPHA > others)
+        variant_priority = {
+            "RELEASE": 100,
+            "STABLE": 90,
+            "": 80,  # No variant (assumed release)
+            "BETA": 70,
+            "ALPHA": 60,
+            "DELTA": 50,
+            "EXPERIMENTAL": 40
+        }
+        
+        priority = variant_priority.get(self.variant, 30)
+        return (version_tuple, priority)
+
+def normalize_engine_name(raw_name: str) -> EngineIdentity:
+    """Extract normalized engine identity from raw name"""
+    # Clean the name
+    name = raw_name.strip()
+    
+    # Handle special cases first
+    if "stockfish" in name.lower():
+        return EngineIdentity(family="Stockfish", version="1.0", variant="1%")
+    
+    if "random" in name.lower() and "opponent" in name.lower():
+        return EngineIdentity(family="Random_Opponent", version="1.0", variant="")
+    
+    if "copycat" in name.lower():
+        # Extract version if present
+        version_match = re.search(r'v?(\d+\.?\d*\.?\d*)', name)
+        version = version_match.group(1) if version_match else "1.0"
+        return EngineIdentity(family="Copycat", version=version, variant="")
+    
+    # Standard engine families
+    family_patterns = [
+        (r'(SlowMate)', 'SlowMate'),
+        (r'(Cece)', 'Cece'),
+        (r'(Cecilia)', 'Cecilia'),
+        (r'(V7P3RAI)', 'V7P3RAI'),
+    ]
+    
+    family = None
+    for pattern, family_name in family_patterns:
+        if re.search(pattern, name, re.IGNORECASE):
+            family = family_name
+            break
+    
+    if not family:
+        # Fallback: use first word as family
+        family = name.split('_')[0].split(' ')[0]
+    
+    # Extract version
+    version_patterns = [
+        r'v(\d+\.\d+\.\d+)',  # v1.2.3
+        r'v(\d+\.\d+)',       # v1.2
+        r'v(\d+)',            # v1
+        r'_(\d+\.\d+\.\d+)',  # _1.2.3
+        r'_(\d+\.\d+)',       # _1.2
+        r'\s(\d+\.\d+)',      # space 1.2
+    ]
+    
+    version = "1.0"  # Default
+    for pattern in version_patterns:
+        match = re.search(pattern, name)
+        if match:
+            version = match.group(1)
+            break
+    
+    # Extract variant/qualifier
+    variant_patterns = [
+        r'(?:v\d+\.?\d*\.?\d*[_\s]*)([A-Z]+)',  # After version: BETA, RELEASE, etc.
+        r'_([A-Z][A-Za-z_]+)(?:_[A-Z][A-Za-z_]*)*$',  # End qualifiers
+    ]
+    
+    variant = ""
+    for pattern in variant_patterns:
+        match = re.search(pattern, name)
+        if match:
+            candidate = match.group(1).upper()
+            # Filter out known non-variant words
+            if candidate not in ['EXE', 'ENGINE', 'CHESS'] and len(candidate) > 1:
+                variant = candidate
+                break
+    
+    # Clean up common variant names
+    variant_mapping = {
+        'RELEASE': 'RELEASE',
+        'REL': 'RELEASE', 
+        'STABLE': 'STABLE',
+        'BETA': 'BETA',
+        'ALPHA': 'ALPHA',
+        'DELTA': 'DELTA',
+        'EXPERIMENTAL': 'EXPERIMENTAL',
+        'EXP': 'EXPERIMENTAL',
+        'TACTICAL': 'TACTICAL',
+        'OPENING': 'OPENING',
+        'ENDGAME': 'ENDGAME',
+        'MIDDLEGAME': 'MIDDLEGAME',
+        'TIME': 'TIME',
+        'SEARCH': 'SEARCH',
+        'ENHANCED': 'ENHANCED',
+        'INTELLIGENCE': 'INTELLIGENCE',
+        'MANAGEMENT': 'MANAGEMENT',
+        'ENHANCEMENTS': 'ENHANCEMENTS',
+        'BASELINE': 'BASELINE',
+        'REVISION': 'REVISION',
+        'NUCLEAR': 'NUCLEAR',
+        'VERSION': 'VERSION',
+        'FIX': 'FIX',
+        'FIXED': 'FIXED'
+    }
+    
+    # Normalize variant
+    if variant in variant_mapping:
+        variant = variant_mapping[variant]
+    
+    return EngineIdentity(family=family, version=version, variant=variant)
+
+@dataclass
 class GameRecord:
     """Individual game record with metadata"""
     white: str
@@ -146,9 +289,18 @@ class UnifiedTournamentAnalyzer:
     def __init__(self, results_dir: str = RESULTS_DIR):
         self.results_dir = results_dir
         self.games: List[GameRecord] = []
-        self.engines: Dict[str, EnginePerformance] = {}
+        self.engines: Dict[str, EnginePerformance] = {}  # Using canonical names as keys
         self.tournaments: Dict[str, Dict] = {}
         self.engine_ratings: Dict[str, float] = {}
+        self.name_mapping: Dict[str, str] = {}  # Maps raw names to canonical names
+        
+    def get_canonical_name(self, raw_name: str) -> str:
+        """Get canonical name for a raw engine name"""
+        if raw_name not in self.name_mapping:
+            identity = normalize_engine_name(raw_name)
+            canonical = identity.canonical_name
+            self.name_mapping[raw_name] = canonical
+        return self.name_mapping[raw_name]
         
     def find_all_pgn_files(self) -> List[Tuple[str, str]]:
         """Find all PGN files in tournament directories"""
@@ -176,47 +328,68 @@ class UnifiedTournamentAnalyzer:
         
         try:
             with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                game_count = 0
                 while True:
-                    game = chess.pgn.read_game(f)
-                    if game is None:
-                        break
+                    try:
+                        game = chess.pgn.read_game(f)
+                        if game is None:
+                            break
+                        
+                        game_count += 1
+                        if game_count % 100 == 0:
+                            print(f"  Processed {game_count} games from {os.path.basename(filepath)}...")
+                        
+                        # Extract game info
+                        headers = game.headers
+                        white = headers.get("White", "Unknown")
+                        black = headers.get("Black", "Unknown")
+                        result = headers.get("Result", "*")
+                        date = headers.get("Date", "????.??.??")
+                        termination = headers.get("Termination", "normal")
+                        opening = headers.get("Opening", "")
+                        eco = headers.get("ECO", "")
+                        
+                        # Extract moves (simplified - just get move count for performance)
+                        moves = []
+                        try:
+                            # Only extract moves if we need them for analysis
+                            # For now, just count the moves to avoid performance issues
+                            node = game
+                            move_count = 0
+                            while node.variations and move_count < 200:  # Limit moves to avoid infinite loops
+                                next_node = node.variation(0)
+                                move_count += 1
+                                node = next_node
+                            
+                            # Store a simplified move list for now
+                            moves = [f"move_{i}" for i in range(move_count)]
+                        except Exception as move_error:
+                            print(f"  Warning: Error extracting moves from game {game_count}: {move_error}")
+                            moves = []
+                        
+                        # Skip incomplete games
+                        if result in ["1-0", "0-1", "1/2-1/2"]:
+                            game_record = GameRecord(
+                                white=white,
+                                black=black,
+                                result=result,
+                                tournament=tournament_name,
+                                date=date,
+                                moves=moves,
+                                termination=termination,
+                                opening=opening,
+                                eco=eco
+                            )
+                            games.append(game_record)
                     
-                    # Extract game info
-                    headers = game.headers
-                    white = headers.get("White", "Unknown")
-                    black = headers.get("Black", "Unknown")
-                    result = headers.get("Result", "*")
-                    date = headers.get("Date", "????.??.??")
-                    termination = headers.get("Termination", "normal")
-                    opening = headers.get("Opening", "")
-                    eco = headers.get("ECO", "")
-                    
-                    # Extract moves
-                    moves = []
-                    node = game
-                    while node.variations:
-                        next_node = node.variation(0)
-                        moves.append(node.board().san(next_node.move))
-                        node = next_node
-                    
-                    # Skip incomplete games
-                    if result in ["1-0", "0-1", "1/2-1/2"]:
-                        game_record = GameRecord(
-                            white=white,
-                            black=black,
-                            result=result,
-                            tournament=tournament_name,
-                            date=date,
-                            moves=moves,
-                            termination=termination,
-                            opening=opening,
-                            eco=eco
-                        )
-                        games.append(game_record)
+                    except Exception as game_error:
+                        print(f"  Warning: Error parsing game {game_count} in {filepath}: {game_error}")
+                        continue
                         
         except Exception as e:
             print(f"Error parsing {filepath}: {e}")
         
+        print(f"  Loaded {len(games)} valid games from {os.path.basename(filepath)}")
         return games
     
     def load_all_games(self):
@@ -244,17 +417,34 @@ class UnifiedTournamentAnalyzer:
     def process_all_games(self):
         """Process all games and build engine performance data"""
         for game in self.games:
-            # Ensure engines exist
-            for engine in [game.white, game.black]:
-                if engine not in self.engines:
-                    self.engines[engine] = EnginePerformance(name=engine)
+            # Get canonical names for both engines
+            canonical_white = self.get_canonical_name(game.white)
+            canonical_black = self.get_canonical_name(game.black)
+            
+            # Ensure engines exist with canonical names
+            for canonical_name in [canonical_white, canonical_black]:
+                if canonical_name not in self.engines:
+                    self.engines[canonical_name] = EnginePerformance(name=canonical_name)
                 
                 # Track which tournaments each engine participated in
-                self.tournaments[game.tournament]["engines"].add(engine)
+                self.tournaments[game.tournament]["engines"].add(canonical_name)
             
-            # Add game to both engines' records
-            self.engines[game.white].add_game(game, playing_white=True)
-            self.engines[game.black].add_game(game, playing_white=False)
+            # Create a normalized game record for processing
+            normalized_game = GameRecord(
+                white=canonical_white,
+                black=canonical_black,
+                result=game.result,
+                tournament=game.tournament,
+                date=game.date,
+                moves=game.moves,
+                termination=game.termination,
+                opening=game.opening,
+                eco=game.eco
+            )
+            
+            # Add game to both engines' records using canonical names
+            self.engines[canonical_white].add_game(normalized_game, playing_white=True)
+            self.engines[canonical_black].add_game(normalized_game, playing_white=False)
     
     def calculate_reliability_scores(self):
         """Calculate reliability scores based on game count and opponent diversity"""
@@ -274,26 +464,31 @@ class UnifiedTournamentAnalyzer:
     
     def estimate_engine_ratings(self):
         """Estimate engine ratings using iterative ELO-like calculation"""
-        # Start with baseline ratings
-        for engine_name in self.engines:
-            if any(baseline in engine_name.lower() for baseline in BASELINE_ENGINES):
-                for baseline, rating in BASELINE_ENGINES.items():
-                    if baseline.lower() in engine_name.lower():
-                        if "stockfish" in baseline.lower():
-                            # Adjust for strength percentage if specified
-                            strength_match = re.search(r'(\d+)%', engine_name)
-                            if strength_match:
-                                strength_pct = int(strength_match.group(1))
-                                # Rough approximation: each 1% = ~28 ELO reduction from max
-                                adjusted_rating = rating - (100 - strength_pct) * 28
-                                self.engine_ratings[engine_name] = max(800, adjusted_rating)
-                            else:
-                                self.engine_ratings[engine_name] = rating
-                        else:
-                            self.engine_ratings[engine_name] = rating
-                        break
+        # Start with baseline ratings using canonical names
+        for canonical_name in self.engines:
+            identity = normalize_engine_name(canonical_name)
+            
+            # Check if this is a baseline engine
+            baseline_rating = None
+            if identity.family.lower() == "stockfish":
+                # Adjust for strength percentage if specified
+                if identity.variant and "%" in identity.variant:
+                    strength_match = re.search(r'(\d+)', identity.variant)
+                    if strength_match:
+                        strength_pct = int(strength_match.group(1))
+                        # Rough approximation: each 1% = ~28 ELO reduction from max
+                        baseline_rating = 2800 - (100 - strength_pct) * 28
+                        baseline_rating = max(800, baseline_rating)
+                    else:
+                        baseline_rating = 2800
+                else:
+                    baseline_rating = 2800
+            elif identity.family.lower() == "random_opponent":
+                baseline_rating = 600  # Random moves baseline
             else:
-                self.engine_ratings[engine_name] = 1200  # Default starting rating
+                baseline_rating = 1200  # Default starting rating
+                
+            self.engine_ratings[canonical_name] = baseline_rating
         
         # Iterative rating adjustment based on results
         for iteration in range(10):
@@ -394,8 +589,27 @@ class UnifiedTournamentAnalyzer:
     
     def generate_comprehensive_report(self) -> Dict[str, Any]:
         """Generate comprehensive analysis report"""
+        
+        # Create name mapping report to show what was consolidated
+        name_consolidation = {}
+        for raw_name, canonical_name in self.name_mapping.items():
+            if canonical_name not in name_consolidation:
+                name_consolidation[canonical_name] = []
+            name_consolidation[canonical_name].append(raw_name)
+        
+        # Only show consolidations where multiple names map to one canonical name
+        meaningful_consolidations = {
+            canonical: raw_names for canonical, raw_names in name_consolidation.items()
+            if len(raw_names) > 1
+        }
+        
         return {
             "analysis_date": datetime.datetime.now().isoformat(),
+            "name_consolidation": {
+                "consolidated_engines": len(meaningful_consolidations),
+                "total_raw_names": len(self.name_mapping),
+                "consolidations": meaningful_consolidations
+            },
             "summary": {
                 "total_games": len(self.games),
                 "total_engines": len(self.engines),
@@ -495,6 +709,19 @@ def main():
     # Generate and save report
     output_file = os.path.join(analyzer.results_dir, "unified_tournament_analysis.json")
     analyzer.save_report(output_file)
+    
+    # Display consolidation summary
+    report = analyzer.generate_comprehensive_report()
+    consolidation_info = report["name_consolidation"]
+    
+    print(f"\n📝 ENGINE NAME CONSOLIDATION:")
+    print("=" * 60)
+    print(f"Consolidated {consolidation_info['consolidated_engines']} engine groups from {consolidation_info['total_raw_names']} raw names")
+    
+    for canonical_name, raw_names in consolidation_info["consolidations"].items():
+        print(f"\n{canonical_name}:")
+        for raw_name in raw_names:
+            print(f"  ← {raw_name}")
     
     # Display summary
     rankings = analyzer.get_unified_rankings()

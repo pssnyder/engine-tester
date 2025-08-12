@@ -104,6 +104,20 @@ def create_unified_overview(unified_data):
     with col4:
         st.metric("Engines with Data", summary.get('engines_with_sufficient_data', 0))
     
+    # Data Consolidation Summary
+    consolidation_info = unified_data.get('consolidation_summary', {})
+    if consolidation_info:
+        st.subheader("🔄 Data Consolidation Report")
+        consolidated_groups = consolidation_info.get('consolidated_groups', {})
+        if consolidated_groups:
+            st.success(f"✅ **Consolidated {len(consolidated_groups)} engine groups** from {consolidation_info.get('total_raw_names', 0)} raw engine names")
+            
+            with st.expander("📋 View Consolidation Details"):
+                for canonical_name, variants in consolidated_groups.items():
+                    st.write(f"**{canonical_name}** ← {len(variants)} variants:")
+                    for variant in variants:
+                        st.write(f"  • `{variant}`")
+    
     # Stockfish Achievement Highlight
     stockfish_achievers = unified_data.get('stockfish_achievers', [])
     if stockfish_achievers:
@@ -111,7 +125,13 @@ def create_unified_overview(unified_data):
         st.success("Your engines have successfully drawn against Stockfish 1%!")
         
         for achiever in stockfish_achievers:
-            st.info(f"**{achiever['name']}**: {achiever['draws_vs_stockfish']} draws out of {achiever['stockfish_games']} games vs Stockfish (Rating: {achiever['estimated_rating']:.0f})")
+            # Add consolidation indicator if available
+            consolidation_note = ""
+            if consolidation_info.get('consolidated_groups', {}).get(achiever['name']):
+                variants = consolidation_info['consolidated_groups'][achiever['name']]
+                consolidation_note = f" (Consolidated from {len(variants)} variants)"
+            
+            st.info(f"**{achiever['name']}**: {achiever['draws_vs_stockfish']} draws out of {achiever['stockfish_games']} games vs Stockfish (Rating: {achiever['estimated_rating']:.0f}){consolidation_note}")
     
     # Top Rankings
     rankings = unified_data.get('unified_rankings', [])
@@ -145,10 +165,18 @@ def create_unified_overview(unified_data):
         fig_scatter.update_layout(height=500)
         st.plotly_chart(fig_scatter, use_container_width=True)
         
-        # Rankings table
-        st.subheader("📊 Detailed Rankings")
+        # Rankings table with consolidation indicators
+        st.subheader("📊 Detailed Rankings (Consolidated Data)")
         display_df = df_rankings[['name', 'estimated_rating', 'games', 'win_rate', 'score_percentage', 'tournaments', 'reliability_score', 'stockfish_games']].copy()
-        display_df.columns = ['Engine', 'ELO Rating', 'Games', 'Win Rate %', 'Score %', 'Tournaments', 'Reliability', 'Stockfish Games']
+        
+        # Add consolidation indicator
+        consolidation_info = unified_data.get('consolidation_summary', {})
+        consolidated_groups = consolidation_info.get('consolidated_groups', {})
+        display_df['Consolidated'] = display_df['name'].apply(
+            lambda x: f"✅ ({len(consolidated_groups[x])} variants)" if x in consolidated_groups else ""
+        )
+        
+        display_df.columns = ['Engine', 'ELO Rating', 'Games', 'Win Rate %', 'Score %', 'Tournaments', 'Reliability', 'Stockfish Games', 'Consolidated']
         display_df = display_df.round({'ELO Rating': 0, 'Win Rate %': 1, 'Score %': 1, 'Reliability': 3})
         
         st.dataframe(display_df, use_container_width=True, hide_index=True)
@@ -158,6 +186,7 @@ def create_stockfish_analysis(unified_data):
     st.header("⚔️ Stockfish Achievement Analysis")
     
     stockfish_achievers = unified_data.get('stockfish_achievers', [])
+    consolidation_info = unified_data.get('consolidation_summary', {})
     
     if not stockfish_achievers:
         st.info("No engines have notable results against Stockfish yet.")
@@ -166,18 +195,38 @@ def create_stockfish_analysis(unified_data):
     st.subheader("🎖️ Hall of Fame: Engines That Drew Stockfish")
     
     for achiever in stockfish_achievers:
-        with st.expander(f"🏆 {achiever['name']} - {achiever['draws_vs_stockfish']} draws vs Stockfish"):
+        # Check if this engine was consolidated
+        consolidated_groups = consolidation_info.get('consolidated_groups', {})
+        consolidation_note = ""
+        if achiever['name'] in consolidated_groups:
+            variants = consolidated_groups[achiever['name']]
+            consolidation_note = f" (Consolidated from {len(variants)} naming variants)"
+        
+        with st.expander(f"🏆 {achiever['name']} - {achiever['draws_vs_stockfish']} draws vs Stockfish{consolidation_note}"):
+            # Show consolidation details if applicable
+            if achiever['name'] in consolidated_groups:
+                st.info(f"**Data Consolidation**: This engine's results combine data from {len(consolidated_groups[achiever['name']])} naming variants:")
+                for variant in consolidated_groups[achiever['name']]:
+                    st.write(f"  • `{variant}`")
+                st.write("---")
+            
             col1, col2 = st.columns(2)
             
             with col1:
                 st.metric("Draws vs Stockfish", achiever['draws_vs_stockfish'])
                 st.metric("Total Games vs Stockfish", achiever['stockfish_games'])
                 st.metric("Estimated Rating", f"{achiever['estimated_rating']:.0f}")
+                st.metric("Total Games (All Opponents)", achiever.get('games', 'N/A'))
             
             with col2:
                 # Calculate survival rate against Stockfish
                 survival_rate = (achiever['draws_vs_stockfish'] / achiever['stockfish_games']) * 100
                 st.metric("Survival Rate vs Stockfish", f"{survival_rate:.1f}%")
+                
+                # Show statistical significance
+                expected_survival = 0.1  # Expected for rating gap
+                actual_vs_expected = survival_rate / expected_survival
+                st.metric("vs Expected Performance", f"{actual_vs_expected:.1f}x better")
                 
                 # Show what this means in context
                 if survival_rate > 10:
