@@ -1,0 +1,33 @@
+Initialized Cece v2.0
+Author: Pat Snyder
+Attribution: Built on python-chess by Niklas Fiekas
+id name Cece
+id author Pat Snyder
+option name Debug type check default false
+option name Hash type spin default 64 min 1 max 1024
+option name Threads type spin default 1 min 1 max 8
+option name MaterialWeight type spin default 100 min 50 max 200
+option name PositionalWeight type spin default 30 min 0 max 100
+option name TacticalWeight type spin default 20 min 0 max 100
+option name SafetyWeight type spin default 15 min 0 max 100
+uciok
+readyok
+Initialized Cece v2.0
+Author: Pat Snyder
+Attribution: Built on python-chess by Niklas Fiekas
+readyok
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 6, time: 1.0s)...
+Searching position to depth 6...
+Depth 1: h2h3 (score: 0) PV: h2h3
+bestmove 0000
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 6, time: 0.06666666666666667s)...
+Searching position to depth 6...
+Depth 1: h2h3 (score: 0) PV: h2h3
+bestmove 0000
+Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+\nSearching position (depth: 6, time: 0.5s)...
+Searching position to depth 6...
+Depth 1: h2h3 (score: 0) PV: h2h3
+bestmove 0000

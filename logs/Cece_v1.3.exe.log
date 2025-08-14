@@ -24,15 +24,15 @@ Searching position to depth 6...
 Depth 1: g1f3 (score: 90) PV: g1f3
 Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
 Depth 3: g1f3 (score: 90) PV: g1f3 g8f6 b1c3
-Depth 4: g1h3 (score: -57) PV: g1h3 g8f6 b1c3 b8c6
+Depth 4: g1h3 (score: -259) PV: g1h3 b8c6 h3g5 h7h6
 Search completed:
-  Nodes searched: 2,121
+  Nodes searched: 2,078
   Time taken: 1.000s
-  NPS: 2,119
-  Evaluation: -57
-  Thoughts collected: 987
+  NPS: 2,077
+  Evaluation: -259
+  Thoughts collected: 966
   Ideas formed: 4
-  Principal variation: g1h3 g8f6 b1c3 b8c6
+  Principal variation: g1h3 b8c6 h3g5 h7h6
 bestmove g1h3
 Position set: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 \nSearching position (depth: 6, time: 0.06666666666666667s)...
@@ -40,11 +40,11 @@ Searching position to depth 6...
 Depth 1: g1f3 (score: 90) PV: g1f3
 Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
 Search completed:
-  Nodes searched: 143
-  Time taken: 0.067s
-  NPS: 2,123
+  Nodes searched: 108
+  Time taken: 0.066s
+  NPS: 1,616
   Evaluation: 0
-  Thoughts collected: 68
+  Thoughts collected: 53
   Ideas formed: 2
   Principal variation: g1f3 g8f6
 bestmove g1f3
@@ -55,11 +55,11 @@ Depth 1: g1f3 (score: 90) PV: g1f3
 Depth 2: g1f3 (score: 0) PV: g1f3 g8f6
 Depth 3: g1f3 (score: 90) PV: g1f3 g8f6 b1c3
 Search completed:
-  Nodes searched: 1,066
-  Time taken: 0.501s
-  NPS: 2,127
+  Nodes searched: 1,000
+  Time taken: 0.500s
+  NPS: 1,998
   Evaluation: 90
-  Thoughts collected: 492
+  Thoughts collected: 460
   Ideas formed: 3
   Principal variation: g1f3 g8f6 b1c3
 bestmove g1f3
@@ -68,15 +68,15 @@ Position set: rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2
 Searching position to depth 6...
 Depth 1: g1f3 (score: 142) PV: g1f3
 Depth 2: g1f3 (score: 2) PV: g1f3 b8c6
-Depth 3: g1f3 (score: 71) PV: g1f3 d8f6 f1b5
+Depth 3: g1f3 (score: 92) PV: g1f3 d8e7 d1e2
 Search completed:
-  Nodes searched: 953
+  Nodes searched: 908
   Time taken: 0.500s
-  NPS: 1,902
-  Evaluation: 71
-  Thoughts collected: 441
+  NPS: 1,813
+  Evaluation: 92
+  Thoughts collected: 419
   Ideas formed: 3
-  Principal variation: g1f3 d8f6 f1b5
+  Principal variation: g1f3 d8e7 d1e2
 bestmove g1f3
 Position set: rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2
 \nSearching position (depth: 6, time: 0.5s)...
@@ -85,11 +85,11 @@ Depth 1: b8c6 (score: -2) PV: b8c6
 Depth 2: b8c6 (score: -92) PV: b8c6 b1c3
 Depth 3: g8h6 (score: -34) PV: g8h6 f3e5 f8d6
 Search completed:
-  Nodes searched: 869
+  Nodes searched: 895
   Time taken: 0.500s
-  NPS: 1,735
+  NPS: 1,788
   Evaluation: -34
-  Thoughts collected: 405
+  Thoughts collected: 418
   Ideas formed: 3
   Principal variation: g8h6 f3e5 f8d6
 bestmove g8h6
