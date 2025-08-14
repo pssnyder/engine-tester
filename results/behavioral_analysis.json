@@ -2,703 +2,703 @@
   "behavioral_profiles": {
     "Cecilia": {
       "engine_name": "Cecilia",
-      "total_games": 197,
-      "total_moves": 12119,
+      "total_games": 989,
+      "total_moves": 49266,
       "behavioral_scores": {
-        "aggression": 2.15,
-        "decisiveness": 20.3,
+        "aggression": 2.98,
+        "decisiveness": 16.02,
         "piece_diversity": 3,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 0.97,
-          "positional": 61.18,
-          "aggressive": 4.49,
-          "defensive": 87.02
+          "tactical": 1.35,
+          "positional": 60.21,
+          "aggressive": 6.22,
+          "defensive": 92.63
         }
       },
       "performance_metrics": {
-        "win_rate": 2.03,
-        "draw_rate": 37.06,
-        "avg_game_length": 123.4,
-        "capture_rate": 3.46,
-        "check_rate": 0.19
+        "win_rate": 1.21,
+        "draw_rate": 49.44,
+        "avg_game_length": 100.0,
+        "capture_rate": 4.8,
+        "check_rate": 0.26
       },
       "signature_patterns": {
         "favorite_moves": {
-          "h8g8": 4001,
-          "g8h8": 3972,
-          "h7f8": 434,
-          "f8h7": 407,
-          "h1g1": 360,
-          "g1h1": 341,
-          "h5g5": 114,
-          "g5h5": 111,
-          "g1h3": 103,
-          "h3g5": 103
+          "h8g8": 14567,
+          "g8h8": 14404,
+          "h7f8": 1847,
+          "f8h7": 1690,
+          "h1g1": 1499,
+          "g1h1": 1406,
+          "h8h7": 537,
+          "h7h8": 522,
+          "g1h3": 496,
+          "h3g5": 496
         },
         "favorite_pieces": {
-          "K": 7005,
-          "R": 3572,
-          "N": 1331,
-          "Q": 109,
-          "B": 83
+          "K": 24377,
+          "R": 16871,
+          "N": 6340,
+          "Q": 777,
+          "B": 743
         },
         "preferred_openings": {
-          "Unknown Opening": 197
+          "Unknown Opening": 989
         },
         "castling_preference": {
-          "kingside": 0,
+          "kingside": 2,
           "queenside": 0
         }
       },
       "territorial_analysis": {
         "N": {
-          "h7": 34.9,
-          "f8": 31.6,
-          "h3": 7.7,
-          "g5": 7.1,
+          "h7": 31.4,
+          "f8": 28.0,
+          "h3": 7.8,
+          "g5": 7.4,
+          "g8": 6.4,
+          "h6": 4.1,
           "g1": 3.9,
-          "g8": 3.8,
-          "h6": 3.6,
-          "c3": 2.2
+          "e7": 3.1
         },
         "R": {
-          "h8": 38.6,
-          "g8": 38.4,
-          "g1": 10.0,
-          "h1": 9.9,
-          "a8": 0.7,
-          "b8": 0.6,
-          "g2": 0.4,
-          "a1": 0.3
+          "h8": 36.8,
+          "g8": 36.8,
+          "g1": 8.8,
+          "h1": 8.7,
+          "a1": 2.8,
+          "b1": 2.7,
+          "a8": 0.8,
+          "b8": 0.7
         },
         "K": {
-          "h8": 38.6,
-          "g8": 38.2,
-          "h7": 2.5,
-          "h5": 2.3,
-          "g4": 2.1,
-          "g5": 1.9,
-          "h4": 1.5,
-          "f8": 1.5
+          "h8": 36.0,
+          "g8": 35.3,
+          "h7": 3.7,
+          "f8": 2.6,
+          "e8": 2.2,
+          "g7": 2.1,
+          "h5": 1.9,
+          "g4": 1.8
         },
         "B": {
-          "h3": 17.5,
-          "f7": 13.3,
-          "g8": 12.0,
-          "f1": 10.8,
-          "e6": 8.4,
-          "c8": 7.8,
-          "b7": 6.0,
-          "f8": 4.2
+          "g8": 24.7,
+          "h7": 22.5,
+          "h3": 7.1,
+          "f1": 5.0,
+          "c8": 5.0,
+          "g7": 4.9,
+          "f8": 4.3,
+          "d7": 3.4
         },
         "Q": {
-          "h8": 38.1,
-          "g8": 35.8,
-          "d8": 9.2,
-          "c8": 4.1,
-          "d1": 2.8,
-          "e8": 2.3,
-          "c2": 2.3,
-          "h7": 1.8
+          "g8": 36.6,
+          "h8": 36.5,
+          "d8": 8.8,
+          "e8": 5.5,
+          "f8": 3.2,
+          "d1": 1.9,
+          "c8": 1.7,
+          "c2": 1.1
         },
         "P": {
-          "e2": 15.8,
-          "d3": 15.8,
-          "g3": 10.5,
-          "g2": 5.3,
-          "g4": 5.3,
-          "f2": 5.3,
-          "e7": 5.3,
-          "e3": 2.6
+          "g3": 9.2,
+          "e7": 8.2,
+          "e2": 7.6,
+          "d3": 7.3,
+          "g2": 7.0,
+          "d6": 6.6,
+          "f6": 5.4,
+          "g7": 4.4
         }
       }
     },
     "SlowMate": {
       "engine_name": "SlowMate",
-      "total_games": 3786,
-      "total_moves": 154204,
+      "total_games": 4930,
+      "total_moves": 204030,
       "behavioral_scores": {
-        "aggression": 14.75,
-        "decisiveness": 64.95,
+        "aggression": 14.59,
+        "decisiveness": 66.01,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 8.6,
-          "positional": 52.78,
-          "aggressive": 29.07,
-          "defensive": 62.75
+          "tactical": 8.66,
+          "positional": 52.9,
+          "aggressive": 28.62,
+          "defensive": 63.14
         }
       },
       "performance_metrics": {
-        "win_rate": 52.56,
-        "draw_rate": 6.15,
-        "avg_game_length": 81.4,
-        "capture_rate": 21.59,
-        "check_rate": 4.5
+        "win_rate": 54.32,
+        "draw_rate": 6.71,
+        "avg_game_length": 82.7,
+        "capture_rate": 21.18,
+        "check_rate": 4.7
       },
       "signature_patterns": {
         "favorite_moves": {
-          "g8h8": 3445,
-          "h8g8": 3440,
-          "e7e6": 1775,
-          "b1c3": 1536,
-          "g1f3": 1468,
-          "d7d6": 1405,
-          "g8f6": 1231,
-          "e2e4": 1192,
-          "a8b8": 1113,
-          "d2d4": 979
+          "h8g8": 4010,
+          "g8h8": 3981,
+          "e7e6": 2241,
+          "b1c3": 2041,
+          "g1f3": 1968,
+          "d7d6": 1837,
+          "g8f6": 1623,
+          "e2e4": 1556,
+          "a8b8": 1415,
+          "d2d4": 1315
         },
         "favorite_pieces": {
-          "K": 44683,
-          "P": 32752,
-          "R": 26695,
-          "N": 23265,
-          "B": 14553
+          "K": 55501,
+          "P": 41586,
+          "R": 38398,
+          "N": 30433,
+          "B": 21380
         },
         "preferred_openings": {
-          "Unknown Opening": 3786
+          "Unknown Opening": 4930
         },
         "castling_preference": {
-          "kingside": 454,
-          "queenside": 144
+          "kingside": 614,
+          "queenside": 242
         }
       },
       "territorial_analysis": {
         "P": {
-          "e4": 4.7,
+          "e4": 4.6,
           "e6": 3.8,
-          "e5": 3.7,
-          "b5": 3.3,
+          "e5": 3.6,
+          "b5": 3.2,
           "d5": 3.1,
           "b4": 3.0,
-          "d4": 2.9,
-          "d6": 2.7
+          "d4": 3.0,
+          "d6": 2.9
         },
         "Q": {
-          "d1": 7.6,
-          "d8": 6.2,
-          "c7": 3.3,
-          "f4": 3.2,
-          "d4": 3.1,
-          "f3": 3.1,
-          "a8": 3.1,
-          "a7": 2.9
+          "d1": 8.5,
+          "d8": 6.1,
+          "e1": 3.4,
+          "d4": 3.2,
+          "f3": 3.0,
+          "c7": 3.0,
+          "a8": 3.0,
+          "f4": 3.0
         },
         "B": {
-          "f8": 5.9,
-          "c1": 5.1,
-          "f1": 4.9,
-          "g4": 4.8,
-          "c8": 4.6,
-          "d4": 4.4,
-          "e5": 3.9,
-          "a3": 3.5
+          "g4": 5.6,
+          "f8": 5.4,
+          "c1": 4.8,
+          "f3": 4.2,
+          "f1": 4.2,
+          "c8": 4.1,
+          "d4": 4.0,
+          "e5": 3.8
         },
         "N": {
-          "c3": 6.5,
-          "f3": 6.4,
+          "f3": 6.6,
+          "c3": 6.6,
           "c6": 5.4,
-          "f6": 5.3,
-          "b1": 4.8,
+          "f6": 5.4,
+          "b1": 4.7,
           "d5": 4.1,
-          "b8": 4.1,
-          "g1": 4.0
+          "g1": 4.0,
+          "b8": 4.0
         },
         "R": {
-          "h8": 5.7,
-          "a1": 4.9,
-          "b1": 4.5,
-          "g8": 3.7,
-          "b8": 3.7,
-          "f1": 3.7,
-          "a8": 3.6,
-          "h6": 3.6
+          "a1": 6.4,
+          "b1": 5.8,
+          "h8": 4.9,
+          "c1": 4.8,
+          "f1": 4.4,
+          "e1": 3.7,
+          "h6": 3.5,
+          "a8": 3.4
         },
         "K": {
-          "g8": 8.5,
-          "h8": 7.1,
-          "e7": 6.0,
-          "d6": 6.0,
-          "e6": 5.9,
+          "g8": 8.1,
+          "h8": 6.8,
+          "e7": 5.9,
+          "d6": 5.9,
+          "e6": 5.7,
           "d7": 4.9,
-          "e8": 3.2,
-          "h7": 3.1
+          "e8": 3.3,
+          "h7": 3.0
         }
       }
     },
     "Cece": {
       "engine_name": "Cece",
-      "total_games": 737,
-      "total_moves": 29623,
+      "total_games": 1785,
+      "total_moves": 67083,
       "behavioral_scores": {
-        "aggression": 14.58,
-        "decisiveness": 46.02,
+        "aggression": 15.4,
+        "decisiveness": 44.94,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 11.52,
-          "positional": 52.86,
-          "aggressive": 26.04,
-          "defensive": 70.45
+          "tactical": 12.51,
+          "positional": 52.27,
+          "aggressive": 27.21,
+          "defensive": 72.16
         }
       },
       "performance_metrics": {
-        "win_rate": 32.02,
-        "draw_rate": 21.3,
-        "avg_game_length": 80.6,
-        "capture_rate": 17.97,
-        "check_rate": 9.49
+        "win_rate": 32.44,
+        "draw_rate": 25.88,
+        "avg_game_length": 75.3,
+        "capture_rate": 18.61,
+        "check_rate": 10.58
       },
       "signature_patterns": {
         "favorite_moves": {
-          "h8g8": 1116,
-          "g8h8": 898,
-          "g8f8": 337,
-          "h1g1": 321,
-          "f8g8": 302,
-          "f8g7": 264,
-          "g1f3": 244,
-          "e8d8": 242,
-          "e8f8": 241,
-          "g8f6": 231
+          "h8g8": 2466,
+          "g8h8": 2136,
+          "f8g8": 708,
+          "h1g1": 669,
+          "g8f8": 658,
+          "g1f3": 545,
+          "e8f8": 528,
+          "h8h7": 504,
+          "g8f6": 469,
+          "e8d8": 446
         },
         "favorite_pieces": {
-          "K": 11468,
-          "N": 4995,
-          "R": 4498,
-          "P": 3807,
-          "B": 2661
+          "K": 22088,
+          "N": 11303,
+          "R": 10955,
+          "P": 9351,
+          "B": 7340
         },
         "preferred_openings": {
-          "Unknown Opening": 737
+          "Unknown Opening": 1785
         },
         "castling_preference": {
-          "kingside": 39,
-          "queenside": 13
+          "kingside": 153,
+          "queenside": 64
         }
       },
       "territorial_analysis": {
         "P": {
-          "e3": 3.3,
-          "e2": 2.9,
-          "e7": 2.9,
-          "f6": 2.9,
-          "h3": 2.9,
-          "e6": 2.8,
-          "e5": 2.7,
-          "d2": 2.7
+          "e4": 4.3,
+          "e5": 4.2,
+          "d4": 4.1,
+          "d5": 4.0,
+          "e2": 3.4,
+          "e7": 3.3,
+          "d2": 3.2,
+          "d7": 2.8
         },
         "N": {
-          "f3": 7.2,
-          "c3": 5.1,
-          "f6": 4.9,
-          "c6": 4.6,
-          "e5": 4.4,
-          "g1": 4.4,
-          "g8": 4.3,
-          "d4": 4.2
+          "f3": 6.5,
+          "e5": 4.9,
+          "f6": 4.8,
+          "c3": 4.6,
+          "g1": 4.6,
+          "g8": 4.6,
+          "c6": 4.4,
+          "b8": 3.9
         },
         "B": {
-          "f8": 6.0,
-          "g7": 5.8,
-          "c8": 5.0,
-          "f1": 5.0,
-          "c1": 4.1,
-          "d7": 3.5,
-          "b7": 3.5,
-          "h6": 3.2
+          "f8": 5.1,
+          "f1": 4.8,
+          "c8": 4.8,
+          "g7": 4.2,
+          "c1": 4.0,
+          "h6": 3.3,
+          "g2": 3.1,
+          "d7": 3.0
         },
         "R": {
-          "h8": 14.9,
-          "g8": 14.6,
-          "h1": 7.4,
-          "g1": 6.9,
-          "a8": 3.8,
-          "b8": 3.4,
-          "f8": 3.3,
-          "a1": 2.3
+          "h8": 15.1,
+          "g8": 13.6,
+          "h1": 7.0,
+          "g1": 5.8,
+          "a8": 3.9,
+          "f8": 3.6,
+          "b8": 3.2,
+          "h2": 2.6
         },
         "Q": {
-          "d8": 7.8,
-          "d1": 5.9,
-          "e8": 3.6,
-          "d5": 3.2,
-          "f8": 3.0,
-          "e5": 3.0,
-          "g8": 2.6,
-          "e7": 2.4
+          "d8": 7.2,
+          "d1": 6.0,
+          "d5": 3.7,
+          "e5": 3.6,
+          "d4": 3.3,
+          "e8": 2.9,
+          "e4": 2.8,
+          "h5": 2.8
         },
         "K": {
-          "g8": 9.4,
-          "h8": 6.2,
-          "f8": 5.8,
-          "e8": 5.5,
-          "g7": 5.3,
-          "f7": 4.4,
-          "h7": 4.0,
-          "e7": 3.6
+          "g8": 10.4,
+          "h8": 7.1,
+          "f8": 6.1,
+          "e8": 5.4,
+          "g7": 4.8,
+          "f7": 4.0,
+          "h7": 3.8,
+          "d8": 3.2
         }
       }
     },
     "V7P3RAI": {
       "engine_name": "V7P3RAI",
-      "total_games": 193,
-      "total_moves": 5212,
+      "total_games": 520,
+      "total_moves": 14254,
       "behavioral_scores": {
-        "aggression": 10.39,
-        "decisiveness": 49.53,
+        "aggression": 9.37,
+        "decisiveness": 41.79,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 8.07,
-          "positional": 54.85,
-          "aggressive": 18.69,
-          "defensive": 71.28
+          "tactical": 7.16,
+          "positional": 55.48,
+          "aggressive": 16.95,
+          "defensive": 77.0
         }
       },
       "performance_metrics": {
-        "win_rate": 35.23,
-        "draw_rate": 17.1,
-        "avg_game_length": 54.2,
-        "capture_rate": 12.97,
-        "check_rate": 6.52
+        "win_rate": 28.46,
+        "draw_rate": 27.12,
+        "avg_game_length": 54.9,
+        "capture_rate": 11.81,
+        "check_rate": 5.7
       },
       "signature_patterns": {
         "favorite_moves": {
-          "d8e8": 148,
-          "e8d8": 147,
-          "a7a6": 103,
-          "h7h6": 100,
-          "f7f5": 95,
-          "g1f3": 94,
-          "b1c3": 94,
-          "g7g5": 81,
-          "b7b5": 72,
-          "c3d5": 61
+          "a7a6": 284,
+          "h7h6": 274,
+          "d8e8": 260,
+          "g1f3": 257,
+          "b1c3": 256,
+          "e8d8": 242,
+          "f7f5": 235,
+          "g7g5": 213,
+          "b7b5": 197,
+          "c7c5": 188
         },
         "favorite_pieces": {
-          "K": 1421,
-          "P": 1144,
-          "Q": 793,
-          "N": 693,
-          "R": 615
+          "K": 4315,
+          "P": 3222,
+          "Q": 2015,
+          "N": 1879,
+          "R": 1439
         },
         "preferred_openings": {
-          "Unknown Opening": 193
+          "Unknown Opening": 520
         },
         "castling_preference": {
-          "kingside": 0,
-          "queenside": 4
+          "kingside": 1,
+          "queenside": 10
         }
       },
       "territorial_analysis": {
         "P": {
-          "f5": 5.9,
-          "a6": 5.4,
-          "h6": 5.2,
-          "g5": 5.2,
-          "c5": 4.9,
-          "h7": 4.3,
-          "a7": 4.3,
-          "g7": 4.3
+          "h6": 5.4,
+          "f5": 5.2,
+          "c5": 5.0,
+          "a6": 4.9,
+          "g5": 4.8,
+          "g7": 4.2,
+          "b5": 4.2,
+          "h7": 4.1
         },
         "K": {
-          "e8": 13.5,
-          "d8": 8.2,
-          "e7": 7.5,
-          "d7": 6.4,
-          "g8": 4.5,
-          "h8": 4.3,
-          "f7": 4.0,
-          "g7": 3.4
+          "e8": 11.3,
+          "e7": 6.6,
+          "d8": 6.4,
+          "d7": 5.3,
+          "d5": 4.3,
+          "g8": 4.0,
+          "e4": 3.5,
+          "f7": 3.4
         },
         "Q": {
-          "d8": 11.0,
-          "e8": 10.7,
-          "e5": 6.4,
-          "h8": 5.8,
-          "c8": 5.7,
-          "d1": 4.9,
-          "f3": 4.5,
-          "c7": 3.9
+          "e8": 8.8,
+          "d8": 7.5,
+          "h5": 6.7,
+          "d1": 5.8,
+          "d7": 5.6,
+          "e5": 4.6,
+          "g5": 4.3,
+          "c8": 4.2
         },
         "N": {
-          "f3": 13.6,
-          "c3": 12.2,
-          "d5": 8.4,
-          "e5": 7.6,
-          "g1": 6.8,
-          "b1": 6.8,
-          "g8": 5.0,
-          "h6": 3.2
+          "f3": 13.9,
+          "c3": 13.3,
+          "e5": 8.8,
+          "d5": 7.6,
+          "b1": 7.0,
+          "g1": 6.9,
+          "g8": 4.4,
+          "h6": 3.6
         },
         "R": {
-          "h8": 15.1,
-          "a8": 14.6,
-          "h6": 10.7,
-          "a7": 8.8,
-          "a6": 6.7,
-          "g8": 4.1,
-          "e8": 3.9,
-          "d8": 3.8
+          "a8": 14.8,
+          "h8": 10.4,
+          "a7": 7.4,
+          "a6": 6.8,
+          "h6": 6.2,
+          "g1": 5.8,
+          "a1": 5.4,
+          "h1": 5.0
         },
         "B": {
-          "f8": 11.9,
-          "c8": 10.1,
-          "d7": 8.0,
-          "f1": 7.4,
-          "h6": 7.1,
-          "a6": 6.7,
-          "g7": 4.6,
-          "b5": 4.0
+          "f8": 10.4,
+          "c8": 8.3,
+          "f1": 7.7,
+          "h6": 5.6,
+          "d7": 5.0,
+          "a6": 5.0,
+          "b5": 4.8,
+          "e7": 4.3
         }
       }
     },
     "Random_Opponent": {
       "engine_name": "Random_Opponent",
-      "total_games": 195,
-      "total_moves": 10852,
+      "total_games": 521,
+      "total_moves": 36127,
       "behavioral_scores": {
-        "aggression": 5.77,
-        "decisiveness": 30.67,
+        "aggression": 5.96,
+        "decisiveness": 31.46,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 3.65,
-          "positional": 58.77,
-          "aggressive": 11.11,
-          "defensive": 76.22
+          "tactical": 4.33,
+          "positional": 59.2,
+          "aggressive": 10.99,
+          "defensive": 77.73
         }
       },
       "performance_metrics": {
-        "win_rate": 9.74,
-        "draw_rate": 20.51,
-        "avg_game_length": 111.6,
-        "capture_rate": 8.12,
-        "check_rate": 2.24
+        "win_rate": 12.28,
+        "draw_rate": 23.8,
+        "avg_game_length": 138.9,
+        "capture_rate": 7.78,
+        "check_rate": 3.24
       },
       "signature_patterns": {
         "favorite_moves": {
-          "h1g1": 73,
-          "e1d1": 68,
-          "a2a3": 61,
-          "h2h3": 59,
-          "g1h1": 59,
-          "e7e6": 57,
-          "h1h2": 56,
-          "e1e2": 55,
-          "e2e3": 54,
-          "b1c3": 53
+          "a2a3": 171,
+          "e1d1": 163,
+          "h2h3": 158,
+          "e2e3": 151,
+          "g7g6": 150,
+          "h1g1": 149,
+          "e7e6": 147,
+          "d7d6": 147,
+          "d2d3": 144,
+          "b7b6": 143
         },
         "favorite_pieces": {
-          "K": 4250,
-          "P": 2202,
-          "N": 1243,
-          "B": 1239,
-          "R": 1182
+          "K": 11774,
+          "P": 6752,
+          "R": 5228,
+          "N": 4814,
+          "B": 4567
         },
         "preferred_openings": {
-          "Unknown Opening": 195
+          "Unknown Opening": 521
         },
         "castling_preference": {
-          "kingside": 10,
-          "queenside": 6
+          "kingside": 31,
+          "queenside": 22
         }
       },
       "territorial_analysis": {
         "P": {
+          "a4": 3.1,
           "a5": 3.1,
-          "a4": 3.0,
-          "g5": 2.8,
-          "h4": 2.8,
-          "g4": 2.7,
-          "h5": 2.6,
-          "c5": 2.5,
-          "e4": 2.5
+          "c5": 2.7,
+          "c4": 2.7,
+          "g5": 2.7,
+          "g4": 2.6,
+          "d4": 2.5,
+          "f5": 2.5
         },
         "Q": {
-          "d1": 7.3,
-          "d8": 5.6,
-          "e2": 3.4,
+          "d1": 5.0,
+          "d8": 4.3,
           "c2": 3.1,
-          "d2": 3.1,
-          "f3": 2.6,
-          "e1": 2.4,
-          "b3": 2.4
+          "d2": 2.5,
+          "c7": 2.5,
+          "e2": 2.4,
+          "f3": 2.3,
+          "b3": 2.1
         },
         "B": {
-          "f1": 5.0,
-          "c1": 4.0,
-          "c8": 4.0,
-          "f8": 3.9,
-          "g2": 2.9,
-          "e2": 2.9,
-          "e3": 2.9,
-          "e7": 2.9
+          "f1": 3.9,
+          "c8": 3.5,
+          "c1": 3.5,
+          "g2": 3.2,
+          "d3": 2.8,
+          "e2": 2.6,
+          "f8": 2.6,
+          "b7": 2.6
         },
         "R": {
-          "h1": 5.1,
-          "a1": 4.9,
-          "h2": 3.5,
-          "h8": 3.5,
-          "b1": 3.0,
-          "a2": 3.0,
-          "a8": 2.9,
-          "f1": 2.8
+          "h1": 4.2,
+          "a1": 4.0,
+          "b1": 2.9,
+          "h2": 2.8,
+          "a2": 2.8,
+          "g1": 2.7,
+          "h8": 2.5,
+          "c1": 2.4
         },
         "K": {
-          "e1": 4.0,
-          "g1": 3.5,
-          "f1": 3.1,
-          "e8": 3.0,
-          "e2": 3.0,
-          "f2": 2.7,
-          "d1": 2.6,
-          "e7": 2.6
+          "e1": 3.6,
+          "f2": 2.9,
+          "e2": 2.8,
+          "e8": 2.8,
+          "e7": 2.6,
+          "d7": 2.5,
+          "d1": 2.4,
+          "g2": 2.3
         },
         "N": {
-          "c3": 5.0,
-          "b1": 4.9,
-          "g8": 4.6,
-          "f6": 4.5,
-          "f3": 4.5,
-          "g1": 4.3,
-          "b8": 3.9,
-          "h6": 3.7
+          "f3": 4.1,
+          "c3": 4.0,
+          "g1": 3.8,
+          "b1": 3.5,
+          "f6": 3.4,
+          "c6": 3.3,
+          "g8": 3.1,
+          "b8": 3.1
         }
       }
     },
     "Copycat": {
       "engine_name": "Copycat",
-      "total_games": 124,
-      "total_moves": 7856,
+      "total_games": 450,
+      "total_moves": 26115,
       "behavioral_scores": {
-        "aggression": 16.15,
-        "decisiveness": 30.97,
+        "aggression": 16.78,
+        "decisiveness": 32.42,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 18.71,
-          "positional": 52.85,
-          "aggressive": 23.56,
-          "defensive": 76.84
+          "tactical": 19.16,
+          "positional": 52.26,
+          "aggressive": 24.72,
+          "defensive": 76.26
         }
       },
       "performance_metrics": {
-        "win_rate": 16.94,
-        "draw_rate": 36.29,
-        "avg_game_length": 127.0,
-        "capture_rate": 13.3,
-        "check_rate": 20.42
+        "win_rate": 18.89,
+        "draw_rate": 36.0,
+        "avg_game_length": 116.2,
+        "capture_rate": 14.12,
+        "check_rate": 20.75
       },
       "signature_patterns": {
         "favorite_moves": {
-          "e7e6": 38,
-          "e2e3": 38,
-          "e1d1": 38,
-          "g2g3": 37,
-          "c7c6": 36,
-          "b2b3": 33,
-          "h7h6": 33,
-          "g7g6": 32,
-          "d1c2": 32,
-          "e8e7": 32
+          "e2e3": 135,
+          "e7e6": 128,
+          "d2d3": 126,
+          "g2g3": 123,
+          "e1d1": 122,
+          "c7c6": 119,
+          "f2f3": 119,
+          "a2a3": 111,
+          "h2h3": 107,
+          "b2b3": 106
         },
         "favorite_pieces": {
-          "K": 3383,
-          "P": 1651,
-          "N": 1017,
-          "B": 652,
-          "R": 618
+          "K": 10061,
+          "P": 5907,
+          "N": 3789,
+          "B": 2370,
+          "R": 2230
         },
         "preferred_openings": {
-          "Unknown Opening": 124
+          "Unknown Opening": 450
         },
         "castling_preference": {
-          "kingside": 3,
-          "queenside": 5
+          "kingside": 18,
+          "queenside": 11
         }
       },
       "territorial_analysis": {
         "P": {
-          "b5": 3.1,
-          "d4": 3.0,
-          "e5": 2.8,
-          "b4": 2.7,
-          "g4": 2.7,
+          "d5": 2.9,
+          "b5": 2.8,
+          "e4": 2.8,
+          "d4": 2.8,
+          "b4": 2.6,
           "g5": 2.6,
-          "d5": 2.5,
-          "c5": 2.5
+          "a4": 2.6,
+          "e5": 2.5
         },
         "N": {
-          "f6": 4.3,
-          "c6": 4.0,
-          "b8": 3.6,
-          "g1": 3.6,
-          "e5": 3.3,
-          "g8": 3.3,
-          "b1": 2.9,
-          "c3": 2.9
+          "f6": 5.9,
+          "c6": 3.7,
+          "c3": 3.3,
+          "b8": 3.3,
+          "g1": 3.3,
+          "g8": 3.2,
+          "b1": 3.2,
+          "f3": 3.0
         },
         "B": {
-          "f8": 5.0,
-          "f1": 4.8,
-          "c8": 4.4,
-          "c1": 4.1,
-          "d7": 3.3,
-          "g2": 3.1,
-          "b7": 2.9,
-          "f3": 2.8
+          "f1": 5.0,
+          "c8": 4.7,
+          "f8": 4.7,
+          "c1": 4.6,
+          "g7": 3.9,
+          "h6": 3.4,
+          "g2": 3.2,
+          "d7": 3.2
         },
         "Q": {
-          "d8": 8.3,
-          "d1": 6.1,
-          "e7": 3.6,
-          "d7": 3.3,
-          "e8": 2.8,
-          "f7": 2.7,
+          "d8": 7.6,
+          "d1": 7.0,
+          "e7": 3.3,
+          "d7": 3.1,
+          "a5": 2.6,
           "d2": 2.4,
-          "g7": 2.2
+          "h5": 2.4,
+          "f7": 2.4
         },
         "R": {
-          "a1": 5.8,
-          "h8": 5.7,
-          "a8": 4.0,
-          "b1": 4.0,
-          "h1": 3.8,
-          "h7": 3.6,
-          "f8": 2.8,
-          "f1": 2.8
+          "h8": 6.6,
+          "a1": 5.3,
+          "h1": 5.3,
+          "a8": 4.2,
+          "g8": 4.2,
+          "h2": 3.9,
+          "h7": 3.5,
+          "b1": 3.0
         },
         "K": {
-          "e2": 3.1,
-          "d2": 3.0,
-          "e1": 2.7,
-          "f2": 2.7,
+          "e1": 3.3,
+          "e2": 3.3,
+          "d2": 3.1,
+          "f2": 3.0,
+          "e8": 2.6,
           "d1": 2.6,
-          "e3": 2.4,
-          "g2": 2.3,
-          "c2": 2.3
+          "e7": 2.3,
+          "d7": 2.3
         }
       }
     },
@@ -1874,235 +1874,235 @@
     },
     "Stockfish 1%": {
       "engine_name": "Stockfish 1%",
-      "total_games": 170,
-      "total_moves": 6979,
+      "total_games": 497,
+      "total_moves": 20345,
       "behavioral_scores": {
-        "aggression": 18.71,
-        "decisiveness": 97.65,
+        "aggression": 19.35,
+        "decisiveness": 96.1,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 20.66,
-          "positional": 50.41,
-          "aggressive": 28.21,
-          "defensive": 58.08
+          "tactical": 21.59,
+          "positional": 50.02,
+          "aggressive": 28.97,
+          "defensive": 58.27
         }
       },
       "performance_metrics": {
-        "win_rate": 97.65,
-        "draw_rate": 2.35,
-        "avg_game_length": 81.7,
-        "capture_rate": 16.55,
-        "check_rate": 21.95
+        "win_rate": 95.98,
+        "draw_rate": 3.62,
+        "avg_game_length": 81.5,
+        "capture_rate": 16.86,
+        "check_rate": 23.08
       },
       "signature_patterns": {
         "favorite_moves": {
-          "e2e4": 88,
-          "d7d5": 87,
-          "d2d4": 84,
-          "e7e5": 74,
-          "b1c3": 74,
-          "g8f6": 73,
-          "b8c6": 70,
-          "g1f3": 70,
-          "e4e5": 56,
-          "e5e4": 56
+          "e2e4": 254,
+          "d7d5": 242,
+          "d2d4": 226,
+          "g1f3": 206,
+          "g8f6": 204,
+          "e7e5": 203,
+          "b8c6": 195,
+          "b1c3": 194,
+          "e5e4": 148,
+          "e4e5": 144
         },
         "favorite_pieces": {
-          "P": 1875,
-          "R": 1398,
-          "Q": 1157,
-          "B": 1108,
-          "N": 1063
+          "P": 5213,
+          "R": 4096,
+          "B": 3474,
+          "Q": 3160,
+          "N": 3060
         },
         "preferred_openings": {
-          "Unknown Opening": 170
+          "Unknown Opening": 497
         },
         "castling_preference": {
-          "kingside": 38,
-          "queenside": 24
+          "kingside": 118,
+          "queenside": 50
         }
       },
       "territorial_analysis": {
         "P": {
           "e4": 7.1,
           "e5": 6.3,
-          "d4": 5.0,
-          "d5": 4.8,
-          "a5": 3.4,
-          "a4": 3.1,
-          "e2": 2.6,
-          "f6": 2.5
+          "d4": 5.3,
+          "d5": 5.3,
+          "a5": 3.0,
+          "a4": 2.8,
+          "e2": 2.7,
+          "d7": 2.6
         },
         "B": {
-          "f8": 5.1,
-          "e6": 4.9,
-          "c6": 4.3,
-          "f1": 4.2,
-          "e3": 4.2,
-          "c8": 4.1,
-          "c1": 3.9,
-          "d3": 3.7
+          "e6": 4.7,
+          "f8": 4.5,
+          "c8": 4.2,
+          "f1": 3.8,
+          "d6": 3.6,
+          "c1": 3.5,
+          "d3": 3.3,
+          "e3": 3.3
         },
         "N": {
-          "c6": 8.0,
-          "f6": 7.9,
-          "f3": 7.8,
-          "c3": 7.7,
-          "g8": 6.1,
-          "e7": 4.2,
-          "d5": 4.0,
-          "b1": 3.9
+          "f6": 8.2,
+          "c6": 8.1,
+          "f3": 7.2,
+          "c3": 6.6,
+          "g8": 5.1,
+          "d5": 4.6,
+          "b8": 4.0,
+          "g1": 3.7
         },
         "Q": {
-          "d8": 5.7,
-          "d1": 5.0,
-          "d7": 4.1,
-          "d5": 3.3,
-          "d4": 3.2,
-          "e6": 3.2,
-          "e7": 2.8,
-          "e2": 2.6
+          "d8": 6.5,
+          "d1": 5.2,
+          "d7": 3.2,
+          "e2": 2.8,
+          "d5": 2.8,
+          "b8": 2.6,
+          "e7": 2.5,
+          "c7": 2.5
         },
         "R": {
-          "h8": 6.5,
-          "g8": 5.0,
-          "a8": 4.9,
-          "h1": 4.5,
-          "d8": 3.7,
-          "h7": 3.6,
-          "b8": 3.6,
-          "a1": 3.3
+          "h8": 5.0,
+          "a8": 4.8,
+          "d8": 3.9,
+          "b8": 3.9,
+          "d1": 3.6,
+          "h1": 3.4,
+          "e1": 3.3,
+          "g8": 3.1
         },
         "K": {
-          "e8": 10.6,
-          "e1": 8.7,
-          "g1": 5.6,
-          "d8": 5.3,
-          "f2": 4.1,
-          "d7": 4.1,
-          "c7": 3.7,
-          "c1": 3.3
+          "e8": 9.8,
+          "e1": 8.8,
+          "g1": 5.4,
+          "d8": 4.5,
+          "f2": 4.4,
+          "d7": 4.3,
+          "f7": 3.6,
+          "c7": 3.1
         }
       }
     },
     "Slowmate": {
       "engine_name": "Slowmate",
-      "total_games": 180,
-      "total_moves": 7210,
+      "total_games": 288,
+      "total_moves": 10541,
       "behavioral_scores": {
-        "aggression": 13.87,
-        "decisiveness": 54.5,
+        "aggression": 16.31,
+        "decisiveness": 62.43,
         "piece_diversity": 6,
         "opening_diversity": 1
       },
       "playing_style": {
         "primary_style": "defensive",
         "style_scores": {
-          "tactical": 7.12,
-          "positional": 53.28,
-          "aggressive": 28.2,
-          "defensive": 62.23
+          "tactical": 10.36,
+          "positional": 51.68,
+          "aggressive": 31.38,
+          "defensive": 63.27
         }
       },
       "performance_metrics": {
-        "win_rate": 36.67,
-        "draw_rate": 3.89,
-        "avg_game_length": 80.1,
-        "capture_rate": 21.37,
-        "check_rate": 2.62
+        "win_rate": 50.35,
+        "draw_rate": 9.38,
+        "avg_game_length": 73.0,
+        "capture_rate": 22.92,
+        "check_rate": 6.39
       },
       "signature_patterns": {
         "favorite_moves": {
-          "g8h8": 207,
-          "h8g8": 199,
-          "e7e6": 144,
-          "e6d6": 121,
-          "d6e6": 103,
-          "d6e7": 95,
-          "e7d6": 93,
-          "d7d6": 90,
-          "b1c3": 83,
-          "e6e7": 82
+          "h8g8": 223,
+          "g8h8": 221,
+          "e7e6": 168,
+          "b1c3": 135,
+          "g8f6": 133,
+          "g1f3": 124,
+          "e6d6": 122,
+          "d7d6": 108,
+          "d6e6": 104,
+          "b8c6": 100
         },
         "favorite_pieces": {
-          "K": 2864,
-          "P": 1485,
-          "N": 1233,
-          "R": 646,
-          "B": 548
+          "K": 3693,
+          "N": 2076,
+          "P": 1812,
+          "R": 1213,
+          "Q": 898
         },
         "preferred_openings": {
-          "Unknown Opening": 180
+          "Unknown Opening": 288
         },
         "castling_preference": {
-          "kingside": 14,
-          "queenside": 0
+          "kingside": 19,
+          "queenside": 5
         }
       },
       "territorial_analysis": {
         "N": {
-          "c6": 8.7,
-          "c3": 6.9,
-          "f6": 6.4,
-          "e5": 6.2,
-          "f3": 6.0,
-          "d5": 5.7,
-          "b8": 4.4,
-          "b1": 4.3
+          "c6": 7.9,
+          "f3": 6.8,
+          "c3": 6.6,
+          "f6": 6.6,
+          "d5": 5.9,
+          "e5": 5.8,
+          "b1": 4.0,
+          "e4": 3.9
         },
         "P": {
-          "e4": 5.8,
-          "e6": 5.6,
+          "e6": 5.7,
+          "e4": 5.4,
           "d5": 4.1,
-          "b5": 3.9,
-          "e5": 3.5,
+          "b5": 3.5,
+          "e5": 3.4,
+          "e7": 3.4,
           "c3": 3.4,
-          "f3": 3.4,
-          "e7": 3.3
+          "f3": 3.1
         },
         "Q": {
-          "d8": 8.6,
-          "d1": 7.9,
-          "f4": 7.7,
-          "f6": 7.1,
-          "d4": 6.5,
-          "e4": 6.2,
-          "a4": 6.1,
-          "g5": 5.1
+          "d8": 7.7,
+          "d1": 6.7,
+          "d4": 5.1,
+          "f4": 5.0,
+          "f6": 4.7,
+          "e4": 4.5,
+          "a4": 4.0,
+          "f3": 3.7
         },
         "B": {
-          "f8": 7.7,
-          "c1": 6.2,
-          "c8": 5.9,
-          "f1": 5.9,
-          "d4": 5.5,
-          "a3": 4.9,
-          "e5": 4.7,
-          "e4": 4.4
+          "f8": 6.7,
+          "c8": 5.8,
+          "f1": 5.5,
+          "c1": 5.3,
+          "d4": 4.1,
+          "e5": 4.1,
+          "e4": 3.8,
+          "a3": 3.8
         },
         "R": {
-          "b8": 8.8,
-          "b1": 8.3,
-          "a1": 6.7,
-          "b5": 6.2,
-          "a8": 5.2,
-          "f1": 4.3,
-          "h8": 3.9,
-          "f8": 3.9
+          "h1": 8.1,
+          "g1": 6.8,
+          "b8": 5.6,
+          "b1": 5.5,
+          "a1": 5.1,
+          "h8": 4.3,
+          "a8": 4.0,
+          "b5": 3.5
         },
         "K": {
-          "d6": 11.1,
-          "e7": 10.3,
-          "e6": 9.2,
-          "g8": 8.7,
-          "h8": 8.2,
-          "d7": 6.8,
-          "e8": 2.8,
-          "h7": 2.3
+          "d6": 8.6,
+          "g8": 8.2,
+          "e7": 8.2,
+          "h8": 7.2,
+          "e6": 7.2,
+          "d7": 5.5,
+          "h7": 3.2,
+          "f8": 3.1
         }
       }
     },
@@ -2343,6 +2343,7 @@
     "defensive_specialists": [
       "Cecilia",
       "Cece",
+      "V7P3RAI",
       "Random_Opponent",
       "Copycat",
       "Cece v1.3",
@@ -2357,7 +2358,6 @@
     ],
     "balanced_players": [
       "SlowMate",
-      "V7P3RAI",
       "SlowMate v0.2.1",
       "Stockfish 1%",
       "Slowmate",
@@ -2371,42 +2371,42 @@
         "Stockfish": 30.36,
         "Cece v2.0": 21.0,
         "SlowMate v1.0": 20.6,
-        "Stockfish 1%": 18.71,
+        "Stockfish 1%": 19.35,
         "Copycat v1.0": 17.16
       },
-      "avg_aggression": 12.489,
+      "avg_aggression": 12.7075,
       "top_decisiveness": {
         "Stockfish": 100.0,
-        "Stockfish 1%": 97.65,
+        "Stockfish 1%": 96.1,
         "SlowMate v1.0": 72.22,
         "SlowMate v0.2.1": 70.64,
-        "SlowMate": 64.95
+        "SlowMate": 66.01
       },
-      "avg_decisiveness": 45.968,
+      "avg_decisiveness": 45.797,
       "top_win_rate": {
         "Stockfish": 100.0,
-        "Stockfish 1%": 97.65,
+        "Stockfish 1%": 95.98,
         "SlowMate v1.0": 69.59,
         "SlowMate v0.2.1": 60.82,
-        "SlowMate": 52.56
+        "SlowMate": 54.32
       },
-      "avg_win_rate": 34.179500000000004,
+      "avg_win_rate": 34.734,
       "top_avg_game_length": {
         "Random Playing Opponent": 180.8,
+        "Random_Opponent": 138.9,
         "SlowMate v0.2.1": 127.5,
-        "Copycat": 127.0,
-        "Cecilia": 123.4,
+        "Copycat": 116.2,
         "Copycat v1.0": 112.4
       },
-      "avg_avg_game_length": 89.22,
+      "avg_avg_game_length": 88.345,
       "top_capture_rate": {
         "Stockfish": 38.93,
         "SlowMate v1.0": 25.84,
         "Cece v2.0": 23.53,
-        "SlowMate": 21.59,
-        "Slowmate": 21.37
+        "Slowmate": 22.92,
+        "SlowMate": 21.18
       },
-      "avg_capture_rate": 15.303,
+      "avg_capture_rate": 15.4405,
       "top_piece_diversity": {
         "SlowMate": 6.0,
         "Cece": 6.0,
@@ -2419,50 +2419,50 @@
     "correlations": {
       "aggression": {
         "aggression": 1.0,
-        "decisiveness": 0.7903936463140341,
-        "win_rate": 0.8102477275998705,
-        "avg_game_length": -0.5436917837817158,
-        "capture_rate": 0.9395698735881787,
-        "piece_diversity": 0.5570451274973288
+        "decisiveness": 0.8035932214388088,
+        "win_rate": 0.81906790704797,
+        "avg_game_length": -0.5314219341733264,
+        "capture_rate": 0.9424358370208223,
+        "piece_diversity": 0.5564239387516956
       },
       "decisiveness": {
-        "aggression": 0.7903936463140341,
+        "aggression": 0.8035932214388088,
         "decisiveness": 1.0,
-        "win_rate": 0.9903497429030109,
-        "avg_game_length": -0.42666526039697783,
-        "capture_rate": 0.8100325895722175,
-        "piece_diversity": 0.5218563229856114
+        "win_rate": 0.9932845449831534,
+        "avg_game_length": -0.3908498619855051,
+        "capture_rate": 0.825028218688515,
+        "piece_diversity": 0.5338583857927234
       },
       "win_rate": {
-        "aggression": 0.8102477275998705,
-        "decisiveness": 0.9903497429030109,
+        "aggression": 0.81906790704797,
+        "decisiveness": 0.9932845449831534,
         "win_rate": 1.0,
-        "avg_game_length": -0.4591361271293678,
-        "capture_rate": 0.8096107206807568,
-        "piece_diversity": 0.47794371348473697
+        "avg_game_length": -0.43184975024231487,
+        "capture_rate": 0.82677355498073,
+        "piece_diversity": 0.49254716984806207
       },
       "avg_game_length": {
-        "aggression": -0.5436917837817158,
-        "decisiveness": -0.42666526039697783,
-        "win_rate": -0.4591361271293678,
+        "aggression": -0.5314219341733264,
+        "decisiveness": -0.3908498619855051,
+        "win_rate": -0.43184975024231487,
         "avg_game_length": 1.0,
-        "capture_rate": -0.6161279399728122,
-        "piece_diversity": -0.10732468944795932
+        "capture_rate": -0.5971028372207524,
+        "piece_diversity": -0.0356864738614988
       },
       "capture_rate": {
-        "aggression": 0.9395698735881787,
-        "decisiveness": 0.8100325895722175,
-        "win_rate": 0.8096107206807568,
-        "avg_game_length": -0.6161279399728122,
+        "aggression": 0.9424358370208223,
+        "decisiveness": 0.825028218688515,
+        "win_rate": 0.82677355498073,
+        "avg_game_length": -0.5971028372207524,
         "capture_rate": 1.0,
-        "piece_diversity": 0.4831860097084135
+        "piece_diversity": 0.47298516247256356
       },
       "piece_diversity": {
-        "aggression": 0.5570451274973288,
-        "decisiveness": 0.5218563229856114,
-        "win_rate": 0.47794371348473697,
-        "avg_game_length": -0.10732468944795932,
-        "capture_rate": 0.4831860097084135,
+        "aggression": 0.5564239387516956,
+        "decisiveness": 0.5338583857927234,
+        "win_rate": 0.49254716984806207,
+        "avg_game_length": -0.0356864738614988,
+        "capture_rate": 0.47298516247256356,
         "piece_diversity": 1.0
       }
     },
@@ -2546,8 +2546,8 @@
   },
   "move_pattern_signatures": {},
   "analysis_metadata": {
-    "total_games": 3735,
+    "total_games": 5944,
     "engines_analyzed": 20,
-    "analysis_date": "2025-08-12T14:41:47.777735"
+    "analysis_date": "2025-08-13T20:23:13.743014"
   }
 }
