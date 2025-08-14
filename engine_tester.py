@@ -315,7 +315,7 @@ def write_reports(reports: List[EngineReport], json_path: str, md_path: str):
 def main():
     parser = argparse.ArgumentParser(description='Batch test UCI chess engines for basic compatibility.')
     parser.add_argument('--dir', default='engines', help='Directory containing engine executables')
-    parser.add_argument('--include', action='append', default=['*.exe'], help='Glob pattern to include (repeatable)')
+    parser.add_argument('--include', action='append', help='Glob pattern to include (repeatable)')
     parser.add_argument('--exclude', action='append', default=[], help='Glob pattern to exclude (repeatable)')
     parser.add_argument('--parallel', type=int, default=1, help='Number of engines to test in parallel (currently sequential enforced)')
     parser.add_argument('--timeout-scale', type=float, default=1.0, help='Multiply all timeouts by this factor')
@@ -324,6 +324,10 @@ def main():
     parser.add_argument('--md', help='Override Markdown report path')
     parser.add_argument('--max-move-ms', type=int, default=1500, help='Hard cap wait for single move (ms)')
     args = parser.parse_args()
+    
+    # Set default include pattern if none specified
+    if not args.include:
+        args.include = ['*.exe']
 
     base_timeouts = {
         'uci_handshake': 5.0,    # Increased for engines with initialization

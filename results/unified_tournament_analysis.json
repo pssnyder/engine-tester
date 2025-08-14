@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2025-08-12T02:36:40.488580",
+  "analysis_date": "2025-08-13T20:28:48.842014",
   "consolidation_summary": {
     "consolidated_engines": 21,
     "total_raw_names": 96,
@@ -153,31 +153,31 @@
     }
   },
   "summary": {
-    "total_games": 3719,
-    "total_engines": 20,
-    "total_tournaments": 11,
-    "engines_with_sufficient_data": 20
+    "total_games": 5921,
+    "total_engines": 27,
+    "total_tournaments": 12,
+    "engines_with_sufficient_data": 27
   },
   "tournaments": {
     "Engine Battle 20250728": {
       "games": 105,
       "engines": [
+        "Cecilia 0.1",
+        "SlowMate 0.0",
+        "SlowMate 0.1",
         "SlowMate 0.4",
         "SlowMate 0.3",
-        "SlowMate 0.2",
-        "SlowMate 0.1",
-        "Cecilia 0.1",
-        "SlowMate 0.0"
+        "SlowMate 0.2"
       ],
       "file": "Engine Battle 20250728.pgn"
     },
     "Engine Battle 20250803": {
       "games": 2,
       "engines": [
-        "Cecilia 0.3",
-        "Cece 1.0",
+        "Cecilia 0.1",
         "SlowMate 0.0",
-        "Cecilia 0.1"
+        "Cece 1.0",
+        "Cecilia 0.3"
       ],
       "file": "Engine Battle 20250803.pgn"
     },
@@ -185,110 +185,147 @@
       "games": 30,
       "engines": [
         "SlowMate 0.4",
-        "Cece 1.3",
-        "Cecilia 0.1"
+        "Cecilia 0.1",
+        "Cece 1.3"
       ],
       "file": "Engine Battle 20250806.pgn"
     },
     "Engine Battle 20250807": {
       "games": 61,
       "engines": [
+        "SlowMate 0.5",
         "SlowMate 0.4",
-        "Cece 1.3",
         "Cece 1.0",
-        "SlowMate 0.5"
+        "Cece 1.3"
       ],
       "file": "Engine Battle 20250807.pgn"
     },
     "Engine Battle 20250808": {
       "games": 893,
       "engines": [
-        "SlowMate 0.4",
-        "Cece 1.1",
-        "SlowMate 0.3",
-        "SlowMate 0.2",
-        "SlowMate 0.5",
         "Cecilia 0.1",
-        "SlowMate 0.1",
-        "Cece 1.3",
-        "Cece 1.2",
         "Cece 1.0",
-        "SlowMate 0.0"
+        "Cece 1.3",
+        "SlowMate 0.5",
+        "SlowMate 0.0",
+        "SlowMate 0.2",
+        "SlowMate 0.4",
+        "Cece 1.2",
+        "SlowMate 0.1",
+        "SlowMate 0.3",
+        "Cece 1.1"
       ],
       "file": "Engine Battle 20250808.pgn"
     },
     "Engine Battle 20250809": {
       "games": 319,
       "engines": [
-        "SlowMate 0.3",
         "Random Playing Opponent",
-        "V7P3RAI 1.0",
-        "SlowMate 0.2",
-        "SlowMate 0.1",
         "Cece 1.3",
+        "V7P3RAI 1.0",
+        "SlowMate 0.0",
         "Cece 1.2",
-        "SlowMate 0.0"
+        "SlowMate 0.1",
+        "SlowMate 0.3",
+        "SlowMate 0.2"
       ],
       "file": "Engine Battle 20250809.pgn"
     },
     "Engine Battle 20250810": {
       "games": 458,
       "engines": [
-        "Copycat 1.0",
-        "Random Playing Opponent",
-        "SlowMate 0.2",
-        "V7P3RAI 1.0",
         "Cecilia 0.1",
+        "Random Playing Opponent",
         "Cece 1.3",
-        "Cece 2.0",
+        "Copycat 1.0",
+        "SlowMate 1.0",
+        "V7P3RAI 1.0",
         "SlowMate 0.0",
-        "SlowMate 1.0"
+        "Cece 2.0",
+        "SlowMate 0.2"
       ],
       "file": "Engine Battle 20250810.pgn"
     },
     "Engine Battle 20250811": {
-      "games": 940,
+      "games": 1918,
       "engines": [
-        "Copycat 1.0",
-        "Cecilia 0.3",
         "Random Playing Opponent",
-        "Stockfish 2650",
-        "V7P3RAI 1.0",
-        "Cecilia 0.1",
+        "SlowMate 0.1.1",
+        "SlowMate 0.3.3",
         "SlowMate 0.2",
-        "Cece 1.3",
+        "Cece 1.0",
+        "Cecilia 0.3",
+        "SlowMate 0.1",
+        "SlowMate 0.3",
+        "SlowMate 0.0.1",
+        "SlowMate 1.0",
         "Cece 2.0",
+        "Cece 1.2",
+        "Stockfish 2650",
+        "Cecilia 0.1",
+        "Cece 1.3",
+        "Copycat 1.0",
+        "V7P3RAI 1.0",
+        "SlowMate 0.0",
+        "SlowMate 0.2.2",
         "Cecilia 0.2",
-        "SlowMate 1.0"
+        "SlowMate 0.1.2",
+        "Cece 1.1",
+        "SlowMate 0.1.3"
       ],
       "file": "Engine Battle 20250811.pgn"
+    },
+    "Engine Battle 20250812": {
+      "games": 1224,
+      "engines": [
+        "Random Playing Opponent",
+        "SlowMate 0.2",
+        "Cece 1.0",
+        "Cecilia 0.3",
+        "SlowMate 0.1",
+        "SlowMate 0.0.1",
+        "SlowMate 1.0",
+        "Cece 2.0",
+        "Cece 1.2",
+        "Stockfish 2650",
+        "Cecilia 0.1",
+        "Cece 1.3",
+        "Copycat 1.0",
+        "V7P3RAI 1.0",
+        "SlowMate 0.0",
+        "SlowMate 0.2.2",
+        "Cecilia 0.2",
+        "Cece_v2.1",
+        "SlowMate 0.1.2"
+      ],
+      "file": "Engine Battle 20250812.pgn"
     },
     "SlowMate Tournament 20250720": {
       "games": 550,
       "engines": [
-        "Stockfish 3645",
-        "SlowMate 0.0",
+        "SlowMate 0.1",
         "SlowMate 0.2",
-        "SlowMate 0.1"
+        "SlowMate 0.0",
+        "Stockfish 3645"
       ],
       "file": "SlowMate Tournament 20250720.pgn"
     },
     "SlowMate Tournament 20250721": {
       "games": 280,
       "engines": [
-        "SlowMate 0.0",
+        "SlowMate 0.1",
         "SlowMate 0.2",
-        "SlowMate 0.1"
+        "SlowMate 0.0"
       ],
       "file": "SlowMate Tournament 20250721.pgn"
     },
     "SlowMate Tournament 20250722": {
       "games": 81,
       "engines": [
+        "SlowMate 0.3",
         "SlowMate 0.1",
-        "SlowMate 0.0",
         "SlowMate 0.2",
-        "SlowMate 0.3"
+        "SlowMate 0.0"
       ],
       "file": "SlowMate Tournament 20250722 2323.pgn"
     }
@@ -298,7 +335,7 @@
       "rank": 1,
       "name": "Stockfish 3645",
       "estimated_rating": 3645.0,
-      "performance_rating": 1626.2,
+      "performance_rating": 1624.4,
       "games": 30,
       "score": 30.0,
       "win_rate": 100.0,
@@ -312,161 +349,231 @@
       "rank": 2,
       "name": "Stockfish 2650",
       "estimated_rating": 2650.0,
-      "performance_rating": 1502.0,
-      "games": 170,
-      "score": 168.0,
-      "win_rate": 97.65,
-      "score_percentage": 98.82,
-      "tournaments": 1,
-      "opponents": 10,
-      "reliability_score": 0.84,
+      "performance_rating": 1595.5,
+      "games": 497,
+      "score": 486.0,
+      "win_rate": 95.98,
+      "score_percentage": 97.79,
+      "tournaments": 2,
+      "opponents": 23,
+      "reliability_score": 0.88,
       "stockfish_games": 0
     },
     {
       "rank": 3,
       "name": "SlowMate 1.0",
-      "estimated_rating": 1250.6,
-      "performance_rating": 1548.0,
-      "games": 296,
-      "score": 254.0,
-      "win_rate": 76.69,
-      "score_percentage": 85.81,
-      "tournaments": 2,
-      "opponents": 11,
-      "reliability_score": 0.88,
-      "stockfish_games": 17
+      "estimated_rating": 1258.7,
+      "performance_rating": 1542.3,
+      "games": 622,
+      "score": 522.5,
+      "win_rate": 73.79,
+      "score_percentage": 84.0,
+      "tournaments": 3,
+      "opponents": 23,
+      "reliability_score": 0.92,
+      "stockfish_games": 48
     },
     {
       "rank": 4,
-      "name": "SlowMate 0.0",
-      "estimated_rating": 1229.7,
-      "performance_rating": 1252.6,
-      "games": 819,
-      "score": 468.5,
-      "win_rate": 55.07,
-      "score_percentage": 57.2,
-      "tournaments": 8,
-      "opponents": 16,
-      "reliability_score": 1.0,
-      "stockfish_games": 0
+      "name": "SlowMate 0.1.2",
+      "estimated_rating": 1232.6,
+      "performance_rating": 1370.8,
+      "games": 98,
+      "score": 67.0,
+      "win_rate": 66.33,
+      "score_percentage": 68.37,
+      "tournaments": 2,
+      "opponents": 22,
+      "reliability_score": 0.878,
+      "stockfish_games": 5
     },
     {
       "rank": 5,
       "name": "SlowMate 0.1",
-      "estimated_rating": 1226.5,
-      "performance_rating": 1289.5,
-      "games": 1335,
-      "score": 724.5,
-      "win_rate": 51.84,
-      "score_percentage": 54.27,
-      "tournaments": 6,
-      "opponents": 14,
+      "estimated_rating": 1226.4,
+      "performance_rating": 1291.7,
+      "games": 1433,
+      "score": 786.0,
+      "win_rate": 52.55,
+      "score_percentage": 54.85,
+      "tournaments": 8,
+      "opponents": 26,
       "reliability_score": 1.0,
-      "stockfish_games": 20
+      "stockfish_games": 25
     },
     {
       "rank": 6,
-      "name": "SlowMate 0.2",
-      "estimated_rating": 1225.6,
-      "performance_rating": 1283.7,
-      "games": 1092,
-      "score": 656.5,
-      "win_rate": 57.51,
-      "score_percentage": 60.12,
-      "tournaments": 8,
-      "opponents": 20,
-      "reliability_score": 1.0,
-      "stockfish_games": 27
+      "name": "SlowMate 0.2.2",
+      "estimated_rating": 1223.8,
+      "performance_rating": 1309.5,
+      "games": 98,
+      "score": 60.0,
+      "win_rate": 56.12,
+      "score_percentage": 61.22,
+      "tournaments": 2,
+      "opponents": 22,
+      "reliability_score": 0.878,
+      "stockfish_games": 5
     },
     {
       "rank": 7,
-      "name": "SlowMate 0.3",
-      "estimated_rating": 1223.5,
-      "performance_rating": 1248.8,
-      "games": 406,
-      "score": 221.5,
-      "win_rate": 54.43,
-      "score_percentage": 54.56,
-      "tournaments": 4,
-      "opponents": 13,
-      "reliability_score": 0.96,
-      "stockfish_games": 0
+      "name": "SlowMate 0.0",
+      "estimated_rating": 1223.7,
+      "performance_rating": 1264.1,
+      "games": 917,
+      "score": 531.5,
+      "win_rate": 55.94,
+      "score_percentage": 57.96,
+      "tournaments": 10,
+      "opponents": 25,
+      "reliability_score": 1.0,
+      "stockfish_games": 5
     },
     {
       "rank": 8,
-      "name": "Cece 2.0",
-      "estimated_rating": 1214.0,
-      "performance_rating": 1219.3,
-      "games": 237,
-      "score": 140.5,
-      "win_rate": 47.68,
-      "score_percentage": 59.28,
-      "tournaments": 2,
-      "opponents": 10,
-      "reliability_score": 0.88,
-      "stockfish_games": 17
+      "name": "SlowMate 0.2",
+      "estimated_rating": 1220.3,
+      "performance_rating": 1289.4,
+      "games": 1258,
+      "score": 758.0,
+      "win_rate": 57.55,
+      "score_percentage": 60.25,
+      "tournaments": 9,
+      "opponents": 26,
+      "reliability_score": 1.0,
+      "stockfish_games": 35
     },
     {
       "rank": 9,
-      "name": "Cece 1.3",
-      "estimated_rating": 1200.9,
-      "performance_rating": 1135.6,
-      "games": 500,
-      "score": 242.0,
-      "win_rate": 33.0,
-      "score_percentage": 48.4,
-      "tournaments": 6,
-      "opponents": 18,
-      "reliability_score": 1.0,
-      "stockfish_games": 17
+      "name": "Cece 2.0",
+      "estimated_rating": 1219.3,
+      "performance_rating": 1244.5,
+      "games": 703,
+      "score": 423.0,
+      "win_rate": 48.93,
+      "score_percentage": 60.17,
+      "tournaments": 3,
+      "opponents": 23,
+      "reliability_score": 0.92,
+      "stockfish_games": 68
     },
     {
       "rank": 10,
-      "name": "Cece 1.2",
-      "estimated_rating": 1199.6,
-      "performance_rating": 1108.5,
-      "games": 152,
-      "score": 66.0,
-      "win_rate": 36.18,
-      "score_percentage": 43.42,
-      "tournaments": 2,
-      "opponents": 12,
-      "reliability_score": 0.88,
-      "stockfish_games": 0
+      "name": "SlowMate 0.1.1",
+      "estimated_rating": 1218.2,
+      "performance_rating": 1296.9,
+      "games": 68,
+      "score": 41.0,
+      "win_rate": 58.82,
+      "score_percentage": 60.29,
+      "tournaments": 1,
+      "opponents": 22,
+      "reliability_score": 0.798,
+      "stockfish_games": 3
     },
     {
       "rank": 11,
-      "name": "Copycat 1.0",
-      "estimated_rating": 1185.3,
-      "performance_rating": 1016.3,
-      "games": 296,
-      "score": 118.0,
-      "win_rate": 20.95,
-      "score_percentage": 39.86,
+      "name": "SlowMate 0.0.1",
+      "estimated_rating": 1216.6,
+      "performance_rating": 1297.0,
+      "games": 98,
+      "score": 58.5,
+      "win_rate": 56.12,
+      "score_percentage": 59.69,
       "tournaments": 2,
-      "opponents": 11,
-      "reliability_score": 0.88,
-      "stockfish_games": 17
+      "opponents": 22,
+      "reliability_score": 0.878,
+      "stockfish_games": 5
     },
     {
       "rank": 12,
-      "name": "V7P3RAI 1.0",
-      "estimated_rating": 1182.2,
-      "performance_rating": 1069.3,
-      "games": 366,
-      "score": 153.0,
-      "win_rate": 27.87,
-      "score_percentage": 41.8,
-      "tournaments": 3,
-      "opponents": 14,
-      "reliability_score": 0.92,
-      "stockfish_games": 17
+      "name": "SlowMate 0.1.3",
+      "estimated_rating": 1209.2,
+      "performance_rating": 1256.8,
+      "games": 68,
+      "score": 37.5,
+      "win_rate": 52.94,
+      "score_percentage": 55.15,
+      "tournaments": 1,
+      "opponents": 22,
+      "reliability_score": 0.798,
+      "stockfish_games": 3
     },
     {
       "rank": 13,
+      "name": "SlowMate 0.3.3",
+      "estimated_rating": 1208.5,
+      "performance_rating": 1242.0,
+      "games": 68,
+      "score": 36.0,
+      "win_rate": 51.47,
+      "score_percentage": 52.94,
+      "tournaments": 1,
+      "opponents": 22,
+      "reliability_score": 0.798,
+      "stockfish_games": 3
+    },
+    {
+      "rank": 14,
+      "name": "SlowMate 0.3",
+      "estimated_rating": 1208.4,
+      "performance_rating": 1243.2,
+      "games": 474,
+      "score": 256.0,
+      "win_rate": 53.8,
+      "score_percentage": 54.01,
+      "tournaments": 5,
+      "opponents": 25,
+      "reliability_score": 1.0,
+      "stockfish_games": 3
+    },
+    {
+      "rank": 15,
+      "name": "Cece 1.3",
+      "estimated_rating": 1196.5,
+      "performance_rating": 1143.3,
+      "games": 598,
+      "score": 288.5,
+      "win_rate": 33.61,
+      "score_percentage": 48.24,
+      "tournaments": 7,
+      "opponents": 24,
+      "reliability_score": 1.0,
+      "stockfish_games": 21
+    },
+    {
+      "rank": 16,
+      "name": "Cece 1.2",
+      "estimated_rating": 1190.7,
+      "performance_rating": 1120.5,
+      "games": 250,
+      "score": 105.5,
+      "win_rate": 33.6,
+      "score_percentage": 42.2,
+      "tournaments": 4,
+      "opponents": 24,
+      "reliability_score": 0.96,
+      "stockfish_games": 5
+    },
+    {
+      "rank": 17,
+      "name": "V7P3RAI 1.0",
+      "estimated_rating": 1190.0,
+      "performance_rating": 1097.1,
+      "games": 693,
+      "score": 287.0,
+      "win_rate": 26.26,
+      "score_percentage": 41.41,
+      "tournaments": 4,
+      "opponents": 23,
+      "reliability_score": 0.96,
+      "stockfish_games": 48
+    },
+    {
+      "rank": 18,
       "name": "SlowMate 0.4",
-      "estimated_rating": 1178.7,
-      "performance_rating": 1044.3,
+      "estimated_rating": 1178.2,
+      "performance_rating": 1039.3,
       "games": 354,
       "score": 116.0,
       "win_rate": 27.68,
@@ -477,52 +584,52 @@
       "stockfish_games": 0
     },
     {
-      "rank": 14,
-      "name": "Cecilia 0.1",
-      "estimated_rating": 1169.6,
-      "performance_rating": 960.9,
-      "games": 369,
-      "score": 91.5,
-      "win_rate": 1.9,
-      "score_percentage": 24.8,
-      "tournaments": 6,
-      "opponents": 18,
-      "reliability_score": 1.0,
-      "stockfish_games": 17
+      "rank": 19,
+      "name": "Copycat 1.0",
+      "estimated_rating": 1178.1,
+      "performance_rating": 1039.2,
+      "games": 622,
+      "score": 240.5,
+      "win_rate": 20.26,
+      "score_percentage": 38.67,
+      "tournaments": 3,
+      "opponents": 23,
+      "reliability_score": 0.92,
+      "stockfish_games": 48
     },
     {
-      "rank": 15,
-      "name": "Cecilia 0.2",
-      "estimated_rating": 1166.8,
-      "performance_rating": 1074.0,
-      "games": 171,
-      "score": 52.0,
-      "win_rate": 0.0,
-      "score_percentage": 30.41,
+      "rank": 20,
+      "name": "Cece_v2.1",
+      "estimated_rating": 1173.8,
+      "performance_rating": 1101.2,
+      "games": 132,
+      "score": 45.5,
+      "win_rate": 7.58,
+      "score_percentage": 34.47,
       "tournaments": 1,
       "opponents": 10,
       "reliability_score": 0.84,
-      "stockfish_games": 17
+      "stockfish_games": 14
     },
     {
-      "rank": 16,
-      "name": "Cecilia 0.3",
-      "estimated_rating": 1161.6,
-      "performance_rating": 1064.3,
-      "games": 172,
-      "score": 49.5,
-      "win_rate": 0.0,
-      "score_percentage": 28.78,
-      "tournaments": 2,
-      "opponents": 11,
-      "reliability_score": 0.88,
-      "stockfish_games": 17
+      "rank": 21,
+      "name": "Cece 1.0",
+      "estimated_rating": 1168.5,
+      "performance_rating": 1070.5,
+      "games": 302,
+      "score": 98.0,
+      "win_rate": 16.56,
+      "score_percentage": 32.45,
+      "tournaments": 5,
+      "opponents": 25,
+      "reliability_score": 1.0,
+      "stockfish_games": 16
     },
     {
-      "rank": 17,
+      "rank": 22,
       "name": "SlowMate 0.5",
-      "estimated_rating": 1161.4,
-      "performance_rating": 950.0,
+      "estimated_rating": 1160.9,
+      "performance_rating": 946.6,
       "games": 111,
       "score": 21.5,
       "win_rate": 0.9,
@@ -533,106 +640,159 @@
       "stockfish_games": 0
     },
     {
-      "rank": 18,
-      "name": "Cece 1.0",
-      "estimated_rating": 1160.8,
-      "performance_rating": 1002.2,
-      "games": 113,
-      "score": 29.5,
-      "win_rate": 15.04,
-      "score_percentage": 26.11,
-      "tournaments": 3,
-      "opponents": 10,
-      "reliability_score": 0.92,
-      "stockfish_games": 0
+      "rank": 23,
+      "name": "Cecilia 0.1",
+      "estimated_rating": 1160.0,
+      "performance_rating": 998.1,
+      "games": 593,
+      "score": 158.5,
+      "win_rate": 1.85,
+      "score_percentage": 26.73,
+      "tournaments": 7,
+      "opponents": 25,
+      "reliability_score": 1.0,
+      "stockfish_games": 34
     },
     {
-      "rank": 19,
+      "rank": 24,
       "name": "Cece 1.1",
-      "estimated_rating": 1160.4,
-      "performance_rating": 900.2,
-      "games": 81,
-      "score": 18.0,
-      "win_rate": 13.58,
-      "score_percentage": 22.22,
-      "tournaments": 1,
-      "opponents": 10,
-      "reliability_score": 0.817,
-      "stockfish_games": 0
+      "estimated_rating": 1156.9,
+      "performance_rating": 903.0,
+      "games": 150,
+      "score": 31.0,
+      "win_rate": 11.33,
+      "score_percentage": 20.67,
+      "tournaments": 2,
+      "opponents": 24,
+      "reliability_score": 0.88,
+      "stockfish_games": 3
     },
     {
-      "rank": 20,
+      "rank": 25,
+      "name": "Cecilia 0.2",
+      "estimated_rating": 1153.8,
+      "performance_rating": 1034.7,
+      "games": 425,
+      "score": 120.5,
+      "win_rate": 0.24,
+      "score_percentage": 28.35,
+      "tournaments": 2,
+      "opponents": 23,
+      "reliability_score": 0.88,
+      "stockfish_games": 36
+    },
+    {
+      "rank": 26,
+      "name": "Cecilia 0.3",
+      "estimated_rating": 1152.9,
+      "performance_rating": 1045.9,
+      "games": 486,
+      "score": 130.0,
+      "win_rate": 0.62,
+      "score_percentage": 26.75,
+      "tournaments": 3,
+      "opponents": 23,
+      "reliability_score": 0.92,
+      "stockfish_games": 46
+    },
+    {
+      "rank": 27,
       "name": "Random Playing Opponent",
       "estimated_rating": 100.0,
-      "performance_rating": 1043.6,
-      "games": 368,
-      "score": 98.5,
-      "win_rate": 13.59,
-      "score_percentage": 26.77,
-      "tournaments": 3,
-      "opponents": 14,
-      "reliability_score": 0.92,
-      "stockfish_games": 17
+      "performance_rating": 1058.0,
+      "games": 694,
+      "score": 185.5,
+      "win_rate": 13.69,
+      "score_percentage": 26.73,
+      "tournaments": 4,
+      "opponents": 23,
+      "reliability_score": 0.96,
+      "stockfish_games": 48
     }
   ],
   "stockfish_achievers": [
     {
+      "name": "Cece 2.0",
+      "stockfish_games": 68,
+      "wins_vs_stockfish": 0,
+      "draws_vs_stockfish": 1,
+      "losses_vs_stockfish": 67,
+      "estimated_rating": 1219.3
+    },
+    {
+      "name": "V7P3RAI 1.0",
+      "stockfish_games": 48,
+      "wins_vs_stockfish": 0,
+      "draws_vs_stockfish": 4,
+      "losses_vs_stockfish": 44,
+      "estimated_rating": 1190.0
+    },
+    {
       "name": "Copycat 1.0",
-      "stockfish_games": 17,
+      "stockfish_games": 48,
       "wins_vs_stockfish": 0,
       "draws_vs_stockfish": 2,
-      "losses_vs_stockfish": 15,
-      "estimated_rating": 1185.3
+      "losses_vs_stockfish": 46,
+      "estimated_rating": 1178.1
     },
     {
       "name": "SlowMate 1.0",
-      "stockfish_games": 17,
+      "stockfish_games": 48,
+      "wins_vs_stockfish": 2,
+      "draws_vs_stockfish": 10,
+      "losses_vs_stockfish": 36,
+      "estimated_rating": 1258.7
+    },
+    {
+      "name": "SlowMate 0.2",
+      "stockfish_games": 35,
       "wins_vs_stockfish": 0,
-      "draws_vs_stockfish": 2,
-      "losses_vs_stockfish": 15,
-      "estimated_rating": 1250.6
+      "draws_vs_stockfish": 1,
+      "losses_vs_stockfish": 34,
+      "estimated_rating": 1220.3
     }
   ],
   "engine_details": {
     "Cecilia 0.1": {
       "performance": {
-        "total_games": 369,
-        "wins": 7,
-        "losses": 193,
-        "draws": 169,
-        "score": 91.5,
-        "win_rate": 1.9,
-        "estimated_rating": 1169.6,
-        "performance_rating": 960.9,
+        "total_games": 593,
+        "wins": 11,
+        "losses": 287,
+        "draws": 295,
+        "score": 158.5,
+        "win_rate": 1.85,
+        "estimated_rating": 1160.0,
+        "performance_rating": 998.1,
         "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250810",
         "Engine Battle 20250803",
         "Engine Battle 20250808",
+        "Engine Battle 20250728",
+        "Engine Battle 20250810",
         "Engine Battle 20250811",
-        "Engine Battle 20250806",
-        "Engine Battle 20250728"
+        "Engine Battle 20250812",
+        "Engine Battle 20250806"
       ],
       "opponents": {
         "SlowMate 0.0": {
           "wins": 0,
-          "losses": 13,
+          "losses": 16,
           "draws": 0
         },
         "SlowMate 0.1": {
           "wins": 0,
-          "losses": 20,
+          "losses": 23,
           "draws": 1
         },
         "SlowMate 0.2": {
           "wins": 3,
-          "losses": 34,
+          "losses": 40,
           "draws": 3
         },
         "SlowMate 0.3": {
           "wins": 0,
-          "losses": 21,
+          "losses": 24,
           "draws": 0
         },
         "SlowMate 0.4": {
@@ -641,24 +801,24 @@
           "draws": 6
         },
         "Cece 1.0": {
-          "wins": 2,
-          "losses": 0,
-          "draws": 3
+          "wins": 4,
+          "losses": 3,
+          "draws": 13
         },
         "Cece 1.3": {
           "wins": 1,
           "losses": 2,
-          "draws": 38
+          "draws": 41
         },
         "Cece 1.1": {
           "wins": 0,
           "losses": 0,
-          "draws": 4
+          "draws": 7
         },
         "Cece 1.2": {
           "wins": 0,
-          "losses": 0,
-          "draws": 4
+          "losses": 1,
+          "draws": 6
         },
         "SlowMate 0.5": {
           "wins": 0,
@@ -667,43 +827,78 @@
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 13,
-          "draws": 14
+          "losses": 21,
+          "draws": 23
         },
         "Random Playing Opponent": {
           "wins": 0,
-          "losses": 12,
-          "draws": 15
+          "losses": 22,
+          "draws": 22
         },
         "Cece 2.0": {
-          "wins": 0,
-          "losses": 22,
-          "draws": 5
+          "wins": 1,
+          "losses": 41,
+          "draws": 22
         },
         "V7P3RAI 1.0": {
           "wins": 0,
           "losses": 0,
-          "draws": 27
+          "draws": 44
         },
         "Copycat 1.0": {
-          "wins": 0,
-          "losses": 15,
-          "draws": 12
+          "wins": 1,
+          "losses": 18,
+          "draws": 25
         },
         "Cecilia 0.2": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 34
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 34,
           "draws": 0
         },
         "Cecilia 0.3": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 34
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 11
         }
       },
       "tournament_breakdown": {
@@ -739,48 +934,56 @@
         },
         "Engine Battle 20250811": {
           "wins": 0,
-          "losses": 73,
-          "draws": 98,
-          "games": 171
+          "losses": 126,
+          "draws": 133,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 4,
+          "losses": 41,
+          "draws": 91,
+          "games": 136
         }
       }
     },
     "SlowMate 0.0": {
       "performance": {
-        "total_games": 819,
-        "wins": 451,
-        "losses": 333,
-        "draws": 35,
-        "score": 468.5,
-        "win_rate": 55.07,
-        "estimated_rating": 1229.7,
-        "performance_rating": 1252.6,
+        "total_games": 917,
+        "wins": 513,
+        "losses": 367,
+        "draws": 37,
+        "score": 531.5,
+        "win_rate": 55.94,
+        "estimated_rating": 1223.7,
+        "performance_rating": 1264.1,
         "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250809",
-        "SlowMate Tournament 20250722",
-        "SlowMate Tournament 20250720",
-        "Engine Battle 20250810",
         "Engine Battle 20250803",
         "Engine Battle 20250808",
+        "Engine Battle 20250728",
+        "Engine Battle 20250810",
+        "Engine Battle 20250811",
         "SlowMate Tournament 20250721",
-        "Engine Battle 20250728"
+        "SlowMate Tournament 20250722",
+        "Engine Battle 20250812",
+        "SlowMate Tournament 20250720",
+        "Engine Battle 20250809"
       ],
       "opponents": {
         "Cecilia 0.1": {
-          "wins": 13,
+          "wins": 16,
           "losses": 0,
           "draws": 0
         },
         "SlowMate 0.3": {
-          "wins": 34,
-          "losses": 16,
+          "wins": 36,
+          "losses": 17,
           "draws": 0
         },
         "SlowMate 0.1": {
-          "wins": 154,
-          "losses": 144,
+          "wins": 157,
+          "losses": 146,
           "draws": 17
         },
         "SlowMate 0.4": {
@@ -789,12 +992,12 @@
           "draws": 1
         },
         "SlowMate 0.2": {
-          "wins": 82,
-          "losses": 93,
+          "wins": 89,
+          "losses": 94,
           "draws": 4
         },
         "Cecilia 0.3": {
-          "wins": 1,
+          "wins": 6,
           "losses": 0,
           "draws": 0
         },
@@ -804,18 +1007,18 @@
           "draws": 6
         },
         "Cece 1.3": {
-          "wins": 21,
-          "losses": 5,
+          "wins": 23,
+          "losses": 8,
           "draws": 0
         },
         "Cece 1.1": {
-          "wins": 6,
+          "wins": 9,
           "losses": 1,
           "draws": 0
         },
         "Cece 1.2": {
-          "wins": 13,
-          "losses": 4,
+          "wins": 15,
+          "losses": 7,
           "draws": 0
         },
         "SlowMate 0.5": {
@@ -824,29 +1027,74 @@
           "draws": 0
         },
         "Cece 1.0": {
-          "wins": 8,
+          "wins": 11,
           "losses": 0,
           "draws": 0
         },
         "Random Playing Opponent": {
-          "wins": 19,
+          "wins": 23,
           "losses": 0,
-          "draws": 0
+          "draws": 1
         },
         "V7P3RAI 1.0": {
-          "wins": 10,
-          "losses": 8,
+          "wins": 13,
+          "losses": 10,
           "draws": 0
         },
         "Copycat 1.0": {
-          "wins": 4,
+          "wins": 9,
           "losses": 1,
           "draws": 5
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 8,
+          "losses": 13,
           "draws": 2
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 1,
+          "losses": 3,
+          "draws": 1
+        },
+        "SlowMate 0.1.2": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cecilia 0.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
         }
       },
       "tournament_breakdown": {
@@ -880,6 +1128,18 @@
           "draws": 7,
           "games": 60
         },
+        "Engine Battle 20250811": {
+          "wins": 42,
+          "losses": 24,
+          "draws": 2,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 20,
+          "losses": 10,
+          "draws": 0,
+          "games": 30
+        },
         "SlowMate Tournament 20250720": {
           "wins": 157,
           "losses": 148,
@@ -902,38 +1162,40 @@
     },
     "SlowMate 0.1": {
       "performance": {
-        "total_games": 1335,
-        "wins": 692,
-        "losses": 578,
-        "draws": 65,
-        "score": 724.5,
-        "win_rate": 51.84,
-        "estimated_rating": 1226.5,
-        "performance_rating": 1289.5,
+        "total_games": 1433,
+        "wins": 753,
+        "losses": 614,
+        "draws": 66,
+        "score": 786.0,
+        "win_rate": 52.55,
+        "estimated_rating": 1226.4,
+        "performance_rating": 1291.7,
         "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250809",
-        "SlowMate Tournament 20250722",
-        "SlowMate Tournament 20250720",
         "Engine Battle 20250808",
+        "Engine Battle 20250728",
         "SlowMate Tournament 20250721",
-        "Engine Battle 20250728"
+        "Engine Battle 20250811",
+        "SlowMate Tournament 20250722",
+        "Engine Battle 20250812",
+        "SlowMate Tournament 20250720",
+        "Engine Battle 20250809"
       ],
       "opponents": {
         "Cecilia 0.1": {
-          "wins": 20,
+          "wins": 23,
           "losses": 0,
           "draws": 1
         },
         "SlowMate 0.2": {
-          "wins": 136,
-          "losses": 158,
+          "wins": 138,
+          "losses": 164,
           "draws": 17
         },
         "SlowMate 0.0": {
-          "wins": 144,
-          "losses": 154,
+          "wins": 146,
+          "losses": 157,
           "draws": 17
         },
         "SlowMate 0.4": {
@@ -942,8 +1204,8 @@
           "draws": 4
         },
         "SlowMate 0.3": {
-          "wins": 47,
-          "losses": 27,
+          "wins": 48,
+          "losses": 29,
           "draws": 1
         },
         "SlowMate 0.1": {
@@ -952,18 +1214,18 @@
           "draws": 20
         },
         "Cece 1.3": {
-          "wins": 22,
-          "losses": 9,
+          "wins": 26,
+          "losses": 10,
           "draws": 2
         },
         "Cece 1.1": {
-          "wins": 15,
+          "wins": 18,
           "losses": 0,
           "draws": 1
         },
         "Cece 1.2": {
-          "wins": 20,
-          "losses": 12,
+          "wins": 24,
+          "losses": 13,
           "draws": 1
         },
         "SlowMate 0.5": {
@@ -972,18 +1234,78 @@
           "draws": 0
         },
         "Cece 1.0": {
-          "wins": 14,
+          "wins": 17,
           "losses": 2,
           "draws": 0
         },
         "Random Playing Opponent": {
-          "wins": 17,
+          "wins": 22,
           "losses": 0,
           "draws": 1
         },
         "V7P3RAI 1.0": {
-          "wins": 8,
-          "losses": 9,
+          "wins": 10,
+          "losses": 12,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "Cecilia 0.3": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 1,
           "draws": 0
         },
         "Stockfish 3645": {
@@ -1011,6 +1333,18 @@
           "draws": 6,
           "games": 139
         },
+        "Engine Battle 20250811": {
+          "wins": 47,
+          "losses": 20,
+          "draws": 1,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 14,
+          "losses": 16,
+          "draws": 0,
+          "games": 30
+        },
         "SlowMate Tournament 20250720": {
           "wins": 225,
           "losses": 267,
@@ -1033,35 +1367,36 @@
     },
     "SlowMate 0.2": {
       "performance": {
-        "total_games": 1092,
-        "wins": 628,
-        "losses": 407,
-        "draws": 57,
-        "score": 656.5,
-        "win_rate": 57.51,
-        "estimated_rating": 1225.6,
-        "performance_rating": 1283.7,
+        "total_games": 1258,
+        "wins": 724,
+        "losses": 466,
+        "draws": 68,
+        "score": 758.0,
+        "win_rate": 57.55,
+        "estimated_rating": 1220.3,
+        "performance_rating": 1289.4,
         "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250809",
-        "SlowMate Tournament 20250722",
-        "SlowMate Tournament 20250720",
-        "Engine Battle 20250810",
         "Engine Battle 20250808",
-        "SlowMate Tournament 20250721",
+        "Engine Battle 20250728",
+        "Engine Battle 20250810",
         "Engine Battle 20250811",
-        "Engine Battle 20250728"
+        "SlowMate Tournament 20250721",
+        "SlowMate Tournament 20250722",
+        "Engine Battle 20250812",
+        "SlowMate Tournament 20250720",
+        "Engine Battle 20250809"
       ],
       "opponents": {
         "Cecilia 0.1": {
-          "wins": 34,
+          "wins": 40,
           "losses": 3,
           "draws": 3
         },
         "SlowMate 0.1": {
-          "wins": 158,
-          "losses": 136,
+          "wins": 164,
+          "losses": 138,
           "draws": 17
         },
         "SlowMate 0.4": {
@@ -1070,23 +1405,23 @@
           "draws": 5
         },
         "SlowMate 0.0": {
-          "wins": 93,
-          "losses": 82,
+          "wins": 94,
+          "losses": 89,
           "draws": 4
         },
         "SlowMate 0.3": {
-          "wins": 40,
-          "losses": 25,
+          "wins": 45,
+          "losses": 26,
           "draws": 0
         },
         "Cece 1.2": {
-          "wins": 20,
+          "wins": 27,
           "losses": 3,
-          "draws": 6
+          "draws": 7
         },
         "Cece 1.3": {
-          "wins": 40,
-          "losses": 20,
+          "wins": 45,
+          "losses": 23,
           "draws": 2
         },
         "SlowMate 0.5": {
@@ -1095,59 +1430,89 @@
           "draws": 0
         },
         "Cece 1.1": {
-          "wins": 11,
+          "wins": 17,
           "losses": 1,
           "draws": 0
         },
         "Cece 1.0": {
-          "wins": 12,
+          "wins": 18,
           "losses": 0,
           "draws": 0
         },
         "SlowMate 0.2": {
-          "wins": 35,
-          "losses": 35,
-          "draws": 6
+          "wins": 37,
+          "losses": 37,
+          "draws": 8
         },
         "Random Playing Opponent": {
-          "wins": 46,
+          "wins": 53,
           "losses": 3,
           "draws": 1
         },
         "V7P3RAI 1.0": {
-          "wins": 24,
-          "losses": 26,
+          "wins": 27,
+          "losses": 31,
           "draws": 0
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 31,
-          "draws": 1
+          "losses": 38,
+          "draws": 2
         },
         "Copycat 1.0": {
-          "wins": 20,
+          "wins": 26,
           "losses": 3,
-          "draws": 9
+          "draws": 10
         },
         "Cece 2.0": {
-          "wins": 11,
-          "losses": 9,
-          "draws": 3
+          "wins": 12,
+          "losses": 14,
+          "draws": 5
         },
         "Cecilia 0.2": {
-          "wins": 17,
+          "wins": 24,
           "losses": 0,
-          "draws": 0
+          "draws": 1
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
-          "draws": 0
+          "losses": 24,
+          "draws": 1
         },
         "Cecilia 0.3": {
-          "wins": 17,
+          "wins": 25,
           "losses": 0,
           "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.2.2": {
+          "wins": 5,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 2,
+          "losses": 6,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 3,
+          "losses": 4,
+          "draws": 1
         },
         "Stockfish 3645": {
           "wins": 0,
@@ -1181,10 +1546,16 @@
           "games": 98
         },
         "Engine Battle 20250811": {
-          "wins": 104,
-          "losses": 56,
-          "draws": 11,
-          "games": 171
+          "wins": 182,
+          "losses": 105,
+          "draws": 20,
+          "games": 307
+        },
+        "Engine Battle 20250812": {
+          "wins": 18,
+          "losses": 10,
+          "draws": 2,
+          "games": 30
         },
         "SlowMate Tournament 20250720": {
           "wins": 112,
@@ -1208,31 +1579,32 @@
     },
     "SlowMate 0.3": {
       "performance": {
-        "total_games": 406,
-        "wins": 221,
-        "losses": 184,
-        "draws": 1,
-        "score": 221.5,
-        "win_rate": 54.43,
-        "estimated_rating": 1223.5,
-        "performance_rating": 1248.8,
-        "reliability_score": 0.96
+        "total_games": 474,
+        "wins": 255,
+        "losses": 217,
+        "draws": 2,
+        "score": 256.0,
+        "win_rate": 53.8,
+        "estimated_rating": 1208.4,
+        "performance_rating": 1243.2,
+        "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250809",
         "Engine Battle 20250808",
         "Engine Battle 20250728",
-        "SlowMate Tournament 20250722"
+        "Engine Battle 20250811",
+        "SlowMate Tournament 20250722",
+        "Engine Battle 20250809"
       ],
       "opponents": {
         "Cecilia 0.1": {
-          "wins": 21,
+          "wins": 24,
           "losses": 0,
           "draws": 0
         },
         "SlowMate 0.0": {
-          "wins": 16,
-          "losses": 34,
+          "wins": 17,
+          "losses": 36,
           "draws": 0
         },
         "SlowMate 0.4": {
@@ -1241,23 +1613,23 @@
           "draws": 0
         },
         "SlowMate 0.1": {
-          "wins": 27,
-          "losses": 47,
+          "wins": 29,
+          "losses": 48,
           "draws": 1
         },
         "SlowMate 0.2": {
-          "wins": 25,
-          "losses": 40,
+          "wins": 26,
+          "losses": 45,
           "draws": 0
         },
         "Cece 1.2": {
-          "wins": 10,
+          "wins": 13,
           "losses": 7,
           "draws": 0
         },
         "Cece 1.3": {
           "wins": 8,
-          "losses": 10,
+          "losses": 13,
           "draws": 0
         },
         "SlowMate 0.5": {
@@ -1266,13 +1638,13 @@
           "draws": 0
         },
         "Cece 1.1": {
-          "wins": 15,
+          "wins": 18,
           "losses": 1,
           "draws": 0
         },
         "Cece 1.0": {
-          "wins": 13,
-          "losses": 3,
+          "wins": 15,
+          "losses": 4,
           "draws": 0
         },
         "SlowMate 0.3": {
@@ -1281,12 +1653,72 @@
           "draws": 0
         },
         "Random Playing Opponent": {
-          "wins": 1,
+          "wins": 4,
           "losses": 0,
           "draws": 0
         },
         "V7P3RAI 1.0": {
+          "wins": 3,
+          "losses": 1,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
           "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.2": {
+          "wins": 2,
           "losses": 0,
           "draws": 0
         }
@@ -1310,6 +1742,12 @@
           "draws": 0,
           "games": 10
         },
+        "Engine Battle 20250811": {
+          "wins": 34,
+          "losses": 33,
+          "draws": 1,
+          "games": 68
+        },
         "SlowMate Tournament 20250722": {
           "wins": 12,
           "losses": 30,
@@ -1326,15 +1764,15 @@
         "draws": 36,
         "score": 116.0,
         "win_rate": 27.68,
-        "estimated_rating": 1178.7,
-        "performance_rating": 1044.3,
+        "estimated_rating": 1178.2,
+        "performance_rating": 1039.3,
         "reliability_score": 0.96
       },
       "tournaments": [
         "Engine Battle 20250808",
+        "Engine Battle 20250728",
         "Engine Battle 20250807",
-        "Engine Battle 20250806",
-        "Engine Battle 20250728"
+        "Engine Battle 20250806"
       ],
       "opponents": {
         "Cecilia 0.1": {
@@ -1422,31 +1860,33 @@
     },
     "Cece 1.0": {
       "performance": {
-        "total_games": 113,
-        "wins": 17,
-        "losses": 71,
-        "draws": 25,
-        "score": 29.5,
-        "win_rate": 15.04,
-        "estimated_rating": 1160.8,
-        "performance_rating": 1002.2,
-        "reliability_score": 0.92
+        "total_games": 302,
+        "wins": 50,
+        "losses": 156,
+        "draws": 96,
+        "score": 98.0,
+        "win_rate": 16.56,
+        "estimated_rating": 1168.5,
+        "performance_rating": 1070.5,
+        "reliability_score": 1.0
       },
       "tournaments": [
         "Engine Battle 20250803",
+        "Engine Battle 20250807",
         "Engine Battle 20250808",
-        "Engine Battle 20250807"
+        "Engine Battle 20250811",
+        "Engine Battle 20250812"
       ],
       "opponents": {
         "Cecilia 0.1": {
-          "wins": 0,
-          "losses": 2,
-          "draws": 3
+          "wins": 3,
+          "losses": 4,
+          "draws": 13
         },
         "Cece 1.3": {
           "wins": 0,
-          "losses": 9,
-          "draws": 5
+          "losses": 11,
+          "draws": 6
         },
         "SlowMate 0.5": {
           "wins": 0,
@@ -1459,34 +1899,109 @@
           "draws": 1
         },
         "SlowMate 0.3": {
-          "wins": 3,
-          "losses": 13,
+          "wins": 4,
+          "losses": 15,
           "draws": 0
         },
         "SlowMate 0.2": {
           "wins": 0,
-          "losses": 12,
+          "losses": 18,
           "draws": 0
         },
         "SlowMate 0.1": {
           "wins": 2,
-          "losses": 14,
+          "losses": 17,
           "draws": 0
         },
         "SlowMate 0.0": {
           "wins": 0,
-          "losses": 8,
+          "losses": 11,
           "draws": 0
         },
         "Cece 1.2": {
           "wins": 0,
-          "losses": 2,
+          "losses": 5,
           "draws": 1
         },
         "Cece 1.1": {
-          "wins": 1,
-          "losses": 1,
+          "wins": 2,
+          "losses": 2,
           "draws": 1
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 16,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 8,
+          "draws": 7
+        },
+        "V7P3RAI 1.0": {
+          "wins": 8,
+          "losses": 1,
+          "draws": 6
+        },
+        "SlowMate 0.3.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 9,
+          "losses": 3,
+          "draws": 3
+        },
+        "Copycat 1.0": {
+          "wins": 1,
+          "losses": 9,
+          "draws": 5
+        },
+        "Cecilia 0.3": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 13
+        },
+        "Cecilia 0.2": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 14
+        },
+        "Cece 2.0": {
+          "wins": 1,
+          "losses": 9,
+          "draws": 5
+        },
+        "Cece_v2.1": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 7
         }
       },
       "tournament_breakdown": {
@@ -1507,80 +2022,153 @@
           "losses": 56,
           "draws": 11,
           "games": 82
+        },
+        "Engine Battle 20250811": {
+          "wins": 9,
+          "losses": 47,
+          "draws": 13,
+          "games": 69
+        },
+        "Engine Battle 20250812": {
+          "wins": 24,
+          "losses": 38,
+          "draws": 58,
+          "games": 120
         }
       }
     },
     "Cecilia 0.3": {
       "performance": {
-        "total_games": 172,
-        "wins": 0,
-        "losses": 73,
-        "draws": 99,
-        "score": 49.5,
-        "win_rate": 0.0,
-        "estimated_rating": 1161.6,
-        "performance_rating": 1064.3,
-        "reliability_score": 0.88
+        "total_games": 486,
+        "wins": 3,
+        "losses": 229,
+        "draws": 254,
+        "score": 130.0,
+        "win_rate": 0.62,
+        "estimated_rating": 1152.9,
+        "performance_rating": 1045.9,
+        "reliability_score": 0.92
       },
       "tournaments": [
         "Engine Battle 20250803",
+        "Engine Battle 20250812",
         "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 0.0": {
           "wins": 0,
-          "losses": 1,
+          "losses": 6,
           "draws": 0
         },
         "Copycat 1.0": {
           "wins": 0,
-          "losses": 5,
-          "draws": 13
+          "losses": 17,
+          "draws": 30
         },
         "Cecilia 0.2": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 36
         },
         "Cece 2.0": {
-          "wins": 0,
-          "losses": 13,
-          "draws": 4
+          "wins": 1,
+          "losses": 50,
+          "draws": 15
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 46,
           "draws": 0
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 9,
-          "draws": 8
+          "losses": 24,
+          "draws": 22
         },
         "Random Playing Opponent": {
           "wins": 0,
-          "losses": 7,
-          "draws": 10
+          "losses": 17,
+          "draws": 29
         },
         "Cecilia 0.1": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 34
         },
         "Cece 1.3": {
           "wins": 0,
-          "losses": 4,
-          "draws": 13
+          "losses": 5,
+          "draws": 17
         },
         "V7P3RAI 1.0": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 46
         },
         "SlowMate 0.2": {
           "wins": 0,
-          "losses": 17,
+          "losses": 25,
           "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 3
+        },
+        "SlowMate 0.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 13
+        },
+        "Cece 1.1": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 1,
+          "losses": 3,
+          "draws": 8
         }
       },
       "tournament_breakdown": {
@@ -1591,38 +2179,45 @@
           "games": 1
         },
         "Engine Battle 20250811": {
-          "wins": 0,
-          "losses": 72,
-          "draws": 99,
-          "games": 171
+          "wins": 2,
+          "losses": 125,
+          "draws": 132,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 1,
+          "losses": 103,
+          "draws": 122,
+          "games": 226
         }
       }
     },
     "Cece 1.3": {
       "performance": {
-        "total_games": 500,
-        "wins": 165,
-        "losses": 181,
-        "draws": 154,
-        "score": 242.0,
-        "win_rate": 33.0,
-        "estimated_rating": 1200.9,
-        "performance_rating": 1135.6,
+        "total_games": 598,
+        "wins": 201,
+        "losses": 222,
+        "draws": 175,
+        "score": 288.5,
+        "win_rate": 33.61,
+        "estimated_rating": 1196.5,
+        "performance_rating": 1143.3,
         "reliability_score": 1.0
       },
       "tournaments": [
-        "Engine Battle 20250809",
-        "Engine Battle 20250810",
-        "Engine Battle 20250808",
-        "Engine Battle 20250811",
         "Engine Battle 20250807",
+        "Engine Battle 20250808",
+        "Engine Battle 20250810",
+        "Engine Battle 20250811",
+        "Engine Battle 20250812",
+        "Engine Battle 20250809",
         "Engine Battle 20250806"
       ],
       "opponents": {
         "Cecilia 0.1": {
           "wins": 2,
           "losses": 1,
-          "draws": 38
+          "draws": 41
         },
         "SlowMate 0.4": {
           "wins": 20,
@@ -1630,9 +2225,9 @@
           "draws": 5
         },
         "Cece 1.0": {
-          "wins": 9,
+          "wins": 11,
           "losses": 0,
-          "draws": 5
+          "draws": 6
         },
         "SlowMate 0.5": {
           "wins": 1,
@@ -1640,74 +2235,104 @@
           "draws": 13
         },
         "SlowMate 0.3": {
-          "wins": 10,
+          "wins": 13,
           "losses": 8,
           "draws": 0
         },
         "SlowMate 0.2": {
-          "wins": 20,
-          "losses": 40,
+          "wins": 23,
+          "losses": 45,
           "draws": 2
         },
         "SlowMate 0.1": {
-          "wins": 9,
-          "losses": 22,
+          "wins": 10,
+          "losses": 26,
           "draws": 2
         },
         "SlowMate 0.0": {
-          "wins": 5,
-          "losses": 21,
+          "wins": 8,
+          "losses": 23,
           "draws": 0
         },
         "Cece 1.2": {
           "wins": 6,
-          "losses": 5,
-          "draws": 2
+          "losses": 7,
+          "draws": 5
         },
         "Cece 1.1": {
-          "wins": 3,
-          "losses": 0,
+          "wins": 5,
+          "losses": 1,
           "draws": 0
         },
         "Random Playing Opponent": {
-          "wins": 33,
+          "wins": 38,
           "losses": 3,
           "draws": 10
         },
         "V7P3RAI 1.0": {
-          "wins": 21,
-          "losses": 10,
+          "wins": 24,
+          "losses": 12,
           "draws": 15
         },
         "Copycat 1.0": {
-          "wins": 16,
-          "losses": 8,
-          "draws": 13
+          "wins": 18,
+          "losses": 9,
+          "draws": 15
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 24,
-          "draws": 13
+          "losses": 27,
+          "draws": 15
         },
         "Cece 2.0": {
-          "wins": 6,
-          "losses": 15,
+          "wins": 8,
+          "losses": 18,
           "draws": 6
         },
         "Cecilia 0.2": {
-          "wins": 0,
+          "wins": 1,
           "losses": 0,
-          "draws": 17
+          "draws": 21
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 21,
           "draws": 0
         },
         "Cecilia 0.3": {
-          "wins": 4,
+          "wins": 5,
           "losses": 0,
-          "draws": 13
+          "draws": 17
+        },
+        "SlowMate 0.3.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 1
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
         }
       },
       "tournament_breakdown": {
@@ -1742,10 +2367,16 @@
           "games": 125
         },
         "Engine Battle 20250811": {
-          "wins": 43,
-          "losses": 55,
-          "draws": 73,
-          "games": 171
+          "wins": 67,
+          "losses": 83,
+          "draws": 89,
+          "games": 239
+        },
+        "Engine Battle 20250812": {
+          "wins": 12,
+          "losses": 13,
+          "draws": 5,
+          "games": 30
         }
       }
     },
@@ -1757,8 +2388,8 @@
         "draws": 41,
         "score": 21.5,
         "win_rate": 0.9,
-        "estimated_rating": 1161.4,
-        "performance_rating": 950.0,
+        "estimated_rating": 1160.9,
+        "performance_rating": 946.6,
         "reliability_score": 0.88
       },
       "tournaments": [
@@ -1834,18 +2465,19 @@
     },
     "Cece 1.1": {
       "performance": {
-        "total_games": 81,
-        "wins": 11,
-        "losses": 56,
-        "draws": 14,
-        "score": 18.0,
-        "win_rate": 13.58,
-        "estimated_rating": 1160.4,
-        "performance_rating": 900.2,
-        "reliability_score": 0.817
+        "total_games": 150,
+        "wins": 17,
+        "losses": 105,
+        "draws": 28,
+        "score": 31.0,
+        "win_rate": 11.33,
+        "estimated_rating": 1156.9,
+        "performance_rating": 903.0,
+        "reliability_score": 0.88
       },
       "tournaments": [
-        "Engine Battle 20250808"
+        "Engine Battle 20250808",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 0.4": {
@@ -1855,33 +2487,33 @@
         },
         "SlowMate 0.3": {
           "wins": 1,
-          "losses": 15,
+          "losses": 18,
           "draws": 0
         },
         "SlowMate 0.2": {
           "wins": 1,
-          "losses": 11,
+          "losses": 17,
           "draws": 0
         },
         "SlowMate 0.1": {
           "wins": 0,
-          "losses": 15,
+          "losses": 18,
           "draws": 1
         },
         "SlowMate 0.0": {
           "wins": 1,
-          "losses": 6,
+          "losses": 9,
           "draws": 0
         },
         "Cecilia 0.1": {
           "wins": 0,
           "losses": 0,
-          "draws": 4
+          "draws": 7
         },
         "Cece 1.2": {
           "wins": 0,
-          "losses": 3,
-          "draws": 1
+          "losses": 5,
+          "draws": 2
         },
         "SlowMate 0.5": {
           "wins": 0,
@@ -1889,11 +2521,81 @@
           "draws": 4
         },
         "Cece 1.3": {
+          "wins": 1,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "V7P3RAI 1.0": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 2
+        },
+        "Stockfish 2650": {
           "wins": 0,
           "losses": 3,
           "draws": 0
         },
-        "Cece 1.0": {
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 1
+        },
+        "Copycat 1.0": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 2
+        },
+        "Cecilia 0.2": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 3
+        },
+        "Cece 2.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cecilia 0.3": {
           "wins": 1,
           "losses": 1,
           "draws": 1
@@ -1905,24 +2607,32 @@
           "losses": 56,
           "draws": 14,
           "games": 81
+        },
+        "Engine Battle 20250811": {
+          "wins": 6,
+          "losses": 49,
+          "draws": 14,
+          "games": 69
         }
       }
     },
     "Cece 1.2": {
       "performance": {
-        "total_games": 152,
-        "wins": 55,
-        "losses": 75,
-        "draws": 22,
-        "score": 66.0,
-        "win_rate": 36.18,
-        "estimated_rating": 1199.6,
-        "performance_rating": 1108.5,
-        "reliability_score": 0.88
+        "total_games": 250,
+        "wins": 84,
+        "losses": 123,
+        "draws": 43,
+        "score": 105.5,
+        "win_rate": 33.6,
+        "estimated_rating": 1190.7,
+        "performance_rating": 1120.5,
+        "reliability_score": 0.96
       },
       "tournaments": [
         "Engine Battle 20250809",
-        "Engine Battle 20250808"
+        "Engine Battle 20250808",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 0.4": {
@@ -1932,41 +2642,41 @@
         },
         "SlowMate 0.3": {
           "wins": 7,
-          "losses": 10,
+          "losses": 13,
           "draws": 0
         },
         "SlowMate 0.2": {
           "wins": 3,
-          "losses": 20,
-          "draws": 6
+          "losses": 27,
+          "draws": 7
         },
         "SlowMate 0.1": {
-          "wins": 12,
-          "losses": 20,
+          "wins": 13,
+          "losses": 24,
           "draws": 1
         },
         "SlowMate 0.0": {
-          "wins": 4,
-          "losses": 13,
+          "wins": 7,
+          "losses": 15,
           "draws": 0
         },
         "Cece 1.3": {
-          "wins": 5,
+          "wins": 7,
           "losses": 6,
-          "draws": 2
+          "draws": 5
         },
         "Cece 1.1": {
-          "wins": 3,
+          "wins": 5,
           "losses": 0,
-          "draws": 1
+          "draws": 2
         },
         "Cecilia 0.1": {
-          "wins": 0,
+          "wins": 1,
           "losses": 0,
-          "draws": 4
+          "draws": 6
         },
         "Cece 1.0": {
-          "wins": 2,
+          "wins": 5,
           "losses": 0,
           "draws": 1
         },
@@ -1976,13 +2686,73 @@
           "draws": 3
         },
         "V7P3RAI 1.0": {
-          "wins": 4,
+          "wins": 6,
+          "losses": 5,
+          "draws": 3
+        },
+        "Random Playing Opponent": {
+          "wins": 9,
+          "losses": 1,
+          "draws": 3
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 3
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
           "losses": 4,
           "draws": 1
         },
-        "Random Playing Opponent": {
-          "wins": 5,
-          "losses": 1,
+        "Copycat 1.0": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "Cecilia 0.2": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 3
+        },
+        "Cece 2.0": {
+          "wins": 1,
+          "losses": 3,
+          "draws": 1
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 2,
           "draws": 2
         }
       },
@@ -1998,96 +2768,154 @@
           "losses": 39,
           "draws": 12,
           "games": 70
+        },
+        "Engine Battle 20250811": {
+          "wins": 19,
+          "losses": 34,
+          "draws": 15,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 10,
+          "losses": 14,
+          "draws": 6,
+          "games": 30
         }
       }
     },
     "V7P3RAI 1.0": {
       "performance": {
-        "total_games": 366,
-        "wins": 102,
-        "losses": 162,
-        "draws": 102,
-        "score": 153.0,
-        "win_rate": 27.87,
-        "estimated_rating": 1182.2,
-        "performance_rating": 1069.3,
-        "reliability_score": 0.92
+        "total_games": 693,
+        "wins": 182,
+        "losses": 301,
+        "draws": 210,
+        "score": 287.0,
+        "win_rate": 26.26,
+        "estimated_rating": 1190.0,
+        "performance_rating": 1097.1,
+        "reliability_score": 0.96
       },
       "tournaments": [
         "Engine Battle 20250809",
-        "Engine Battle 20250811",
-        "Engine Battle 20250810"
+        "Engine Battle 20250810",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "Cece 1.2": {
-          "wins": 4,
-          "losses": 4,
-          "draws": 1
+          "wins": 5,
+          "losses": 6,
+          "draws": 3
         },
         "SlowMate 0.2": {
-          "wins": 26,
-          "losses": 24,
+          "wins": 31,
+          "losses": 27,
           "draws": 0
         },
         "SlowMate 0.1": {
-          "wins": 9,
-          "losses": 8,
-          "draws": 0
-        },
-        "SlowMate 0.0": {
-          "wins": 8,
+          "wins": 12,
           "losses": 10,
           "draws": 0
         },
-        "Cece 1.3": {
+        "SlowMate 0.0": {
           "wins": 10,
-          "losses": 21,
+          "losses": 13,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 12,
+          "losses": 24,
           "draws": 15
         },
         "SlowMate 0.3": {
-          "wins": 0,
-          "losses": 1,
+          "wins": 1,
+          "losses": 3,
           "draws": 0
         },
         "Random Playing Opponent": {
-          "wins": 22,
-          "losses": 15,
-          "draws": 9
+          "wins": 39,
+          "losses": 25,
+          "draws": 13
         },
         "Copycat 1.0": {
-          "wins": 18,
-          "losses": 11,
-          "draws": 8
+          "wins": 33,
+          "losses": 19,
+          "draws": 16
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 37,
+          "losses": 68,
           "draws": 0
         },
         "Cece 2.0": {
-          "wins": 5,
-          "losses": 14,
-          "draws": 8
+          "wins": 21,
+          "losses": 38,
+          "draws": 18
         },
         "Cecilia 0.1": {
           "wins": 0,
           "losses": 0,
-          "draws": 27
+          "draws": 44
         },
         "Cecilia 0.2": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 36
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
-          "draws": 0
+          "losses": 44,
+          "draws": 4
         },
         "Cecilia 0.3": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 46
+        },
+        "Cece 1.1": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 2
+        },
+        "Cece 1.0": {
+          "wins": 1,
+          "losses": 8,
+          "draws": 6
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 5,
+          "losses": 2,
+          "draws": 7
         }
       },
       "tournament_breakdown": {
@@ -2104,100 +2932,152 @@
           "games": 126
         },
         "Engine Battle 20250811": {
-          "wins": 32,
-          "losses": 70,
-          "draws": 69,
-          "games": 171
+          "wins": 60,
+          "losses": 109,
+          "draws": 91,
+          "games": 260
+        },
+        "Engine Battle 20250812": {
+          "wins": 52,
+          "losses": 100,
+          "draws": 86,
+          "games": 238
         }
       }
     },
     "Random Playing Opponent": {
       "performance": {
-        "total_games": 368,
-        "wins": 50,
-        "losses": 221,
-        "draws": 97,
-        "score": 98.5,
-        "win_rate": 13.59,
+        "total_games": 694,
+        "wins": 95,
+        "losses": 418,
+        "draws": 181,
+        "score": 185.5,
+        "win_rate": 13.69,
         "estimated_rating": 100.0,
-        "performance_rating": 1043.6,
-        "reliability_score": 0.92
+        "performance_rating": 1058.0,
+        "reliability_score": 0.96
       },
       "tournaments": [
         "Engine Battle 20250809",
-        "Engine Battle 20250811",
-        "Engine Battle 20250810"
+        "Engine Battle 20250810",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 0.2": {
           "wins": 3,
-          "losses": 46,
+          "losses": 53,
           "draws": 1
         },
         "SlowMate 0.1": {
           "wins": 0,
-          "losses": 17,
+          "losses": 22,
           "draws": 1
         },
         "SlowMate 0.0": {
           "wins": 0,
-          "losses": 19,
-          "draws": 0
+          "losses": 23,
+          "draws": 1
         },
         "Cece 1.3": {
           "wins": 3,
-          "losses": 33,
+          "losses": 38,
           "draws": 10
         },
         "SlowMate 0.3": {
           "wins": 0,
-          "losses": 1,
+          "losses": 4,
           "draws": 0
         },
         "Cece 1.2": {
           "wins": 1,
-          "losses": 5,
-          "draws": 2
+          "losses": 9,
+          "draws": 3
         },
         "V7P3RAI 1.0": {
-          "wins": 15,
-          "losses": 22,
-          "draws": 9
+          "wins": 25,
+          "losses": 39,
+          "draws": 13
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 33,
-          "draws": 4
+          "losses": 63,
+          "draws": 5
         },
         "Copycat 1.0": {
           "wins": 0,
-          "losses": 11,
-          "draws": 26
+          "losses": 20,
+          "draws": 48
         },
         "Cece 2.0": {
-          "wins": 2,
-          "losses": 17,
-          "draws": 8
+          "wins": 3,
+          "losses": 63,
+          "draws": 12
         },
         "Cecilia 0.1": {
-          "wins": 12,
+          "wins": 22,
           "losses": 0,
-          "draws": 15
+          "draws": 22
         },
         "Cecilia 0.2": {
-          "wins": 7,
+          "wins": 14,
           "losses": 0,
-          "draws": 11
+          "draws": 23
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 48,
           "draws": 0
         },
         "Cecilia 0.3": {
-          "wins": 7,
+          "wins": 17,
           "losses": 0,
-          "draws": 10
+          "draws": 29
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 3,
+          "losses": 9,
+          "draws": 3
+        },
+        "Cece 1.1": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 9
         }
       },
       "tournament_breakdown": {
@@ -2214,84 +3094,151 @@
           "games": 126
         },
         "Engine Battle 20250811": {
-          "wins": 28,
-          "losses": 85,
-          "draws": 58,
-          "games": 171
+          "wins": 32,
+          "losses": 155,
+          "draws": 72,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 41,
+          "losses": 127,
+          "draws": 70,
+          "games": 238
         }
       }
     },
     "Copycat 1.0": {
       "performance": {
-        "total_games": 296,
-        "wins": 62,
-        "losses": 122,
-        "draws": 112,
-        "score": 118.0,
-        "win_rate": 20.95,
-        "estimated_rating": 1185.3,
-        "performance_rating": 1016.3,
-        "reliability_score": 0.88
+        "total_games": 622,
+        "wins": 126,
+        "losses": 267,
+        "draws": 229,
+        "score": 240.5,
+        "win_rate": 20.26,
+        "estimated_rating": 1178.1,
+        "performance_rating": 1039.2,
+        "reliability_score": 0.92
       },
       "tournaments": [
-        "Engine Battle 20250811",
-        "Engine Battle 20250810"
+        "Engine Battle 20250810",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "Cece 1.3": {
-          "wins": 8,
-          "losses": 16,
-          "draws": 13
+          "wins": 9,
+          "losses": 18,
+          "draws": 15
         },
         "V7P3RAI 1.0": {
-          "wins": 11,
-          "losses": 18,
-          "draws": 8
+          "wins": 19,
+          "losses": 33,
+          "draws": 16
         },
         "SlowMate 0.0": {
           "wins": 1,
-          "losses": 4,
+          "losses": 9,
           "draws": 5
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 36,
-          "draws": 1
+          "losses": 66,
+          "draws": 2
         },
         "Random Playing Opponent": {
-          "wins": 11,
+          "wins": 20,
           "losses": 0,
-          "draws": 26
+          "draws": 48
         },
         "SlowMate 0.2": {
           "wins": 3,
-          "losses": 20,
-          "draws": 9
+          "losses": 26,
+          "draws": 10
         },
         "Cece 2.0": {
-          "wins": 1,
-          "losses": 13,
-          "draws": 13
+          "wins": 3,
+          "losses": 42,
+          "draws": 33
         },
         "Cecilia 0.1": {
-          "wins": 15,
-          "losses": 0,
-          "draws": 12
+          "wins": 18,
+          "losses": 1,
+          "draws": 25
         },
         "Cecilia 0.3": {
-          "wins": 5,
+          "wins": 17,
           "losses": 0,
-          "draws": 13
+          "draws": 30
         },
         "Cecilia 0.2": {
-          "wins": 7,
+          "wins": 16,
           "losses": 0,
-          "draws": 10
+          "draws": 20
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 15,
+          "losses": 46,
           "draws": 2
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 1
+        },
+        "Cece 1.1": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 2
+        },
+        "SlowMate 0.3.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 4
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 9,
+          "losses": 1,
+          "draws": 5
+        },
+        "Cece 1.2": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 6,
+          "losses": 0,
+          "draws": 8
         }
       },
       "tournament_breakdown": {
@@ -2302,84 +3249,151 @@
           "games": 125
         },
         "Engine Battle 20250811": {
-          "wins": 40,
-          "losses": 64,
-          "draws": 67,
-          "games": 171
+          "wins": 53,
+          "losses": 109,
+          "draws": 97,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 51,
+          "losses": 100,
+          "draws": 87,
+          "games": 238
         }
       }
     },
     "SlowMate 1.0": {
       "performance": {
-        "total_games": 296,
-        "wins": 227,
-        "losses": 15,
-        "draws": 54,
-        "score": 254.0,
-        "win_rate": 76.69,
-        "estimated_rating": 1250.6,
-        "performance_rating": 1548.0,
-        "reliability_score": 0.88
+        "total_games": 622,
+        "wins": 459,
+        "losses": 36,
+        "draws": 127,
+        "score": 522.5,
+        "win_rate": 73.79,
+        "estimated_rating": 1258.7,
+        "performance_rating": 1542.3,
+        "reliability_score": 0.92
       },
       "tournaments": [
-        "Engine Battle 20250811",
-        "Engine Battle 20250810"
+        "Engine Battle 20250810",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "Random Playing Opponent": {
-          "wins": 33,
+          "wins": 63,
           "losses": 0,
-          "draws": 4
+          "draws": 5
         },
         "SlowMate 0.2": {
-          "wins": 31,
+          "wins": 38,
           "losses": 0,
-          "draws": 1
+          "draws": 2
         },
         "Cece 1.3": {
-          "wins": 24,
+          "wins": 27,
           "losses": 0,
-          "draws": 13
+          "draws": 15
         },
         "Copycat 1.0": {
-          "wins": 36,
+          "wins": 66,
           "losses": 0,
-          "draws": 1
+          "draws": 2
         },
         "V7P3RAI 1.0": {
-          "wins": 37,
+          "wins": 68,
           "losses": 0,
           "draws": 0
         },
         "SlowMate 0.0": {
-          "wins": 8,
+          "wins": 13,
           "losses": 0,
           "draws": 2
         },
         "Cece 2.0": {
-          "wins": 27,
+          "wins": 66,
+          "losses": 0,
+          "draws": 13
+        },
+        "Cecilia 0.1": {
+          "wins": 21,
+          "losses": 0,
+          "draws": 23
+        },
+        "Stockfish 2650": {
+          "wins": 2,
+          "losses": 36,
+          "draws": 10
+        },
+        "Cecilia 0.3": {
+          "wins": 24,
+          "losses": 0,
+          "draws": 22
+        },
+        "Cecilia 0.2": {
+          "wins": 17,
+          "losses": 0,
+          "draws": 19
+        },
+        "Cece 1.0": {
+          "wins": 8,
+          "losses": 0,
+          "draws": 7
+        },
+        "SlowMate 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 4,
           "losses": 0,
           "draws": 1
         },
-        "Cecilia 0.1": {
-          "wins": 13,
+        "Cece 1.1": {
+          "wins": 3,
           "losses": 0,
-          "draws": 14
+          "draws": 0
         },
-        "Stockfish 2650": {
-          "wins": 0,
-          "losses": 15,
+        "SlowMate 0.3.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 1
+        },
+        "SlowMate 0.1.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 2,
+          "losses": 0,
           "draws": 2
         },
-        "Cecilia 0.3": {
-          "wins": 9,
+        "Cece_v2.1": {
+          "wins": 11,
           "losses": 0,
-          "draws": 8
-        },
-        "Cecilia 0.2": {
-          "wins": 9,
-          "losses": 0,
-          "draws": 8
+          "draws": 3
         }
       },
       "tournament_breakdown": {
@@ -2390,79 +3404,151 @@
           "games": 125
         },
         "Engine Battle 20250811": {
-          "wins": 119,
-          "losses": 15,
-          "draws": 37,
-          "games": 171
+          "wins": 186,
+          "losses": 18,
+          "draws": 55,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 165,
+          "losses": 18,
+          "draws": 55,
+          "games": 238
         }
       }
     },
     "Cece 2.0": {
       "performance": {
-        "total_games": 237,
-        "wins": 113,
-        "losses": 69,
-        "draws": 55,
-        "score": 140.5,
-        "win_rate": 47.68,
-        "estimated_rating": 1214.0,
-        "performance_rating": 1219.3,
-        "reliability_score": 0.88
+        "total_games": 703,
+        "wins": 344,
+        "losses": 201,
+        "draws": 158,
+        "score": 423.0,
+        "win_rate": 48.93,
+        "estimated_rating": 1219.3,
+        "performance_rating": 1244.5,
+        "reliability_score": 0.92
       },
       "tournaments": [
-        "Engine Battle 20250811",
-        "Engine Battle 20250810"
+        "Engine Battle 20250810",
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 0.2": {
-          "wins": 9,
-          "losses": 11,
-          "draws": 3
+          "wins": 14,
+          "losses": 12,
+          "draws": 5
         },
         "Copycat 1.0": {
-          "wins": 13,
-          "losses": 1,
-          "draws": 13
+          "wins": 42,
+          "losses": 3,
+          "draws": 33
         },
         "Cece 1.3": {
-          "wins": 15,
-          "losses": 6,
+          "wins": 18,
+          "losses": 8,
           "draws": 6
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 27,
-          "draws": 1
+          "losses": 66,
+          "draws": 13
         },
         "Random Playing Opponent": {
-          "wins": 17,
-          "losses": 2,
-          "draws": 8
+          "wins": 63,
+          "losses": 3,
+          "draws": 12
         },
         "V7P3RAI 1.0": {
-          "wins": 14,
-          "losses": 5,
-          "draws": 8
+          "wins": 38,
+          "losses": 21,
+          "draws": 18
         },
         "Cecilia 0.1": {
-          "wins": 22,
-          "losses": 0,
-          "draws": 5
+          "wins": 41,
+          "losses": 1,
+          "draws": 22
         },
         "Cecilia 0.3": {
-          "wins": 13,
-          "losses": 0,
-          "draws": 4
+          "wins": 50,
+          "losses": 1,
+          "draws": 15
         },
         "Cecilia 0.2": {
-          "wins": 10,
+          "wins": 39,
           "losses": 0,
-          "draws": 7
+          "draws": 17
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 67,
+          "draws": 1
+        },
+        "SlowMate 0.3": {
+          "wins": 3,
+          "losses": 0,
           "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.1.1": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 2
+        },
+        "SlowMate 0.1.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 9,
+          "losses": 1,
+          "draws": 5
+        },
+        "Cece 1.2": {
+          "wins": 3,
+          "losses": 1,
+          "draws": 1
+        },
+        "Cece_v2.1": {
+          "wins": 5,
+          "losses": 2,
+          "draws": 7
         }
       },
       "tournament_breakdown": {
@@ -2473,162 +3559,1225 @@
           "games": 66
         },
         "Engine Battle 20250811": {
-          "wins": 78,
-          "losses": 53,
-          "draws": 40,
-          "games": 171
+          "wins": 194,
+          "losses": 116,
+          "draws": 89,
+          "games": 399
+        },
+        "Engine Battle 20250812": {
+          "wins": 115,
+          "losses": 69,
+          "draws": 54,
+          "games": 238
         }
       }
     },
     "Cecilia 0.2": {
       "performance": {
-        "total_games": 171,
-        "wins": 0,
-        "losses": 67,
-        "draws": 104,
-        "score": 52.0,
-        "win_rate": 0.0,
-        "estimated_rating": 1166.8,
-        "performance_rating": 1074.0,
-        "reliability_score": 0.84
+        "total_games": 425,
+        "wins": 1,
+        "losses": 185,
+        "draws": 239,
+        "score": 120.5,
+        "win_rate": 0.24,
+        "estimated_rating": 1153.8,
+        "performance_rating": 1034.7,
+        "reliability_score": 0.88
       },
       "tournaments": [
+        "Engine Battle 20250812",
         "Engine Battle 20250811"
       ],
       "opponents": {
         "Random Playing Opponent": {
           "wins": 0,
-          "losses": 7,
-          "draws": 11
+          "losses": 14,
+          "draws": 23
         },
         "Cecilia 0.3": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 36
         },
         "Cecilia 0.1": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 34
         },
         "Cece 1.3": {
           "wins": 0,
-          "losses": 0,
-          "draws": 17
+          "losses": 1,
+          "draws": 21
         },
         "V7P3RAI 1.0": {
           "wins": 0,
           "losses": 0,
-          "draws": 17
+          "draws": 36
         },
         "SlowMate 0.2": {
           "wins": 0,
-          "losses": 17,
-          "draws": 0
+          "losses": 24,
+          "draws": 1
         },
         "Copycat 1.0": {
           "wins": 0,
-          "losses": 7,
-          "draws": 10
+          "losses": 16,
+          "draws": 20
         },
         "Cece 2.0": {
           "wins": 0,
-          "losses": 10,
-          "draws": 7
+          "losses": 39,
+          "draws": 17
         },
         "Stockfish 2650": {
           "wins": 0,
-          "losses": 17,
+          "losses": 36,
           "draws": 0
         },
         "SlowMate 1.0": {
           "wins": 0,
-          "losses": 9,
-          "draws": 8
+          "losses": 17,
+          "draws": 19
+        },
+        "SlowMate 0.1.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 3
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 1
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 14
+        },
+        "Cece 1.2": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 3
+        },
+        "SlowMate 0.3": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 11
         }
       },
       "tournament_breakdown": {
         "Engine Battle 20250811": {
           "wins": 0,
-          "losses": 67,
-          "draws": 104,
-          "games": 171
+          "losses": 125,
+          "draws": 134,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 1,
+          "losses": 60,
+          "draws": 105,
+          "games": 166
         }
       }
     },
     "Stockfish 2650": {
       "performance": {
-        "total_games": 170,
-        "wins": 166,
-        "losses": 0,
-        "draws": 4,
-        "score": 168.0,
-        "win_rate": 97.65,
+        "total_games": 497,
+        "wins": 477,
+        "losses": 2,
+        "draws": 18,
+        "score": 486.0,
+        "win_rate": 95.98,
         "estimated_rating": 2650.0,
-        "performance_rating": 1502.0,
-        "reliability_score": 0.84
+        "performance_rating": 1595.5,
+        "reliability_score": 0.88
       },
       "tournaments": [
+        "Engine Battle 20250812",
         "Engine Battle 20250811"
       ],
       "opponents": {
         "SlowMate 1.0": {
-          "wins": 15,
-          "losses": 0,
-          "draws": 2
+          "wins": 36,
+          "losses": 2,
+          "draws": 10
         },
         "Random Playing Opponent": {
-          "wins": 17,
+          "wins": 48,
           "losses": 0,
           "draws": 0
         },
         "Cecilia 0.3": {
-          "wins": 17,
+          "wins": 46,
           "losses": 0,
           "draws": 0
         },
         "Cecilia 0.1": {
-          "wins": 17,
+          "wins": 34,
           "losses": 0,
           "draws": 0
         },
         "Cece 1.3": {
-          "wins": 17,
+          "wins": 21,
           "losses": 0,
           "draws": 0
         },
         "V7P3RAI 1.0": {
-          "wins": 17,
+          "wins": 44,
           "losses": 0,
-          "draws": 0
+          "draws": 4
         },
         "SlowMate 0.2": {
-          "wins": 17,
+          "wins": 24,
           "losses": 0,
-          "draws": 0
+          "draws": 1
         },
         "Copycat 1.0": {
-          "wins": 15,
+          "wins": 46,
           "losses": 0,
           "draws": 2
         },
         "Cecilia 0.2": {
-          "wins": 17,
+          "wins": 36,
           "losses": 0,
           "draws": 0
         },
         "Cece 2.0": {
-          "wins": 17,
+          "wins": 67,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cece 1.0": {
+          "wins": 16,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece_v2.1": {
+          "wins": 14,
           "losses": 0,
           "draws": 0
         }
       },
       "tournament_breakdown": {
         "Engine Battle 20250811": {
-          "wins": 166,
+          "wins": 253,
           "losses": 0,
+          "draws": 6,
+          "games": 259
+        },
+        "Engine Battle 20250812": {
+          "wins": 224,
+          "losses": 2,
+          "draws": 12,
+          "games": 238
+        }
+      }
+    },
+    "SlowMate 0.3.3": {
+      "performance": {
+        "total_games": 68,
+        "wins": 35,
+        "losses": 31,
+        "draws": 2,
+        "score": 36.0,
+        "win_rate": 51.47,
+        "estimated_rating": 1208.5,
+        "performance_rating": 1242.0,
+        "reliability_score": 0.798
+      },
+      "tournaments": [
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "Cece 1.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 1
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "Cecilia 0.2": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "V7P3RAI 1.0": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "Random Playing Opponent": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.1": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 35,
+          "losses": 31,
+          "draws": 2,
+          "games": 68
+        }
+      }
+    },
+    "SlowMate 0.2.2": {
+      "performance": {
+        "total_games": 98,
+        "wins": 55,
+        "losses": 33,
+        "draws": 10,
+        "score": 60.0,
+        "win_rate": 56.12,
+        "estimated_rating": 1223.8,
+        "performance_rating": 1309.5,
+        "reliability_score": 0.878
+      },
+      "tournaments": [
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "Cecilia 0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2": {
+          "wins": 3,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 3,
+          "losses": 1,
+          "draws": 1
+        },
+        "Copycat 1.0": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 4
+        },
+        "Cecilia 0.2": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cece 2.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 2
+        },
+        "Cece 1.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 1
+        },
+        "V7P3RAI 1.0": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "Random Playing Opponent": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 41,
+          "losses": 21,
+          "draws": 6,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 14,
+          "losses": 12,
           "draws": 4,
-          "games": 170
+          "games": 30
+        }
+      }
+    },
+    "SlowMate 0.1.3": {
+      "performance": {
+        "total_games": 68,
+        "wins": 36,
+        "losses": 29,
+        "draws": 3,
+        "score": 37.5,
+        "win_rate": 52.94,
+        "estimated_rating": 1209.2,
+        "performance_rating": 1256.8,
+        "reliability_score": 0.798
+      },
+      "tournaments": [
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "Copycat 1.0": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cecilia 0.2": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "Cece 1.2": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "V7P3RAI 1.0": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.2": {
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 36,
+          "losses": 29,
+          "draws": 3,
+          "games": 68
+        }
+      }
+    },
+    "SlowMate 0.1.2": {
+      "performance": {
+        "total_games": 98,
+        "wins": 65,
+        "losses": 29,
+        "draws": 4,
+        "score": 67.0,
+        "win_rate": 66.33,
+        "estimated_rating": 1232.6,
+        "performance_rating": 1370.8,
+        "reliability_score": 0.878
+      },
+      "tournaments": [
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "Random Playing Opponent": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cece 1.1": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 1
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.2": {
+          "wins": 6,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.0": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 1
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "V7P3RAI 1.0": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 1
+        },
+        "SlowMate 0.0.1": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 46,
+          "losses": 18,
+          "draws": 4,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 19,
+          "losses": 11,
+          "draws": 0,
+          "games": 30
+        }
+      }
+    },
+    "SlowMate 0.1.1": {
+      "performance": {
+        "total_games": 68,
+        "wins": 40,
+        "losses": 26,
+        "draws": 2,
+        "score": 41.0,
+        "win_rate": 58.82,
+        "estimated_rating": 1218.2,
+        "performance_rating": 1296.9,
+        "reliability_score": 0.798
+      },
+      "tournaments": [
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "SlowMate 0.0": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cecilia 0.2": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "V7P3RAI 1.0": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.2": {
+          "wins": 3,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.1.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 0.0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 2,
+          "losses": 1,
+          "draws": 0
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2.2": {
+          "wins": 1,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.1.2": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.1": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 40,
+          "losses": 26,
+          "draws": 2,
+          "games": 68
+        }
+      }
+    },
+    "SlowMate 0.0.1": {
+      "performance": {
+        "total_games": 98,
+        "wins": 55,
+        "losses": 36,
+        "draws": 7,
+        "score": 58.5,
+        "win_rate": 56.12,
+        "estimated_rating": 1216.6,
+        "performance_rating": 1297.0,
+        "reliability_score": 0.878
+      },
+      "tournaments": [
+        "Engine Battle 20250812",
+        "Engine Battle 20250811"
+      ],
+      "opponents": {
+        "SlowMate 0.1": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.0": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Copycat 1.0": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 1
+        },
+        "Cecilia 0.2": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 2.0": {
+          "wins": 2,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece 1.2": {
+          "wins": 4,
+          "losses": 1,
+          "draws": 0
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 1
+        },
+        "V7P3RAI 1.0": {
+          "wins": 3,
+          "losses": 2,
+          "draws": 0
+        },
+        "SlowMate 0.3": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "SlowMate 0.2": {
+          "wins": 4,
+          "losses": 3,
+          "draws": 1
+        },
+        "SlowMate 0.1.3": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "SlowMate 0.1.1": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0
+        },
+        "Cece 1.0": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.3": {
+          "wins": 5,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cecilia 0.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Cece 1.3": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "Cece 1.1": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0
+        },
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 0
+        },
+        "SlowMate 0.3.3": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 1
+        },
+        "SlowMate 0.2.2": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 1
+        },
+        "SlowMate 0.1.2": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 0
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250811": {
+          "wins": 40,
+          "losses": 21,
+          "draws": 7,
+          "games": 68
+        },
+        "Engine Battle 20250812": {
+          "wins": 15,
+          "losses": 15,
+          "draws": 0,
+          "games": 30
+        }
+      }
+    },
+    "Cece_v2.1": {
+      "performance": {
+        "total_games": 132,
+        "wins": 10,
+        "losses": 51,
+        "draws": 71,
+        "score": 45.5,
+        "win_rate": 7.58,
+        "estimated_rating": 1173.8,
+        "performance_rating": 1101.2,
+        "reliability_score": 0.84
+      },
+      "tournaments": [
+        "Engine Battle 20250812"
+      ],
+      "opponents": {
+        "Stockfish 2650": {
+          "wins": 0,
+          "losses": 14,
+          "draws": 0
+        },
+        "Random Playing Opponent": {
+          "wins": 1,
+          "losses": 4,
+          "draws": 9
+        },
+        "Cece 2.0": {
+          "wins": 2,
+          "losses": 5,
+          "draws": 7
+        },
+        "V7P3RAI 1.0": {
+          "wins": 2,
+          "losses": 5,
+          "draws": 7
+        },
+        "SlowMate 1.0": {
+          "wins": 0,
+          "losses": 11,
+          "draws": 3
+        },
+        "Copycat 1.0": {
+          "wins": 0,
+          "losses": 6,
+          "draws": 8
+        },
+        "Cece 1.0": {
+          "wins": 0,
+          "losses": 5,
+          "draws": 7
+        },
+        "Cecilia 0.2": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 11
+        },
+        "Cecilia 0.1": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 11
+        },
+        "Cecilia 0.3": {
+          "wins": 3,
+          "losses": 1,
+          "draws": 8
+        }
+      },
+      "tournament_breakdown": {
+        "Engine Battle 20250812": {
+          "wins": 10,
+          "losses": 51,
+          "draws": 71,
+          "games": 132
         }
       }
     },
@@ -2641,7 +4790,7 @@
         "score": 30.0,
         "win_rate": 100.0,
         "estimated_rating": 3645.0,
-        "performance_rating": 1626.2,
+        "performance_rating": 1624.4,
         "reliability_score": 0.469
       },
       "tournaments": [
