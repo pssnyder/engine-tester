@@ -72,12 +72,23 @@ def load_data(tournament_folder=None):
 
 def parse_engine_family(engine_name):
     """Extract engine family for grouping"""
+    # Check for each engine family based on directory structure
     if 'SlowMate' in engine_name:
         return 'SlowMate'
+    elif 'Cecilia' in engine_name:  # Check Cecilia before Cece to avoid conflicts
+        return 'Cecilia'
     elif 'Cece' in engine_name:
         return 'Cece'  
-    elif 'Cecilia' in engine_name:
-        return 'Cecilia'
+    elif 'Copycat' in engine_name:
+        return 'Copycat'
+    elif 'V7P3RAI' in engine_name:
+        return 'V7P3RAI'
+    elif 'V7P3R' in engine_name:
+        return 'V7P3R'
+    elif 'Stockfish' in engine_name or 'stockfish' in engine_name.lower():
+        return 'Stockfish'
+    elif 'Random' in engine_name or 'Opponent' in engine_name:
+        return 'Opponents'
     else:
         return 'Other'
 
@@ -98,7 +109,7 @@ def parse_version_number(engine_name):
                 return f"{int(parts[0])}.{int(parts[1])}.0"
     return "0.0.0"
 
-def create_unified_overview(unified_data):
+def create_unified_overview(unified_data, show_stockfish: bool, date_filtered_rankings: List[Dict[str, Any]]):
     """Create comprehensive overview across all tournaments"""
     st.header("🏆 Unified Engine Rankings - All Tournaments")
     
@@ -133,23 +144,12 @@ def create_unified_overview(unified_data):
                     for variant in variants:
                         st.write(f"  • `{variant}`")
     
-    # Stockfish Achievement Highlight
-    stockfish_achievers = unified_data.get('stockfish_achievers', [])
-    if stockfish_achievers:
-        st.subheader("🎯 STOCKFISH ACHIEVEMENT UNLOCKED!")
-        st.success("Your engines have successfully drawn against Stockfish 1%!")
-        
-        for achiever in stockfish_achievers:
-            # Add consolidation indicator if available
-            consolidation_note = ""
-            if consolidation_info.get('consolidated_groups', {}).get(achiever['name']):
-                variants = consolidation_info['consolidated_groups'][achiever['name']]
-                consolidation_note = f" (Consolidated from {len(variants)} variants)"
-            
-            st.info(f"**{achiever['name']}**: {achiever['draws_vs_stockfish']} draws out of {achiever['stockfish_games']} games vs Stockfish (Rating: {achiever['estimated_rating']:.0f}){consolidation_note}")
+    # Stockfish achievement section removed for cleaner focus on custom engine progress
     
     # Top Rankings
-    rankings = unified_data.get('unified_rankings', [])
+    rankings = date_filtered_rankings or unified_data.get('unified_rankings', [])
+    if not show_stockfish:
+        rankings = [r for r in rankings if not r['name'].lower().startswith('stockfish')]
     if rankings:
         st.subheader("🏅 Complete Engine Rankings by Estimated ELO")
         
@@ -162,12 +162,24 @@ def create_unified_overview(unified_data):
         st.write("**Engine Family Distribution:**")
         col1, col2, col3, col4 = st.columns(4)
         family_items = list(families.items())
+        
+        # Define icons for each engine family
+        family_icons = {
+            'SlowMate': '🚀',      # Rocket for your main engine
+            'Cece': '♟️',          # Pawn for Cece family
+            'Cecilia': '👑',       # Crown for Cecilia family  
+            'Copycat': '🪞',       # Mirror for Copycat
+            'V7P3RAI': '🤖',       # Robot for AI engine
+            'V7P3R': '⚙️',        # Gear for V7P3R
+            'Stockfish': '🐠',     # Fish for Stockfish
+            'Opponents': '🎯',     # Target for opponents
+            'Other': '❓'          # Question mark for others
+        }
+        
         for i, (family, count) in enumerate(family_items):
             col = [col1, col2, col3, col4][i % 4]
-            if family == "SlowMate":
-                col.metric(f"🚀 {family}", count)
-            else:
-                col.metric(f"⭐ {family}", count)
+            icon = family_icons.get(family, '⭐')
+            col.metric(f"{icon} {family}", count)
         
         # Filter options
         st.subheader("📊 Rankings Display Options")
@@ -221,7 +233,17 @@ def create_unified_overview(unified_data):
                     'estimated_rating': 'Estimated ELO Rating',
                 'reliability_score': 'Reliability Score'
             },
-            color_discrete_map={'SlowMate': '#1f77b4', 'Cece': '#ff7f0e', 'Cecilia': '#2ca02c', 'Other': '#d62728'}
+            color_discrete_map={
+                'SlowMate': '#1f77b4',     # Blue
+                'Cece': '#ff7f0e',         # Orange  
+                'Cecilia': '#2ca02c',      # Green
+                'Copycat': '#d62728',      # Red
+                'V7P3RAI': '#9467bd',      # Purple
+                'V7P3R': '#8c564b',        # Brown
+                'Stockfish': '#e377c2',    # Pink
+                'Opponents': '#7f7f7f',    # Gray
+                'Other': '#bcbd22'         # Olive
+            }
         )
         fig_scatter.update_layout(height=500)
         st.plotly_chart(fig_scatter, use_container_width=True)
@@ -243,72 +265,7 @@ def create_unified_overview(unified_data):
         st.dataframe(display_df, use_container_width=True, hide_index=True)
 
 def create_stockfish_analysis(unified_data):
-    """Detailed analysis of Stockfish achievements"""
-    st.header("⚔️ Stockfish Achievement Analysis")
-    
-    stockfish_achievers = unified_data.get('stockfish_achievers', [])
-    consolidation_info = unified_data.get('consolidation_summary', {})
-    
-    if not stockfish_achievers:
-        st.info("No engines have notable results against Stockfish yet.")
-        return
-    
-    st.subheader("🎖️ Hall of Fame: Engines That Drew Stockfish")
-    
-    for achiever in stockfish_achievers:
-        # Check if this engine was consolidated
-        consolidated_groups = consolidation_info.get('consolidated_groups', {})
-        consolidation_note = ""
-        if achiever['name'] in consolidated_groups:
-            variants = consolidated_groups[achiever['name']]
-            consolidation_note = f" (Consolidated from {len(variants)} naming variants)"
-        
-        with st.expander(f"🏆 {achiever['name']} - {achiever['draws_vs_stockfish']} draws vs Stockfish{consolidation_note}"):
-            # Show consolidation details if applicable
-            if achiever['name'] in consolidated_groups:
-                st.info(f"**Data Consolidation**: This engine's results combine data from {len(consolidated_groups[achiever['name']])} naming variants:")
-                for variant in consolidated_groups[achiever['name']]:
-                    st.write(f"  • `{variant}`")
-                st.write("---")
-            
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                st.metric("Draws vs Stockfish", achiever['draws_vs_stockfish'])
-                st.metric("Total Games vs Stockfish", achiever['stockfish_games'])
-                st.metric("Estimated Rating", f"{achiever['estimated_rating']:.0f}")
-                st.metric("Total Games (All Opponents)", achiever.get('games', 'N/A'))
-            
-            with col2:
-                # Calculate survival rate against Stockfish
-                survival_rate = (achiever['draws_vs_stockfish'] / achiever['stockfish_games']) * 100
-                st.metric("Survival Rate vs Stockfish", f"{survival_rate:.1f}%")
-                
-                # Show statistical significance
-                expected_survival = 0.1  # Expected for rating gap
-                actual_vs_expected = survival_rate / expected_survival
-                st.metric("vs Expected Performance", f"{actual_vs_expected:.1f}x better")
-                
-                # Show what this means in context
-                if survival_rate > 10:
-                    st.success("🔥 Exceptional performance!")
-                elif survival_rate > 5:
-                    st.info("✨ Strong showing!")
-                else:
-                    st.info("💪 Respectable effort!")
-    
-    # Rating implications
-    st.subheader("📈 What This Means")
-    st.markdown("""
-    Drawing against Stockfish 1% is a significant achievement because:
-    - **Stockfish 1%** ≈ 2200+ ELO (still very strong!)
-    - **Your engines** are estimated around 1200-1280 ELO
-    - **Rating gap** of ~1000 points typically means 0.1% chance of non-loss
-    - **Your achievement** suggests either:
-      - Engines are stronger than estimated
-      - Stockfish had tactical oversights in specific positions
-      - Excellent defensive play in drawn endgames
-    """)
+    st.info("Stockfish specific analysis view has been deprecated to focus on custom engine development metrics.")
 
 def create_rating_progression(unified_data):
     """Show engine development progression"""
@@ -317,16 +274,28 @@ def create_rating_progression(unified_data):
     rankings = unified_data.get('unified_rankings', [])
     engine_details = unified_data.get('engine_details', {})
     
-    # Focus on SlowMate progression
-    slowmate_engines = [e for e in rankings if 'SlowMate' in e['name']]
+    # Get all available families for selection
+    all_engines = [e['name'] for e in rankings]
+    families = list(set([parse_engine_family(name) for name in all_engines]))
+    families = [f for f in families if f not in ['Stockfish', 'Opponents', 'Other']]  # Focus on custom engines
     
-    if not slowmate_engines:
-        st.info("No SlowMate engines found for progression analysis.")
+    if not families:
+        st.info("No custom engine families found for progression analysis.")
+        return
+    
+    # Family selection
+    selected_family = st.selectbox("Select engine family for progression analysis:", families, index=0)
+    
+    # Get engines from selected family
+    family_engines = [e for e in rankings if parse_engine_family(e['name']) == selected_family]
+    
+    if not family_engines:
+        st.info(f"No {selected_family} engines found for progression analysis.")
         return
     
     # Create progression DataFrame
     progression_data = []
-    for engine in slowmate_engines:
+    for engine in family_engines:
         # Extract version for sorting
         version_match = re.search(r'v?(\d+)\.(\d+)\.?(\d*)', engine['name'])
         if version_match:
@@ -361,7 +330,7 @@ def create_rating_progression(unified_data):
     ))
     
     fig_progression.update_layout(
-        title="SlowMate Version Rating Progression",
+        title=f"{selected_family} Version Rating Progression",
         xaxis_title="Version",
         yaxis_title="Estimated ELO Rating",
         height=500,
@@ -374,14 +343,14 @@ def create_rating_progression(unified_data):
     col1, col2 = st.columns(2)
     
     with col1:
-        best_engine = max(slowmate_engines, key=lambda e: e['estimated_rating'])
-        st.success(f"🏆 **Best SlowMate**: {best_engine['name']}")
+        best_engine = max(family_engines, key=lambda e: e['estimated_rating'])
+        st.success(f"🏆 **Best {selected_family}**: {best_engine['name']}")
         st.write(f"Rating: {best_engine['estimated_rating']:.0f}")
         st.write(f"Games: {best_engine['games']}")
         st.write(f"Win Rate: {best_engine['win_rate']:.1f}%")
     
     with col2:
-        worst_engine = min(slowmate_engines, key=lambda e: e['estimated_rating'])
+        worst_engine = min(family_engines, key=lambda e: e['estimated_rating'])
         st.warning(f"📉 **Needs Work**: {worst_engine['name']}")
         st.write(f"Rating: {worst_engine['estimated_rating']:.0f}")
         st.write(f"Games: {worst_engine['games']}")
@@ -804,7 +773,7 @@ def main():
         "Choose Analysis View",
         [
             "Unified Rankings",
-            "Stockfish Achievements", 
+            # Removed explicit Stockfish page
             "Engine Behavioral Analysis",
             "Engine Landscape",
             "Rating Progression",
@@ -818,6 +787,39 @@ def main():
     
     rankings = unified_data.get('unified_rankings', [])
     if rankings:
+        # Date range filter using normalized games metadata
+        game_meta = unified_data.get('games', [])
+        date_range = unified_data.get('date_range', {})
+        filtered_rankings = unified_data.get('unified_rankings', [])
+        if game_meta and date_range.get('min') and date_range.get('max'):
+            min_date = datetime.datetime.fromisoformat(date_range['min'])
+            max_date = datetime.datetime.fromisoformat(date_range['max'])
+            date_selection = st.sidebar.date_input(
+                "Date Range",
+                value=(min_date, max_date),
+                min_value=min_date, max_value=max_date
+            )
+            # Handle both single date and date range returns
+            if isinstance(date_selection, tuple) and len(date_selection) == 2:
+                start_date, end_date = date_selection
+            elif isinstance(date_selection, tuple) and len(date_selection) == 1:
+                start_date = end_date = date_selection[0]
+            else:
+                start_date = end_date = date_selection
+            
+            # Filter games within range and derive engines included in that window for dynamic ranking subset display (simple filter)
+            if isinstance(start_date, datetime.date) and isinstance(end_date, datetime.date):
+                engines_in_range = set()
+                for g in game_meta:
+                    g_date = datetime.date.fromisoformat(g['date'])
+                    if start_date <= g_date <= end_date:
+                        engines_in_range.add(g['white'])
+                        engines_in_range.add(g['black'])
+                filtered_rankings = [r for r in filtered_rankings if r['name'] in engines_in_range]
+
+        # Toggle Stockfish visibility
+        show_stockfish = st.sidebar.checkbox("Include Stockfish", value=False, help="Show/hide Stockfish to prevent scale distortion")
+
         # Engine family filter
         all_engines = [e['name'] for e in rankings]
         families = list(set([parse_engine_family(name) for name in all_engines]))
@@ -852,9 +854,7 @@ def main():
     
     # Display selected page
     if page == "Unified Rankings":
-        create_unified_overview(unified_data)
-    elif page == "Stockfish Achievements":
-        create_stockfish_analysis(unified_data)
+        create_unified_overview(unified_data, show_stockfish, filtered_rankings)
     elif page == "Engine Behavioral Analysis":
         create_behavioral_analysis()
     elif page == "Engine Landscape":
