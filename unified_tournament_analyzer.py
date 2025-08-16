@@ -290,12 +290,14 @@ class UnifiedTournamentAnalyzer:
     def __init__(self, results_dir: str = RESULTS_DIR):
         self.results_dir = results_dir
         self.games: List[GameRecord] = []
+        # Normalized games (canonical names) for downstream temporal filtering / dashboard
+        self.normalized_games: List[GameRecord] = []
         self.engines: Dict[str, EnginePerformance] = {}  # Using canonical names as keys
         self.tournaments: Dict[str, Dict] = {}
         self.engine_ratings: Dict[str, float] = {}
         self.manual_name_mapping: Dict[str, str] = {}  # Manual mapping from file
         self.rating_overrides: Dict[str, float] = {}  # Manual rating overrides
-        
+
         # Load manual name mapping and rating overrides
         self.manual_name_mapping, self.rating_overrides = load_name_mapping()
         print(f"📋 Loaded manual name mapping with {len(self.manual_name_mapping)} variants")
@@ -445,6 +447,8 @@ class UnifiedTournamentAnalyzer:
                 opening=game.opening,
                 eco=game.eco
             )
+            # Store normalized game for later date / range filtering in dashboard
+            self.normalized_games.append(normalized_game)
             
             # Add game to both engines' records using canonical names
             self.engines[canonical_white].add_game(normalized_game, playing_white=True)
@@ -624,9 +628,37 @@ class UnifiedTournamentAnalyzer:
                 "consolidated_groups": {}
             }
 
+        # Derive date range and compact game list (only essential fields) for dashboard filters
+        compact_games = []
+        min_date = None
+        max_date = None
+        for g in self.normalized_games:
+            # Expect dates like YYYY.MM.DD; skip if unknown
+            raw_date = g.date
+            if raw_date and re.match(r"\d{4}\.\d{2}\.\d{2}", raw_date):
+                iso_date = raw_date.replace('.', '-')
+                try:
+                    # Validate date
+                    datetime.date.fromisoformat(iso_date)
+                except ValueError:
+                    continue
+                compact_games.append({
+                    "white": g.white,
+                    "black": g.black,
+                    "result": g.result,
+                    "date": iso_date,
+                    "tournament": g.tournament
+                })
+                if not min_date or iso_date < min_date:
+                    min_date = iso_date
+                if not max_date or iso_date > max_date:
+                    max_date = iso_date
+
         return {
             "analysis_date": datetime.datetime.now().isoformat(),
             "consolidation_summary": consolidation_summary,
+            "date_range": {"min": min_date, "max": max_date},
+            "games": compact_games,
             "summary": {
                 "total_games": len(self.games),
                 "total_engines": len(self.engines),
