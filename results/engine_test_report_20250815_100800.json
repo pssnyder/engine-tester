@@ -1,0 +1,17 @@
+[
+  {
+    "engine": "Stockfish_800_ELO.exe",
+    "path": "engines/Opponents\\Stockfish_800_ELO.exe",
+    "critical_pass": false,
+    "total_duration": 0.008971691131591797,
+    "stages": [
+      {
+        "name": "launch",
+        "ok": false,
+        "duration": 0.008971691131591797,
+        "detail": "[WinError 216] This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher",
+        "fail_type": "CRASH"
+      }
+    ]
+  }
+]
