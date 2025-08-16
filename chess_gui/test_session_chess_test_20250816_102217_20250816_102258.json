@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "session_id": "chess_test_20250816_102217",
+    "export_timestamp": "2025-08-16T10:22:58.114970",
+    "duration_seconds": 41.044923543930054,
+    "chess_ai_version": "1.0",
+    "format_version": "1.0"
+  },
+  "metrics": {
+    "session_id": "chess_test_20250816_102217",
+    "start_time": 1755354137.0700471,
+    "end_time": 1755354178.1149707,
+    "total_moves": 1,
+    "total_evaluations": 1,
+    "total_tests": 0,
+    "engines_used": [
+      "chess-ai-auto"
+    ],
+    "positions_analyzed": 1
+  },
+  "moves": [
+    {
+      "move_number": 1,
+      "player": "human",
+      "move_uci": "e2e4",
+      "move_san": "e4",
+      "time_taken": 0.0,
+      "fen_before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "fen_after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "timestamp": 1755354139.3376436
+    }
+  ],
+  "evaluations": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "evaluator": "chess-ai-auto",
+      "score": 40,
+      "depth": 2,
+      "nodes": 414,
+      "time_ms": 26.96084976196289,
+      "nps": 14345,
+      "pv": [
+        "f7f6",
+        "f2f3"
+      ],
+      "is_mate": false,
+      "mate_in": null,
+      "timestamp": 1755354139.3656042
+    }
+  ],
+  "test_actions": [],
+  "position_history": [
+    "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+  ],
+  "session_notes": [
+    "[10:22:17] chess-ai engine loaded with direct Python access"
+  ],
+  "final_position": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+}
