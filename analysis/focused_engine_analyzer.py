@@ -48,8 +48,9 @@ class FocusedEngineAnalyzer:
     def load_name_mapping(self) -> Dict:
         """Load name consolidation mapping"""
         try:
-            with open('engine_name_mapping.json', 'r') as f:
-                return json.load(f)
+            with open('results/name_consolidation.json', 'r') as f:
+                data = json.load(f)
+                return data.get('name_consolidation', {}).get('consolidations', {})
         except FileNotFoundError:
             print("Warning: No engine name mapping found")
             return {}
