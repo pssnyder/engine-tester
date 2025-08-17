@@ -1,0 +1,144 @@
+{
+  "godot_opponents": {
+    "beginner": [
+      {
+        "name": "CopyCat",
+        "bot_id": 17,
+        "elo": 192,
+        "description": "Mirrors opponent moves - perfect for testing pattern recognition",
+        "personality": "copycat",
+        "difficulty": "beginner",
+        "test_focus": ["pattern_recognition", "move_mirroring"]
+      },
+      {
+        "name": "BongcloudEnthusiast", 
+        "bot_id": 278,
+        "elo": 307,
+        "description": "Always plays bongcloud opening - tests opening exploitation",
+        "personality": "opening_specialist",
+        "difficulty": "beginner", 
+        "test_focus": ["opening_exploitation", "poor_opening_punishment"]
+      }
+    ],
+    "intermediate": [
+      {
+        "name": "WhateverBot",
+        "bot_id": 153,
+        "elo": 677,
+        "description": "1-move lookahead with basic tactics",
+        "personality": "basic_tactical",
+        "difficulty": "intermediate",
+        "test_focus": ["basic_tactics", "piece_development", "safety"]
+      },
+      {
+        "name": "applemethod",
+        "bot_id": 70,
+        "elo": 1085,
+        "description": "Material and tempo focused with multi-move search",
+        "personality": "material_tempo",
+        "difficulty": "intermediate",
+        "test_focus": ["material_evaluation", "tempo", "multi_move_search"]
+      },
+      {
+        "name": "Squeedo",
+        "bot_id": 253,
+        "elo": 1276,
+        "description": "Pawn advancement and piece development focused",
+        "personality": "positional",
+        "difficulty": "intermediate",
+        "test_focus": ["pawn_structure", "piece_development", "mobility"]
+      }
+    ],
+    "advanced": [
+      {
+        "name": "Monstrosity200",
+        "bot_id": 425,
+        "elo": 1569,
+        "description": "200-token efficiency challenge - mobility focused",
+        "personality": "efficient",
+        "difficulty": "advanced",
+        "test_focus": ["code_efficiency", "mobility", "material"]
+      },
+      {
+        "name": "GameTechExplained",
+        "bot_id": 266,
+        "elo": 1713,
+        "description": "Positional understanding and piece placement",
+        "personality": "positional_advanced",
+        "difficulty": "advanced",
+        "test_focus": ["positional_understanding", "piece_placement"]
+      },
+      {
+        "name": "ElectricShockwaveGambit",
+        "bot_id": 303,
+        "elo": 2001,
+        "description": "Mobility and safety focused with deep search",
+        "personality": "mobility_safety",
+        "difficulty": "advanced",
+        "test_focus": ["piece_mobility", "piece_safety", "deep_search"]
+      },
+      {
+        "name": "KingGambotIV",
+        "bot_id": 628,
+        "elo": 2172,
+        "description": "Aggressive king play with deep search techniques",
+        "personality": "aggressive_king",
+        "difficulty": "advanced",
+        "test_focus": ["aggressive_play", "king_activity", "unconventional_strategies"]
+      }
+    ],
+    "expert": [
+      {
+        "name": "NNBot",
+        "bot_id": 529,
+        "elo": 2246,
+        "description": "Neural network evaluation with compressed AI",
+        "personality": "neural_network",
+        "difficulty": "expert",
+        "test_focus": ["neural_evaluation", "tempo", "advanced_positioning"]
+      },
+      {
+        "name": "TinyHugeBot",
+        "bot_id": 610,
+        "elo": 2513,
+        "description": "Code compression exploit with optimized deep search",
+        "personality": "search_optimized",
+        "difficulty": "expert",
+        "test_focus": ["deep_search", "search_optimization", "piece_placement"]
+      },
+      {
+        "name": "Boychesser",
+        "bot_id": 614,
+        "elo": 2772,
+        "description": "Tournament winner - tactical excellence and deep search",
+        "personality": "tactical_master",
+        "difficulty": "expert",
+        "test_focus": ["tactical_combinations", "deep_search", "positional_mastery", "endgame"]
+      }
+    ]
+  },
+  "difficulty_ranges": {
+    "beginner": "192-500 ELO - Basic patterns and exploitable weaknesses",
+    "intermediate": "501-1300 ELO - Tactical awareness and basic strategy", 
+    "advanced": "1301-2200 ELO - Advanced positioning and search depth",
+    "expert": "2201+ ELO - Master-level play and optimization"
+  },
+  "test_categories": {
+    "pattern_recognition": "Tests engine's ability to recognize and counter repetitive patterns",
+    "opening_exploitation": "Tests engine's ability to punish poor opening choices",
+    "basic_tactics": "Tests fundamental tactical awareness (pins, forks, skewers)",
+    "material_evaluation": "Tests accurate piece value assessment",
+    "tempo": "Tests understanding of move timing and initiative",
+    "pawn_structure": "Tests pawn formation and advancement strategies",
+    "piece_development": "Tests proper piece placement and development",
+    "mobility": "Tests preference for piece activity and movement options",
+    "piece_safety": "Tests ability to protect pieces and avoid blunders",
+    "positional_understanding": "Tests long-term strategic planning",
+    "deep_search": "Tests engine's search depth and calculation ability",
+    "aggressive_play": "Tests response to unconventional aggressive strategies",
+    "neural_evaluation": "Tests against AI-based position evaluation",
+    "search_optimization": "Tests against highly optimized search algorithms",
+    "tactical_combinations": "Tests complex tactical sequence recognition",
+    "endgame": "Tests endgame technique and conversion ability"
+  }
+}

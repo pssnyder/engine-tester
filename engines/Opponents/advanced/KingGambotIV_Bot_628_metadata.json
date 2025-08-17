@@ -1,0 +1,15 @@
+{
+  "name": "KingGambotIV",
+  "bot_id": 628,
+  "elo": 2172,
+  "description": "Aggressive king play with deep search techniques",
+  "personality": "aggressive_king",
+  "difficulty": "advanced",
+  "test_focus": [
+    "aggressive_play",
+    "king_activity",
+    "unconventional_strategies"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_628.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\KingGambotIV_Bot_628.cs"
+}
