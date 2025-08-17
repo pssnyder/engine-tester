@@ -1,0 +1,14 @@
+{
+  "name": "GameTechExplained",
+  "bot_id": 266,
+  "elo": 1713,
+  "description": "Positional understanding and piece placement",
+  "personality": "positional_advanced",
+  "difficulty": "advanced",
+  "test_focus": [
+    "positional_understanding",
+    "piece_placement"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_266.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\GameTechExplained_Bot_266.cs"
+}

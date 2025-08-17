@@ -1,0 +1,14 @@
+{
+  "name": "BongcloudEnthusiast",
+  "bot_id": 278,
+  "elo": 307,
+  "description": "Always plays bongcloud opening - tests opening exploitation",
+  "personality": "opening_specialist",
+  "difficulty": "beginner",
+  "test_focus": [
+    "opening_exploitation",
+    "poor_opening_punishment"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_278.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\beginner\\BongcloudEnthusiast_Bot_278.cs"
+}

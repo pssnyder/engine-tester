@@ -1,0 +1,15 @@
+{
+  "name": "TinyHugeBot",
+  "bot_id": 610,
+  "elo": 2513,
+  "description": "Code compression exploit with optimized deep search",
+  "personality": "search_optimized",
+  "difficulty": "expert",
+  "test_focus": [
+    "deep_search",
+    "search_optimization",
+    "piece_placement"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_610.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\TinyHugeBot_Bot_610.cs"
+}

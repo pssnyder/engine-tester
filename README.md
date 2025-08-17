@@ -401,3 +401,11 @@ streamlit run dashboard.py
 - Engine testing reports in `results/`
 - Tournament analysis in `results/unified_tournament_analysis.json` 
 - Interactive dashboard at `http://localhost:8501`
+
+
+# User's Engine Notes:
+- **SlowMate**: Strongest engine to date is v1.0, however previous versions show inconsistent progression. 
+- **V7P3R**: Aggressive moves and strong tactical play in v4.1 but has issues with time management in <300/5 time controls.
+- **CopyCat & V7P3RAI**: Model based engines, more difficult to debug, will most likely fall out of tournament play as static engines progress in performance beyond current model capabilities.
+- **Random_Opponent**: Remains good baseline for minimal 100 ELO play. Quickly identifies weaknesses in other engines.
+- **Cece & Cecilia**: Identical evaluation functions, Cece uses prebuilt libraries, Cecelia implements its own search functions. Each show evaluation issues early in development, need development heuristics such as progressive lower of the eval for non-threatened pieces that have already been moved in the last five moves, preventing piece shuffling and repeat piece movements during development phases.

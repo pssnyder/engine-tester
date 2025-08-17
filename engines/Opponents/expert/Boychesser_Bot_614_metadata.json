@@ -1,0 +1,16 @@
+{
+  "name": "Boychesser",
+  "bot_id": 614,
+  "elo": 2772,
+  "description": "Tournament winner - tactical excellence and deep search",
+  "personality": "tactical_master",
+  "difficulty": "expert",
+  "test_focus": [
+    "tactical_combinations",
+    "deep_search",
+    "positional_mastery",
+    "endgame"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_614.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\Boychesser_Bot_614.cs"
+}

@@ -1,0 +1,23 @@
+{
+  "session_id": "chess_session_20250817_103629",
+  "session_start": 1755441389.963694,
+  "session_duration": 10.06427550315857,
+  "moves": [
+    {
+      "move": "d2d4",
+      "player": "Human",
+      "time_taken": 0,
+      "timestamp": 1755441394.8303766,
+      "move_number": 1,
+      "fen_before": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "fen_after": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+    }
+  ],
+  "evaluations": [],
+  "notes": [],
+  "stats": {
+    "total_moves": 1,
+    "total_evaluations": 0,
+    "total_notes": 0
+  }
+}

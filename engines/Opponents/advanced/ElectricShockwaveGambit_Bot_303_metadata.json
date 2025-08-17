@@ -1,0 +1,15 @@
+{
+  "name": "ElectricShockwaveGambit",
+  "bot_id": 303,
+  "elo": 2001,
+  "description": "Mobility and safety focused with deep search",
+  "personality": "mobility_safety",
+  "difficulty": "advanced",
+  "test_focus": [
+    "piece_mobility",
+    "piece_safety",
+    "deep_search"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_303.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\ElectricShockwaveGambit_Bot_303.cs"
+}
