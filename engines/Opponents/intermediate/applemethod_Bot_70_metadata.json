@@ -1,0 +1,15 @@
+{
+  "name": "applemethod",
+  "bot_id": 70,
+  "elo": 1085,
+  "description": "Material and tempo focused with multi-move search",
+  "personality": "material_tempo",
+  "difficulty": "intermediate",
+  "test_focus": [
+    "material_evaluation",
+    "tempo",
+    "multi_move_search"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_70.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\applemethod_Bot_70.cs"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "WhateverBot",
+  "bot_id": 153,
+  "elo": 677,
+  "description": "1-move lookahead with basic tactics",
+  "personality": "basic_tactical",
+  "difficulty": "intermediate",
+  "test_focus": [
+    "basic_tactics",
+    "piece_development",
+    "safety"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_153.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\WhateverBot_Bot_153.cs"
+}

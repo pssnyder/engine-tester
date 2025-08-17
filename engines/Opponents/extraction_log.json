@@ -1,0 +1,180 @@
+[
+  {
+    "name": "CopyCat",
+    "bot_id": 17,
+    "elo": 192,
+    "description": "Mirrors opponent moves - perfect for testing pattern recognition",
+    "personality": "copycat",
+    "difficulty": "beginner",
+    "test_focus": [
+      "pattern_recognition",
+      "move_mirroring"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_17.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\beginner\\CopyCat_Bot_17.cs"
+  },
+  {
+    "name": "BongcloudEnthusiast",
+    "bot_id": 278,
+    "elo": 307,
+    "description": "Always plays bongcloud opening - tests opening exploitation",
+    "personality": "opening_specialist",
+    "difficulty": "beginner",
+    "test_focus": [
+      "opening_exploitation",
+      "poor_opening_punishment"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_278.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\beginner\\BongcloudEnthusiast_Bot_278.cs"
+  },
+  {
+    "name": "WhateverBot",
+    "bot_id": 153,
+    "elo": 677,
+    "description": "1-move lookahead with basic tactics",
+    "personality": "basic_tactical",
+    "difficulty": "intermediate",
+    "test_focus": [
+      "basic_tactics",
+      "piece_development",
+      "safety"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_153.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\WhateverBot_Bot_153.cs"
+  },
+  {
+    "name": "applemethod",
+    "bot_id": 70,
+    "elo": 1085,
+    "description": "Material and tempo focused with multi-move search",
+    "personality": "material_tempo",
+    "difficulty": "intermediate",
+    "test_focus": [
+      "material_evaluation",
+      "tempo",
+      "multi_move_search"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_70.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\applemethod_Bot_70.cs"
+  },
+  {
+    "name": "Squeedo",
+    "bot_id": 253,
+    "elo": 1276,
+    "description": "Pawn advancement and piece development focused",
+    "personality": "positional",
+    "difficulty": "intermediate",
+    "test_focus": [
+      "pawn_structure",
+      "piece_development",
+      "mobility"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_253.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\Squeedo_Bot_253.cs"
+  },
+  {
+    "name": "Monstrosity200",
+    "bot_id": 425,
+    "elo": 1569,
+    "description": "200-token efficiency challenge - mobility focused",
+    "personality": "efficient",
+    "difficulty": "advanced",
+    "test_focus": [
+      "code_efficiency",
+      "mobility",
+      "material"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_425.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\Monstrosity200_Bot_425.cs"
+  },
+  {
+    "name": "GameTechExplained",
+    "bot_id": 266,
+    "elo": 1713,
+    "description": "Positional understanding and piece placement",
+    "personality": "positional_advanced",
+    "difficulty": "advanced",
+    "test_focus": [
+      "positional_understanding",
+      "piece_placement"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_266.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\GameTechExplained_Bot_266.cs"
+  },
+  {
+    "name": "ElectricShockwaveGambit",
+    "bot_id": 303,
+    "elo": 2001,
+    "description": "Mobility and safety focused with deep search",
+    "personality": "mobility_safety",
+    "difficulty": "advanced",
+    "test_focus": [
+      "piece_mobility",
+      "piece_safety",
+      "deep_search"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_303.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\ElectricShockwaveGambit_Bot_303.cs"
+  },
+  {
+    "name": "KingGambotIV",
+    "bot_id": 628,
+    "elo": 2172,
+    "description": "Aggressive king play with deep search techniques",
+    "personality": "aggressive_king",
+    "difficulty": "advanced",
+    "test_focus": [
+      "aggressive_play",
+      "king_activity",
+      "unconventional_strategies"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_628.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\KingGambotIV_Bot_628.cs"
+  },
+  {
+    "name": "NNBot",
+    "bot_id": 529,
+    "elo": 2246,
+    "description": "Neural network evaluation with compressed AI",
+    "personality": "neural_network",
+    "difficulty": "expert",
+    "test_focus": [
+      "neural_evaluation",
+      "tempo",
+      "advanced_positioning"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_529.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\NNBot_Bot_529.cs"
+  },
+  {
+    "name": "TinyHugeBot",
+    "bot_id": 610,
+    "elo": 2513,
+    "description": "Code compression exploit with optimized deep search",
+    "personality": "search_optimized",
+    "difficulty": "expert",
+    "test_focus": [
+      "deep_search",
+      "search_optimization",
+      "piece_placement"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_610.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\TinyHugeBot_Bot_610.cs"
+  },
+  {
+    "name": "Boychesser",
+    "bot_id": 614,
+    "elo": 2772,
+    "description": "Tournament winner - tactical excellence and deep search",
+    "personality": "tactical_master",
+    "difficulty": "expert",
+    "test_focus": [
+      "tactical_combinations",
+      "deep_search",
+      "positional_mastery",
+      "endgame"
+    ],
+    "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_614.cs",
+    "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\Boychesser_Bot_614.cs"
+  }
+]

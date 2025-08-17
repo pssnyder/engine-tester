@@ -20,8 +20,8 @@ from io import StringIO
 import logging
 
 # Import our engine modules
-import chess_ai
-import interface
+# import chess_ai  # Removed dependency - now using universal engine manager
+# import engine_interface  # Removed dependency - now using universal engine manager
 
 # Visual display constants
 WIDTH, HEIGHT = 640, 640
@@ -428,28 +428,15 @@ class ChessCore:
         })
 
     def engine_move(self, depth: int = 3, time_limit: Optional[float] = None) -> Optional[str]:
-        """Get a move from our chess_ai engine with live search display"""
+        """Get a move from an external engine (placeholder - for use with universal engine manager)"""
         print(f"\n{'='*60}")
-        print(f"Engine thinking (depth {depth})...")
-        print(f"{'='*60}")
-        
-        start_time = time.time()
-        
-        # Use our chess_ai module directly with info callback
-        best_move = chess_ai.search(
-            board=self.board.copy(),
-            depth=depth,
-            time_limit=time_limit,
-            info_callback=self.display_live_search_info,
-            stop_event=None
-        )
-        
-        total_time = time.time() - start_time
-        print(f"{'='*60}")
-        print(f"Search completed in {total_time:.3f}s - Best move: {best_move}")
+        print(f"Engine move requested (depth {depth})...")
+        print(f"Note: This method is now a placeholder.")
+        print(f"Use the universal engine manager for actual engine moves.")
         print(f"{'='*60}\n")
         
-        return best_move
+        # Return None to indicate no move available from this method
+        return None
 
     def run_efficiency_test(self, test_positions: list, depths: list = [3, 4, 5]):
         """Run efficiency tests on multiple positions to compare search features"""
@@ -473,16 +460,12 @@ class ChessCore:
                 # Clear metrics for this test
                 self.search_metrics = {}
                 
-                # Run search
+                # Run search - placeholder for universal engine manager integration
                 start_time = time.time()
-                best_move = chess_ai.search(
-                    board=self.board.copy(),
-                    depth=depth,
-                    time_limit=None,
-                    info_callback=self.display_live_search_info,
-                    stop_event=None
-                )
+                best_move = None  # Placeholder - no engine search available
                 total_time = time.time() - start_time
+                
+                print("Note: Engine search disabled - integrate with universal engine manager")
                 
                 # Store results
                 if pos_name not in self.efficiency_test_data:
