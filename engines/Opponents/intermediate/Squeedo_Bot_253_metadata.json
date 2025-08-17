@@ -1,0 +1,15 @@
+{
+  "name": "Squeedo",
+  "bot_id": 253,
+  "elo": 1276,
+  "description": "Pawn advancement and piece development focused",
+  "personality": "positional",
+  "difficulty": "intermediate",
+  "test_focus": [
+    "pawn_structure",
+    "piece_development",
+    "mobility"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_253.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\intermediate\\Squeedo_Bot_253.cs"
+}
