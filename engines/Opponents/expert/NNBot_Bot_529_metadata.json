@@ -1,0 +1,15 @@
+{
+  "name": "NNBot",
+  "bot_id": 529,
+  "elo": 2246,
+  "description": "Neural network evaluation with compressed AI",
+  "personality": "neural_network",
+  "difficulty": "expert",
+  "test_focus": [
+    "neural_evaluation",
+    "tempo",
+    "advanced_positioning"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_529.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\expert\\NNBot_Bot_529.cs"
+}

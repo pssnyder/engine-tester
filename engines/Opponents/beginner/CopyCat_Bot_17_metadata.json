@@ -1,0 +1,14 @@
+{
+  "name": "CopyCat",
+  "bot_id": 17,
+  "elo": 192,
+  "description": "Mirrors opponent moves - perfect for testing pattern recognition",
+  "personality": "copycat",
+  "difficulty": "beginner",
+  "test_focus": [
+    "pattern_recognition",
+    "move_mirroring"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_17.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\beginner\\CopyCat_Bot_17.cs"
+}

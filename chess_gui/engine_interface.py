@@ -106,9 +106,9 @@ class ChessAIEngine(EngineInterface):
         # Import chess-ai modules
         try:
             import chess_ai
-            import interface
+            import engine_interface
             self.chess_ai = chess_ai
-            self.interface = interface
+            self.interface = engine_interface
             self.ready = True
         except ImportError as e:
             print(f"Failed to import chess-ai modules: {e}")

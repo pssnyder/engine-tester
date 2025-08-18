@@ -1,0 +1,15 @@
+{
+  "name": "Monstrosity200",
+  "bot_id": 425,
+  "elo": 1569,
+  "description": "200-token efficiency challenge - mobility focused",
+  "personality": "efficient",
+  "difficulty": "advanced",
+  "test_focus": [
+    "code_efficiency",
+    "mobility",
+    "material"
+  ],
+  "source_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\source_repos\\Tiny-Chess-Godot\\scripts\\chess-challenge\\Bots\\Bot_425.cs",
+  "extracted_file": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Opponents\\advanced\\Monstrosity200_Bot_425.cs"
+}
