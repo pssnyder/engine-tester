@@ -1,0 +1,255 @@
+{
+  "game_decisiveness": {
+    "abandoned": 16,
+    "checkmate": 455,
+    "resignation": 157,
+    "draw": 6,
+    "timeout": 80
+  },
+  "time_control_distribution": {
+    "classical": 714
+  },
+  "opening_stats": {
+    "Unknown": {
+      "games": 714,
+      "wins": 312,
+      "losses": 365,
+      "draws": 37
+    }
+  },
+  "phase_transitions": {
+    "avg_opening_duration": 33.33053221288515,
+    "avg_middlegame_duration": 25.37261698440208
+  },
+  "piece_stats": {
+    "white pawn": {
+      "P": {
+        "total_moves": 7046,
+        "attack_moves": 7046,
+        "defense_moves": 0,
+        "capture_moves": 1497,
+        "check_moves": 184,
+        "squares_visited": 48,
+        "avg_survival": 39.6212035197275,
+        "phase_distribution": {
+          "opening": 3338,
+          "middlegame": 1824,
+          "endgame": 1884
+        }
+      }
+    },
+    "white knight": {
+      "N": {
+        "total_moves": 3855,
+        "attack_moves": 3222,
+        "defense_moves": 633,
+        "capture_moves": 985,
+        "check_moves": 329,
+        "squares_visited": 63,
+        "avg_survival": 13.031906614785992,
+        "phase_distribution": {
+          "opening": 2115,
+          "middlegame": 1079,
+          "endgame": 661
+        }
+      }
+    },
+    "white bishop": {
+      "B": {
+        "total_moves": 3560,
+        "attack_moves": 2769,
+        "defense_moves": 791,
+        "capture_moves": 1086,
+        "check_moves": 410,
+        "squares_visited": 63,
+        "avg_survival": 14.815449438202247,
+        "phase_distribution": {
+          "opening": 1954,
+          "middlegame": 1014,
+          "endgame": 592
+        }
+      }
+    },
+    "white rook": {
+      "R": {
+        "total_moves": 3357,
+        "attack_moves": 1163,
+        "defense_moves": 2194,
+        "capture_moves": 966,
+        "check_moves": 645,
+        "squares_visited": 64,
+        "avg_survival": 22.269288054810843,
+        "phase_distribution": {
+          "opening": 198,
+          "middlegame": 1469,
+          "endgame": 1690
+        }
+      }
+    },
+    "white queen": {
+      "Q": {
+        "total_moves": 3050,
+        "attack_moves": 1701,
+        "defense_moves": 1349,
+        "capture_moves": 1033,
+        "check_moves": 1024,
+        "squares_visited": 64,
+        "avg_survival": 10.681639344262296,
+        "phase_distribution": {
+          "opening": 895,
+          "middlegame": 1668,
+          "endgame": 487
+        }
+      }
+    },
+    "black pawn": {
+      "p": {
+        "total_moves": 7161,
+        "attack_moves": 7161,
+        "defense_moves": 0,
+        "capture_moves": 1610,
+        "check_moves": 170,
+        "squares_visited": 48,
+        "avg_survival": 39.05362379555928,
+        "phase_distribution": {
+          "opening": 3450,
+          "middlegame": 1857,
+          "endgame": 1854
+        }
+      }
+    },
+    "black knight": {
+      "n": {
+        "total_moves": 3762,
+        "attack_moves": 3154,
+        "defense_moves": 608,
+        "capture_moves": 996,
+        "check_moves": 287,
+        "squares_visited": 64,
+        "avg_survival": 13.348219032429558,
+        "phase_distribution": {
+          "opening": 2012,
+          "middlegame": 1023,
+          "endgame": 727
+        }
+      }
+    },
+    "black bishop": {
+      "b": {
+        "total_moves": 3388,
+        "attack_moves": 2660,
+        "defense_moves": 728,
+        "capture_moves": 1062,
+        "check_moves": 343,
+        "squares_visited": 64,
+        "avg_survival": 16.19539551357733,
+        "phase_distribution": {
+          "opening": 1733,
+          "middlegame": 1009,
+          "endgame": 646
+        }
+      }
+    },
+    "black rook": {
+      "r": {
+        "total_moves": 3119,
+        "attack_moves": 1066,
+        "defense_moves": 2053,
+        "capture_moves": 912,
+        "check_moves": 629,
+        "squares_visited": 64,
+        "avg_survival": 23.618467457518435,
+        "phase_distribution": {
+          "opening": 207,
+          "middlegame": 1349,
+          "endgame": 1563
+        }
+      }
+    },
+    "black queen": {
+      "q": {
+        "total_moves": 3002,
+        "attack_moves": 1613,
+        "defense_moves": 1389,
+        "capture_moves": 1072,
+        "check_moves": 1039,
+        "squares_visited": 64,
+        "avg_survival": 10.94070619586942,
+        "phase_distribution": {
+          "opening": 892,
+          "middlegame": 1649,
+          "endgame": 461
+        }
+      }
+    },
+    "white king": {
+      "K": {
+        "total_moves": 3613,
+        "attack_moves": 1496,
+        "defense_moves": 2117,
+        "capture_moves": 364,
+        "check_moves": 8,
+        "squares_visited": 64,
+        "avg_survival": 0.0,
+        "phase_distribution": {
+          "opening": 552,
+          "middlegame": 863,
+          "endgame": 2198
+        }
+      }
+    },
+    "black king": {
+      "k": {
+        "total_moves": 3711,
+        "attack_moves": 1598,
+        "defense_moves": 2113,
+        "capture_moves": 386,
+        "check_moves": 2,
+        "squares_visited": 64,
+        "avg_survival": 0.0,
+        "phase_distribution": {
+          "opening": 563,
+          "middlegame": 886,
+          "endgame": 2262
+        }
+      }
+    }
+  },
+  "metric_correlations": {
+    "decisiveness": {
+      "decisiveness": 1.0,
+      "total_moves": 0.16989974316098208,
+      "material_imbalance": 0.022142390120842664,
+      "avg_move_quality": NaN,
+      "avg_time_per_move": NaN
+    },
+    "total_moves": {
+      "decisiveness": 0.16989974316098208,
+      "total_moves": 1.0,
+      "material_imbalance": -0.011341913186766079,
+      "avg_move_quality": NaN,
+      "avg_time_per_move": NaN
+    },
+    "material_imbalance": {
+      "decisiveness": 0.022142390120842664,
+      "total_moves": -0.011341913186766079,
+      "material_imbalance": 1.0,
+      "avg_move_quality": NaN,
+      "avg_time_per_move": NaN
+    },
+    "avg_move_quality": {
+      "decisiveness": NaN,
+      "total_moves": NaN,
+      "material_imbalance": NaN,
+      "avg_move_quality": NaN,
+      "avg_time_per_move": NaN
+    },
+    "avg_time_per_move": {
+      "decisiveness": NaN,
+      "total_moves": NaN,
+      "material_imbalance": NaN,
+      "avg_move_quality": NaN,
+      "avg_time_per_move": NaN
+    }
+  }
+}

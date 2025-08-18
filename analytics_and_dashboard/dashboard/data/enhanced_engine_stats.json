@@ -1,0 +1,1899 @@
+{
+  "SlowMate 0.3": {
+    "wins": 329,
+    "losses": 326,
+    "draws": 15,
+    "total_games": 670,
+    "total_moves": 43828,
+    "win_types": {
+      "other": 324,
+      "adjudication": 1,
+      "time": 4
+    },
+    "loss_types": {
+      "other": 326
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 65.41492537313432,
+    "personality_traits": {
+      "solid": 670,
+      "conservative": 91,
+      "aggressive": 289,
+      "volatile": 7,
+      "drawish": 14,
+      "slow": 4
+    },
+    "win_rate": 0.491044776119403,
+    "loss_rate": 0.48656716417910445,
+    "draw_rate": 0.022388059701492536,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "conservative": 0.13582089552238805,
+      "aggressive": 0.43134328358208956,
+      "volatile": 0.010447761194029851,
+      "drawish": 0.020895522388059702,
+      "slow": 0.005970149253731343
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.43134328358208956
+      ],
+      [
+        "conservative",
+        0.13582089552238805
+      ]
+    ]
+  },
+  "SlowMate_v0.4.0_BETA": {
+    "wins": 11,
+    "losses": 88,
+    "draws": 15,
+    "total_games": 114,
+    "total_moves": 9911,
+    "win_types": {
+      "other": 11
+    },
+    "loss_types": {
+      "other": 88
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 86.93859649122807,
+    "personality_traits": {
+      "solid": 114,
+      "aggressive": 14,
+      "drawish": 12,
+      "conservative": 22,
+      "volatile": 1
+    },
+    "win_rate": 0.09649122807017543,
+    "loss_rate": 0.7719298245614035,
+    "draw_rate": 0.13157894736842105,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "aggressive": 0.12280701754385964,
+      "drawish": 0.10526315789473684,
+      "conservative": 0.19298245614035087,
+      "volatile": 0.008771929824561403
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.19298245614035087
+      ],
+      [
+        "aggressive",
+        0.12280701754385964
+      ]
+    ]
+  },
+  "SlowMate 0.4": {
+    "wins": 87,
+    "losses": 132,
+    "draws": 25,
+    "total_games": 244,
+    "total_moves": 18178,
+    "win_types": {
+      "other": 87
+    },
+    "loss_types": {
+      "other": 132
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 74.5,
+    "personality_traits": {
+      "solid": 244,
+      "conservative": 57,
+      "aggressive": 86,
+      "drawish": 24
+    },
+    "win_rate": 0.35655737704918034,
+    "loss_rate": 0.5409836065573771,
+    "draw_rate": 0.10245901639344263,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "conservative": 0.2336065573770492,
+      "aggressive": 0.3524590163934426,
+      "drawish": 0.09836065573770492
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.3524590163934426
+      ],
+      [
+        "conservative",
+        0.2336065573770492
+      ]
+    ]
+  },
+  "Cece 1.0": {
+    "wins": 390,
+    "losses": 799,
+    "draws": 427,
+    "total_games": 1616,
+    "total_moves": 128815,
+    "win_types": {
+      "other": 381,
+      "time": 9
+    },
+    "loss_types": {
+      "other": 797,
+      "adjudication": 2
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 79.71225247524752,
+    "personality_traits": {
+      "drawish": 416,
+      "solid": 1616,
+      "aggressive": 372,
+      "conservative": 391,
+      "volatile": 4,
+      "slow": 9
+    },
+    "win_rate": 0.24133663366336633,
+    "loss_rate": 0.4944306930693069,
+    "draw_rate": 0.26423267326732675,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.25742574257425743,
+      "solid": 1.0,
+      "aggressive": 0.2301980198019802,
+      "conservative": 0.24195544554455445,
+      "volatile": 0.0024752475247524753,
+      "slow": 0.005569306930693069
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.25742574257425743
+      ],
+      [
+        "conservative",
+        0.24195544554455445
+      ]
+    ]
+  },
+  "SlowMate 0.5": {
+    "wins": 1,
+    "losses": 69,
+    "draws": 42,
+    "total_games": 112,
+    "total_moves": 4408,
+    "win_types": {
+      "other": 1
+    },
+    "loss_types": {
+      "other": 69
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 39.357142857142854,
+    "personality_traits": {
+      "aggressive": 69,
+      "solid": 112,
+      "drawish": 41,
+      "conservative": 6
+    },
+    "win_rate": 0.008928571428571428,
+    "loss_rate": 0.6160714285714286,
+    "draw_rate": 0.375,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "aggressive": 0.6160714285714286,
+      "solid": 1.0,
+      "drawish": 0.36607142857142855,
+      "conservative": 0.05357142857142857
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.6160714285714286
+      ],
+      [
+        "drawish",
+        0.36607142857142855
+      ]
+    ]
+  },
+  "SlowMate_v0.3.03_Version_vs_Version_Nuclear_Fix": {
+    "wins": 58,
+    "losses": 36,
+    "draws": 0,
+    "total_games": 94,
+    "total_moves": 5266,
+    "win_types": {
+      "other": 58
+    },
+    "loss_types": {
+      "other": 36
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 56.02127659574468,
+    "personality_traits": {
+      "conservative": 12,
+      "solid": 94,
+      "aggressive": 37
+    },
+    "win_rate": 0.6170212765957447,
+    "loss_rate": 0.3829787234042553,
+    "draw_rate": 0.0,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.1276595744680851,
+      "solid": 1.0,
+      "aggressive": 0.39361702127659576
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.39361702127659576
+      ],
+      [
+        "conservative",
+        0.1276595744680851
+      ]
+    ]
+  },
+  "SlowMate_v0.3.02_Enhanced_Endgame": {
+    "wins": 46,
+    "losses": 38,
+    "draws": 0,
+    "total_games": 84,
+    "total_moves": 4638,
+    "win_types": {
+      "other": 45,
+      "adjudication": 1
+    },
+    "loss_types": {
+      "other": 38
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 55.214285714285715,
+    "personality_traits": {
+      "solid": 84,
+      "aggressive": 37,
+      "volatile": 1,
+      "conservative": 9
+    },
+    "win_rate": 0.5476190476190477,
+    "loss_rate": 0.4523809523809524,
+    "draw_rate": 0.0,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "aggressive": 0.44047619047619047,
+      "volatile": 0.011904761904761904,
+      "conservative": 0.10714285714285714
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.44047619047619047
+      ],
+      [
+        "conservative",
+        0.10714285714285714
+      ]
+    ]
+  },
+  "SlowMate_v0.0.10_Tactical_Intelligence": {
+    "wins": 186,
+    "losses": 147,
+    "draws": 21,
+    "total_games": 354,
+    "total_moves": 32963,
+    "win_types": {
+      "other": 186
+    },
+    "loss_types": {
+      "other": 147
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 93.11581920903954,
+    "personality_traits": {
+      "solid": 354,
+      "conservative": 93,
+      "aggressive": 81,
+      "drawish": 21,
+      "volatile": 4
+    },
+    "win_rate": 0.5254237288135594,
+    "loss_rate": 0.4152542372881356,
+    "draw_rate": 0.059322033898305086,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "conservative": 0.2627118644067797,
+      "aggressive": 0.2288135593220339,
+      "drawish": 0.059322033898305086,
+      "volatile": 0.011299435028248588
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.2627118644067797
+      ],
+      [
+        "aggressive",
+        0.2288135593220339
+      ]
+    ]
+  },
+  "SlowMate_v0.1.01_Tactics": {
+    "wins": 153,
+    "losses": 124,
+    "draws": 17,
+    "total_games": 294,
+    "total_moves": 27098,
+    "win_types": {
+      "other": 153
+    },
+    "loss_types": {
+      "other": 124
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 92.17006802721089,
+    "personality_traits": {
+      "conservative": 80,
+      "solid": 294,
+      "aggressive": 66,
+      "volatile": 1,
+      "drawish": 17
+    },
+    "win_rate": 0.5204081632653061,
+    "loss_rate": 0.4217687074829932,
+    "draw_rate": 0.05782312925170068,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.272108843537415,
+      "solid": 1.0,
+      "aggressive": 0.22448979591836735,
+      "volatile": 0.003401360544217687,
+      "drawish": 0.05782312925170068
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.272108843537415
+      ],
+      [
+        "aggressive",
+        0.22448979591836735
+      ]
+    ]
+  },
+  "SlowMate_v0.2.02_Time_Management": {
+    "wins": 54,
+    "losses": 28,
+    "draws": 3,
+    "total_games": 85,
+    "total_moves": 7689,
+    "win_types": {
+      "other": 54
+    },
+    "loss_types": {
+      "other": 28
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 90.45882352941176,
+    "personality_traits": {
+      "conservative": 26,
+      "solid": 85,
+      "aggressive": 18,
+      "drawish": 3
+    },
+    "win_rate": 0.6352941176470588,
+    "loss_rate": 0.32941176470588235,
+    "draw_rate": 0.03529411764705882,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.3058823529411765,
+      "solid": 1.0,
+      "aggressive": 0.21176470588235294,
+      "drawish": 0.03529411764705882
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.3058823529411765
+      ],
+      [
+        "aggressive",
+        0.21176470588235294
+      ]
+    ]
+  },
+  "SlowMate_v0.2.01_Enhanced_Search": {
+    "wins": 227,
+    "losses": 142,
+    "draws": 23,
+    "total_games": 392,
+    "total_moves": 38819,
+    "win_types": {
+      "other": 227
+    },
+    "loss_types": {
+      "other": 128,
+      "time": 13,
+      "adjudication": 1
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 13,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 99.02806122448979,
+    "personality_traits": {
+      "conservative": 126,
+      "solid": 392,
+      "aggressive": 103,
+      "drawish": 23,
+      "volatile": 6,
+      "slow": 13
+    },
+    "win_rate": 0.5790816326530612,
+    "loss_rate": 0.3622448979591837,
+    "draw_rate": 0.058673469387755105,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.32142857142857145,
+      "solid": 1.0,
+      "aggressive": 0.2627551020408163,
+      "drawish": 0.058673469387755105,
+      "volatile": 0.015306122448979591,
+      "slow": 0.03316326530612245
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.32142857142857145
+      ],
+      [
+        "aggressive",
+        0.2627551020408163
+      ]
+    ]
+  },
+  "SlowMate_v0.1.02_Opening_Endgame": {
+    "wins": 134,
+    "losses": 75,
+    "draws": 15,
+    "total_games": 224,
+    "total_moves": 19633,
+    "win_types": {
+      "other": 134
+    },
+    "loss_types": {
+      "other": 75
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 87.64732142857143,
+    "personality_traits": {
+      "conservative": 65,
+      "solid": 224,
+      "aggressive": 65,
+      "drawish": 15,
+      "volatile": 1
+    },
+    "win_rate": 0.5982142857142857,
+    "loss_rate": 0.33482142857142855,
+    "draw_rate": 0.06696428571428571,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.29017857142857145,
+      "solid": 1.0,
+      "aggressive": 0.29017857142857145,
+      "drawish": 0.06696428571428571,
+      "volatile": 0.004464285714285714
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.29017857142857145
+      ],
+      [
+        "aggressive",
+        0.29017857142857145
+      ]
+    ]
+  },
+  "SlowMate_v0.1.03_Middlegame": {
+    "wins": 145,
+    "losses": 136,
+    "draws": 13,
+    "total_games": 294,
+    "total_moves": 26648,
+    "win_types": {
+      "other": 145
+    },
+    "loss_types": {
+      "other": 136
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 90.63945578231292,
+    "personality_traits": {
+      "drawish": 12,
+      "conservative": 87,
+      "solid": 294,
+      "aggressive": 72,
+      "volatile": 1
+    },
+    "win_rate": 0.4931972789115646,
+    "loss_rate": 0.46258503401360546,
+    "draw_rate": 0.04421768707482993,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.04081632653061224,
+      "conservative": 0.29591836734693877,
+      "solid": 1.0,
+      "aggressive": 0.24489795918367346,
+      "volatile": 0.003401360544217687
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.29591836734693877
+      ],
+      [
+        "aggressive",
+        0.24489795918367346
+      ]
+    ]
+  },
+  "V7P3RAI 1.0": {
+    "wins": 378,
+    "losses": 657,
+    "draws": 338,
+    "total_games": 1373,
+    "total_moves": 77887,
+    "win_types": {
+      "other": 360,
+      "time": 17,
+      "adjudication": 1
+    },
+    "loss_types": {
+      "other": 657
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 56.72760378732702,
+    "personality_traits": {
+      "solid": 1373,
+      "aggressive": 568,
+      "drawish": 337,
+      "conservative": 143,
+      "volatile": 8,
+      "slow": 17
+    },
+    "win_rate": 0.2753095411507647,
+    "loss_rate": 0.4785142024763292,
+    "draw_rate": 0.24617625637290605,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "aggressive": 0.41369264384559357,
+      "drawish": 0.24544792425345957,
+      "conservative": 0.10415149308084487,
+      "volatile": 0.005826656955571741,
+      "slow": 0.012381646030589949
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.41369264384559357
+      ],
+      [
+        "drawish",
+        0.24544792425345957
+      ]
+    ]
+  },
+  "Random Playing Opponent": {
+    "wins": 157,
+    "losses": 864,
+    "draws": 365,
+    "total_games": 1386,
+    "total_moves": 174487,
+    "win_types": {
+      "other": 142,
+      "time": 15
+    },
+    "loss_types": {
+      "other": 864
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 125.8924963924964,
+    "personality_traits": {
+      "solid": 1386,
+      "conservative": 497,
+      "drawish": 364,
+      "aggressive": 216,
+      "volatile": 49,
+      "slow": 15
+    },
+    "win_rate": 0.11327561327561328,
+    "loss_rate": 0.6233766233766234,
+    "draw_rate": 0.26334776334776333,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "conservative": 0.35858585858585856,
+      "drawish": 0.26262626262626265,
+      "aggressive": 0.15584415584415584,
+      "volatile": 0.03535353535353535,
+      "slow": 0.010822510822510822
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.35858585858585856
+      ],
+      [
+        "drawish",
+        0.26262626262626265
+      ]
+    ]
+  },
+  "SlowMate 1.0": {
+    "wins": 380,
+    "losses": 27,
+    "draws": 107,
+    "total_games": 514,
+    "total_moves": 24212,
+    "win_types": {
+      "other": 378,
+      "time": 2
+    },
+    "loss_types": {
+      "other": 27
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 47.10505836575876,
+    "personality_traits": {
+      "solid": 514,
+      "aggressive": 246,
+      "drawish": 107,
+      "slow": 2,
+      "volatile": 2,
+      "conservative": 22
+    },
+    "win_rate": 0.7392996108949417,
+    "loss_rate": 0.05252918287937743,
+    "draw_rate": 0.20817120622568094,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "aggressive": 0.4785992217898833,
+      "drawish": 0.20817120622568094,
+      "slow": 0.0038910505836575876,
+      "volatile": 0.0038910505836575876,
+      "conservative": 0.042801556420233464
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.4785992217898833
+      ],
+      [
+        "drawish",
+        0.20817120622568094
+      ]
+    ]
+  },
+  "Cece 2.0": {
+    "wins": 880,
+    "losses": 860,
+    "draws": 546,
+    "total_games": 2286,
+    "total_moves": 145587,
+    "win_types": {
+      "other": 785,
+      "time": 95
+    },
+    "loss_types": {
+      "other": 859,
+      "time": 1
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 1,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 63.686351706036746,
+    "personality_traits": {
+      "drawish": 539,
+      "conservative": 364,
+      "solid": 2286,
+      "aggressive": 583,
+      "slow": 98,
+      "volatile": 2
+    },
+    "win_rate": 0.38495188101487315,
+    "loss_rate": 0.3762029746281715,
+    "draw_rate": 0.2388451443569554,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.2357830271216098,
+      "conservative": 0.15923009623797024,
+      "solid": 1.0,
+      "aggressive": 0.2550306211723535,
+      "slow": 0.04286964129483815,
+      "volatile": 0.0008748906386701663
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.2550306211723535
+      ],
+      [
+        "drawish",
+        0.2357830271216098
+      ]
+    ]
+  },
+  "Cecilia v0.1": {
+    "wins": 0,
+    "losses": 73,
+    "draws": 98,
+    "total_games": 171,
+    "total_moves": 16599,
+    "win_types": {},
+    "loss_types": {
+      "other": 73
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 97.0701754385965,
+    "personality_traits": {
+      "conservative": 49,
+      "solid": 171,
+      "drawish": 98,
+      "aggressive": 80,
+      "volatile": 6
+    },
+    "win_rate": 0.0,
+    "loss_rate": 0.4269005847953216,
+    "draw_rate": 0.5730994152046783,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.28654970760233917,
+      "solid": 1.0,
+      "drawish": 0.5730994152046783,
+      "aggressive": 0.4678362573099415,
+      "volatile": 0.03508771929824561
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.5730994152046783
+      ],
+      [
+        "aggressive",
+        0.4678362573099415
+      ]
+    ]
+  },
+  "SlowMate v0.2.1": {
+    "wins": 104,
+    "losses": 56,
+    "draws": 11,
+    "total_games": 171,
+    "total_moves": 21807,
+    "win_types": {
+      "other": 104
+    },
+    "loss_types": {
+      "other": 56
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 127.52631578947368,
+    "personality_traits": {
+      "conservative": 65,
+      "solid": 171,
+      "aggressive": 32,
+      "drawish": 11,
+      "volatile": 5
+    },
+    "win_rate": 0.6081871345029239,
+    "loss_rate": 0.32748538011695905,
+    "draw_rate": 0.06432748538011696,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.38011695906432746,
+      "solid": 1.0,
+      "aggressive": 0.1871345029239766,
+      "drawish": 0.06432748538011696,
+      "volatile": 0.029239766081871343
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.38011695906432746
+      ],
+      [
+        "aggressive",
+        0.1871345029239766
+      ]
+    ]
+  },
+  "Cecilia v0.2": {
+    "wins": 0,
+    "losses": 67,
+    "draws": 104,
+    "total_games": 171,
+    "total_moves": 16740,
+    "win_types": {},
+    "loss_types": {
+      "other": 67
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 97.89473684210526,
+    "personality_traits": {
+      "drawish": 104,
+      "conservative": 47,
+      "solid": 171,
+      "aggressive": 83,
+      "volatile": 5
+    },
+    "win_rate": 0.0,
+    "loss_rate": 0.391812865497076,
+    "draw_rate": 0.6081871345029239,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.6081871345029239,
+      "conservative": 0.27485380116959063,
+      "solid": 1.0,
+      "aggressive": 0.4853801169590643,
+      "volatile": 0.029239766081871343
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.6081871345029239
+      ],
+      [
+        "aggressive",
+        0.4853801169590643
+      ]
+    ]
+  },
+  "Cecilia v0.3": {
+    "wins": 0,
+    "losses": 72,
+    "draws": 99,
+    "total_games": 171,
+    "total_moves": 15210,
+    "win_types": {},
+    "loss_types": {
+      "other": 72
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 88.94736842105263,
+    "personality_traits": {
+      "drawish": 99,
+      "conservative": 41,
+      "solid": 171,
+      "aggressive": 82,
+      "volatile": 5
+    },
+    "win_rate": 0.0,
+    "loss_rate": 0.42105263157894735,
+    "draw_rate": 0.5789473684210527,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.5789473684210527,
+      "conservative": 0.23976608187134502,
+      "solid": 1.0,
+      "aggressive": 0.47953216374269003,
+      "volatile": 0.029239766081871343
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.5789473684210527
+      ],
+      [
+        "aggressive",
+        0.47953216374269003
+      ]
+    ]
+  },
+  "Stockfish 1": {
+    "wins": 1052,
+    "losses": 2,
+    "draws": 36,
+    "total_games": 1090,
+    "total_moves": 81926,
+    "win_types": {
+      "other": 999,
+      "time": 53
+    },
+    "loss_types": {
+      "other": 2
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 75.16146788990825,
+    "personality_traits": {
+      "conservative": 210,
+      "solid": 1090,
+      "aggressive": 264,
+      "drawish": 34,
+      "volatile": 5,
+      "slow": 53
+    },
+    "win_rate": 0.9651376146788991,
+    "loss_rate": 0.001834862385321101,
+    "draw_rate": 0.03302752293577982,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.1926605504587156,
+      "solid": 1.0,
+      "aggressive": 0.24220183486238533,
+      "drawish": 0.031192660550458717,
+      "volatile": 0.0045871559633027525,
+      "slow": 0.04862385321100918
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.24220183486238533
+      ],
+      [
+        "conservative",
+        0.1926605504587156
+      ]
+    ]
+  },
+  "Slowmate_v1.0": {
+    "wins": 714,
+    "losses": 65,
+    "draws": 132,
+    "total_games": 911,
+    "total_moves": 53497,
+    "win_types": {
+      "other": 635,
+      "time": 79
+    },
+    "loss_types": {
+      "other": 65
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 58.72338090010977,
+    "personality_traits": {
+      "drawish": 129,
+      "solid": 911,
+      "aggressive": 251,
+      "conservative": 66,
+      "slow": 79,
+      "volatile": 4
+    },
+    "win_rate": 0.7837541163556532,
+    "loss_rate": 0.07135016465422613,
+    "draw_rate": 0.14489571899012074,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.141602634467618,
+      "solid": 1.0,
+      "aggressive": 0.27552140504939626,
+      "conservative": 0.07244785949506037,
+      "slow": 0.0867178924259056,
+      "volatile": 0.0043907793633369925
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.27552140504939626
+      ],
+      [
+        "drawish",
+        0.141602634467618
+      ]
+    ]
+  },
+  "Cecilia_v0.2.0_Enhanced_Fixed": {
+    "wins": 1,
+    "losses": 94,
+    "draws": 123,
+    "total_games": 218,
+    "total_moves": 22087,
+    "win_types": {
+      "other": 1
+    },
+    "loss_types": {
+      "other": 94
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 101.31651376146789,
+    "personality_traits": {
+      "conservative": 59,
+      "solid": 218,
+      "volatile": 8,
+      "drawish": 123,
+      "aggressive": 96
+    },
+    "win_rate": 0.0045871559633027525,
+    "loss_rate": 0.43119266055045874,
+    "draw_rate": 0.5642201834862385,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.2706422018348624,
+      "solid": 1.0,
+      "volatile": 0.03669724770642202,
+      "drawish": 0.5642201834862385,
+      "aggressive": 0.44036697247706424
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.5642201834862385
+      ],
+      [
+        "aggressive",
+        0.44036697247706424
+      ]
+    ]
+  },
+  "Cecilia_v0.3.0_Advanced_Fixed": {
+    "wins": 2,
+    "losses": 106,
+    "draws": 110,
+    "total_games": 218,
+    "total_moves": 20534,
+    "win_types": {
+      "other": 2
+    },
+    "loss_types": {
+      "other": 106
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 94.19266055045871,
+    "personality_traits": {
+      "conservative": 62,
+      "solid": 218,
+      "aggressive": 95,
+      "drawish": 110,
+      "volatile": 5
+    },
+    "win_rate": 0.009174311926605505,
+    "loss_rate": 0.48623853211009177,
+    "draw_rate": 0.5045871559633027,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.28440366972477066,
+      "solid": 1.0,
+      "aggressive": 0.43577981651376146,
+      "drawish": 0.5045871559633027,
+      "volatile": 0.022935779816513763
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.5045871559633027
+      ],
+      [
+        "aggressive",
+        0.43577981651376146
+      ]
+    ]
+  },
+  "Copycat 2.0": {
+    "wins": 93,
+    "losses": 311,
+    "draws": 170,
+    "total_games": 574,
+    "total_moves": 54595,
+    "win_types": {
+      "other": 85,
+      "time": 8
+    },
+    "loss_types": {
+      "time": 38,
+      "other": 273
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 38,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 95.11324041811847,
+    "personality_traits": {
+      "slow": 47,
+      "aggressive": 135,
+      "solid": 574,
+      "drawish": 168,
+      "conservative": 186,
+      "volatile": 10
+    },
+    "win_rate": 0.16202090592334495,
+    "loss_rate": 0.5418118466898955,
+    "draw_rate": 0.2961672473867596,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "slow": 0.08188153310104529,
+      "aggressive": 0.23519163763066203,
+      "solid": 1.0,
+      "drawish": 0.2926829268292683,
+      "conservative": 0.3240418118466899,
+      "volatile": 0.017421602787456445
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "conservative",
+        0.3240418118466899
+      ],
+      [
+        "drawish",
+        0.2926829268292683
+      ]
+    ]
+  },
+  "Cecilia_v0.3.0": {
+    "wins": 17,
+    "losses": 117,
+    "draws": 76,
+    "total_games": 210,
+    "total_moves": 22327,
+    "win_types": {
+      "time": 16,
+      "other": 1
+    },
+    "loss_types": {
+      "other": 117
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 106.31904761904762,
+    "personality_traits": {
+      "drawish": 76,
+      "conservative": 64,
+      "solid": 210,
+      "aggressive": 71,
+      "slow": 16,
+      "volatile": 7
+    },
+    "win_rate": 0.08095238095238096,
+    "loss_rate": 0.5571428571428572,
+    "draw_rate": 0.3619047619047619,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "drawish": 0.3619047619047619,
+      "conservative": 0.3047619047619048,
+      "solid": 1.0,
+      "aggressive": 0.3380952380952381,
+      "slow": 0.0761904761904762,
+      "volatile": 0.03333333333333333
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.3619047619047619
+      ],
+      [
+        "aggressive",
+        0.3380952380952381
+      ]
+    ]
+  },
+  "C0BR4 1.0": {
+    "wins": 23,
+    "losses": 69,
+    "draws": 16,
+    "total_games": 108,
+    "total_moves": 4093,
+    "win_types": {
+      "other": 22,
+      "time": 1
+    },
+    "loss_types": {
+      "other": 69
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 37.898148148148145,
+    "personality_traits": {
+      "aggressive": 64,
+      "solid": 108,
+      "slow": 1,
+      "drawish": 15,
+      "conservative": 2
+    },
+    "win_rate": 0.21296296296296297,
+    "loss_rate": 0.6388888888888888,
+    "draw_rate": 0.14814814814814814,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "aggressive": 0.5925925925925926,
+      "solid": 1.0,
+      "slow": 0.009259259259259259,
+      "drawish": 0.1388888888888889,
+      "conservative": 0.018518518518518517
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.5925925925925926
+      ],
+      [
+        "drawish",
+        0.1388888888888889
+      ]
+    ]
+  },
+  "V7P3R 4.3": {
+    "wins": 29,
+    "losses": 18,
+    "draws": 44,
+    "total_games": 91,
+    "total_moves": 5896,
+    "win_types": {
+      "other": 24,
+      "time": 5
+    },
+    "loss_types": {
+      "other": 18
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 64.79120879120879,
+    "personality_traits": {
+      "aggressive": 22,
+      "solid": 91,
+      "drawish": 43,
+      "conservative": 16,
+      "slow": 5
+    },
+    "win_rate": 0.31868131868131866,
+    "loss_rate": 0.1978021978021978,
+    "draw_rate": 0.4835164835164835,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "aggressive": 0.24175824175824176,
+      "solid": 1.0,
+      "drawish": 0.4725274725274725,
+      "conservative": 0.17582417582417584,
+      "slow": 0.054945054945054944
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "drawish",
+        0.4725274725274725
+      ],
+      [
+        "aggressive",
+        0.24175824175824176
+      ]
+    ]
+  },
+  "C0BR4 2.0": {
+    "wins": 21,
+    "losses": 34,
+    "draws": 5,
+    "total_games": 60,
+    "total_moves": 2490,
+    "win_types": {
+      "other": 21
+    },
+    "loss_types": {
+      "other": 34
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 41.5,
+    "personality_traits": {
+      "aggressive": 26,
+      "solid": 60,
+      "drawish": 5,
+      "conservative": 2
+    },
+    "win_rate": 0.35,
+    "loss_rate": 0.5666666666666667,
+    "draw_rate": 0.08333333333333333,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "aggressive": 0.43333333333333335,
+      "solid": 1.0,
+      "drawish": 0.08333333333333333,
+      "conservative": 0.03333333333333333
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.43333333333333335
+      ],
+      [
+        "drawish",
+        0.08333333333333333
+      ]
+    ]
+  },
+  "SlowMate_v0.1.02_Beta": {
+    "wins": 28,
+    "losses": 28,
+    "draws": 4,
+    "total_games": 60,
+    "total_moves": 5001,
+    "win_types": {
+      "adjudication": 21,
+      "other": 7
+    },
+    "loss_types": {
+      "adjudication": 27,
+      "other": 1
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 83.35,
+    "personality_traits": {
+      "volatile": 48,
+      "aggressive": 11,
+      "solid": 60,
+      "drawish": 4,
+      "conservative": 16
+    },
+    "win_rate": 0.4666666666666667,
+    "loss_rate": 0.4666666666666667,
+    "draw_rate": 0.06666666666666667,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "volatile": 0.8,
+      "aggressive": 0.18333333333333332,
+      "solid": 1.0,
+      "drawish": 0.06666666666666667,
+      "conservative": 0.26666666666666666
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "volatile",
+        0.8
+      ],
+      [
+        "conservative",
+        0.26666666666666666
+      ]
+    ]
+  },
+  "SlowMate_v0.0.2_Enhanced_Intelligence": {
+    "wins": 37,
+    "losses": 20,
+    "draws": 3,
+    "total_games": 60,
+    "total_moves": 6348,
+    "win_types": {
+      "other": 11,
+      "adjudication": 26
+    },
+    "loss_types": {
+      "adjudication": 18,
+      "other": 2
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 105.8,
+    "personality_traits": {
+      "conservative": 18,
+      "solid": 60,
+      "volatile": 44,
+      "drawish": 3,
+      "aggressive": 13
+    },
+    "win_rate": 0.6166666666666667,
+    "loss_rate": 0.3333333333333333,
+    "draw_rate": 0.05,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.3,
+      "solid": 1.0,
+      "volatile": 0.7333333333333333,
+      "drawish": 0.05,
+      "aggressive": 0.21666666666666667
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "volatile",
+        0.7333333333333333
+      ],
+      [
+        "conservative",
+        0.3
+      ]
+    ]
+  },
+  "Slowmate_v0.1.0": {
+    "wins": 37,
+    "losses": 50,
+    "draws": 3,
+    "total_games": 90,
+    "total_moves": 7737,
+    "win_types": {
+      "adjudication": 37
+    },
+    "loss_types": {
+      "other": 16,
+      "adjudication": 34
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 85.96666666666667,
+    "personality_traits": {
+      "conservative": 20,
+      "solid": 90,
+      "volatile": 71,
+      "aggressive": 14,
+      "drawish": 3
+    },
+    "win_rate": 0.4111111111111111,
+    "loss_rate": 0.5555555555555556,
+    "draw_rate": 0.03333333333333333,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.2222222222222222,
+      "solid": 1.0,
+      "volatile": 0.7888888888888889,
+      "aggressive": 0.15555555555555556,
+      "drawish": 0.03333333333333333
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "volatile",
+        0.7888888888888889
+      ],
+      [
+        "conservative",
+        0.2222222222222222
+      ]
+    ]
+  },
+  "SlowMate_v0.0.1_Pure_Random": {
+    "wins": 33,
+    "losses": 26,
+    "draws": 1,
+    "total_games": 60,
+    "total_moves": 3556,
+    "win_types": {
+      "adjudication": 33
+    },
+    "loss_types": {
+      "other": 10,
+      "adjudication": 16
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 59.266666666666666,
+    "personality_traits": {
+      "conservative": 9,
+      "solid": 60,
+      "volatile": 49,
+      "aggressive": 5,
+      "drawish": 1
+    },
+    "win_rate": 0.55,
+    "loss_rate": 0.43333333333333335,
+    "draw_rate": 0.016666666666666666,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.15,
+      "solid": 1.0,
+      "volatile": 0.8166666666666667,
+      "aggressive": 0.08333333333333333,
+      "drawish": 0.016666666666666666
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "volatile",
+        0.8166666666666667
+      ],
+      [
+        "conservative",
+        0.15
+      ]
+    ]
+  },
+  "SlowMate_v0.0.3_Opening_Book": {
+    "wins": 29,
+    "losses": 28,
+    "draws": 3,
+    "total_games": 60,
+    "total_moves": 5595,
+    "win_types": {
+      "other": 7,
+      "adjudication": 22
+    },
+    "loss_types": {
+      "adjudication": 23,
+      "other": 5
+    },
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 93.25,
+    "personality_traits": {
+      "conservative": 19,
+      "solid": 60,
+      "volatile": 45,
+      "aggressive": 10,
+      "drawish": 3
+    },
+    "win_rate": 0.48333333333333334,
+    "loss_rate": 0.4666666666666667,
+    "draw_rate": 0.05,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "conservative": 0.31666666666666665,
+      "solid": 1.0,
+      "volatile": 0.75,
+      "aggressive": 0.16666666666666666,
+      "drawish": 0.05
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "volatile",
+        0.75
+      ],
+      [
+        "conservative",
+        0.31666666666666665
+      ]
+    ]
+  },
+  "Stockfish": {
+    "wins": 30,
+    "losses": 0,
+    "draws": 0,
+    "total_games": 30,
+    "total_moves": 818,
+    "win_types": {
+      "other": 14,
+      "adjudication": 16
+    },
+    "loss_types": {},
+    "blunders": 0,
+    "blunder_games": 0,
+    "time_losses": 0,
+    "material_losses": 0,
+    "mate_wins": 0,
+    "mate_losses": 0,
+    "average_game_length": 27.266666666666666,
+    "personality_traits": {
+      "solid": 30,
+      "aggressive": 22,
+      "volatile": 16
+    },
+    "win_rate": 1.0,
+    "loss_rate": 0.0,
+    "draw_rate": 0.0,
+    "blunder_rate": 0.0,
+    "personality_percentages": {
+      "solid": 1.0,
+      "aggressive": 0.7333333333333333,
+      "volatile": 0.5333333333333333
+    },
+    "dominant_traits": [
+      [
+        "solid",
+        1.0
+      ],
+      [
+        "aggressive",
+        0.7333333333333333
+      ],
+      [
+        "volatile",
+        0.5333333333333333
+      ]
+    ]
+  }
+}
