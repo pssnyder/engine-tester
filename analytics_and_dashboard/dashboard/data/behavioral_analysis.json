@@ -1,0 +1,2553 @@
+{
+  "behavioral_profiles": {
+    "Cecilia": {
+      "engine_name": "Cecilia",
+      "total_games": 989,
+      "total_moves": 49266,
+      "behavioral_scores": {
+        "aggression": 2.98,
+        "decisiveness": 16.02,
+        "piece_diversity": 3,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 1.35,
+          "positional": 60.21,
+          "aggressive": 6.22,
+          "defensive": 92.63
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 1.21,
+        "draw_rate": 49.44,
+        "avg_game_length": 100.0,
+        "capture_rate": 4.8,
+        "check_rate": 0.26
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 14567,
+          "g8h8": 14404,
+          "h7f8": 1847,
+          "f8h7": 1690,
+          "h1g1": 1499,
+          "g1h1": 1406,
+          "h8h7": 537,
+          "h7h8": 522,
+          "g1h3": 496,
+          "h3g5": 496
+        },
+        "favorite_pieces": {
+          "K": 24377,
+          "R": 16871,
+          "N": 6340,
+          "Q": 777,
+          "B": 743
+        },
+        "preferred_openings": {
+          "Unknown Opening": 989
+        },
+        "castling_preference": {
+          "kingside": 2,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "h7": 31.4,
+          "f8": 28.0,
+          "h3": 7.8,
+          "g5": 7.4,
+          "g8": 6.4,
+          "h6": 4.1,
+          "g1": 3.9,
+          "e7": 3.1
+        },
+        "R": {
+          "h8": 36.8,
+          "g8": 36.8,
+          "g1": 8.8,
+          "h1": 8.7,
+          "a1": 2.8,
+          "b1": 2.7,
+          "a8": 0.8,
+          "b8": 0.7
+        },
+        "K": {
+          "h8": 36.0,
+          "g8": 35.3,
+          "h7": 3.7,
+          "f8": 2.6,
+          "e8": 2.2,
+          "g7": 2.1,
+          "h5": 1.9,
+          "g4": 1.8
+        },
+        "B": {
+          "g8": 24.7,
+          "h7": 22.5,
+          "h3": 7.1,
+          "f1": 5.0,
+          "c8": 5.0,
+          "g7": 4.9,
+          "f8": 4.3,
+          "d7": 3.4
+        },
+        "Q": {
+          "g8": 36.6,
+          "h8": 36.5,
+          "d8": 8.8,
+          "e8": 5.5,
+          "f8": 3.2,
+          "d1": 1.9,
+          "c8": 1.7,
+          "c2": 1.1
+        },
+        "P": {
+          "g3": 9.2,
+          "e7": 8.2,
+          "e2": 7.6,
+          "d3": 7.3,
+          "g2": 7.0,
+          "d6": 6.6,
+          "f6": 5.4,
+          "g7": 4.4
+        }
+      }
+    },
+    "SlowMate": {
+      "engine_name": "SlowMate",
+      "total_games": 4930,
+      "total_moves": 204030,
+      "behavioral_scores": {
+        "aggression": 14.59,
+        "decisiveness": 66.01,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 8.66,
+          "positional": 52.9,
+          "aggressive": 28.62,
+          "defensive": 63.14
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 54.32,
+        "draw_rate": 6.71,
+        "avg_game_length": 82.7,
+        "capture_rate": 21.18,
+        "check_rate": 4.7
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 4010,
+          "g8h8": 3981,
+          "e7e6": 2241,
+          "b1c3": 2041,
+          "g1f3": 1968,
+          "d7d6": 1837,
+          "g8f6": 1623,
+          "e2e4": 1556,
+          "a8b8": 1415,
+          "d2d4": 1315
+        },
+        "favorite_pieces": {
+          "K": 55501,
+          "P": 41586,
+          "R": 38398,
+          "N": 30433,
+          "B": 21380
+        },
+        "preferred_openings": {
+          "Unknown Opening": 4930
+        },
+        "castling_preference": {
+          "kingside": 614,
+          "queenside": 242
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "e4": 4.6,
+          "e6": 3.8,
+          "e5": 3.6,
+          "b5": 3.2,
+          "d5": 3.1,
+          "b4": 3.0,
+          "d4": 3.0,
+          "d6": 2.9
+        },
+        "Q": {
+          "d1": 8.5,
+          "d8": 6.1,
+          "e1": 3.4,
+          "d4": 3.2,
+          "f3": 3.0,
+          "c7": 3.0,
+          "a8": 3.0,
+          "f4": 3.0
+        },
+        "B": {
+          "g4": 5.6,
+          "f8": 5.4,
+          "c1": 4.8,
+          "f3": 4.2,
+          "f1": 4.2,
+          "c8": 4.1,
+          "d4": 4.0,
+          "e5": 3.8
+        },
+        "N": {
+          "f3": 6.6,
+          "c3": 6.6,
+          "c6": 5.4,
+          "f6": 5.4,
+          "b1": 4.7,
+          "d5": 4.1,
+          "g1": 4.0,
+          "b8": 4.0
+        },
+        "R": {
+          "a1": 6.4,
+          "b1": 5.8,
+          "h8": 4.9,
+          "c1": 4.8,
+          "f1": 4.4,
+          "e1": 3.7,
+          "h6": 3.5,
+          "a8": 3.4
+        },
+        "K": {
+          "g8": 8.1,
+          "h8": 6.8,
+          "e7": 5.9,
+          "d6": 5.9,
+          "e6": 5.7,
+          "d7": 4.9,
+          "e8": 3.3,
+          "h7": 3.0
+        }
+      }
+    },
+    "Cece": {
+      "engine_name": "Cece",
+      "total_games": 1785,
+      "total_moves": 67083,
+      "behavioral_scores": {
+        "aggression": 15.4,
+        "decisiveness": 44.94,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 12.51,
+          "positional": 52.27,
+          "aggressive": 27.21,
+          "defensive": 72.16
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 32.44,
+        "draw_rate": 25.88,
+        "avg_game_length": 75.3,
+        "capture_rate": 18.61,
+        "check_rate": 10.58
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 2466,
+          "g8h8": 2136,
+          "f8g8": 708,
+          "h1g1": 669,
+          "g8f8": 658,
+          "g1f3": 545,
+          "e8f8": 528,
+          "h8h7": 504,
+          "g8f6": 469,
+          "e8d8": 446
+        },
+        "favorite_pieces": {
+          "K": 22088,
+          "N": 11303,
+          "R": 10955,
+          "P": 9351,
+          "B": 7340
+        },
+        "preferred_openings": {
+          "Unknown Opening": 1785
+        },
+        "castling_preference": {
+          "kingside": 153,
+          "queenside": 64
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "e4": 4.3,
+          "e5": 4.2,
+          "d4": 4.1,
+          "d5": 4.0,
+          "e2": 3.4,
+          "e7": 3.3,
+          "d2": 3.2,
+          "d7": 2.8
+        },
+        "N": {
+          "f3": 6.5,
+          "e5": 4.9,
+          "f6": 4.8,
+          "c3": 4.6,
+          "g1": 4.6,
+          "g8": 4.6,
+          "c6": 4.4,
+          "b8": 3.9
+        },
+        "B": {
+          "f8": 5.1,
+          "f1": 4.8,
+          "c8": 4.8,
+          "g7": 4.2,
+          "c1": 4.0,
+          "h6": 3.3,
+          "g2": 3.1,
+          "d7": 3.0
+        },
+        "R": {
+          "h8": 15.1,
+          "g8": 13.6,
+          "h1": 7.0,
+          "g1": 5.8,
+          "a8": 3.9,
+          "f8": 3.6,
+          "b8": 3.2,
+          "h2": 2.6
+        },
+        "Q": {
+          "d8": 7.2,
+          "d1": 6.0,
+          "d5": 3.7,
+          "e5": 3.6,
+          "d4": 3.3,
+          "e8": 2.9,
+          "e4": 2.8,
+          "h5": 2.8
+        },
+        "K": {
+          "g8": 10.4,
+          "h8": 7.1,
+          "f8": 6.1,
+          "e8": 5.4,
+          "g7": 4.8,
+          "f7": 4.0,
+          "h7": 3.8,
+          "d8": 3.2
+        }
+      }
+    },
+    "V7P3RAI": {
+      "engine_name": "V7P3RAI",
+      "total_games": 520,
+      "total_moves": 14254,
+      "behavioral_scores": {
+        "aggression": 9.37,
+        "decisiveness": 41.79,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 7.16,
+          "positional": 55.48,
+          "aggressive": 16.95,
+          "defensive": 77.0
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 28.46,
+        "draw_rate": 27.12,
+        "avg_game_length": 54.9,
+        "capture_rate": 11.81,
+        "check_rate": 5.7
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "a7a6": 284,
+          "h7h6": 274,
+          "d8e8": 260,
+          "g1f3": 257,
+          "b1c3": 256,
+          "e8d8": 242,
+          "f7f5": 235,
+          "g7g5": 213,
+          "b7b5": 197,
+          "c7c5": 188
+        },
+        "favorite_pieces": {
+          "K": 4315,
+          "P": 3222,
+          "Q": 2015,
+          "N": 1879,
+          "R": 1439
+        },
+        "preferred_openings": {
+          "Unknown Opening": 520
+        },
+        "castling_preference": {
+          "kingside": 1,
+          "queenside": 10
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "h6": 5.4,
+          "f5": 5.2,
+          "c5": 5.0,
+          "a6": 4.9,
+          "g5": 4.8,
+          "g7": 4.2,
+          "b5": 4.2,
+          "h7": 4.1
+        },
+        "K": {
+          "e8": 11.3,
+          "e7": 6.6,
+          "d8": 6.4,
+          "d7": 5.3,
+          "d5": 4.3,
+          "g8": 4.0,
+          "e4": 3.5,
+          "f7": 3.4
+        },
+        "Q": {
+          "e8": 8.8,
+          "d8": 7.5,
+          "h5": 6.7,
+          "d1": 5.8,
+          "d7": 5.6,
+          "e5": 4.6,
+          "g5": 4.3,
+          "c8": 4.2
+        },
+        "N": {
+          "f3": 13.9,
+          "c3": 13.3,
+          "e5": 8.8,
+          "d5": 7.6,
+          "b1": 7.0,
+          "g1": 6.9,
+          "g8": 4.4,
+          "h6": 3.6
+        },
+        "R": {
+          "a8": 14.8,
+          "h8": 10.4,
+          "a7": 7.4,
+          "a6": 6.8,
+          "h6": 6.2,
+          "g1": 5.8,
+          "a1": 5.4,
+          "h1": 5.0
+        },
+        "B": {
+          "f8": 10.4,
+          "c8": 8.3,
+          "f1": 7.7,
+          "h6": 5.6,
+          "d7": 5.0,
+          "a6": 5.0,
+          "b5": 4.8,
+          "e7": 4.3
+        }
+      }
+    },
+    "Random_Opponent": {
+      "engine_name": "Random_Opponent",
+      "total_games": 521,
+      "total_moves": 36127,
+      "behavioral_scores": {
+        "aggression": 5.96,
+        "decisiveness": 31.46,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 4.33,
+          "positional": 59.2,
+          "aggressive": 10.99,
+          "defensive": 77.73
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 12.28,
+        "draw_rate": 23.8,
+        "avg_game_length": 138.9,
+        "capture_rate": 7.78,
+        "check_rate": 3.24
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "a2a3": 171,
+          "e1d1": 163,
+          "h2h3": 158,
+          "e2e3": 151,
+          "g7g6": 150,
+          "h1g1": 149,
+          "e7e6": 147,
+          "d7d6": 147,
+          "d2d3": 144,
+          "b7b6": 143
+        },
+        "favorite_pieces": {
+          "K": 11774,
+          "P": 6752,
+          "R": 5228,
+          "N": 4814,
+          "B": 4567
+        },
+        "preferred_openings": {
+          "Unknown Opening": 521
+        },
+        "castling_preference": {
+          "kingside": 31,
+          "queenside": 22
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "a4": 3.1,
+          "a5": 3.1,
+          "c5": 2.7,
+          "c4": 2.7,
+          "g5": 2.7,
+          "g4": 2.6,
+          "d4": 2.5,
+          "f5": 2.5
+        },
+        "Q": {
+          "d1": 5.0,
+          "d8": 4.3,
+          "c2": 3.1,
+          "d2": 2.5,
+          "c7": 2.5,
+          "e2": 2.4,
+          "f3": 2.3,
+          "b3": 2.1
+        },
+        "B": {
+          "f1": 3.9,
+          "c8": 3.5,
+          "c1": 3.5,
+          "g2": 3.2,
+          "d3": 2.8,
+          "e2": 2.6,
+          "f8": 2.6,
+          "b7": 2.6
+        },
+        "R": {
+          "h1": 4.2,
+          "a1": 4.0,
+          "b1": 2.9,
+          "h2": 2.8,
+          "a2": 2.8,
+          "g1": 2.7,
+          "h8": 2.5,
+          "c1": 2.4
+        },
+        "K": {
+          "e1": 3.6,
+          "f2": 2.9,
+          "e2": 2.8,
+          "e8": 2.8,
+          "e7": 2.6,
+          "d7": 2.5,
+          "d1": 2.4,
+          "g2": 2.3
+        },
+        "N": {
+          "f3": 4.1,
+          "c3": 4.0,
+          "g1": 3.8,
+          "b1": 3.5,
+          "f6": 3.4,
+          "c6": 3.3,
+          "g8": 3.1,
+          "b8": 3.1
+        }
+      }
+    },
+    "Copycat": {
+      "engine_name": "Copycat",
+      "total_games": 450,
+      "total_moves": 26115,
+      "behavioral_scores": {
+        "aggression": 16.78,
+        "decisiveness": 32.42,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 19.16,
+          "positional": 52.26,
+          "aggressive": 24.72,
+          "defensive": 76.26
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 18.89,
+        "draw_rate": 36.0,
+        "avg_game_length": 116.2,
+        "capture_rate": 14.12,
+        "check_rate": 20.75
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "e2e3": 135,
+          "e7e6": 128,
+          "d2d3": 126,
+          "g2g3": 123,
+          "e1d1": 122,
+          "c7c6": 119,
+          "f2f3": 119,
+          "a2a3": 111,
+          "h2h3": 107,
+          "b2b3": 106
+        },
+        "favorite_pieces": {
+          "K": 10061,
+          "P": 5907,
+          "N": 3789,
+          "B": 2370,
+          "R": 2230
+        },
+        "preferred_openings": {
+          "Unknown Opening": 450
+        },
+        "castling_preference": {
+          "kingside": 18,
+          "queenside": 11
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "d5": 2.9,
+          "b5": 2.8,
+          "e4": 2.8,
+          "d4": 2.8,
+          "b4": 2.6,
+          "g5": 2.6,
+          "a4": 2.6,
+          "e5": 2.5
+        },
+        "N": {
+          "f6": 5.9,
+          "c6": 3.7,
+          "c3": 3.3,
+          "b8": 3.3,
+          "g1": 3.3,
+          "g8": 3.2,
+          "b1": 3.2,
+          "f3": 3.0
+        },
+        "B": {
+          "f1": 5.0,
+          "c8": 4.7,
+          "f8": 4.7,
+          "c1": 4.6,
+          "g7": 3.9,
+          "h6": 3.4,
+          "g2": 3.2,
+          "d7": 3.2
+        },
+        "Q": {
+          "d8": 7.6,
+          "d1": 7.0,
+          "e7": 3.3,
+          "d7": 3.1,
+          "a5": 2.6,
+          "d2": 2.4,
+          "h5": 2.4,
+          "f7": 2.4
+        },
+        "R": {
+          "h8": 6.6,
+          "a1": 5.3,
+          "h1": 5.3,
+          "a8": 4.2,
+          "g8": 4.2,
+          "h2": 3.9,
+          "h7": 3.5,
+          "b1": 3.0
+        },
+        "K": {
+          "e1": 3.3,
+          "e2": 3.3,
+          "d2": 3.1,
+          "f2": 3.0,
+          "e8": 2.6,
+          "d1": 2.6,
+          "e7": 2.3,
+          "d7": 2.3
+        }
+      }
+    },
+    "Cece v1.3": {
+      "engine_name": "Cece v1.3",
+      "total_games": 171,
+      "total_moves": 5176,
+      "behavioral_scores": {
+        "aggression": 17.06,
+        "decisiveness": 34.8,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 14.08,
+          "positional": 50.98,
+          "aggressive": 29.94,
+          "defensive": 79.41
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 25.15,
+        "draw_rate": 42.69,
+        "avg_game_length": 60.5,
+        "capture_rate": 20.36,
+        "check_rate": 12.09
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 276,
+          "g8h8": 217,
+          "h1g1": 102,
+          "g1f3": 90,
+          "b1c3": 52,
+          "g1h1": 52,
+          "g8f6": 50,
+          "b8c6": 49,
+          "f3e5": 45,
+          "e7e6": 43
+        },
+        "favorite_pieces": {
+          "N": 1368,
+          "R": 1134,
+          "K": 821,
+          "B": 693,
+          "P": 629
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 9,
+          "queenside": 7
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "f3": 8.2,
+          "f6": 4.9,
+          "e5": 4.8,
+          "c3": 4.8,
+          "g8": 4.5,
+          "g1": 4.3,
+          "c6": 3.8,
+          "d3": 3.7
+        },
+        "P": {
+          "e6": 4.4,
+          "e7": 4.3,
+          "d2": 3.4,
+          "e3": 3.1,
+          "e2": 3.0,
+          "g7": 2.9,
+          "d4": 2.9,
+          "c3": 2.6
+        },
+        "Q": {
+          "d8": 6.8,
+          "d1": 5.4,
+          "g5": 5.2,
+          "d5": 3.0,
+          "c8": 2.9,
+          "g8": 2.6,
+          "d3": 2.5,
+          "d7": 2.5
+        },
+        "B": {
+          "g7": 5.6,
+          "g5": 5.5,
+          "h6": 5.1,
+          "f8": 4.4,
+          "c1": 3.6,
+          "e5": 3.5,
+          "e7": 3.1,
+          "f6": 3.0
+        },
+        "K": {
+          "g8": 12.1,
+          "g7": 6.8,
+          "f8": 6.5,
+          "h8": 6.2,
+          "e8": 4.9,
+          "f7": 4.8,
+          "d8": 4.0,
+          "e1": 3.2
+        },
+        "R": {
+          "g8": 20.7,
+          "h8": 20.2,
+          "h1": 8.6,
+          "g1": 8.4,
+          "a8": 3.6,
+          "b8": 2.6,
+          "f8": 2.3,
+          "a1": 2.0
+        }
+      }
+    },
+    "V7P3RAI v1.0": {
+      "engine_name": "V7P3RAI v1.0",
+      "total_games": 171,
+      "total_moves": 4184,
+      "behavioral_scores": {
+        "aggression": 8.0,
+        "decisiveness": 30.99,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 6.43,
+          "positional": 56.18,
+          "aggressive": 14.2,
+          "defensive": 84.57
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 18.71,
+        "draw_rate": 40.35,
+        "avg_game_length": 48.9,
+        "capture_rate": 9.75,
+        "check_rate": 5.38
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h7h6": 98,
+          "g1f3": 88,
+          "a7a6": 86,
+          "f7f5": 84,
+          "b1c3": 83,
+          "b7b5": 74,
+          "f3e5": 74,
+          "g7g5": 72,
+          "e8e7": 69,
+          "e8d7": 69
+        },
+        "favorite_pieces": {
+          "K": 1065,
+          "P": 1057,
+          "Q": 641,
+          "N": 586,
+          "R": 455
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 6,
+          "queenside": 1
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "h6": 5.6,
+          "c5": 5.6,
+          "f5": 5.1,
+          "a6": 4.7,
+          "b5": 4.3,
+          "g5": 4.2,
+          "h7": 4.0,
+          "a7": 4.0
+        },
+        "K": {
+          "e8": 12.6,
+          "e7": 7.8,
+          "h8": 6.1,
+          "g8": 6.1,
+          "d8": 5.5,
+          "d7": 4.7,
+          "f7": 4.4,
+          "h7": 4.2
+        },
+        "Q": {
+          "e8": 11.9,
+          "d7": 11.1,
+          "h5": 10.7,
+          "d8": 8.3,
+          "g5": 8.3,
+          "d1": 6.7,
+          "a4": 2.8,
+          "f3": 2.7
+        },
+        "N": {
+          "f3": 18.4,
+          "c3": 13.5,
+          "e5": 11.0,
+          "g1": 7.7,
+          "d5": 7.5,
+          "b1": 7.2,
+          "d4": 2.7,
+          "e4": 2.6
+        },
+        "B": {
+          "f1": 8.9,
+          "f8": 7.8,
+          "c8": 7.6,
+          "b5": 7.2,
+          "d7": 5.0,
+          "h6": 5.0,
+          "g7": 5.0,
+          "c1": 4.1
+        },
+        "R": {
+          "a1": 10.2,
+          "a8": 8.8,
+          "b1": 8.1,
+          "h8": 7.0,
+          "h7": 6.3,
+          "a7": 6.2,
+          "h6": 4.9,
+          "a5": 4.7
+        }
+      }
+    },
+    "SlowMate v1.0": {
+      "engine_name": "SlowMate v1.0",
+      "total_games": 171,
+      "total_moves": 4536,
+      "behavioral_scores": {
+        "aggression": 20.6,
+        "decisiveness": 72.22,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 15.89,
+          "positional": 48.7,
+          "aggressive": 37.15,
+          "defensive": 66.4
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 69.59,
+        "draw_rate": 21.64,
+        "avg_game_length": 52.7,
+        "capture_rate": 25.84,
+        "check_rate": 12.74
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h1g1": 130,
+          "g8f6": 86,
+          "g1f3": 85,
+          "b1c3": 84,
+          "g1h1": 78,
+          "f3e5": 61,
+          "b8c6": 59,
+          "c3d5": 49,
+          "a8b8": 48,
+          "h8g8": 47
+        },
+        "favorite_pieces": {
+          "N": 1298,
+          "K": 1128,
+          "R": 865,
+          "Q": 537,
+          "P": 385
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 8,
+          "queenside": 6
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "f3": 8.3,
+          "d5": 7.9,
+          "c3": 7.4,
+          "f6": 7.3,
+          "c6": 6.3,
+          "d4": 5.7,
+          "e5": 5.5,
+          "e4": 4.4
+        },
+        "K": {
+          "b2": 8.5,
+          "a2": 5.6,
+          "b7": 4.2,
+          "b1": 3.9,
+          "c2": 3.5,
+          "g8": 3.3,
+          "b8": 3.2,
+          "g7": 3.1
+        },
+        "P": {
+          "e6": 5.6,
+          "e7": 4.9,
+          "e2": 4.3,
+          "d6": 4.3,
+          "c3": 4.2,
+          "e4": 4.0,
+          "f3": 4.0,
+          "d3": 4.0
+        },
+        "Q": {
+          "d1": 5.4,
+          "d8": 4.6,
+          "d7": 4.6,
+          "f3": 3.5,
+          "a5": 2.8,
+          "a4": 2.8,
+          "f6": 2.7,
+          "d4": 2.7
+        },
+        "B": {
+          "f8": 7.1,
+          "d7": 6.2,
+          "d2": 5.3,
+          "c8": 5.0,
+          "b5": 4.6,
+          "g2": 4.6,
+          "e7": 4.6,
+          "f1": 4.5
+        },
+        "R": {
+          "h1": 12.7,
+          "g1": 12.5,
+          "h2": 6.2,
+          "h8": 5.8,
+          "a8": 4.7,
+          "b8": 4.7,
+          "h7": 4.3,
+          "g8": 3.5
+        }
+      }
+    },
+    "Cece v2.0": {
+      "engine_name": "Cece v2.0",
+      "total_games": 171,
+      "total_moves": 5415,
+      "behavioral_scores": {
+        "aggression": 21.0,
+        "decisiveness": 54.91,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 18.73,
+          "positional": 48.66,
+          "aggressive": 35.62,
+          "defensive": 67.0
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 45.61,
+        "draw_rate": 23.39,
+        "avg_game_length": 63.3,
+        "capture_rate": 23.53,
+        "check_rate": 17.21
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "g1f3": 87,
+          "e7e5": 84,
+          "e2e4": 84,
+          "h8g8": 73,
+          "f3e5": 71,
+          "g8h8": 68,
+          "d2d4": 62,
+          "d7d5": 60,
+          "g8f6": 54,
+          "e4e5": 54
+        },
+        "favorite_pieces": {
+          "P": 981,
+          "K": 945,
+          "N": 910,
+          "B": 885,
+          "R": 852
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 41,
+          "queenside": 8
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "e4": 10.5,
+          "e5": 9.4,
+          "d5": 8.2,
+          "d4": 7.7,
+          "e2": 4.6,
+          "e7": 4.1,
+          "d7": 4.0,
+          "d2": 4.0
+        },
+        "N": {
+          "f3": 10.5,
+          "e5": 10.2,
+          "f6": 7.3,
+          "f7": 5.0,
+          "g1": 4.9,
+          "g8": 4.6,
+          "d5": 4.0,
+          "c3": 3.9
+        },
+        "B": {
+          "f1": 4.6,
+          "e5": 4.6,
+          "f8": 4.5,
+          "h6": 4.3,
+          "c1": 3.7,
+          "c8": 3.7,
+          "d5": 3.3,
+          "g5": 3.3
+        },
+        "K": {
+          "g8": 10.0,
+          "e8": 6.2,
+          "h8": 5.8,
+          "f8": 5.7,
+          "f3": 3.9,
+          "e1": 3.8,
+          "g7": 3.8,
+          "e4": 3.7
+        },
+        "Q": {
+          "d5": 6.1,
+          "d8": 5.8,
+          "h5": 5.6,
+          "e5": 5.6,
+          "d1": 5.6,
+          "h4": 5.0,
+          "d4": 4.3,
+          "f3": 4.1
+        },
+        "R": {
+          "h8": 9.9,
+          "h1": 7.7,
+          "g8": 7.4,
+          "f8": 5.9,
+          "e8": 5.0,
+          "h2": 4.6,
+          "e4": 3.5,
+          "d8": 3.3
+        }
+      }
+    },
+    "Cecilia v0.1": {
+      "engine_name": "Cecilia v0.1",
+      "total_games": 171,
+      "total_moves": 8270,
+      "behavioral_scores": {
+        "aggression": 3.23,
+        "decisiveness": 12.81,
+        "piece_diversity": 3,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 1.57,
+          "positional": 60.0,
+          "aggressive": 6.64,
+          "defensive": 96.39
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 0.0,
+        "draw_rate": 57.31,
+        "avg_game_length": 97.1,
+        "capture_rate": 5.07,
+        "check_rate": 0.47
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 2292,
+          "g8h8": 2269,
+          "h7f8": 316,
+          "h1g1": 291,
+          "f8h7": 285,
+          "g1h1": 274,
+          "a1b1": 173,
+          "b1a1": 167,
+          "g8h7": 122,
+          "h7g8": 118
+        },
+        "favorite_pieces": {
+          "K": 3461,
+          "R": 3107,
+          "N": 1082,
+          "B": 367,
+          "Q": 222
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 0,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "h7": 31.1,
+          "f8": 27.9,
+          "h3": 7.9,
+          "g5": 7.3,
+          "g8": 4.9,
+          "h6": 4.5,
+          "g1": 3.9,
+          "f7": 2.2
+        },
+        "R": {
+          "h8": 34.4,
+          "g8": 34.3,
+          "g1": 9.3,
+          "h1": 9.1,
+          "a1": 5.5,
+          "b1": 5.5,
+          "a8": 0.4,
+          "g2": 0.4
+        },
+        "B": {
+          "g8": 30.5,
+          "h7": 30.1,
+          "f8": 6.8,
+          "e7": 6.7,
+          "h8": 4.5,
+          "g7": 4.4,
+          "h3": 3.0,
+          "f1": 2.5
+        },
+        "K": {
+          "g8": 35.3,
+          "h8": 34.9,
+          "f8": 3.1,
+          "h7": 2.6,
+          "e8": 2.4,
+          "g3": 1.9,
+          "g7": 1.8,
+          "g4": 1.6
+        },
+        "P": {
+          "e7": 14.5,
+          "d6": 9.7,
+          "e2": 9.7,
+          "d3": 9.7,
+          "f6": 6.5,
+          "g7": 4.8,
+          "g6": 4.8,
+          "g2": 3.2
+        },
+        "Q": {
+          "h8": 43.9,
+          "g8": 43.2,
+          "d8": 3.6,
+          "e8": 2.5,
+          "d1": 1.6,
+          "c1": 0.9,
+          "c8": 0.9,
+          "d7": 0.5
+        }
+      }
+    },
+    "SlowMate v0.2.1": {
+      "engine_name": "SlowMate v0.2.1",
+      "total_games": 171,
+      "total_moves": 10933,
+      "behavioral_scores": {
+        "aggression": 10.36,
+        "decisiveness": 70.64,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 6.42,
+          "positional": 56.33,
+          "aggressive": 20.08,
+          "defensive": 65.96
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 60.82,
+        "draw_rate": 6.43,
+        "avg_game_length": 127.5,
+        "capture_rate": 14.74,
+        "check_rate": 3.8
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "f1e1": 327,
+          "e1f1": 319,
+          "a1b1": 274,
+          "b1a1": 262,
+          "b1c1": 245,
+          "a1c1": 242,
+          "c1b1": 235,
+          "c1a1": 227,
+          "e1d1": 190,
+          "d1e1": 187
+        },
+        "favorite_pieces": {
+          "R": 4208,
+          "P": 1747,
+          "B": 1635,
+          "K": 1210,
+          "Q": 1072
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 45,
+          "queenside": 35
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "b5": 4.0,
+          "d4": 3.8,
+          "d6": 3.3,
+          "e4": 3.3,
+          "e6": 3.2,
+          "b4": 3.1,
+          "g5": 3.1,
+          "a7": 2.9
+        },
+        "B": {
+          "g4": 11.3,
+          "f3": 9.9,
+          "e7": 4.3,
+          "f8": 3.8,
+          "e5": 3.7,
+          "c1": 3.1,
+          "f6": 3.0,
+          "f1": 3.0
+        },
+        "R": {
+          "a1": 13.1,
+          "c1": 12.9,
+          "b1": 12.8,
+          "f1": 8.4,
+          "e1": 8.3,
+          "d1": 5.0,
+          "h4": 3.0,
+          "h3": 2.9
+        },
+        "N": {
+          "f3": 7.4,
+          "c3": 6.0,
+          "f6": 5.7,
+          "e5": 5.0,
+          "c6": 4.8,
+          "g1": 4.2,
+          "b1": 4.2,
+          "b8": 3.9
+        },
+        "Q": {
+          "d1": 21.3,
+          "e1": 18.1,
+          "c1": 5.8,
+          "d8": 5.3,
+          "b1": 4.2,
+          "c8": 2.5,
+          "b8": 2.4,
+          "a8": 2.2
+        },
+        "K": {
+          "e7": 5.4,
+          "e5": 4.4,
+          "d7": 4.4,
+          "e6": 4.1,
+          "g1": 3.8,
+          "e1": 3.6,
+          "e8": 3.6,
+          "e4": 3.4
+        }
+      }
+    },
+    "Random Playing Opponent": {
+      "engine_name": "Random Playing Opponent",
+      "total_games": 171,
+      "total_moves": 15446,
+      "behavioral_scores": {
+        "aggression": 5.87,
+        "decisiveness": 31.29,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 4.69,
+          "positional": 60.1,
+          "aggressive": 10.43,
+          "defensive": 82.85
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 16.37,
+        "draw_rate": 33.92,
+        "avg_game_length": 180.8,
+        "capture_rate": 7.17,
+        "check_rate": 3.9
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "e7e6": 63,
+          "a4a5": 58,
+          "c2c3": 58,
+          "b2b3": 56,
+          "h1g1": 56,
+          "e2e3": 55,
+          "g7g6": 54,
+          "f2f3": 52,
+          "g2g3": 52,
+          "d7d6": 51
+        },
+        "favorite_pieces": {
+          "K": 4175,
+          "R": 2783,
+          "P": 2693,
+          "N": 2383,
+          "B": 2109
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 16,
+          "queenside": 13
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "a5": 3.2,
+          "a4": 3.0,
+          "b5": 2.9,
+          "b4": 2.9,
+          "c5": 2.7,
+          "g5": 2.7,
+          "f4": 2.6,
+          "d4": 2.6
+        },
+        "R": {
+          "a1": 3.2,
+          "a8": 2.9,
+          "a2": 2.6,
+          "b1": 2.5,
+          "h8": 2.4,
+          "h1": 2.3,
+          "b8": 2.3,
+          "b2": 2.3
+        },
+        "N": {
+          "c6": 3.9,
+          "c3": 3.6,
+          "e4": 3.1,
+          "b1": 2.7,
+          "c5": 2.7,
+          "f6": 2.7,
+          "g1": 2.7,
+          "b8": 2.7
+        },
+        "Q": {
+          "d1": 4.3,
+          "d8": 3.9,
+          "d2": 2.4,
+          "b3": 2.3,
+          "e2": 2.3,
+          "g6": 2.2,
+          "d3": 2.2,
+          "e6": 2.1
+        },
+        "B": {
+          "c1": 4.1,
+          "b7": 3.5,
+          "f1": 3.2,
+          "c8": 3.1,
+          "d2": 2.8,
+          "g2": 2.7,
+          "b2": 2.6,
+          "d5": 2.4
+        },
+        "K": {
+          "e8": 3.1,
+          "e1": 3.1,
+          "e2": 3.0,
+          "e7": 2.9,
+          "g2": 2.9,
+          "f2": 2.8,
+          "d7": 2.7,
+          "g1": 2.6
+        }
+      }
+    },
+    "Cecilia v0.2": {
+      "engine_name": "Cecilia v0.2",
+      "total_games": 171,
+      "total_moves": 8342,
+      "behavioral_scores": {
+        "aggression": 3.17,
+        "decisiveness": 11.75,
+        "piece_diversity": 3,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 1.46,
+          "positional": 60.05,
+          "aggressive": 6.61,
+          "defensive": 98.19
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 0.0,
+        "draw_rate": 60.82,
+        "avg_game_length": 97.9,
+        "capture_rate": 5.08,
+        "check_rate": 0.31
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 2479,
+          "g8h8": 2457,
+          "h1g1": 238,
+          "h7f8": 233,
+          "g1h1": 228,
+          "f8h7": 201,
+          "a1b1": 138,
+          "b1a1": 132,
+          "g8h7": 98,
+          "h8h7": 94
+        },
+        "favorite_pieces": {
+          "K": 3680,
+          "R": 3489,
+          "N": 843,
+          "B": 194,
+          "Q": 102
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 0,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "h7": 30.2,
+          "f8": 25.7,
+          "h3": 10.2,
+          "g5": 9.6,
+          "h6": 5.2,
+          "g8": 5.2,
+          "g1": 5.1,
+          "c3": 3.6
+        },
+        "R": {
+          "h8": 38.5,
+          "g8": 38.4,
+          "h1": 6.8,
+          "g1": 6.8,
+          "a1": 3.9,
+          "b1": 3.9,
+          "a8": 0.3,
+          "b8": 0.2
+        },
+        "Q": {
+          "h8": 41.2,
+          "g8": 39.7,
+          "d8": 3.9,
+          "d1": 2.9,
+          "c2": 2.0,
+          "d7": 1.5,
+          "c7": 1.5,
+          "e4": 1.0
+        },
+        "K": {
+          "h8": 33.1,
+          "g8": 32.9,
+          "h7": 4.1,
+          "f8": 4.0,
+          "e8": 3.5,
+          "g7": 2.3,
+          "h5": 1.6,
+          "g5": 1.5
+        },
+        "B": {
+          "g8": 35.8,
+          "h7": 34.3,
+          "d7": 3.6,
+          "e8": 3.4,
+          "c8": 3.1,
+          "f7": 3.1,
+          "f1": 2.6,
+          "h3": 2.6
+        },
+        "P": {
+          "f6": 10.3,
+          "g7": 8.8,
+          "b6": 7.4,
+          "b7": 5.9,
+          "e7": 5.9,
+          "d3": 5.9,
+          "e3": 4.4,
+          "d6": 4.4
+        }
+      }
+    },
+    "Cecilia v0.3": {
+      "engine_name": "Cecilia v0.3",
+      "total_games": 171,
+      "total_moves": 7577,
+      "behavioral_scores": {
+        "aggression": 3.25,
+        "decisiveness": 12.63,
+        "piece_diversity": 3,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 1.56,
+          "positional": 59.83,
+          "aggressive": 6.71,
+          "defensive": 96.67
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 0.0,
+        "draw_rate": 57.89,
+        "avg_game_length": 88.9,
+        "capture_rate": 5.13,
+        "check_rate": 0.44
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 2180,
+          "g8h8": 2151,
+          "h1g1": 237,
+          "g1h1": 225,
+          "h7f8": 194,
+          "f8h7": 161,
+          "a1b1": 96,
+          "f8g8": 95,
+          "b1a1": 90,
+          "g8h6": 86
+        },
+        "favorite_pieces": {
+          "K": 3319,
+          "R": 3073,
+          "N": 927,
+          "B": 174,
+          "Q": 72
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 0,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "h7": 23.2,
+          "f8": 19.1,
+          "g8": 12.9,
+          "h3": 9.2,
+          "e7": 8.7,
+          "g5": 8.7,
+          "h6": 4.7,
+          "g1": 4.6
+        },
+        "R": {
+          "h8": 38.3,
+          "g8": 38.2,
+          "h1": 7.7,
+          "g1": 7.7,
+          "a1": 3.1,
+          "b1": 3.0,
+          "a8": 0.4,
+          "b8": 0.3
+        },
+        "B": {
+          "g8": 27.9,
+          "h7": 27.3,
+          "g7": 9.8,
+          "h8": 8.3,
+          "f1": 4.3,
+          "h3": 3.4,
+          "f8": 2.9,
+          "c8": 2.0
+        },
+        "Q": {
+          "h8": 30.6,
+          "g8": 27.8,
+          "d8": 17.4,
+          "e8": 9.7,
+          "d1": 3.5,
+          "d7": 3.5,
+          "c7": 2.1,
+          "c1": 1.4
+        },
+        "K": {
+          "g8": 33.3,
+          "h8": 32.0,
+          "f8": 4.4,
+          "e8": 3.6,
+          "h7": 3.1,
+          "d8": 2.1,
+          "h5": 1.9,
+          "f7": 1.5
+        },
+        "P": {
+          "e7": 16.7,
+          "d6": 12.5,
+          "f6": 8.3,
+          "g7": 8.3,
+          "f3": 8.3,
+          "e4": 8.3,
+          "e2": 8.3,
+          "d3": 8.3
+        }
+      }
+    },
+    "Copycat v1.0": {
+      "engine_name": "Copycat v1.0",
+      "total_games": 171,
+      "total_moves": 9609,
+      "behavioral_scores": {
+        "aggression": 17.16,
+        "decisiveness": 34.62,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 19.21,
+          "positional": 51.95,
+          "aggressive": 25.62,
+          "defensive": 77.58
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 23.39,
+        "draw_rate": 39.18,
+        "avg_game_length": 112.4,
+        "capture_rate": 14.87,
+        "check_rate": 20.58
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "e7e6": 53,
+          "g2g3": 52,
+          "c2c3": 51,
+          "f2f3": 51,
+          "e2e3": 47,
+          "h4h5": 46,
+          "d7d6": 41,
+          "a7a6": 39,
+          "g7g6": 38,
+          "d2d3": 38
+        },
+        "favorite_pieces": {
+          "K": 3197,
+          "P": 2298,
+          "N": 1498,
+          "B": 1058,
+          "R": 932
+        },
+        "preferred_openings": {
+          "Unknown Opening": 171
+        },
+        "castling_preference": {
+          "kingside": 4,
+          "queenside": 4
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "d5": 3.0,
+          "h4": 3.0,
+          "d4": 2.7,
+          "e4": 2.7,
+          "h5": 2.7,
+          "b4": 2.7,
+          "g5": 2.5,
+          "b5": 2.5
+        },
+        "R": {
+          "a1": 6.0,
+          "h1": 5.6,
+          "a8": 4.1,
+          "h8": 4.0,
+          "h2": 3.6,
+          "g1": 3.5,
+          "b1": 3.4,
+          "g8": 3.1
+        },
+        "Q": {
+          "d8": 8.1,
+          "d1": 6.9,
+          "c7": 3.7,
+          "d7": 3.4,
+          "e7": 3.2,
+          "d2": 2.6,
+          "b3": 2.5,
+          "c2": 2.3
+        },
+        "K": {
+          "e1": 3.9,
+          "f2": 3.9,
+          "e2": 3.4,
+          "g2": 2.9,
+          "e8": 2.8,
+          "f1": 2.8,
+          "e7": 2.6,
+          "d1": 2.6
+        },
+        "B": {
+          "f8": 4.9,
+          "f1": 4.7,
+          "g7": 4.3,
+          "c1": 3.9,
+          "c8": 3.8,
+          "h6": 3.4,
+          "e7": 3.4,
+          "d7": 3.2
+        },
+        "N": {
+          "f6": 5.2,
+          "b1": 3.9,
+          "c3": 3.7,
+          "g1": 3.4,
+          "g8": 3.3,
+          "c6": 3.2,
+          "b8": 3.1,
+          "e7": 3.1
+        }
+      }
+    },
+    "Stockfish 1%": {
+      "engine_name": "Stockfish 1%",
+      "total_games": 497,
+      "total_moves": 20345,
+      "behavioral_scores": {
+        "aggression": 19.35,
+        "decisiveness": 96.1,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 21.59,
+          "positional": 50.02,
+          "aggressive": 28.97,
+          "defensive": 58.27
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 95.98,
+        "draw_rate": 3.62,
+        "avg_game_length": 81.5,
+        "capture_rate": 16.86,
+        "check_rate": 23.08
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "e2e4": 254,
+          "d7d5": 242,
+          "d2d4": 226,
+          "g1f3": 206,
+          "g8f6": 204,
+          "e7e5": 203,
+          "b8c6": 195,
+          "b1c3": 194,
+          "e5e4": 148,
+          "e4e5": 144
+        },
+        "favorite_pieces": {
+          "P": 5213,
+          "R": 4096,
+          "B": 3474,
+          "Q": 3160,
+          "N": 3060
+        },
+        "preferred_openings": {
+          "Unknown Opening": 497
+        },
+        "castling_preference": {
+          "kingside": 118,
+          "queenside": 50
+        }
+      },
+      "territorial_analysis": {
+        "P": {
+          "e4": 7.1,
+          "e5": 6.3,
+          "d4": 5.3,
+          "d5": 5.3,
+          "a5": 3.0,
+          "a4": 2.8,
+          "e2": 2.7,
+          "d7": 2.6
+        },
+        "B": {
+          "e6": 4.7,
+          "f8": 4.5,
+          "c8": 4.2,
+          "f1": 3.8,
+          "d6": 3.6,
+          "c1": 3.5,
+          "d3": 3.3,
+          "e3": 3.3
+        },
+        "N": {
+          "f6": 8.2,
+          "c6": 8.1,
+          "f3": 7.2,
+          "c3": 6.6,
+          "g8": 5.1,
+          "d5": 4.6,
+          "b8": 4.0,
+          "g1": 3.7
+        },
+        "Q": {
+          "d8": 6.5,
+          "d1": 5.2,
+          "d7": 3.2,
+          "e2": 2.8,
+          "d5": 2.8,
+          "b8": 2.6,
+          "e7": 2.5,
+          "c7": 2.5
+        },
+        "R": {
+          "h8": 5.0,
+          "a8": 4.8,
+          "d8": 3.9,
+          "b8": 3.9,
+          "d1": 3.6,
+          "h1": 3.4,
+          "e1": 3.3,
+          "g8": 3.1
+        },
+        "K": {
+          "e8": 9.8,
+          "e1": 8.8,
+          "g1": 5.4,
+          "d8": 4.5,
+          "f2": 4.4,
+          "d7": 4.3,
+          "f7": 3.6,
+          "c7": 3.1
+        }
+      }
+    },
+    "Slowmate": {
+      "engine_name": "Slowmate",
+      "total_games": 288,
+      "total_moves": 10541,
+      "behavioral_scores": {
+        "aggression": 16.31,
+        "decisiveness": 62.43,
+        "piece_diversity": 6,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 10.36,
+          "positional": 51.68,
+          "aggressive": 31.38,
+          "defensive": 63.27
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 50.35,
+        "draw_rate": 9.38,
+        "avg_game_length": 73.0,
+        "capture_rate": 22.92,
+        "check_rate": 6.39
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "h8g8": 223,
+          "g8h8": 221,
+          "e7e6": 168,
+          "b1c3": 135,
+          "g8f6": 133,
+          "g1f3": 124,
+          "e6d6": 122,
+          "d7d6": 108,
+          "d6e6": 104,
+          "b8c6": 100
+        },
+        "favorite_pieces": {
+          "K": 3693,
+          "N": 2076,
+          "P": 1812,
+          "R": 1213,
+          "Q": 898
+        },
+        "preferred_openings": {
+          "Unknown Opening": 288
+        },
+        "castling_preference": {
+          "kingside": 19,
+          "queenside": 5
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "c6": 7.9,
+          "f3": 6.8,
+          "c3": 6.6,
+          "f6": 6.6,
+          "d5": 5.9,
+          "e5": 5.8,
+          "b1": 4.0,
+          "e4": 3.9
+        },
+        "P": {
+          "e6": 5.7,
+          "e4": 5.4,
+          "d5": 4.1,
+          "b5": 3.5,
+          "e5": 3.4,
+          "e7": 3.4,
+          "c3": 3.4,
+          "f3": 3.1
+        },
+        "Q": {
+          "d8": 7.7,
+          "d1": 6.7,
+          "d4": 5.1,
+          "f4": 5.0,
+          "f6": 4.7,
+          "e4": 4.5,
+          "a4": 4.0,
+          "f3": 3.7
+        },
+        "B": {
+          "f8": 6.7,
+          "c8": 5.8,
+          "f1": 5.5,
+          "c1": 5.3,
+          "d4": 4.1,
+          "e5": 4.1,
+          "e4": 3.8,
+          "a3": 3.8
+        },
+        "R": {
+          "h1": 8.1,
+          "g1": 6.8,
+          "b8": 5.6,
+          "b1": 5.5,
+          "a1": 5.1,
+          "h8": 4.3,
+          "a8": 4.0,
+          "b5": 3.5
+        },
+        "K": {
+          "d6": 8.6,
+          "g8": 8.2,
+          "e7": 8.2,
+          "h8": 7.2,
+          "e6": 7.2,
+          "d7": 5.5,
+          "h7": 3.2,
+          "f8": 3.1
+        }
+      }
+    },
+    "Slowmate_current": {
+      "engine_name": "Slowmate_current",
+      "total_games": 90,
+      "total_moves": 3924,
+      "behavioral_scores": {
+        "aggression": 13.35,
+        "decisiveness": 58.11,
+        "piece_diversity": 5,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "defensive",
+        "style_scores": {
+          "tactical": 7.13,
+          "positional": 53.73,
+          "aggressive": 26.89,
+          "defensive": 61.77
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 41.11,
+        "draw_rate": 2.22,
+        "avg_game_length": 87.1,
+        "capture_rate": 20.26,
+        "check_rate": 2.98
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "g8h8": 94,
+          "h8g8": 84,
+          "e7e6": 73,
+          "d7e6": 64,
+          "e7d6": 61,
+          "e6d7": 58,
+          "d6d7": 52,
+          "e6e7": 50,
+          "d6e7": 50,
+          "d7d6": 50
+        },
+        "favorite_pieces": {
+          "K": 1823,
+          "P": 844,
+          "N": 523,
+          "R": 352,
+          "B": 208
+        },
+        "preferred_openings": {
+          "Unknown Opening": 90
+        },
+        "castling_preference": {
+          "kingside": 7,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "c3": 7.1,
+          "f3": 6.6,
+          "f6": 6.5,
+          "b1": 5.9,
+          "c6": 5.0,
+          "e4": 5.0,
+          "g1": 4.3,
+          "b8": 4.3
+        },
+        "P": {
+          "e4": 5.7,
+          "e5": 4.6,
+          "b4": 4.0,
+          "e6": 3.7,
+          "b5": 3.4,
+          "f3": 3.1,
+          "a3": 3.1,
+          "d5": 2.8
+        },
+        "R": {
+          "f1": 8.7,
+          "f8": 5.5,
+          "b8": 5.1,
+          "a1": 5.0,
+          "a8": 4.4,
+          "h8": 3.8,
+          "h1": 3.6,
+          "f6": 3.6
+        },
+        "Q": {
+          "d8": 9.2,
+          "d1": 8.9,
+          "c7": 7.5,
+          "c2": 5.5,
+          "a4": 5.5,
+          "f3": 4.9,
+          "c4": 4.6,
+          "f1": 3.7
+        },
+        "B": {
+          "f8": 9.1,
+          "c1": 7.2,
+          "e5": 7.0,
+          "c8": 6.2,
+          "f1": 6.2,
+          "e3": 6.0,
+          "g7": 6.0,
+          "a6": 5.8
+        },
+        "K": {
+          "e6": 9.3,
+          "d6": 8.6,
+          "e7": 8.4,
+          "d7": 8.3,
+          "g8": 7.4,
+          "h8": 6.0,
+          "h7": 3.2,
+          "e8": 2.9
+        }
+      }
+    },
+    "Stockfish": {
+      "engine_name": "Stockfish",
+      "total_games": 30,
+      "total_moves": 411,
+      "behavioral_scores": {
+        "aggression": 30.36,
+        "decisiveness": 100.0,
+        "piece_diversity": 5,
+        "opening_diversity": 1
+      },
+      "playing_style": {
+        "primary_style": "aggressive",
+        "style_scores": {
+          "tactical": 22.66,
+          "positional": 42.33,
+          "aggressive": 55.44,
+          "defensive": 48.74
+        }
+      },
+      "performance_metrics": {
+        "win_rate": 100.0,
+        "draw_rate": 0.0,
+        "avg_game_length": 27.3,
+        "capture_rate": 38.93,
+        "check_rate": 17.52
+      },
+      "signature_patterns": {
+        "favorite_moves": {
+          "g8f6": 15,
+          "e2e4": 15,
+          "e4e5": 15,
+          "d2d4": 15,
+          "e1f2": 15,
+          "g1f3": 15,
+          "b1c3": 15,
+          "d1d4": 13,
+          "f6e4": 11,
+          "f3g5": 10
+        },
+        "favorite_pieces": {
+          "P": 132,
+          "N": 126,
+          "Q": 76,
+          "B": 48,
+          "K": 23
+        },
+        "preferred_openings": {
+          "Unknown Opening": 30
+        },
+        "castling_preference": {
+          "kingside": 0,
+          "queenside": 0
+        }
+      },
+      "territorial_analysis": {
+        "N": {
+          "f6": 14.7,
+          "c3": 11.9,
+          "f3": 10.3,
+          "f7": 9.5,
+          "e4": 8.7,
+          "g5": 6.3,
+          "g8": 6.0,
+          "g1": 6.0
+        },
+        "P": {
+          "e5": 13.3,
+          "e4": 12.9,
+          "d4": 10.6,
+          "e2": 6.4,
+          "f6": 6.1,
+          "d7": 5.7,
+          "d2": 5.7,
+          "d5": 5.7
+        },
+        "K": {
+          "e1": 32.6,
+          "f2": 32.6,
+          "e8": 17.4,
+          "f7": 17.4
+        },
+        "B": {
+          "c1": 12.5,
+          "f8": 9.4,
+          "b4": 9.4,
+          "e3": 9.4,
+          "c8": 7.3,
+          "e2": 6.2,
+          "g4": 6.2,
+          "f4": 6.2
+        },
+        "Q": {
+          "d4": 16.4,
+          "h4": 13.2,
+          "d8": 10.5,
+          "d1": 9.9,
+          "f4": 7.9,
+          "b2": 7.9,
+          "d6": 6.6,
+          "b4": 6.6
+        },
+        "R": {
+          "h1": 41.7,
+          "e1": 25.0,
+          "f1": 16.7,
+          "h8": 8.3,
+          "d8": 8.3
+        }
+      }
+    }
+  },
+  "engine_categories": {
+    "aggressive_fighters": [
+      "Stockfish"
+    ],
+    "positional_masters": [],
+    "tactical_wizards": [],
+    "defensive_specialists": [
+      "Cecilia",
+      "Cece",
+      "V7P3RAI",
+      "Random_Opponent",
+      "Copycat",
+      "Cece v1.3",
+      "V7P3RAI v1.0",
+      "SlowMate v1.0",
+      "Cece v2.0",
+      "Cecilia v0.1",
+      "Random Playing Opponent",
+      "Cecilia v0.2",
+      "Cecilia v0.3",
+      "Copycat v1.0"
+    ],
+    "balanced_players": [
+      "SlowMate",
+      "SlowMate v0.2.1",
+      "Stockfish 1%",
+      "Slowmate",
+      "Slowmate_current"
+    ],
+    "developing_engines": []
+  },
+  "comparative_analysis": {
+    "rankings": {
+      "top_aggression": {
+        "Stockfish": 30.36,
+        "Cece v2.0": 21.0,
+        "SlowMate v1.0": 20.6,
+        "Stockfish 1%": 19.35,
+        "Copycat v1.0": 17.16
+      },
+      "avg_aggression": 12.7075,
+      "top_decisiveness": {
+        "Stockfish": 100.0,
+        "Stockfish 1%": 96.1,
+        "SlowMate v1.0": 72.22,
+        "SlowMate v0.2.1": 70.64,
+        "SlowMate": 66.01
+      },
+      "avg_decisiveness": 45.797,
+      "top_win_rate": {
+        "Stockfish": 100.0,
+        "Stockfish 1%": 95.98,
+        "SlowMate v1.0": 69.59,
+        "SlowMate v0.2.1": 60.82,
+        "SlowMate": 54.32
+      },
+      "avg_win_rate": 34.734,
+      "top_avg_game_length": {
+        "Random Playing Opponent": 180.8,
+        "Random_Opponent": 138.9,
+        "SlowMate v0.2.1": 127.5,
+        "Copycat": 116.2,
+        "Copycat v1.0": 112.4
+      },
+      "avg_avg_game_length": 88.345,
+      "top_capture_rate": {
+        "Stockfish": 38.93,
+        "SlowMate v1.0": 25.84,
+        "Cece v2.0": 23.53,
+        "Slowmate": 22.92,
+        "SlowMate": 21.18
+      },
+      "avg_capture_rate": 15.4405,
+      "top_piece_diversity": {
+        "SlowMate": 6.0,
+        "Cece": 6.0,
+        "V7P3RAI": 6.0,
+        "Random_Opponent": 6.0,
+        "Copycat": 6.0
+      },
+      "avg_piece_diversity": 5.3
+    },
+    "correlations": {
+      "aggression": {
+        "aggression": 1.0,
+        "decisiveness": 0.8035932214388088,
+        "win_rate": 0.81906790704797,
+        "avg_game_length": -0.5314219341733264,
+        "capture_rate": 0.9424358370208223,
+        "piece_diversity": 0.5564239387516956
+      },
+      "decisiveness": {
+        "aggression": 0.8035932214388088,
+        "decisiveness": 1.0,
+        "win_rate": 0.9932845449831534,
+        "avg_game_length": -0.3908498619855051,
+        "capture_rate": 0.825028218688515,
+        "piece_diversity": 0.5338583857927234
+      },
+      "win_rate": {
+        "aggression": 0.81906790704797,
+        "decisiveness": 0.9932845449831534,
+        "win_rate": 1.0,
+        "avg_game_length": -0.43184975024231487,
+        "capture_rate": 0.82677355498073,
+        "piece_diversity": 0.49254716984806207
+      },
+      "avg_game_length": {
+        "aggression": -0.5314219341733264,
+        "decisiveness": -0.3908498619855051,
+        "win_rate": -0.43184975024231487,
+        "avg_game_length": 1.0,
+        "capture_rate": -0.5971028372207524,
+        "piece_diversity": -0.0356864738614988
+      },
+      "capture_rate": {
+        "aggression": 0.9424358370208223,
+        "decisiveness": 0.825028218688515,
+        "win_rate": 0.82677355498073,
+        "avg_game_length": -0.5971028372207524,
+        "capture_rate": 1.0,
+        "piece_diversity": 0.47298516247256356
+      },
+      "piece_diversity": {
+        "aggression": 0.5564239387516956,
+        "decisiveness": 0.5338583857927234,
+        "win_rate": 0.49254716984806207,
+        "avg_game_length": -0.0356864738614988,
+        "capture_rate": 0.47298516247256356,
+        "piece_diversity": 1.0
+      }
+    },
+    "relationships": {
+      "similar_styles": {
+        "defensive": [
+          "Cecilia",
+          "SlowMate",
+          "Cece",
+          "V7P3RAI",
+          "Random_Opponent",
+          "Copycat",
+          "Cece v1.3",
+          "V7P3RAI v1.0",
+          "SlowMate v1.0",
+          "Cece v2.0",
+          "Cecilia v0.1",
+          "SlowMate v0.2.1",
+          "Random Playing Opponent",
+          "Cecilia v0.2",
+          "Cecilia v0.3",
+          "Copycat v1.0",
+          "Stockfish 1%",
+          "Slowmate",
+          "Slowmate_current"
+        ],
+        "aggressive": [
+          "Stockfish"
+        ]
+      },
+      "engine_families": {
+        "Cecilia": [
+          "Cecilia",
+          "Cecilia v0.1",
+          "Cecilia v0.2",
+          "Cecilia v0.3"
+        ],
+        "SlowMate": [
+          "SlowMate",
+          "SlowMate v1.0",
+          "SlowMate v0.2.1"
+        ],
+        "Cece": [
+          "Cece",
+          "Cece v1.3",
+          "Cece v2.0"
+        ],
+        "V": [
+          "V7P3RAI",
+          "V7P3RAI v1.0"
+        ],
+        "Random_Opponent": [
+          "Random_Opponent"
+        ],
+        "Copycat": [
+          "Copycat",
+          "Copycat v1.0"
+        ],
+        "Random Playing Opponent": [
+          "Random Playing Opponent"
+        ],
+        "Stockfish": [
+          "Stockfish 1%",
+          "Stockfish"
+        ],
+        "Slowmate": [
+          "Slowmate"
+        ],
+        "Slowmate_current": [
+          "Slowmate_current"
+        ]
+      },
+      "performance_clusters": {}
+    },
+    "summary_stats": {
+      "total_engines": 20,
+      "most_aggressive": "Stockfish",
+      "most_decisive": "Stockfish",
+      "highest_win_rate": "Stockfish"
+    }
+  },
+  "move_pattern_signatures": {},
+  "analysis_metadata": {
+    "total_games": 5944,
+    "engines_analyzed": 20,
+    "analysis_date": "2025-08-13T20:23:13.743014"
+  }
+}

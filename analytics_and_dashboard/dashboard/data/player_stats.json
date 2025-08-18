@@ -1,0 +1,272 @@
+{
+  "Cecilia 0.1": {
+    "games_played": 593,
+    "wins": 11,
+    "draws": 295,
+    "losses": 287,
+    "win_rate": 1.85,
+    "estimated_rating": 1160.0,
+    "performance_rating": 998.1,
+    "tournaments": 7
+  },
+  "SlowMate 0.0": {
+    "games_played": 917,
+    "wins": 513,
+    "draws": 37,
+    "losses": 367,
+    "win_rate": 55.94,
+    "estimated_rating": 1223.7,
+    "performance_rating": 1264.1,
+    "tournaments": 10
+  },
+  "SlowMate 0.1": {
+    "games_played": 1433,
+    "wins": 753,
+    "draws": 66,
+    "losses": 614,
+    "win_rate": 52.55,
+    "estimated_rating": 1226.4,
+    "performance_rating": 1291.7,
+    "tournaments": 8
+  },
+  "SlowMate 0.2": {
+    "games_played": 1258,
+    "wins": 724,
+    "draws": 68,
+    "losses": 466,
+    "win_rate": 57.55,
+    "estimated_rating": 1220.3,
+    "performance_rating": 1289.4,
+    "tournaments": 9
+  },
+  "SlowMate 0.3": {
+    "games_played": 474,
+    "wins": 255,
+    "draws": 2,
+    "losses": 217,
+    "win_rate": 53.8,
+    "estimated_rating": 1208.4,
+    "performance_rating": 1243.2,
+    "tournaments": 5
+  },
+  "SlowMate 0.4": {
+    "games_played": 354,
+    "wins": 98,
+    "draws": 36,
+    "losses": 220,
+    "win_rate": 27.68,
+    "estimated_rating": 1178.2,
+    "performance_rating": 1039.3,
+    "tournaments": 4
+  },
+  "Cece 1.0": {
+    "games_played": 302,
+    "wins": 50,
+    "draws": 96,
+    "losses": 156,
+    "win_rate": 16.56,
+    "estimated_rating": 1168.5,
+    "performance_rating": 1070.5,
+    "tournaments": 5
+  },
+  "Cecilia 0.3": {
+    "games_played": 486,
+    "wins": 3,
+    "draws": 254,
+    "losses": 229,
+    "win_rate": 0.62,
+    "estimated_rating": 1152.9,
+    "performance_rating": 1045.9,
+    "tournaments": 3
+  },
+  "Cece 1.3": {
+    "games_played": 598,
+    "wins": 201,
+    "draws": 175,
+    "losses": 222,
+    "win_rate": 33.61,
+    "estimated_rating": 1196.5,
+    "performance_rating": 1143.3,
+    "tournaments": 7
+  },
+  "SlowMate 0.5": {
+    "games_played": 111,
+    "wins": 1,
+    "draws": 41,
+    "losses": 69,
+    "win_rate": 0.9,
+    "estimated_rating": 1160.9,
+    "performance_rating": 946.6,
+    "tournaments": 2
+  },
+  "Cece 1.1": {
+    "games_played": 150,
+    "wins": 17,
+    "draws": 28,
+    "losses": 105,
+    "win_rate": 11.33,
+    "estimated_rating": 1156.9,
+    "performance_rating": 903.0,
+    "tournaments": 2
+  },
+  "Cece 1.2": {
+    "games_played": 250,
+    "wins": 84,
+    "draws": 43,
+    "losses": 123,
+    "win_rate": 33.6,
+    "estimated_rating": 1190.7,
+    "performance_rating": 1120.5,
+    "tournaments": 4
+  },
+  "V7P3RAI 1.0": {
+    "games_played": 693,
+    "wins": 182,
+    "draws": 210,
+    "losses": 301,
+    "win_rate": 26.26,
+    "estimated_rating": 1190.0,
+    "performance_rating": 1097.1,
+    "tournaments": 4
+  },
+  "Random Playing Opponent": {
+    "games_played": 694,
+    "wins": 95,
+    "draws": 181,
+    "losses": 418,
+    "win_rate": 13.69,
+    "estimated_rating": 100.0,
+    "performance_rating": 1058.0,
+    "tournaments": 4
+  },
+  "Copycat 1.0": {
+    "games_played": 622,
+    "wins": 126,
+    "draws": 229,
+    "losses": 267,
+    "win_rate": 20.26,
+    "estimated_rating": 1178.1,
+    "performance_rating": 1039.2,
+    "tournaments": 3
+  },
+  "SlowMate 1.0": {
+    "games_played": 622,
+    "wins": 459,
+    "draws": 127,
+    "losses": 36,
+    "win_rate": 73.79,
+    "estimated_rating": 1258.7,
+    "performance_rating": 1542.3,
+    "tournaments": 3
+  },
+  "Cece 2.0": {
+    "games_played": 703,
+    "wins": 344,
+    "draws": 158,
+    "losses": 201,
+    "win_rate": 48.93,
+    "estimated_rating": 1219.3,
+    "performance_rating": 1244.5,
+    "tournaments": 3
+  },
+  "Cecilia 0.2": {
+    "games_played": 425,
+    "wins": 1,
+    "draws": 239,
+    "losses": 185,
+    "win_rate": 0.24,
+    "estimated_rating": 1153.8,
+    "performance_rating": 1034.7,
+    "tournaments": 2
+  },
+  "Stockfish 2650": {
+    "games_played": 497,
+    "wins": 477,
+    "draws": 18,
+    "losses": 2,
+    "win_rate": 95.98,
+    "estimated_rating": 2650.0,
+    "performance_rating": 1595.5,
+    "tournaments": 2
+  },
+  "SlowMate 0.3.3": {
+    "games_played": 68,
+    "wins": 35,
+    "draws": 2,
+    "losses": 31,
+    "win_rate": 51.47,
+    "estimated_rating": 1208.5,
+    "performance_rating": 1242.0,
+    "tournaments": 1
+  },
+  "SlowMate 0.2.2": {
+    "games_played": 98,
+    "wins": 55,
+    "draws": 10,
+    "losses": 33,
+    "win_rate": 56.12,
+    "estimated_rating": 1223.8,
+    "performance_rating": 1309.5,
+    "tournaments": 2
+  },
+  "SlowMate 0.1.3": {
+    "games_played": 68,
+    "wins": 36,
+    "draws": 3,
+    "losses": 29,
+    "win_rate": 52.94,
+    "estimated_rating": 1209.2,
+    "performance_rating": 1256.8,
+    "tournaments": 1
+  },
+  "SlowMate 0.1.2": {
+    "games_played": 98,
+    "wins": 65,
+    "draws": 4,
+    "losses": 29,
+    "win_rate": 66.33,
+    "estimated_rating": 1232.6,
+    "performance_rating": 1370.8,
+    "tournaments": 2
+  },
+  "SlowMate 0.1.1": {
+    "games_played": 68,
+    "wins": 40,
+    "draws": 2,
+    "losses": 26,
+    "win_rate": 58.82,
+    "estimated_rating": 1218.2,
+    "performance_rating": 1296.9,
+    "tournaments": 1
+  },
+  "SlowMate 0.0.1": {
+    "games_played": 98,
+    "wins": 55,
+    "draws": 7,
+    "losses": 36,
+    "win_rate": 56.12,
+    "estimated_rating": 1216.6,
+    "performance_rating": 1297.0,
+    "tournaments": 2
+  },
+  "Cece_v2.1": {
+    "games_played": 132,
+    "wins": 10,
+    "draws": 71,
+    "losses": 51,
+    "win_rate": 7.58,
+    "estimated_rating": 1173.8,
+    "performance_rating": 1101.2,
+    "tournaments": 1
+  },
+  "Stockfish 3645": {
+    "games_played": 30,
+    "wins": 30,
+    "draws": 0,
+    "losses": 0,
+    "win_rate": 100.0,
+    "estimated_rating": 3645.0,
+    "performance_rating": 1624.4,
+    "tournaments": 1
+  }
+}
