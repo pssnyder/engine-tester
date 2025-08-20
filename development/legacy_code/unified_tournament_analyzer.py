@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Tuple, Optional, Any
 import chess.pgn
 import math
-from name_mapper import load_name_mapping, normalize_engine_name_with_mapping
+from analytics_and_dashboard.analyzers.name_mapper import load_name_mapping, normalize_engine_name_with_mapping
 
 # Configuration
 RESULTS_DIR = "results"
