@@ -7,3 +7,5 @@ networkx>=3.0
 numpy>=1.24.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
+asyncio-compat>=0.1.0
+statistics>=1.0.3.5

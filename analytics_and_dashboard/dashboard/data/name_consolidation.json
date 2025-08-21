@@ -12,8 +12,8 @@
           "Cece_v1.3",
           "Cece v1.3"
         ],
-        "rating_override": null,
-        "include_in_metrics": true
+        "rating_override": 1296,
+        "include_in_metrics": false
       },
       "Cece 2.0": {
         "variants": [
@@ -27,7 +27,63 @@
           "Cece_v2.3", 
           "Cece v2.3"
         ],
-        "rating_override": null,
+        "rating_override": 1073,
+        "include_in_metrics": false
+      },
+      "Cece v1.0": {
+        "variants": [
+          "Cece_v1.0"
+        ],
+        "rating_override": 1014,
+        "include_in_metrics": true
+      },
+      "Cece v1.1": {
+        "variants": [
+          "Cece_v1.1"
+        ],
+        "rating_override": 1384,
+        "include_in_metrics": true
+      },
+      "Cece v1.2": {
+        "variants": [
+          "Cece_v1.2"
+        ],
+        "rating_override": 1218,
+        "include_in_metrics": true
+      },
+      "Cece v1.3": {
+        "variants": [
+          "Cece_v1.3"
+        ],
+        "rating_override": 1296,
+        "include_in_metrics": true
+      },
+      "Cece v2.0": {
+        "variants": [
+          "Cece_v2.0"
+        ],
+        "rating_override": 1129,
+        "include_in_metrics": true
+      },
+      "Cece v2.1": {
+        "variants": [
+          "Cece_v2.1"
+        ],
+        "rating_override": 1010,
+        "include_in_metrics": true
+      },
+      "Cece v2.2": {
+        "variants": [
+          "Cece_v2.2"
+        ],
+        "rating_override": 1235,
+        "include_in_metrics": true
+      },
+      "Cece v2.3": {
+        "variants": [
+          "Cece_v2.3"
+        ],
+        "rating_override": 1073,
         "include_in_metrics": true
       },
       "V7P3RAI 1.0": {
@@ -36,16 +92,17 @@
           "V7P3RAI v1.0",
           "V7P3RAI_1.0"
         ],
-        "rating_override": null,
-        "include_in_metrics": true
+        "rating_override": 515,
+        "include_in_metrics": false
       },
       "V7P3R 4.1": {
         "variants": [
           "V7P3R_v4.1",
-          "V7P3R v4.1"
+          "V7P3R v4.1",
+          "V7P3R 4.1"
         ],
-        "rating_override": null,
-        "include_in_metrics": false
+        "rating_override": 1060,
+        "include_in_metrics": true
       },
       "V7P3R 4.2": {
         "variants": [
@@ -53,12 +110,22 @@
           "V7P3R v4.2"
         ],
         "rating_override": null,
-        "include_in_metrics": false
+        "include_in_metrics": true
       },
       "V7P3R 4.3": {
         "variants": [
           "V7P3R_v4.3",
-          "V7P3R v4.3"
+          "V7P3R v4.3",
+          "V7P3R 4.3"
+        ],
+        "rating_override": 770,
+        "include_in_metrics": true
+      },
+      "V7P3R 5.0": {
+        "variants": [
+          "V7P3R_v5.0",
+          "V7P3R v5.0",
+          "V7P3R 5.0"
         ],
         "rating_override": null,
         "include_in_metrics": true
@@ -68,18 +135,20 @@
           "C0BR4_v1.0",
           "C0BR4 v1.0",
           "ChessAI_v1.0",
-          "ChessAI v1.0"
+          "ChessAI v1.0",
+          "C0BR4 1.0"
         ],
-        "rating_override": null,
-        "include_in_metrics": true
+        "rating_override": 1408,
+        "include_in_metrics": false
       },
       "C0BR4 2.0": {
         "variants": [
           "C0BR4_v2.0",
-          "C0BR4 v2.0"
+          "C0BR4 v2.0",
+          "C0BR4 2.0"
         ],
-        "rating_override": null,
-        "include_in_metrics": true
+        "rating_override": 1333,
+        "include_in_metrics": false
       },
       "Copycat 1.0": {
         "variants": [
@@ -96,7 +165,7 @@
           "Copycat v2.0"
         ],
         "rating_override": null,
-        "include_in_metrics": true
+        "include_in_metrics": false
       },
       "Cecilia 0.0": {
         "variants": [
@@ -117,12 +186,17 @@
         "rating_override": null,
         "include_in_metrics": false
       },
+      "SlowMate Other": {
+        "variants": [
+          "Slowmate_current"
+        ],
+        "rating_override": 0,
+        "include_in_metrics": false
+      },
       "SlowMate 0.0": {
         "variants": [
-          "SlowMate_v0.0.0",
           "SlowMate_v0.0.00",
           "SlowMate_v0.0.01",
-          "SlowMate_v0.0.1",
           "SlowMate_v0.0.02",
           "SlowMate_v0.0.03",
           "SlowMate_v0.0.04",
@@ -131,22 +205,22 @@
           "SlowMate_v0.0.07",
           "SlowMate_v0.0.08",
           "SlowMate_v0.0.09",
-          "SlowMate_v0.0.10",
-          "SlowMate_v0.0.11",
-          "SlowMate_v0.0.12",
           "SlowMate_v0.0.00_DELTA",
           "SlowMate_v0.0.0_DELTA",
           "SlowMate_v0.0.1_PURE_RANDOM",
           "SlowMate_v0.0.01_DELTA",
           "SlowMate_v0.0.2_ENHANCED_INTELLIGENCE",
-          "SlowMate_v0.0.3_OPENING_BOOK",
-          "SlowMate_v0.0.10_TACTICAL_INTELLIGENCE"
-        ],
+          "SlowMate_v0.0.3_OPENING_BOOK"
+          ],
         "rating_override": null,
-        "include_in_metrics": false
+        "include_in_metrics": true
       },
-      "SlowMate 0.1": {
+      "SlowMate 0.5": {
         "variants": [
+          "SlowMate_v0.0.10",
+          "SlowMate_v0.0.11",
+          "SlowMate_v0.0.12",
+          "SlowMate_v0.0.10_TACTICAL_INTELLIGENCE",
           "SlowMate_v0.1.0",
           "SlowMate_v0.1.01",
           "SlowMate_v0.1.1",
@@ -159,13 +233,7 @@
           "SlowMate_v0.1.02_OPENING_ENDGAME",
           "SlowMate_v0.1.02_BETA",
           "SlowMate_v0.1.03_MIDDLEGAME",
-          "Slowmate_v0.1.01_beta"
-        ],
-        "rating_override": null,
-        "include_in_metrics": false
-      },
-      "SlowMate 0.2": {
-        "variants": [
+          "Slowmate_v0.1.01_beta",
           "SlowMate_v0.2.0",
           "SlowMate_v0.2.01",
           "SlowMate_v0.2.02",
@@ -175,13 +243,6 @@
           "SlowMate_v0.2.01_ENHANCED_SEARCH",
           "SlowMate_v0.2.02_TIME_MANAGEMENT",
           "SlowMate_v0.2.1",
-          "Slowmate_current"
-        ],
-        "rating_override": null,
-        "include_in_metrics": false
-      },
-      "SlowMate 0.3": {
-        "variants": [
           "SlowMate_v0.3.0",
           "SlowMate_v0.3.01",
           "SlowMate_v0.3.02",
@@ -190,25 +251,14 @@
           "SlowMate_v0.3.0_BETA",
           "SlowMate_v0.3.02_ENHANCED_ENDGAME",
           "SlowMate_v0.3.03_VERSION_VS_VERSION_NUCLEAR_FIX",
-          "SlowMate_v0.3.01_Opening_Enhancements"
-        ],
-        "rating_override": null,
-        "include_in_metrics": true
-      },
-      "SlowMate 0.4": {
-        "variants": [
+          "SlowMate_v0.3.01_Opening_Enhancements",
           "SlowMate_v0.4.0",
           "SlowMate_v0.4.01",
           "SlowMate_v0.4.02",
           "SlowMate_v0.4.03",
+          "SlowMate_v0.4.0_BETA",
           "SlowMate_v0.4.02_Time_Revision",
-          "SlowMate_v0.4.03_Stable_Baseline"
-        ],
-        "rating_override": null,
-        "include_in_metrics": true
-      },
-      "SlowMate 0.5": {
-        "variants": [
+          "SlowMate_v0.4.03_Stable_Baseline",
           "SlowMate_v0.5.0",
           "SlowMate_v0.5.0_BETA"
         ],
@@ -219,7 +269,35 @@
         "variants": [
           "SlowMate_v1.0",
           "SlowMate v1.0",
-          "SlowMate_v1.0_RELEASE"
+          "SlowMate_v1.0_RELEASE",
+          "Slowmate_v1.0",
+          "SlowMate 1.0"
+        ],
+        "rating_override": 1404,
+        "include_in_metrics": true
+      },
+      "SlowMate 2.0": {
+        "variants": [
+          "SlowMate_v2.0",
+          "SlowMate v2.0",
+          "SlowMate_v2.0_RELEASE",
+          "Slowmate_v2.0",
+          "SlowMate 2.0"
+        ],
+        "rating_override": 626,
+        "include_in_metrics": true
+      },
+      "SlowMate 3.0": {
+        "variants": [
+          "SlowMate_v3.0",
+          "SlowMate v3.0",
+          "SlowMate_v3.0_RELEASE",
+          "Slowmate_v3.0",
+          "SlowMate 3.0",
+          "SlowMate_v2.1",
+          "SlowMate_v2.1_BETA",
+          "SlowMate 2.1",
+          "Slowmate_v2.1"
         ],
         "rating_override": null,
         "include_in_metrics": true
@@ -230,7 +308,7 @@
           "Random Playing Opponent"
         ],
         "rating_override": 100,
-        "include_in_metrics": true
+        "include_in_metrics": false
       },
       "Stockfish 1": {
         "variants": [
@@ -238,14 +316,14 @@
           "Stockfish 1%"
         ],
         "rating_override": 2650,
-        "include_in_metrics": true
+        "include_in_metrics": false
       },
       "Stockfish": {
         "variants": [
           "Stockfish"
         ],
         "rating_override": 3645,
-        "include_in_metrics": true
+        "include_in_metrics": false
       },
       "Other": {
         "variants": [
