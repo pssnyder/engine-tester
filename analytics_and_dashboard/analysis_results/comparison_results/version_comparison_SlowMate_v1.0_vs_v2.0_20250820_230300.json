@@ -1,0 +1,147 @@
+{
+  "analysis_metadata": {
+    "engine_family": "SlowMate",
+    "version_comparison": "1.0 vs 2.0",
+    "analysis_date": "2025-08-20T23:03:00.458312",
+    "stockfish_depth": 12,
+    "games_analyzed": {
+      "v1_games": 15,
+      "v2_games": 15,
+      "direct_comparisons": 20
+    }
+  },
+  "executive_summary": {
+    "overall_improvement": false,
+    "blunder_rate_change": 0.0,
+    "accuracy_change": 0.0,
+    "direct_match_record": {
+      "v1_wins": 0,
+      "v1_losses": 10,
+      "v1_draws": 10,
+      "v2_wins": 10,
+      "v2_losses": 0,
+      "v2_draws": 10
+    },
+    "key_regressions": 0
+  },
+  "detailed_analysis": {
+    "tactical_performance": {
+      "v1_metrics": {
+        "total_games": 15,
+        "avg_move_accuracy": 100.0,
+        "avg_blunders_per_game": 0,
+        "avg_mistakes_per_game": 0,
+        "avg_centipawn_loss": 0.0,
+        "phase_distribution": {
+          "opening_moves": 127,
+          "middlegame_moves": 68,
+          "endgame_moves": 0
+        }
+      },
+      "v2_metrics": {
+        "total_games": 15,
+        "avg_move_accuracy": 100.0,
+        "avg_blunders_per_game": 0,
+        "avg_mistakes_per_game": 0,
+        "avg_centipawn_loss": 0.0,
+        "phase_distribution": {
+          "opening_moves": 117,
+          "middlegame_moves": 44,
+          "endgame_moves": 0
+        }
+      },
+      "regressions": []
+    },
+    "positional_performance": {
+      "regressions": []
+    },
+    "opening_analysis": {},
+    "endgame_analysis": {}
+  },
+  "actionable_recommendations": [],
+  "sample_games": {
+    "regression_examples": [
+      {
+        "game_info": "C0BR4 2.0 vs SlowMate 2.0",
+        "result": "0-1",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      },
+      {
+        "game_info": "Cece 2.0 vs SlowMate 2.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      },
+      {
+        "game_info": "SlowMate 2.0 vs V7P3R 4.3",
+        "result": "0-1",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      }
+    ],
+    "improvement_examples": [
+      {
+        "game_info": "C0BR4 2.0 vs SlowMate 2.0",
+        "result": "0-1",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      },
+      {
+        "game_info": "Cece 2.0 vs SlowMate 2.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      },
+      {
+        "game_info": "SlowMate 2.0 vs V7P3R 4.3",
+        "result": "0-1",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      }
+    ],
+    "direct_comparisons": [
+      {
+        "white": "SlowMate 2.0",
+        "black": "SlowMate 1.0",
+        "result": "0-1",
+        "tournament": "Engine Battle 20250820",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "SlowMate 1.0",
+        "black": "SlowMate 2.0",
+        "result": "1/2-1/2",
+        "tournament": "Engine Battle 20250820",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "SlowMate 2.0",
+        "black": "SlowMate 1.0",
+        "result": "0-1",
+        "tournament": "Engine Battle 20250820",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "SlowMate 1.0",
+        "black": "SlowMate 2.0",
+        "result": "1/2-1/2",
+        "tournament": "Engine Battle 20250820",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "SlowMate 2.0",
+        "black": "SlowMate 1.0",
+        "result": "0-1",
+        "tournament": "Engine Battle 20250820",
+        "significance": "Direct head-to-head comparison"
+      }
+    ]
+  }
+}

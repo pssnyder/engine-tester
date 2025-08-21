@@ -1,0 +1,147 @@
+{
+  "analysis_metadata": {
+    "engine_family": "V7P3R",
+    "version_comparison": "4.1 vs 4.3",
+    "analysis_date": "2025-08-20T23:03:03.365800",
+    "stockfish_depth": 12,
+    "games_analyzed": {
+      "v1_games": 15,
+      "v2_games": 15,
+      "direct_comparisons": 40
+    }
+  },
+  "executive_summary": {
+    "overall_improvement": false,
+    "blunder_rate_change": 0.0,
+    "accuracy_change": 0.0,
+    "direct_match_record": {
+      "v1_wins": 0,
+      "v1_losses": 33,
+      "v1_draws": 7,
+      "v2_wins": 33,
+      "v2_losses": 0,
+      "v2_draws": 7
+    },
+    "key_regressions": 0
+  },
+  "detailed_analysis": {
+    "tactical_performance": {
+      "v1_metrics": {
+        "total_games": 15,
+        "avg_move_accuracy": 100.0,
+        "avg_blunders_per_game": 0,
+        "avg_mistakes_per_game": 0,
+        "avg_centipawn_loss": 0.0,
+        "phase_distribution": {
+          "opening_moves": 129,
+          "middlegame_moves": 67,
+          "endgame_moves": 0
+        }
+      },
+      "v2_metrics": {
+        "total_games": 15,
+        "avg_move_accuracy": 100.0,
+        "avg_blunders_per_game": 0,
+        "avg_mistakes_per_game": 0,
+        "avg_centipawn_loss": 0.0,
+        "phase_distribution": {
+          "opening_moves": 135,
+          "middlegame_moves": 96,
+          "endgame_moves": 0
+        }
+      },
+      "regressions": []
+    },
+    "positional_performance": {
+      "regressions": []
+    },
+    "opening_analysis": {},
+    "endgame_analysis": {}
+  },
+  "actionable_recommendations": [],
+  "sample_games": {
+    "regression_examples": [
+      {
+        "game_info": "V7P3R 4.3 vs SlowMate 1.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      },
+      {
+        "game_info": "V7P3R 4.3 vs Cece 2.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      },
+      {
+        "game_info": "C0BR4 1.0 vs V7P3R 4.3",
+        "result": "1-0",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_issue": "Low move accuracy suggests tactical issues"
+      }
+    ],
+    "improvement_examples": [
+      {
+        "game_info": "V7P3R 4.3 vs SlowMate 1.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      },
+      {
+        "game_info": "V7P3R 4.3 vs Cece 2.0",
+        "result": "1/2-1/2",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      },
+      {
+        "game_info": "C0BR4 1.0 vs V7P3R 4.3",
+        "result": "1-0",
+        "accuracy": 100.0,
+        "blunders": 0,
+        "key_strength": "High move accuracy demonstrates improvement"
+      }
+    ],
+    "direct_comparisons": [
+      {
+        "white": "V7P3R 4.1",
+        "black": "V7P3R 4.3",
+        "result": "1-0",
+        "tournament": "Engine Battle 20250817",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "V7P3R 4.3",
+        "black": "V7P3R 4.1",
+        "result": "1-0",
+        "tournament": "Engine Battle 20250817",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "V7P3R 4.1",
+        "black": "V7P3R 4.3",
+        "result": "1-0",
+        "tournament": "Engine Battle 20250817",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "V7P3R 4.3",
+        "black": "V7P3R 4.1",
+        "result": "1-0",
+        "tournament": "Engine Battle 20250817",
+        "significance": "Direct head-to-head comparison"
+      },
+      {
+        "white": "V7P3R 4.1",
+        "black": "V7P3R 4.3",
+        "result": "1-0",
+        "tournament": "Engine Battle 20250817",
+        "significance": "Direct head-to-head comparison"
+      }
+    ]
+  }
+}
