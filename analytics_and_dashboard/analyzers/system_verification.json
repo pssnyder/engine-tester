@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-20 20:20:51.706144",
+  "dependencies": true,
+  "stockfish": true,
+  "engines": {
+    "SlowMate": {
+      "found": [
+        "Slowmate_v1.0.exe",
+        "SlowMate_v2.0.exe"
+      ],
+      "missing": [],
+      "available": [
+        "SlowMate_v0.0.0.exe",
+        "SlowMate_v0.0.1.exe",
+        "SlowMate_v0.1.0.exe",
+        "SlowMate_v0.1.1.exe",
+        "SlowMate_v0.1.2.exe",
+        "SlowMate_v0.1.3.exe",
+        "SlowMate_v0.2.0.exe",
+        "SlowMate_v0.2.1.exe",
+        "SlowMate_v0.2.2.exe",
+        "SlowMate_v0.3.0.exe",
+        "SlowMate_v0.3.3.exe",
+        "Slowmate_v1.0.exe",
+        "SlowMate_v2.0.exe"
+      ]
+    },
+    "V7P3R": {
+      "found": [
+        "V7P3R_v4.1.exe",
+        "V7P3R_v4.3.exe"
+      ],
+      "missing": [],
+      "available": [
+        "V7P3R_v4.1.exe",
+        "V7P3R_v4.2.exe",
+        "V7P3R_v4.3.exe"
+      ]
+    },
+    "Cece": {
+      "found": [
+        "Cece_v2.0.exe",
+        "Cece_v2.3.exe"
+      ],
+      "missing": [],
+      "available": [
+        "Cece_v1.0.exe",
+        "Cece_v1.1.exe",
+        "Cece_v1.2.exe",
+        "Cece_v1.3.exe",
+        "Cece_v2.0.exe",
+        "Cece_v2.1.exe",
+        "Cece_v2.2.exe",
+        "Cece_v2.3.exe"
+      ]
+    },
+    "C0BR4": {
+      "found": [
+        "C0BR4_v1.0.exe",
+        "C0BR4_v2.0.exe"
+      ],
+      "missing": [],
+      "available": [
+        "C0BR4_v1.0.exe",
+        "C0BR4_v2.0.exe"
+      ]
+    }
+  },
+  "game_data": true,
+  "ready_engines": [
+    "SlowMate",
+    "V7P3R",
+    "Cece",
+    "C0BR4"
+  ],
+  "overall_ready": true
+}

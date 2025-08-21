@@ -1,0 +1,84 @@
+{
+  "analysis_config": {
+    "stockfish": {
+      "default_depth": 12,
+      "max_depth": 20,
+      "time_limit_per_position": 2.0,
+      "executable_path": "../../engines/Stockfish/stockfish-windows-x86-64-avx2.exe"
+    },
+    "sampling": {
+      "max_games_per_version": 15,
+      "move_sampling_rate": 0.3,
+      "min_games_for_analysis": 5
+    },
+    "thresholds": {
+      "blunder_centipawn_loss": 300,
+      "mistake_centipawn_loss": 100,
+      "inaccuracy_centipawn_loss": 50,
+      "regression_blunder_increase": 1.5,
+      "regression_accuracy_decrease": 2.0
+    },
+    "game_phases": {
+      "opening_moves": 12,
+      "middlegame_start": 13,
+      "endgame_piece_threshold": 14
+    }
+  },
+  "engine_comparisons": {
+    "predefined": [
+      {
+        "name": "SlowMate Evolution",
+        "engine": "SlowMate",
+        "version_1": "1.0",
+        "version_2": "2.0",
+        "description": "Major version upgrade analysis"
+      },
+      {
+        "name": "V7P3R Recent Updates",
+        "engine": "V7P3R",
+        "version_1": "4.1",
+        "version_2": "4.3",
+        "description": "Minor version improvements"
+      },
+      {
+        "name": "Cece Enhancement",
+        "engine": "Cece",
+        "version_1": "2.0",
+        "version_2": "2.3",
+        "description": "Tactical improvements analysis"
+      },
+      {
+        "name": "C0BR4 Major Overhaul",
+        "engine": "C0BR4",
+        "version_1": "1.0",
+        "version_2": "2.0",
+        "description": "Complete engine rewrite comparison"
+      }
+    ]
+  },
+  "output_config": {
+    "report_format": "json",
+    "include_sample_games": true,
+    "max_sample_games": 5,
+    "include_move_details": false,
+    "timestamp_format": "%Y%m%d_%H%M%S"
+  },
+  "performance_config": {
+    "parallel_analysis": false,
+    "cache_evaluations": true,
+    "progress_updates": true,
+    "verbose_logging": false
+  },
+  "recommendations": {
+    "priority_levels": ["HIGH", "MEDIUM", "LOW"],
+    "categories": [
+      "Tactical",
+      "Positional", 
+      "Opening",
+      "Endgame",
+      "Time Management",
+      "General"
+    ],
+    "max_recommendations": 10
+  }
+}
