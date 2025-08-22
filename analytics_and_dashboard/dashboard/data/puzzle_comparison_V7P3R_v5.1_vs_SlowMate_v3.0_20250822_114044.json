@@ -1,0 +1,4099 @@
+{
+  "engine_1_name": "V7P3R_v5.1",
+  "engine_1_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\V7P3R\\V7P3R_v5.1.exe",
+  "engine_1_results": {
+    "total": 68,
+    "solved": 0,
+    "failed": 68,
+    "time_taken": 136.79160952568054,
+    "by_theme": {
+      "backRankMate": {
+        "total": 7,
+        "solved": 0
+      },
+      "endgame": {
+        "total": 37,
+        "solved": 0
+      },
+      "mate": {
+        "total": 42,
+        "solved": 0
+      },
+      "mateIn2": {
+        "total": 18,
+        "solved": 0
+      },
+      "short": {
+        "total": 40,
+        "solved": 0
+      },
+      "bodenMate": {
+        "total": 2,
+        "solved": 0
+      },
+      "hangingPiece": {
+        "total": 5,
+        "solved": 0
+      },
+      "mateIn1": {
+        "total": 24,
+        "solved": 0
+      },
+      "middlegame": {
+        "total": 27,
+        "solved": 0
+      },
+      "oneMove": {
+        "total": 24,
+        "solved": 0
+      },
+      "advantage": {
+        "total": 9,
+        "solved": 0
+      },
+      "master": {
+        "total": 7,
+        "solved": 0
+      },
+      "masterVsMaster": {
+        "total": 1,
+        "solved": 0
+      },
+      "skewer": {
+        "total": 3,
+        "solved": 0
+      },
+      "superGM": {
+        "total": 1,
+        "solved": 0
+      },
+      "queensideAttack": {
+        "total": 2,
+        "solved": 0
+      },
+      "crushing": {
+        "total": 17,
+        "solved": 0
+      },
+      "kingsideAttack": {
+        "total": 4,
+        "solved": 0
+      },
+      "rookEndgame": {
+        "total": 4,
+        "solved": 0
+      },
+      "attackingF2F7": {
+        "total": 2,
+        "solved": 0
+      },
+      "fork": {
+        "total": 10,
+        "solved": 0
+      },
+      "opening": {
+        "total": 4,
+        "solved": 0
+      },
+      "long": {
+        "total": 4,
+        "solved": 0
+      },
+      "defensiveMove": {
+        "total": 1,
+        "solved": 0
+      },
+      "advancedPawn": {
+        "total": 4,
+        "solved": 0
+      },
+      "queenEndgame": {
+        "total": 1,
+        "solved": 0
+      },
+      "deflection": {
+        "total": 2,
+        "solved": 0
+      },
+      "discoveredAttack": {
+        "total": 1,
+        "solved": 0
+      },
+      "hookMate": {
+        "total": 1,
+        "solved": 0
+      },
+      "clearance": {
+        "total": 1,
+        "solved": 0
+      },
+      "promotion": {
+        "total": 1,
+        "solved": 0
+      },
+      "bishopEndgame": {
+        "total": 1,
+        "solved": 0
+      },
+      "smotheredMate": {
+        "total": 1,
+        "solved": 0
+      }
+    },
+    "by_rating": {
+      "1000-1200": {
+        "total": 29,
+        "solved": 0
+      },
+      "800-1000": {
+        "total": 25,
+        "solved": 0
+      },
+      "400-600": {
+        "total": 8,
+        "solved": 0
+      },
+      "600-800": {
+        "total": 6,
+        "solved": 0
+      }
+    },
+    "total_test_time": 329.4409132003784,
+    "engine_name": "V7P3R_v5.1",
+    "engine_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\V7P3R\\V7P3R_v5.1.exe",
+    "detailed_puzzles": [
+      {
+        "puzzle_id": "0009B",
+        "puzzle_rating": 1080,
+        "puzzle_themes": "advantage middlegame short",
+        "puzzle_fen": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+        "puzzle_moves": "b6c5 e2g4 h3g4 d1g4",
+        "solved": false,
+        "time_taken": 6.019590139389038,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "000o3",
+        "puzzle_rating": 891,
+        "puzzle_themes": "crushing endgame pawnEndgame short zugzwang",
+        "puzzle_fen": "8/2p1k3/6p1/1p1P1p2/1P3P2/3K2Pp/7P/8 b - - 1 43",
+        "puzzle_moves": "e7d6 d3d4 g6g5 f4g5",
+        "solved": false,
+        "time_taken": 6.0217444896698,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "000rO",
+        "puzzle_rating": 1110,
+        "puzzle_themes": "crushing endgame fork master short",
+        "puzzle_fen": "3R4/8/K7/pB2b3/1p6/1P2k3/3p4/8 w - - 4 58",
+        "puzzle_moves": "a6a5 e5c7 a5b4 c7d8",
+        "solved": false,
+        "time_taken": 6.021655797958374,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "000rZ",
+        "puzzle_rating": 1076,
+        "puzzle_themes": "kingsideAttack mate mateIn1 oneMove opening",
+        "puzzle_fen": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+        "puzzle_moves": "d4e6 d6h2",
+        "solved": false,
+        "time_taken": 6.0341997146606445,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001Wz",
+        "puzzle_rating": 1120,
+        "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/5ppp/r1p5/p1n1RP2/8/2P2N1P/2P3P1/3R2K1 b - - 0 21",
+        "puzzle_moves": "e8e5 d1d8 e5e8 d8e8",
+        "solved": false,
+        "time_taken": 0.5033619403839111,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001gi",
+        "puzzle_rating": 820,
+        "puzzle_themes": "bodenMate hangingPiece mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r6r/1pNk1ppp/2np4/b3p3/4P1b1/N1Q5/P4PPP/R3KB1R w KQ - 3 18",
+        "puzzle_moves": "c7a8 a5c3",
+        "solved": false,
+        "time_taken": 0.3023538589477539,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001om",
+        "puzzle_rating": 1018,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "5r1k/pp4pp/5p2/1BbQp1r1/6K1/7P/1PP3P1/3R3R w - - 2 26",
+        "puzzle_moves": "g4h4 c5f2 g2g3 f2g3",
+        "solved": false,
+        "time_taken": 2.315608024597168,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001pC",
+        "puzzle_rating": 788,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove smotheredMate",
+        "puzzle_fen": "r4rk1/pp3ppp/3b4/2p1pPB1/7N/2PP3n/PP4PP/R2Q1RqK w - - 5 18",
+        "puzzle_moves": "f1g1 h3f2",
+        "solved": false,
+        "time_taken": 6.0338897705078125,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001w5",
+        "puzzle_rating": 1049,
+        "puzzle_themes": "advancedPawn attraction mate mateIn2 middlegame promotion short",
+        "puzzle_fen": "1rb2rk1/q5P1/4p2p/3p3p/3P1P2/2P5/2QK3P/3R2R1 b - - 0 29",
+        "puzzle_moves": "f8f7 c2h7 g8h7 g7g8q",
+        "solved": false,
+        "time_taken": 6.0148162841796875,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001wR",
+        "puzzle_rating": 1189,
+        "puzzle_themes": "endgame long mate mateIn3",
+        "puzzle_fen": "6nr/pp3p1p/k1p5/8/1QN5/2P1P3/4KPqP/8 b - - 5 26",
+        "puzzle_moves": "b7b5 b4a5 a6b7 c4d6 b7b8 a5d8",
+        "solved": false,
+        "time_taken": 6.015581130981445,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001wb",
+        "puzzle_rating": 1196,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r3k2r/pb1p1ppp/1b4q1/1Q2P3/8/2NP1Pn1/PP4PP/R1B2R1K w kq - 1 17",
+        "puzzle_moves": "h2g3 g6h5",
+        "solved": false,
+        "time_taken": 6.019865274429321,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001wr",
+        "puzzle_rating": 999,
+        "puzzle_themes": "advantage fork master masterVsMaster middlegame short",
+        "puzzle_fen": "r4rk1/p3ppbp/Pp1q1np1/3PpbB1/2B5/2N5/1PPQ1PPP/3RR1K1 w - - 4 18",
+        "puzzle_moves": "f2f3 d6c5 g1h1 c5c4",
+        "solved": false,
+        "time_taken": 6.016453504562378,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "001xl",
+        "puzzle_rating": 1152,
+        "puzzle_themes": "advantage endgame master masterVsMaster short skewer superGM",
+        "puzzle_fen": "8/4R1k1/p5pp/3B4/5q2/8/5P1P/6K1 b - - 5 40",
+        "puzzle_moves": "g7f6 e7f7 f6e5 f7f4",
+        "solved": false,
+        "time_taken": 2.005404472351074,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002CP",
+        "puzzle_rating": 926,
+        "puzzle_themes": "endgame mate mateIn1 oneMove queensideAttack",
+        "puzzle_fen": "r5k1/pp4pp/4p1q1/4p3/3n4/P5P1/1PP2Q1P/2KR1R2 w - - 4 24",
+        "puzzle_moves": "f2e3 g6c2",
+        "solved": false,
+        "time_taken": 5.817465543746948,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002GQ",
+        "puzzle_rating": 655,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "5rk1/5ppp/4p3/4N3/8/1Pn5/5PPP/5RK1 w - - 0 28",
+        "puzzle_moves": "f1c1 c3e2 g1f1 e2c1",
+        "solved": false,
+        "time_taken": 6.014052391052246,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "002O7",
+        "puzzle_rating": 969,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "r3qrk1/2p2pp1/p2bpn1p/2ppNb2/3P1P2/1PP1P1B1/P2N2PP/R2Q1RK1 b - - 0 14",
+        "puzzle_moves": "f5g4 e5g4 f6g4 d1g4",
+        "solved": false,
+        "time_taken": 4.6165430545806885,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002Q2",
+        "puzzle_rating": 988,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "7k/p4R1p/3p3r/2pN1n2/2PbBBb1/3P2P1/P3r3/5R1K w - - 1 28",
+        "puzzle_moves": "f4h6 f5g3",
+        "solved": false,
+        "time_taken": 6.02289891242981,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "002bK",
+        "puzzle_rating": 1139,
+        "puzzle_themes": "advantage endgame hangingPiece short",
+        "puzzle_fen": "8/7p/2b1k3/p2p1pPB/1n1P3P/N1p1P3/4K3/8 b - - 1 42",
+        "puzzle_moves": "c6b5 a3b5 c3c2 e2d2",
+        "solved": false,
+        "time_taken": 6.023788928985596,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "002p5",
+        "puzzle_rating": 953,
+        "puzzle_themes": "kingsideAttack mate mateIn2 middlegame short",
+        "puzzle_fen": "r1bqr1k1/pp1nbpp1/2p2n2/6P1/2BP4/P7/1PQNNPP1/R3K2R b KQ - 0 13",
+        "puzzle_moves": "f6d5 c2h7 g8f8 h7h8",
+        "solved": false,
+        "time_taken": 0.8030238151550293,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002vV",
+        "puzzle_rating": 428,
+        "puzzle_themes": "endgame master mate mateIn1 oneMove rookEndgame",
+        "puzzle_fen": "8/6k1/2R4p/5p1P/5P1K/6P1/8/r7 w - - 2 58",
+        "puzzle_moves": "c6b6 a1h1",
+        "solved": false,
+        "time_taken": 5.112263202667236,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0030b",
+        "puzzle_rating": 873,
+        "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+        "puzzle_fen": "6k1/5ppp/5nb1/pp6/6rP/5N1Q/Pq2r1P1/3R2RK b - - 4 32",
+        "puzzle_moves": "g6e4 d1d8 f6e8 d8e8",
+        "solved": false,
+        "time_taken": 6.017829179763794,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "0039T",
+        "puzzle_rating": 993,
+        "puzzle_themes": "crushing defensiveMove endgame long rookEndgame skewer",
+        "puzzle_fen": "1r5r/p3kp2/4p2p/4P3/3R1Pp1/6P1/P1P4P/4K2R w K - 1 25",
+        "puzzle_moves": "d4a4 b8b1 e1f2 b1h1 a4a7 e7f8",
+        "solved": false,
+        "time_taken": 6.019561290740967,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003AX",
+        "puzzle_rating": 960,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2r2rk1/5ppp/bq2p3/p1ppP1N1/Pb1P2P1/1P2P2P/2QN4/2R1K2R b K - 1 18",
+        "puzzle_moves": "c5d4 c2h7",
+        "solved": false,
+        "time_taken": 6.0212626457214355,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003Jb",
+        "puzzle_rating": 993,
+        "puzzle_themes": "advantage fork master middlegame short",
+        "puzzle_fen": "6k1/3bqr1p/2rpp1pR/p7/Pp1QP3/1B3P2/1PP3P1/2KR4 w - - 6 22",
+        "puzzle_moves": "d4a7 e7g5 c1b1 g5h6",
+        "solved": false,
+        "time_taken": 6.035923004150391,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003YF",
+        "puzzle_rating": 1103,
+        "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/1pp2ppp/p2p4/2bPp3/2P1Pn1q/P1N2B2/1P3P2/R1BQK1R1 w Q - 1 15",
+        "puzzle_moves": "c1f4 h4f2",
+        "solved": false,
+        "time_taken": 3.108567953109741,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003eP",
+        "puzzle_rating": 1156,
+        "puzzle_themes": "crushing exposedKing long middlegame skewer",
+        "puzzle_fen": "8/r1b1q2k/2p3p1/2Pp4/1P2p1n1/2B1P3/NQ6/2K4R b - - 1 36",
+        "puzzle_moves": "h7g8 h1h8 g8f7 h8h7 f7e8 h7e7",
+        "solved": false,
+        "time_taken": 6.024932146072388,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003jH",
+        "puzzle_rating": 1067,
+        "puzzle_themes": "crushing fork long middlegame",
+        "puzzle_fen": "rn3rk1/p5pp/3N4/4np1q/5Q2/1P3K2/PB1P2P1/2R4R w - - 0 25",
+        "puzzle_moves": "f3f2 e5d3 f2e3 d3f4 h1h5 f4h5",
+        "solved": false,
+        "time_taken": 6.014167308807373,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003jb",
+        "puzzle_rating": 960,
+        "puzzle_themes": "crushing fork master middlegame short",
+        "puzzle_fen": "r3kb1r/p4ppp/b1p1p3/3q4/3Q4/4BN2/PPP2PPP/R3K2R b KQkq - 0 11",
+        "puzzle_moves": "c6c5 d4a4 a6b5 a4b5",
+        "solved": false,
+        "time_taken": 6.0193986892700195,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003jv",
+        "puzzle_rating": 1006,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "1R6/1p2k2p/p2n2p1/4K3/8/6P1/P6P/8 w - - 10 37",
+        "puzzle_moves": "b8h8 d6f7 e5e4 f7h8",
+        "solved": false,
+        "time_taken": 6.0162739753723145,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "003o0",
+        "puzzle_rating": 988,
+        "puzzle_themes": "advantage fork master opening short",
+        "puzzle_fen": "r1bqk2r/pp1nbppp/3p4/1B1p4/3P1B2/8/PPP2PPP/R2QK1NR w KQkq - 2 9",
+        "puzzle_moves": "g1f3 d8a5 d1d2 a5b5",
+        "solved": false,
+        "time_taken": 0.602806806564331,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003r5",
+        "puzzle_rating": 1107,
+        "puzzle_themes": "crushing fork middlegame short",
+        "puzzle_fen": "r2qr1k1/ppp2ppp/4b3/3P4/1nP2Q2/2N2N1P/PP3KP1/R4R2 w - - 1 15",
+        "puzzle_moves": "d5e6 b4d3 f2g1 d3f4",
+        "solved": false,
+        "time_taken": 6.013864755630493,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "0042j",
+        "puzzle_rating": 489,
+        "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+        "puzzle_fen": "3r2k1/4nppp/pq1p1b2/1p2P3/2r2P2/2P1NR2/PP1Q2BP/3R2K1 b - - 0 24",
+        "puzzle_moves": "d6e5 d2d8 b6d8 d1d8",
+        "solved": false,
+        "time_taken": 6.014777183532715,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "00465",
+        "puzzle_rating": 671,
+        "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove queenRookEndgame",
+        "puzzle_fen": "3r1Q1k/pp4pp/2p5/6q1/5R2/2P5/P1P2PPP/3rR1K1 b - - 8 27",
+        "puzzle_moves": "d8f8 f4f8",
+        "solved": false,
+        "time_taken": 6.0149171352386475,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "004JD",
+        "puzzle_rating": 1187,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP6/P2KNP2/8 w - - 3 41",
+        "puzzle_moves": "d2e3 a3c2",
+        "solved": false,
+        "time_taken": 0.4017333984375,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004LZ",
+        "puzzle_rating": 1182,
+        "puzzle_themes": "advancedPawn crushing defensiveMove deflection endgame long promotion",
+        "puzzle_fen": "8/7R/5p2/p7/7P/2p5/3k2r1/1K2N3 w - - 3 48",
+        "puzzle_moves": "e1g2 c3c2 b1a2 c2c1q h7d7 d2e2",
+        "solved": false,
+        "time_taken": 6.019078969955444,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "004Lu",
+        "puzzle_rating": 1106,
+        "puzzle_themes": "advancedPawn advantage endgame exposedKing long master",
+        "puzzle_fen": "8/p1p4p/4Pk2/2PP1p1P/1r3r2/5B2/P3RK2/8 b - - 3 38",
+        "puzzle_moves": "f6e7 d5d6 c7d6 c5d6 e7d6 e6e7",
+        "solved": false,
+        "time_taken": 6.018442392349243,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "004WZ",
+        "puzzle_rating": 891,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r6k/1b3pp1/p1q1pn1p/2p5/P1B5/1PN4Q/2P1RP1P/R4Kr1 w - - 2 26",
+        "puzzle_moves": "f1g1 c6h1",
+        "solved": false,
+        "time_taken": 5.013687610626221,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004X6",
+        "puzzle_rating": 1152,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "1r4k1/p4ppp/2Q5/3pq3/8/P6P/2PR1PP1/Rr4K1 w - - 1 26",
+        "puzzle_moves": "a1b1 b8b1 d2d1 b1d1",
+        "solved": false,
+        "time_taken": 2.7112345695495605,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004XI",
+        "puzzle_rating": 926,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "8/3kqp2/4p3/p2p4/3P1P2/4P1rP/7r/1QR2K2 b - - 1 34",
+        "puzzle_moves": "e7a3 b1b7 d7e8 c1c8",
+        "solved": false,
+        "time_taken": 1.806147575378418,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004iZ",
+        "puzzle_rating": 400,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r2r2k1/2q1bpp1/3p1n1p/1ppN4/1P1BP3/P5Q1/4RPPP/R5K1 b - - 1 20",
+        "puzzle_moves": "f6d5 g3g7",
+        "solved": false,
+        "time_taken": 1.7041995525360107,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004nd",
+        "puzzle_rating": 898,
+        "puzzle_themes": "crushing fork middlegame short",
+        "puzzle_fen": "3q2k1/2r5/pp3p1Q/2b1n3/P3N3/2P5/1P4PP/R6K b - - 0 24",
+        "puzzle_moves": "c7d7 e4f6 d8f6 h6f6",
+        "solved": false,
+        "time_taken": 4.215556621551514,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0050w",
+        "puzzle_rating": 1068,
+        "puzzle_themes": "crushing endgame fork long",
+        "puzzle_fen": "5rk1/1p2p1rp/p2p4/2pPb2R/2P1P3/1P1BKP1R/8/8 b - - 4 30",
+        "puzzle_moves": "g7g3 h3g3 e5g3 h5g5 g8f7 g5g3",
+        "solved": false,
+        "time_taken": 0.6021301746368408,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "005N7",
+        "puzzle_rating": 536,
+        "puzzle_themes": "backRankMate endgame hangingPiece mate mateIn2 short",
+        "puzzle_fen": "r6k/2q3pp/8/2p1n3/R1Qp4/7P/2PB1PP1/6K1 b - - 0 32",
+        "puzzle_moves": "e5c4 a4a8 c7b8 a8b8",
+        "solved": false,
+        "time_taken": 0.30243945121765137,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "005nD",
+        "puzzle_rating": 1005,
+        "puzzle_themes": "fork mate mateIn2 middlegame short",
+        "puzzle_fen": "3rk2r/2qn1pp1/p1Q1R3/3n3p/8/8/PP4PP/5R1K b k - 0 23",
+        "puzzle_moves": "f7e6 c6e6 d5e7 e6f7",
+        "solved": false,
+        "time_taken": 6.017472982406616,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "0061g",
+        "puzzle_rating": 802,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "6k1/pp3pp1/2p1q1Pp/3b4/8/6Q1/PB3Pp1/3RrNK1 b - - 2 27",
+        "puzzle_moves": "e1d1 g3b8 e6e8 b8e8",
+        "solved": false,
+        "time_taken": 6.020349979400635,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "00656",
+        "puzzle_rating": 1033,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "7r/ppp2kp1/2nb1pp1/3p3r/3P2q1/2PQB2P/PP3PP1/R3R1K1 w - - 0 18",
+        "puzzle_moves": "h3g4 h5h1",
+        "solved": false,
+        "time_taken": 0.40189433097839355,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006GK",
+        "puzzle_rating": 1086,
+        "puzzle_themes": "mate mateIn1 oneMove opening queensideAttack",
+        "puzzle_fen": "2kr1br1/ppBb1ppp/8/3P2Q1/3n2n1/5N2/PP3qPP/RN2R2K b - - 0 16",
+        "puzzle_moves": "d4f3 g5d8",
+        "solved": false,
+        "time_taken": 0.301516056060791,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006HV",
+        "puzzle_rating": 1145,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "1r6/5k2/2p1pNp1/p5Pp/1pQ1P2P/2P4R/KP3P2/3q4 w - - 4 31",
+        "puzzle_moves": "c4c6 b4b3 a2a3 d1a1",
+        "solved": false,
+        "time_taken": 3.1116349697113037,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006OI",
+        "puzzle_rating": 843,
+        "puzzle_themes": "crushing endgame rookEndgame short skewer",
+        "puzzle_fen": "8/p7/5k2/P5R1/6KP/8/8/5r2 w - - 5 53",
+        "puzzle_moves": "g5g8 f1g1 g4f4 g1g8",
+        "solved": false,
+        "time_taken": 1.505878210067749,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006yP",
+        "puzzle_rating": 819,
+        "puzzle_themes": "crushing endgame master rookEndgame short skewer",
+        "puzzle_fen": "6R1/8/Kpk1p3/1p1pP3/6P1/PPP1r3/8/8 b - - 3 40",
+        "puzzle_moves": "e3c3 g8c8 c6d7 c8c3",
+        "solved": false,
+        "time_taken": 1.306422472000122,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0071K",
+        "puzzle_rating": 1161,
+        "puzzle_themes": "crushing defensiveMove endgame hangingPiece short",
+        "puzzle_fen": "3N1r2/6R1/kp6/p2pPp1Q/2pP2P1/2q5/2P5/2K5 w - - 0 38",
+        "puzzle_moves": "g7a7 a6a7 h5h7 a7a6",
+        "solved": false,
+        "time_taken": 3.3097734451293945,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0071N",
+        "puzzle_rating": 523,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "6k1/p4pp1/1p5p/4b3/4B3/4P1P1/PpR2PKP/3r4 b - - 1 30",
+        "puzzle_moves": "b2b1q c2c8 d1d8 c8d8",
+        "solved": false,
+        "time_taken": 1.9063363075256348,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007HB",
+        "puzzle_rating": 543,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "rn2q1k1/pp3ppp/2pb4/3p1B2/2Pn4/1Q3N2/PP3PPP/R1B4K w - - 0 15",
+        "puzzle_moves": "f3d4 e8e1",
+        "solved": false,
+        "time_taken": 6.027937889099121,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "007Rn",
+        "puzzle_rating": 992,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/p4p1p/1p6/6q1/3P2n1/P4Q2/1P1B2P1/7K w - - 0 34",
+        "puzzle_moves": "d2g5 e8e1 f3f1 e1f1",
+        "solved": false,
+        "time_taken": 2.3079679012298584,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007XE",
+        "puzzle_rating": 645,
+        "puzzle_themes": "backRankMate fork mate mateIn2 middlegame short",
+        "puzzle_fen": "2kr3r/p1p1bpp1/2p2n1p/8/8/1P6/P1P1RPPP/RNB3K1 w - - 1 16",
+        "puzzle_moves": "e2e7 d8d1 e7e1 d1e1",
+        "solved": false,
+        "time_taken": 5.113667249679565,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007c6",
+        "puzzle_rating": 721,
+        "puzzle_themes": "bodenMate mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2kr3r/pp1n2pp/2QB1bp1/5q2/2B5/8/PPP2PPP/3R1RK1 b - - 0 17",
+        "puzzle_moves": "b7c6 c4a6",
+        "solved": false,
+        "time_taken": 4.015583038330078,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007eS",
+        "puzzle_rating": 1177,
+        "puzzle_themes": "advantage endgame short",
+        "puzzle_fen": "6k1/p4p2/1p5p/4r3/P3B3/1P3P2/2PK2PP/8 w - - 0 29",
+        "puzzle_moves": "d2e3 f7f5 g2g4 f5e4",
+        "solved": false,
+        "time_taken": 0.4028193950653076,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007fJ",
+        "puzzle_rating": 548,
+        "puzzle_themes": "advancedPawn endgame mate mateIn1 oneMove queenEndgame",
+        "puzzle_fen": "8/1P3ppp/8/8/8/2pk3P/3p2P1/3K4 w - - 0 52",
+        "puzzle_moves": "b7b8q c3c2",
+        "solved": false,
+        "time_taken": 3.516146421432495,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007tv",
+        "puzzle_rating": 1146,
+        "puzzle_themes": "advantage attackingF2F7 long middlegame skewer",
+        "puzzle_fen": "r3k1nr/1pp2ppp/1pnp2q1/4p1B1/2B1P3/3P1Q1P/PPP2PP1/R4RK1 b kq - 0 11",
+        "puzzle_moves": "g6g5 f3f7 e8d8 f7f8 d8d7 f8a8",
+        "solved": false,
+        "time_taken": 6.023434638977051,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "0082f",
+        "puzzle_rating": 1018,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/2q2ppp/3pp3/4Pb1N/pp6/1B4Q1/PPP3PP/1K1RR3 b - - 0 21",
+        "puzzle_moves": "a4b3 g3g7",
+        "solved": false,
+        "time_taken": 3.1121742725372314,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0088O",
+        "puzzle_rating": 1108,
+        "puzzle_themes": "crushing deflection endgame short",
+        "puzzle_fen": "7Q/2p5/1p2prp1/p4k1p/P4p1P/8/6RK/3q4 b - - 2 37",
+        "puzzle_moves": "d1a4 g2g5 f5e4 h8f6",
+        "solved": false,
+        "time_taken": 2.0079851150512695,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008GK",
+        "puzzle_rating": 436,
+        "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+        "puzzle_fen": "1k1r4/ppp3p1/8/1P5p/8/P3n2P/2P1r1P1/B3NRK1 b - - 4 31",
+        "puzzle_moves": "d8d1 f1f8 d1d8 f8d8",
+        "solved": false,
+        "time_taken": 0.40169715881347656,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008LD",
+        "puzzle_rating": 411,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "8/6pp/4N1k1/5p2/5P2/5rPb/4R2P/6K1 w - - 0 35",
+        "puzzle_moves": "e6g5 f3f1",
+        "solved": false,
+        "time_taken": 0.6021637916564941,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008Nz",
+        "puzzle_rating": 457,
+        "puzzle_themes": "backRankMate mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P1bPPR1/r6r/3R2K1 b - - 1 29",
+        "puzzle_moves": "d3e2 d1d8",
+        "solved": false,
+        "time_taken": 0.10120320320129395,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008P4",
+        "puzzle_rating": 648,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "8/4k3/1p1p4/rP2p1p1/P2nP1P1/3BK3/8/R7 w - - 0 35",
+        "puzzle_moves": "e3d2 d4b3 d2c3 b3a1",
+        "solved": false,
+        "time_taken": 1.10313081741333,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008Y3",
+        "puzzle_rating": 1062,
+        "puzzle_themes": "advantage discoveredAttack kingsideAttack master middlegame short",
+        "puzzle_fen": "r5k1/1p1rqpp1/p3pnp1/2PN4/8/1Q5P/PP3PP1/3RR1K1 b - - 0 24",
+        "puzzle_moves": "e7c5 d5f6 g7f6 d1d7",
+        "solved": false,
+        "time_taken": 3.312941551208496,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008cl",
+        "puzzle_rating": 907,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r3k2r/ppp2p1p/2n1pp2/7q/2PN2b1/2BP1Pb1/PP2B1P1/R2Q1RK1 w kq - 1 16",
+        "puzzle_moves": "f3g4 h5h2",
+        "solved": false,
+        "time_taken": 2.0050597190856934,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008o6",
+        "puzzle_rating": 471,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "Q5k1/p1p3p1/5rP1/8/3P4/7P/q3r3/B4RK1 b - - 1 34",
+        "puzzle_moves": "f6f8 a8f8",
+        "solved": false,
+        "time_taken": 6.013490676879883,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "008oX",
+        "puzzle_rating": 978,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/2R3pp/2p4q/1p1p4/3P4/P7/1PP2R2/1K1N4 b - - 3 32",
+        "puzzle_moves": "e8e1 c7c8 e1e8 c8e8",
+        "solved": false,
+        "time_taken": 1.7087783813476562,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008rw",
+        "puzzle_rating": 983,
+        "puzzle_themes": "mate mateIn1 oneMove opening",
+        "puzzle_fen": "rn2kb1r/pp2pppp/2p2n2/4q3/8/2N4Q/PPPPBPPP/R1B1K2R b KQkq - 2 8",
+        "puzzle_moves": "g7g6 h3c8",
+        "solved": false,
+        "time_taken": 4.211892604827881,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008tL",
+        "puzzle_rating": 1062,
+        "puzzle_themes": "advancedPawn crushing endgame master rookEndgame short",
+        "puzzle_fen": "8/7k/pR5p/3p4/5r2/2P1p2P/P5P1/6K1 w - - 0 40",
+        "puzzle_moves": "b6a6 e3e2 a6e6 f4f1",
+        "solved": false,
+        "time_taken": 6.016988277435303,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "0092z",
+        "puzzle_rating": 945,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "2r3k1/2qR1ppp/p7/2p2Q2/P7/7P/5PP1/6K1 b - - 3 26",
+        "puzzle_moves": "c7c6 f5f7 g8h8 f7g7",
+        "solved": false,
+        "time_taken": 2.607966899871826,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009IO",
+        "puzzle_rating": 1165,
+        "puzzle_themes": "hookMate mate mateIn2 middlegame short",
+        "puzzle_fen": "3rk3/5p1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 b - - 4 25",
+        "puzzle_moves": "e8e7 f2f7 h7f7 f1f7",
+        "solved": false,
+        "time_taken": 0.702521800994873,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009L0",
+        "puzzle_rating": 706,
+        "puzzle_themes": "backRankMate hangingPiece mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "6k1/pb2r1pN/1n4Bp/3p4/1P2pR2/P7/3R1PPP/2r3K1 w - - 2 30",
+        "puzzle_moves": "d2d1 c1d1",
+        "solved": false,
+        "time_taken": 1.205094814300537,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009Wc",
+        "puzzle_rating": 1084,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "1r3rk1/1pq2pbp/p1p1pnp1/2N1N3/3P4/1QP5/PP3PPP/3RR1K1 w - - 2 19",
+        "puzzle_moves": "e5d7 f6d7 c5d7 c7d7",
+        "solved": false,
+        "time_taken": 1.406557321548462,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009bR",
+        "puzzle_rating": 1048,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r2k/3q2r1/1p4pQ/p1pP4/2P4P/1N4p1/PP3RK1/8 b - - 1 37",
+        "puzzle_moves": "g7h7 f2f8 e8f8 h6f8",
+        "solved": false,
+        "time_taken": 2.810274362564087,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009bn",
+        "puzzle_rating": 954,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2kr2r1/ppb2ppp/3qbn2/2Np2B1/P7/2P2Q1P/1PB2PP1/R4RK1 w - - 5 18",
+        "puzzle_moves": "c5e6 d6h2",
+        "solved": false,
+        "time_taken": 2.8080477714538574,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009f8",
+        "puzzle_rating": 1078,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "8/1p4p1/pb2ppkp/3n4/3P4/P3BN1P/1P2KPP1/8 b - - 0 26",
+        "puzzle_moves": "g6f5 f3h4 f5e4 f2f3",
+        "solved": false,
+        "time_taken": 1.9080355167388916,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009lk",
+        "puzzle_rating": 918,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "1R6/6pk/2p4p/3bP2r/5B1P/2P2qP1/P4P1Q/4R1K1 w - - 2 40",
+        "puzzle_moves": "e1e3 f3d1 e3e1 d1e1",
+        "solved": false,
+        "time_taken": 6.018545389175415,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": "timeout"
+      },
+      {
+        "puzzle_id": "009oc",
+        "puzzle_rating": 1176,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "5Q2/pbp3np/1p1pB1pk/1P6/P3q2P/6K1/8/8 b - - 1 32",
+        "puzzle_moves": "e4e6 f8f4 g6g5 f4g5",
+        "solved": false,
+        "time_taken": 1.2036242485046387,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009tE",
+        "puzzle_rating": 671,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "6k1/6pp/p1N2p2/1pP2bP1/5P2/8/PPP5/3K4 b - - 1 28",
+        "puzzle_moves": "f6g5 c6e7 g8f7 e7f5",
+        "solved": false,
+        "time_taken": 0.6021575927734375,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009uB",
+        "puzzle_rating": 1042,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "3br2r/5k1p/4p1pQ/P5P1/1B5P/P6q/5R2/6K1 b - - 1 35",
+        "puzzle_moves": "f7g8 f2f8 e8f8 h6f8",
+        "solved": false,
+        "time_taken": 0.7026972770690918,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00A5v",
+        "puzzle_rating": 876,
+        "puzzle_themes": "crushing endgame short",
+        "puzzle_fen": "4r1k1/pp1qr1p1/7p/2pPR3/2P2p2/1PQ2P2/P5PP/4R1K1 w - - 3 33",
+        "puzzle_moves": "c3d2 e7e5 e1e5 e8e5",
+        "solved": false,
+        "time_taken": 0.9050068855285645,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AGs",
+        "puzzle_rating": 909,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "rn2k2Q/5p2/2p1p1r1/1q4p1/8/8/4NPPP/3R1K1R b q - 5 23",
+        "puzzle_moves": "e8e7 h8d8",
+        "solved": false,
+        "time_taken": 1.2034692764282227,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AOH",
+        "puzzle_rating": 843,
+        "puzzle_themes": "advancedPawn advantage endgame long",
+        "puzzle_fen": "6k1/1R6/1p2p1pp/4P3/p1N2P2/6PK/7P/1r6 w - - 0 48",
+        "puzzle_moves": "b7b6 b1b6 c4b6 a4a3 b6d7 a3a2",
+        "solved": false,
+        "time_taken": 3.011537790298462,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Aae",
+        "puzzle_rating": 1020,
+        "puzzle_themes": "advancedPawn clearance crushing endgame long promotion rookEndgame",
+        "puzzle_fen": "1R6/1P6/4pkp1/5p2/3P3p/3KP3/8/1r6 b - - 0 43",
+        "puzzle_moves": "h4h3 b8f8 f6e7 b7b8q b1b8 f8b8",
+        "solved": false,
+        "time_taken": 2.2144064903259277,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Aas",
+        "puzzle_rating": 1054,
+        "puzzle_themes": "crushing fork long middlegame",
+        "puzzle_fen": "3r1rk1/1p2q1pp/5p2/8/1P1n4/6Q1/PPbB1PPP/R2B1RK1 w - - 9 20",
+        "puzzle_moves": "d1c2 d4e2 g1h1 e2g3 f2g3 d8d2",
+        "solved": false,
+        "time_taken": 2.9065868854522705,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AbP",
+        "puzzle_rating": 805,
+        "puzzle_themes": "crushing endgame short",
+        "puzzle_fen": "4r1k1/pp3pp1/2p5/7b/4P2P/2P2N2/PP4K1/3R4 b - - 0 24",
+        "puzzle_moves": "e8e4 d1d8 g8h7 f3g5",
+        "solved": false,
+        "time_taken": 2.305776834487915,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Af3",
+        "puzzle_rating": 1113,
+        "puzzle_themes": "advancedPawn bishopEndgame crushing endgame short",
+        "puzzle_fen": "8/8/2B2p1p/P4Pp1/3p1kP1/1b1Pb2P/8/4K3 b - - 0 50",
+        "puzzle_moves": "f4g3 a5a6 b3c4 a6a7",
+        "solved": false,
+        "time_taken": 0.9029319286346436,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AfZ",
+        "puzzle_rating": 919,
+        "puzzle_themes": "master mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2r3kR/Q7/5q2/1brpN3/5Pp1/4P1P1/6K1/1B6 b - - 2 43",
+        "puzzle_moves": "f6h8 a7f7",
+        "solved": false,
+        "time_taken": 0.20136427879333496,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Ahb",
+        "puzzle_rating": 1138,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "1k4nr/pp1r1ppp/4p3/1Nb2q2/2Pp4/6P1/PP3P1P/R1BQR1K1 b - - 2 14",
+        "puzzle_moves": "g8h6 c1f4 f5f4 g3f4",
+        "solved": false,
+        "time_taken": 1.5051636695861816,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AoZ",
+        "puzzle_rating": 1043,
+        "puzzle_themes": "advantage deflection endgame short",
+        "puzzle_fen": "8/1R6/p1pk4/6bp/1QP5/P7/KP6/3r2q1 b - - 2 44",
+        "puzzle_moves": "g1c5 b7d7 d6d7 b4c5",
+        "solved": false,
+        "time_taken": 1.5038094520568848,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Au2",
+        "puzzle_rating": 961,
+        "puzzle_themes": "advantage endgame short",
+        "puzzle_fen": "r5r1/pp2kp2/2p5/3pQ3/3P4/2NB4/PPP2q2/1K6 b - - 1 28",
+        "puzzle_moves": "e7d7 d3f5 f2f5 e5f5",
+        "solved": false,
+        "time_taken": 3.6111111640930176,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00B2k",
+        "puzzle_rating": 833,
+        "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/pbp3pp/1p1pp3/6B1/2PPp2q/3nP2P/PP3P2/R2QKBR1 w Q - 8 16",
+        "puzzle_moves": "f1d3 h4f2",
+        "solved": false,
+        "time_taken": 1.4052963256835938,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BJm",
+        "puzzle_rating": 1078,
+        "puzzle_themes": "advantage fork hangingPiece middlegame short",
+        "puzzle_fen": "r2q1rk1/1Q2bppp/p1N1p3/1p6/2pP1n2/2P5/PP3PPP/R4RK1 b - - 1 18",
+        "puzzle_moves": "d8d5 c6e7 g8h8 e7d5",
+        "solved": false,
+        "time_taken": 0.20219826698303223,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BNd",
+        "puzzle_rating": 946,
+        "puzzle_themes": "advantage fork middlegame short",
+        "puzzle_fen": "1rr3k1/3bppbp/3p1np1/1B1N4/P2BP3/5P2/P2R2PP/R5K1 b - - 0 21",
+        "puzzle_moves": "d7b5 d5e7 g8f8 e7c8",
+        "solved": false,
+        "time_taken": 1.3072924613952637,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BQD",
+        "puzzle_rating": 806,
+        "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove",
+        "puzzle_fen": "4r3/3R1pkp/6p1/1P6/1b6/5B2/1P1p1PPP/3R2K1 w - - 0 36",
+        "puzzle_moves": "d1d2 e8e1",
+        "solved": false,
+        "time_taken": 2.1071853637695312,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bm8",
+        "puzzle_rating": 1126,
+        "puzzle_themes": "endgame master mate mateIn1 oneMove",
+        "puzzle_fen": "8/6kp/4b1q1/1p6/1PpPp2Q/2P1P3/r2N2P1/5RK1 w - - 7 34",
+        "puzzle_moves": "d2e4 g6g2",
+        "solved": false,
+        "time_taken": 3.911839008331299,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bn0",
+        "puzzle_rating": 1040,
+        "puzzle_themes": "mate mateIn1 oneMove opening smotheredMate",
+        "puzzle_fen": "r1bqkb1r/pp1pnppp/2n1p3/1N6/5B2/8/PPP1PPPP/R2QKBNR b KQkq - 4 6",
+        "puzzle_moves": "e6e5 b5d6",
+        "solved": false,
+        "time_taken": 3.115591049194336,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bn4",
+        "puzzle_rating": 691,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "1k6/pp6/4nNp1/P6p/3pr3/7P/3R1PPK/8 b - - 0 40",
+        "puzzle_moves": "e4e5 f6d7 b8c7 d7e5",
+        "solved": false,
+        "time_taken": 0.8048920631408691,
+        "engine_name": "V7P3R_v5.1",
+        "error_type": null
+      }
+    ]
+  },
+  "engine_2_name": "SlowMate_v3.0",
+  "engine_2_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\SlowMate\\SlowMate_v3.0.exe",
+  "engine_2_results": {
+    "total": 100,
+    "solved": 6,
+    "failed": 94,
+    "time_taken": 10.730450868606567,
+    "by_theme": {
+      "advantage": {
+        "total": 15,
+        "solved": 0
+      },
+      "middlegame": {
+        "total": 45,
+        "solved": 0
+      },
+      "short": {
+        "total": 57,
+        "solved": 3
+      },
+      "crushing": {
+        "total": 28,
+        "solved": 0
+      },
+      "endgame": {
+        "total": 50,
+        "solved": 5
+      },
+      "pawnEndgame": {
+        "total": 1,
+        "solved": 0
+      },
+      "zugzwang": {
+        "total": 1,
+        "solved": 0
+      },
+      "fork": {
+        "total": 19,
+        "solved": 0
+      },
+      "master": {
+        "total": 13,
+        "solved": 0
+      },
+      "kingsideAttack": {
+        "total": 6,
+        "solved": 0
+      },
+      "mate": {
+        "total": 57,
+        "solved": 6
+      },
+      "mateIn1": {
+        "total": 32,
+        "solved": 3
+      },
+      "oneMove": {
+        "total": 32,
+        "solved": 3
+      },
+      "opening": {
+        "total": 5,
+        "solved": 1
+      },
+      "backRankMate": {
+        "total": 10,
+        "solved": 2
+      },
+      "mateIn2": {
+        "total": 24,
+        "solved": 3
+      },
+      "bodenMate": {
+        "total": 2,
+        "solved": 0
+      },
+      "hangingPiece": {
+        "total": 6,
+        "solved": 1
+      },
+      "smotheredMate": {
+        "total": 2,
+        "solved": 0
+      },
+      "advancedPawn": {
+        "total": 8,
+        "solved": 0
+      },
+      "attraction": {
+        "total": 1,
+        "solved": 0
+      },
+      "promotion": {
+        "total": 3,
+        "solved": 0
+      },
+      "long": {
+        "total": 11,
+        "solved": 0
+      },
+      "mateIn3": {
+        "total": 1,
+        "solved": 0
+      },
+      "masterVsMaster": {
+        "total": 2,
+        "solved": 0
+      },
+      "skewer": {
+        "total": 6,
+        "solved": 0
+      },
+      "superGM": {
+        "total": 1,
+        "solved": 0
+      },
+      "queensideAttack": {
+        "total": 2,
+        "solved": 0
+      },
+      "rookEndgame": {
+        "total": 6,
+        "solved": 0
+      },
+      "defensiveMove": {
+        "total": 3,
+        "solved": 0
+      },
+      "attackingF2F7": {
+        "total": 3,
+        "solved": 0
+      },
+      "exposedKing": {
+        "total": 2,
+        "solved": 0
+      },
+      "queenRookEndgame": {
+        "total": 1,
+        "solved": 1
+      },
+      "deflection": {
+        "total": 3,
+        "solved": 0
+      },
+      "queenEndgame": {
+        "total": 1,
+        "solved": 0
+      },
+      "discoveredAttack": {
+        "total": 1,
+        "solved": 0
+      },
+      "hookMate": {
+        "total": 1,
+        "solved": 0
+      },
+      "clearance": {
+        "total": 1,
+        "solved": 0
+      },
+      "bishopEndgame": {
+        "total": 1,
+        "solved": 0
+      }
+    },
+    "by_rating": {
+      "1000-1200": {
+        "total": 45,
+        "solved": 0
+      },
+      "800-1000": {
+        "total": 35,
+        "solved": 3
+      },
+      "600-800": {
+        "total": 9,
+        "solved": 1
+      },
+      "400-600": {
+        "total": 11,
+        "solved": 2
+      }
+    },
+    "total_test_time": 10.732600688934326,
+    "engine_name": "SlowMate_v3.0",
+    "engine_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\SlowMate\\SlowMate_v3.0.exe",
+    "detailed_puzzles": [
+      {
+        "puzzle_id": "0009B",
+        "puzzle_rating": 1080,
+        "puzzle_themes": "advantage middlegame short",
+        "puzzle_fen": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+        "puzzle_moves": "b6c5 e2g4 h3g4 d1g4",
+        "solved": false,
+        "time_taken": 0.10241389274597168,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "000o3",
+        "puzzle_rating": 891,
+        "puzzle_themes": "crushing endgame pawnEndgame short zugzwang",
+        "puzzle_fen": "8/2p1k3/6p1/1p1P1p2/1P3P2/3K2Pp/7P/8 b - - 1 43",
+        "puzzle_moves": "e7d6 d3d4 g6g5 f4g5",
+        "solved": false,
+        "time_taken": 0.20148611068725586,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "000rO",
+        "puzzle_rating": 1110,
+        "puzzle_themes": "crushing endgame fork master short",
+        "puzzle_fen": "3R4/8/K7/pB2b3/1p6/1P2k3/3p4/8 w - - 4 58",
+        "puzzle_moves": "a6a5 e5c7 a5b4 c7d8",
+        "solved": false,
+        "time_taken": 0.10157251358032227,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "000rZ",
+        "puzzle_rating": 1076,
+        "puzzle_themes": "kingsideAttack mate mateIn1 oneMove opening",
+        "puzzle_fen": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+        "puzzle_moves": "d4e6 d6h2",
+        "solved": false,
+        "time_taken": 0.10141372680664062,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001Wz",
+        "puzzle_rating": 1120,
+        "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/5ppp/r1p5/p1n1RP2/8/2P2N1P/2P3P1/3R2K1 b - - 0 21",
+        "puzzle_moves": "e8e5 d1d8 e5e8 d8e8",
+        "solved": false,
+        "time_taken": 0.10173153877258301,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001gi",
+        "puzzle_rating": 820,
+        "puzzle_themes": "bodenMate hangingPiece mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r6r/1pNk1ppp/2np4/b3p3/4P1b1/N1Q5/P4PPP/R3KB1R w KQ - 3 18",
+        "puzzle_moves": "c7a8 a5c3",
+        "solved": false,
+        "time_taken": 0.10142683982849121,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001om",
+        "puzzle_rating": 1018,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "5r1k/pp4pp/5p2/1BbQp1r1/6K1/7P/1PP3P1/3R3R w - - 2 26",
+        "puzzle_moves": "g4h4 c5f2 g2g3 f2g3",
+        "solved": false,
+        "time_taken": 0.10137009620666504,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001pC",
+        "puzzle_rating": 788,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove smotheredMate",
+        "puzzle_fen": "r4rk1/pp3ppp/3b4/2p1pPB1/7N/2PP3n/PP4PP/R2Q1RqK w - - 5 18",
+        "puzzle_moves": "f1g1 h3f2",
+        "solved": false,
+        "time_taken": 0.10119962692260742,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001w5",
+        "puzzle_rating": 1049,
+        "puzzle_themes": "advancedPawn attraction mate mateIn2 middlegame promotion short",
+        "puzzle_fen": "1rb2rk1/q5P1/4p2p/3p3p/3P1P2/2P5/2QK3P/3R2R1 b - - 0 29",
+        "puzzle_moves": "f8f7 c2h7 g8h7 g7g8q",
+        "solved": false,
+        "time_taken": 0.10137939453125,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001wR",
+        "puzzle_rating": 1189,
+        "puzzle_themes": "endgame long mate mateIn3",
+        "puzzle_fen": "6nr/pp3p1p/k1p5/8/1QN5/2P1P3/4KPqP/8 b - - 5 26",
+        "puzzle_moves": "b7b5 b4a5 a6b7 c4d6 b7b8 a5d8",
+        "solved": false,
+        "time_taken": 0.10119009017944336,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001wb",
+        "puzzle_rating": 1196,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r3k2r/pb1p1ppp/1b4q1/1Q2P3/8/2NP1Pn1/PP4PP/R1B2R1K w kq - 1 17",
+        "puzzle_moves": "h2g3 g6h5",
+        "solved": false,
+        "time_taken": 0.10125017166137695,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001wr",
+        "puzzle_rating": 999,
+        "puzzle_themes": "advantage fork master masterVsMaster middlegame short",
+        "puzzle_fen": "r4rk1/p3ppbp/Pp1q1np1/3PpbB1/2B5/2N5/1PPQ1PPP/3RR1K1 w - - 4 18",
+        "puzzle_moves": "f2f3 d6c5 g1h1 c5c4",
+        "solved": false,
+        "time_taken": 0.10133123397827148,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "001xl",
+        "puzzle_rating": 1152,
+        "puzzle_themes": "advantage endgame master masterVsMaster short skewer superGM",
+        "puzzle_fen": "8/4R1k1/p5pp/3B4/5q2/8/5P1P/6K1 b - - 5 40",
+        "puzzle_moves": "g7f6 e7f7 f6e5 f7f4",
+        "solved": false,
+        "time_taken": 0.10105752944946289,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002CP",
+        "puzzle_rating": 926,
+        "puzzle_themes": "endgame mate mateIn1 oneMove queensideAttack",
+        "puzzle_fen": "r5k1/pp4pp/4p1q1/4p3/3n4/P5P1/1PP2Q1P/2KR1R2 w - - 4 24",
+        "puzzle_moves": "f2e3 g6c2",
+        "solved": false,
+        "time_taken": 0.10115170478820801,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002GQ",
+        "puzzle_rating": 655,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "5rk1/5ppp/4p3/4N3/8/1Pn5/5PPP/5RK1 w - - 0 28",
+        "puzzle_moves": "f1c1 c3e2 g1f1 e2c1",
+        "solved": false,
+        "time_taken": 0.10133886337280273,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002O7",
+        "puzzle_rating": 969,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "r3qrk1/2p2pp1/p2bpn1p/2ppNb2/3P1P2/1PP1P1B1/P2N2PP/R2Q1RK1 b - - 0 14",
+        "puzzle_moves": "f5g4 e5g4 f6g4 d1g4",
+        "solved": false,
+        "time_taken": 0.10120105743408203,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002Q2",
+        "puzzle_rating": 988,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "7k/p4R1p/3p3r/2pN1n2/2PbBBb1/3P2P1/P3r3/5R1K w - - 1 28",
+        "puzzle_moves": "f4h6 f5g3",
+        "solved": false,
+        "time_taken": 0.10113763809204102,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002bK",
+        "puzzle_rating": 1139,
+        "puzzle_themes": "advantage endgame hangingPiece short",
+        "puzzle_fen": "8/7p/2b1k3/p2p1pPB/1n1P3P/N1p1P3/4K3/8 b - - 1 42",
+        "puzzle_moves": "c6b5 a3b5 c3c2 e2d2",
+        "solved": false,
+        "time_taken": 0.10119056701660156,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002p5",
+        "puzzle_rating": 953,
+        "puzzle_themes": "kingsideAttack mate mateIn2 middlegame short",
+        "puzzle_fen": "r1bqr1k1/pp1nbpp1/2p2n2/6P1/2BP4/P7/1PQNNPP1/R3K2R b KQ - 0 13",
+        "puzzle_moves": "f6d5 c2h7 g8f8 h7h8",
+        "solved": false,
+        "time_taken": 0.10115289688110352,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "002vV",
+        "puzzle_rating": 428,
+        "puzzle_themes": "endgame master mate mateIn1 oneMove rookEndgame",
+        "puzzle_fen": "8/6k1/2R4p/5p1P/5P1K/6P1/8/r7 w - - 2 58",
+        "puzzle_moves": "c6b6 a1h1",
+        "solved": false,
+        "time_taken": 0.10107064247131348,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0030b",
+        "puzzle_rating": 873,
+        "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+        "puzzle_fen": "6k1/5ppp/5nb1/pp6/6rP/5N1Q/Pq2r1P1/3R2RK b - - 4 32",
+        "puzzle_moves": "g6e4 d1d8 f6e8 d8e8",
+        "solved": false,
+        "time_taken": 0.10127067565917969,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0039T",
+        "puzzle_rating": 993,
+        "puzzle_themes": "crushing defensiveMove endgame long rookEndgame skewer",
+        "puzzle_fen": "1r5r/p3kp2/4p2p/4P3/3R1Pp1/6P1/P1P4P/4K2R w K - 1 25",
+        "puzzle_moves": "d4a4 b8b1 e1f2 b1h1 a4a7 e7f8",
+        "solved": false,
+        "time_taken": 0.10117936134338379,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003AX",
+        "puzzle_rating": 960,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2r2rk1/5ppp/bq2p3/p1ppP1N1/Pb1P2P1/1P2P2P/2QN4/2R1K2R b K - 1 18",
+        "puzzle_moves": "c5d4 c2h7",
+        "solved": false,
+        "time_taken": 0.10116362571716309,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003Jb",
+        "puzzle_rating": 993,
+        "puzzle_themes": "advantage fork master middlegame short",
+        "puzzle_fen": "6k1/3bqr1p/2rpp1pR/p7/Pp1QP3/1B3P2/1PP3P1/2KR4 w - - 6 22",
+        "puzzle_moves": "d4a7 e7g5 c1b1 g5h6",
+        "solved": false,
+        "time_taken": 0.10127639770507812,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003YF",
+        "puzzle_rating": 1103,
+        "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/1pp2ppp/p2p4/2bPp3/2P1Pn1q/P1N2B2/1P3P2/R1BQK1R1 w Q - 1 15",
+        "puzzle_moves": "c1f4 h4f2",
+        "solved": false,
+        "time_taken": 0.10118532180786133,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003eP",
+        "puzzle_rating": 1156,
+        "puzzle_themes": "crushing exposedKing long middlegame skewer",
+        "puzzle_fen": "8/r1b1q2k/2p3p1/2Pp4/1P2p1n1/2B1P3/NQ6/2K4R b - - 1 36",
+        "puzzle_moves": "h7g8 h1h8 g8f7 h8h7 f7e8 h7e7",
+        "solved": false,
+        "time_taken": 0.10116791725158691,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003jH",
+        "puzzle_rating": 1067,
+        "puzzle_themes": "crushing fork long middlegame",
+        "puzzle_fen": "rn3rk1/p5pp/3N4/4np1q/5Q2/1P3K2/PB1P2P1/2R4R w - - 0 25",
+        "puzzle_moves": "f3f2 e5d3 f2e3 d3f4 h1h5 f4h5",
+        "solved": false,
+        "time_taken": 0.10112690925598145,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003jb",
+        "puzzle_rating": 960,
+        "puzzle_themes": "crushing fork master middlegame short",
+        "puzzle_fen": "r3kb1r/p4ppp/b1p1p3/3q4/3Q4/4BN2/PPP2PPP/R3K2R b KQkq - 0 11",
+        "puzzle_moves": "c6c5 d4a4 a6b5 a4b5",
+        "solved": false,
+        "time_taken": 0.10118937492370605,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003jv",
+        "puzzle_rating": 1006,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "1R6/1p2k2p/p2n2p1/4K3/8/6P1/P6P/8 w - - 10 37",
+        "puzzle_moves": "b8h8 d6f7 e5e4 f7h8",
+        "solved": false,
+        "time_taken": 0.10125851631164551,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003o0",
+        "puzzle_rating": 988,
+        "puzzle_themes": "advantage fork master opening short",
+        "puzzle_fen": "r1bqk2r/pp1nbppp/3p4/1B1p4/3P1B2/8/PPP2PPP/R2QK1NR w KQkq - 2 9",
+        "puzzle_moves": "g1f3 d8a5 d1d2 a5b5",
+        "solved": false,
+        "time_taken": 0.10119104385375977,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "003r5",
+        "puzzle_rating": 1107,
+        "puzzle_themes": "crushing fork middlegame short",
+        "puzzle_fen": "r2qr1k1/ppp2ppp/4b3/3P4/1nP2Q2/2N2N1P/PP3KP1/R4R2 w - - 1 15",
+        "puzzle_moves": "d5e6 b4d3 f2g1 d3f4",
+        "solved": false,
+        "time_taken": 0.10122346878051758,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0042j",
+        "puzzle_rating": 489,
+        "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+        "puzzle_fen": "3r2k1/4nppp/pq1p1b2/1p2P3/2r2P2/2P1NR2/PP1Q2BP/3R2K1 b - - 0 24",
+        "puzzle_moves": "d6e5 d2d8 b6d8 d1d8",
+        "solved": false,
+        "time_taken": 0.10114145278930664,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00465",
+        "puzzle_rating": 671,
+        "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove queenRookEndgame",
+        "puzzle_fen": "3r1Q1k/pp4pp/2p5/6q1/5R2/2P5/P1P2PPP/3rR1K1 b - - 8 27",
+        "puzzle_moves": "d8f8 f4f8",
+        "solved": true,
+        "time_taken": 0.10110306739807129,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004JD",
+        "puzzle_rating": 1187,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP6/P2KNP2/8 w - - 3 41",
+        "puzzle_moves": "d2e3 a3c2",
+        "solved": false,
+        "time_taken": 0.10123586654663086,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004LZ",
+        "puzzle_rating": 1182,
+        "puzzle_themes": "advancedPawn crushing defensiveMove deflection endgame long promotion",
+        "puzzle_fen": "8/7R/5p2/p7/7P/2p5/3k2r1/1K2N3 w - - 3 48",
+        "puzzle_moves": "e1g2 c3c2 b1a2 c2c1q h7d7 d2e2",
+        "solved": false,
+        "time_taken": 0.1010749340057373,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004Lu",
+        "puzzle_rating": 1106,
+        "puzzle_themes": "advancedPawn advantage endgame exposedKing long master",
+        "puzzle_fen": "8/p1p4p/4Pk2/2PP1p1P/1r3r2/5B2/P3RK2/8 b - - 3 38",
+        "puzzle_moves": "f6e7 d5d6 c7d6 c5d6 e7d6 e6e7",
+        "solved": false,
+        "time_taken": 0.10144853591918945,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004WZ",
+        "puzzle_rating": 891,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r6k/1b3pp1/p1q1pn1p/2p5/P1B5/1PN4Q/2P1RP1P/R4Kr1 w - - 2 26",
+        "puzzle_moves": "f1g1 c6h1",
+        "solved": false,
+        "time_taken": 0.10122227668762207,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004X6",
+        "puzzle_rating": 1152,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "1r4k1/p4ppp/2Q5/3pq3/8/P6P/2PR1PP1/Rr4K1 w - - 1 26",
+        "puzzle_moves": "a1b1 b8b1 d2d1 b1d1",
+        "solved": false,
+        "time_taken": 0.10114288330078125,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004XI",
+        "puzzle_rating": 926,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "8/3kqp2/4p3/p2p4/3P1P2/4P1rP/7r/1QR2K2 b - - 1 34",
+        "puzzle_moves": "e7a3 b1b7 d7e8 c1c8",
+        "solved": false,
+        "time_taken": 0.10116410255432129,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004iZ",
+        "puzzle_rating": 400,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r2r2k1/2q1bpp1/3p1n1p/1ppN4/1P1BP3/P5Q1/4RPPP/R5K1 b - - 1 20",
+        "puzzle_moves": "f6d5 g3g7",
+        "solved": false,
+        "time_taken": 0.10108113288879395,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "004nd",
+        "puzzle_rating": 898,
+        "puzzle_themes": "crushing fork middlegame short",
+        "puzzle_fen": "3q2k1/2r5/pp3p1Q/2b1n3/P3N3/2P5/1P4PP/R6K b - - 0 24",
+        "puzzle_moves": "c7d7 e4f6 d8f6 h6f6",
+        "solved": false,
+        "time_taken": 0.10118603706359863,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0050w",
+        "puzzle_rating": 1068,
+        "puzzle_themes": "crushing endgame fork long",
+        "puzzle_fen": "5rk1/1p2p1rp/p2p4/2pPb2R/2P1P3/1P1BKP1R/8/8 b - - 4 30",
+        "puzzle_moves": "g7g3 h3g3 e5g3 h5g5 g8f7 g5g3",
+        "solved": false,
+        "time_taken": 0.10117912292480469,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "005N7",
+        "puzzle_rating": 536,
+        "puzzle_themes": "backRankMate endgame hangingPiece mate mateIn2 short",
+        "puzzle_fen": "r6k/2q3pp/8/2p1n3/R1Qp4/7P/2PB1PP1/6K1 b - - 0 32",
+        "puzzle_moves": "e5c4 a4a8 c7b8 a8b8",
+        "solved": true,
+        "time_taken": 0.20144867897033691,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "005nD",
+        "puzzle_rating": 1005,
+        "puzzle_themes": "fork mate mateIn2 middlegame short",
+        "puzzle_fen": "3rk2r/2qn1pp1/p1Q1R3/3n3p/8/8/PP4PP/5R1K b k - 0 23",
+        "puzzle_moves": "f7e6 c6e6 d5e7 e6f7",
+        "solved": false,
+        "time_taken": 0.10204792022705078,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0061g",
+        "puzzle_rating": 802,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "6k1/pp3pp1/2p1q1Pp/3b4/8/6Q1/PB3Pp1/3RrNK1 b - - 2 27",
+        "puzzle_moves": "e1d1 g3b8 e6e8 b8e8",
+        "solved": true,
+        "time_taken": 0.20156502723693848,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00656",
+        "puzzle_rating": 1033,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "7r/ppp2kp1/2nb1pp1/3p3r/3P2q1/2PQB2P/PP3PP1/R3R1K1 w - - 0 18",
+        "puzzle_moves": "h3g4 h5h1",
+        "solved": false,
+        "time_taken": 0.10154128074645996,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006GK",
+        "puzzle_rating": 1086,
+        "puzzle_themes": "mate mateIn1 oneMove opening queensideAttack",
+        "puzzle_fen": "2kr1br1/ppBb1ppp/8/3P2Q1/3n2n1/5N2/PP3qPP/RN2R2K b - - 0 16",
+        "puzzle_moves": "d4f3 g5d8",
+        "solved": false,
+        "time_taken": 0.10174918174743652,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006HV",
+        "puzzle_rating": 1145,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "1r6/5k2/2p1pNp1/p5Pp/1pQ1P2P/2P4R/KP3P2/3q4 w - - 4 31",
+        "puzzle_moves": "c4c6 b4b3 a2a3 d1a1",
+        "solved": false,
+        "time_taken": 0.10138535499572754,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006OI",
+        "puzzle_rating": 843,
+        "puzzle_themes": "crushing endgame rookEndgame short skewer",
+        "puzzle_fen": "8/p7/5k2/P5R1/6KP/8/8/5r2 w - - 5 53",
+        "puzzle_moves": "g5g8 f1g1 g4f4 g1g8",
+        "solved": false,
+        "time_taken": 0.10173654556274414,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "006yP",
+        "puzzle_rating": 819,
+        "puzzle_themes": "crushing endgame master rookEndgame short skewer",
+        "puzzle_fen": "6R1/8/Kpk1p3/1p1pP3/6P1/PPP1r3/8/8 b - - 3 40",
+        "puzzle_moves": "e3c3 g8c8 c6d7 c8c3",
+        "solved": false,
+        "time_taken": 0.1015622615814209,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0071K",
+        "puzzle_rating": 1161,
+        "puzzle_themes": "crushing defensiveMove endgame hangingPiece short",
+        "puzzle_fen": "3N1r2/6R1/kp6/p2pPp1Q/2pP2P1/2q5/2P5/2K5 w - - 0 38",
+        "puzzle_moves": "g7a7 a6a7 h5h7 a7a6",
+        "solved": false,
+        "time_taken": 0.20244097709655762,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0071N",
+        "puzzle_rating": 523,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "6k1/p4pp1/1p5p/4b3/4B3/4P1P1/PpR2PKP/3r4 b - - 1 30",
+        "puzzle_moves": "b2b1q c2c8 d1d8 c8d8",
+        "solved": false,
+        "time_taken": 0.10162806510925293,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007HB",
+        "puzzle_rating": 543,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "rn2q1k1/pp3ppp/2pb4/3p1B2/2Pn4/1Q3N2/PP3PPP/R1B4K w - - 0 15",
+        "puzzle_moves": "f3d4 e8e1",
+        "solved": false,
+        "time_taken": 0.10099983215332031,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007Rn",
+        "puzzle_rating": 992,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/p4p1p/1p6/6q1/3P2n1/P4Q2/1P1B2P1/7K w - - 0 34",
+        "puzzle_moves": "d2g5 e8e1 f3f1 e1f1",
+        "solved": false,
+        "time_taken": 0.10114192962646484,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007XE",
+        "puzzle_rating": 645,
+        "puzzle_themes": "backRankMate fork mate mateIn2 middlegame short",
+        "puzzle_fen": "2kr3r/p1p1bpp1/2p2n1p/8/8/1P6/P1P1RPPP/RNB3K1 w - - 1 16",
+        "puzzle_moves": "e2e7 d8d1 e7e1 d1e1",
+        "solved": false,
+        "time_taken": 0.1012570858001709,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007c6",
+        "puzzle_rating": 721,
+        "puzzle_themes": "bodenMate mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2kr3r/pp1n2pp/2QB1bp1/5q2/2B5/8/PPP2PPP/3R1RK1 b - - 0 17",
+        "puzzle_moves": "b7c6 c4a6",
+        "solved": false,
+        "time_taken": 0.10121893882751465,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007eS",
+        "puzzle_rating": 1177,
+        "puzzle_themes": "advantage endgame short",
+        "puzzle_fen": "6k1/p4p2/1p5p/4r3/P3B3/1P3P2/2PK2PP/8 w - - 0 29",
+        "puzzle_moves": "d2e3 f7f5 g2g4 f5e4",
+        "solved": false,
+        "time_taken": 0.10103440284729004,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007fJ",
+        "puzzle_rating": 548,
+        "puzzle_themes": "advancedPawn endgame mate mateIn1 oneMove queenEndgame",
+        "puzzle_fen": "8/1P3ppp/8/8/8/2pk3P/3p2P1/3K4 w - - 0 52",
+        "puzzle_moves": "b7b8q c3c2",
+        "solved": false,
+        "time_taken": 0.10076189041137695,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "007tv",
+        "puzzle_rating": 1146,
+        "puzzle_themes": "advantage attackingF2F7 long middlegame skewer",
+        "puzzle_fen": "r3k1nr/1pp2ppp/1pnp2q1/4p1B1/2B1P3/3P1Q1P/PPP2PP1/R4RK1 b kq - 0 11",
+        "puzzle_moves": "g6g5 f3f7 e8d8 f7f8 d8d7 f8a8",
+        "solved": false,
+        "time_taken": 0.10113215446472168,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0082f",
+        "puzzle_rating": 1018,
+        "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/2q2ppp/3pp3/4Pb1N/pp6/1B4Q1/PPP3PP/1K1RR3 b - - 0 21",
+        "puzzle_moves": "a4b3 g3g7",
+        "solved": false,
+        "time_taken": 0.10110235214233398,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0088O",
+        "puzzle_rating": 1108,
+        "puzzle_themes": "crushing deflection endgame short",
+        "puzzle_fen": "7Q/2p5/1p2prp1/p4k1p/P4p1P/8/6RK/3q4 b - - 2 37",
+        "puzzle_moves": "d1a4 g2g5 f5e4 h8f6",
+        "solved": false,
+        "time_taken": 0.10102105140686035,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008GK",
+        "puzzle_rating": 436,
+        "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+        "puzzle_fen": "1k1r4/ppp3p1/8/1P5p/8/P3n2P/2P1r1P1/B3NRK1 b - - 4 31",
+        "puzzle_moves": "d8d1 f1f8 d1d8 f8d8",
+        "solved": false,
+        "time_taken": 0.10111880302429199,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008LD",
+        "puzzle_rating": 411,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "8/6pp/4N1k1/5p2/5P2/5rPb/4R2P/6K1 w - - 0 35",
+        "puzzle_moves": "e6g5 f3f1",
+        "solved": false,
+        "time_taken": 0.10103178024291992,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008Nz",
+        "puzzle_rating": 457,
+        "puzzle_themes": "backRankMate mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P1bPPR1/r6r/3R2K1 b - - 1 29",
+        "puzzle_moves": "d3e2 d1d8",
+        "solved": false,
+        "time_taken": 0.10122084617614746,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008P4",
+        "puzzle_rating": 648,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "8/4k3/1p1p4/rP2p1p1/P2nP1P1/3BK3/8/R7 w - - 0 35",
+        "puzzle_moves": "e3d2 d4b3 d2c3 b3a1",
+        "solved": false,
+        "time_taken": 0.10117506980895996,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008Y3",
+        "puzzle_rating": 1062,
+        "puzzle_themes": "advantage discoveredAttack kingsideAttack master middlegame short",
+        "puzzle_fen": "r5k1/1p1rqpp1/p3pnp1/2PN4/8/1Q5P/PP3PP1/3RR1K1 b - - 0 24",
+        "puzzle_moves": "e7c5 d5f6 g7f6 d1d7",
+        "solved": false,
+        "time_taken": 0.10120606422424316,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008cl",
+        "puzzle_rating": 907,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r3k2r/ppp2p1p/2n1pp2/7q/2PN2b1/2BP1Pb1/PP2B1P1/R2Q1RK1 w kq - 1 16",
+        "puzzle_moves": "f3g4 h5h2",
+        "solved": false,
+        "time_taken": 0.1012275218963623,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008o6",
+        "puzzle_rating": 471,
+        "puzzle_themes": "endgame mate mateIn1 oneMove",
+        "puzzle_fen": "Q5k1/p1p3p1/5rP1/8/3P4/7P/q3r3/B4RK1 b - - 1 34",
+        "puzzle_moves": "f6f8 a8f8",
+        "solved": true,
+        "time_taken": 0.10113167762756348,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008oX",
+        "puzzle_rating": 978,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r1k1/2R3pp/2p4q/1p1p4/3P4/P7/1PP2R2/1K1N4 b - - 3 32",
+        "puzzle_moves": "e8e1 c7c8 e1e8 c8e8",
+        "solved": true,
+        "time_taken": 0.2014913558959961,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008rw",
+        "puzzle_rating": 983,
+        "puzzle_themes": "mate mateIn1 oneMove opening",
+        "puzzle_fen": "rn2kb1r/pp2pppp/2p2n2/4q3/8/2N4Q/PPPPBPPP/R1B1K2R b KQkq - 2 8",
+        "puzzle_moves": "g7g6 h3c8",
+        "solved": true,
+        "time_taken": 0.10120916366577148,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "008tL",
+        "puzzle_rating": 1062,
+        "puzzle_themes": "advancedPawn crushing endgame master rookEndgame short",
+        "puzzle_fen": "8/7k/pR5p/3p4/5r2/2P1p2P/P5P1/6K1 w - - 0 40",
+        "puzzle_moves": "b6a6 e3e2 a6e6 f4f1",
+        "solved": false,
+        "time_taken": 0.10120344161987305,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "0092z",
+        "puzzle_rating": 945,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "2r3k1/2qR1ppp/p7/2p2Q2/P7/7P/5PP1/6K1 b - - 3 26",
+        "puzzle_moves": "c7c6 f5f7 g8h8 f7g7",
+        "solved": false,
+        "time_taken": 0.10115528106689453,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009IO",
+        "puzzle_rating": 1165,
+        "puzzle_themes": "hookMate mate mateIn2 middlegame short",
+        "puzzle_fen": "3rk3/5p1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 b - - 4 25",
+        "puzzle_moves": "e8e7 f2f7 h7f7 f1f7",
+        "solved": false,
+        "time_taken": 0.10115694999694824,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009L0",
+        "puzzle_rating": 706,
+        "puzzle_themes": "backRankMate hangingPiece mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "6k1/pb2r1pN/1n4Bp/3p4/1P2pR2/P7/3R1PPP/2r3K1 w - - 2 30",
+        "puzzle_moves": "d2d1 c1d1",
+        "solved": false,
+        "time_taken": 0.10106372833251953,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009Wc",
+        "puzzle_rating": 1084,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "1r3rk1/1pq2pbp/p1p1pnp1/2N1N3/3P4/1QP5/PP3PPP/3RR1K1 w - - 2 19",
+        "puzzle_moves": "e5d7 f6d7 c5d7 c7d7",
+        "solved": false,
+        "time_taken": 0.1011955738067627,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009bR",
+        "puzzle_rating": 1048,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "4r2k/3q2r1/1p4pQ/p1pP4/2P4P/1N4p1/PP3RK1/8 b - - 1 37",
+        "puzzle_moves": "g7h7 f2f8 e8f8 h6f8",
+        "solved": false,
+        "time_taken": 0.1015164852142334,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009bn",
+        "puzzle_rating": 954,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2kr2r1/ppb2ppp/3qbn2/2Np2B1/P7/2P2Q1P/1PB2PP1/R4RK1 w - - 5 18",
+        "puzzle_moves": "c5e6 d6h2",
+        "solved": false,
+        "time_taken": 0.10119175910949707,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009f8",
+        "puzzle_rating": 1078,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "8/1p4p1/pb2ppkp/3n4/3P4/P3BN1P/1P2KPP1/8 b - - 0 26",
+        "puzzle_moves": "g6f5 f3h4 f5e4 f2f3",
+        "solved": false,
+        "time_taken": 0.1012885570526123,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009lk",
+        "puzzle_rating": 918,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "1R6/6pk/2p4p/3bP2r/5B1P/2P2qP1/P4P1Q/4R1K1 w - - 2 40",
+        "puzzle_moves": "e1e3 f3d1 e3e1 d1e1",
+        "solved": false,
+        "time_taken": 0.10125374794006348,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009oc",
+        "puzzle_rating": 1176,
+        "puzzle_themes": "endgame mate mateIn2 short",
+        "puzzle_fen": "5Q2/pbp3np/1p1pB1pk/1P6/P3q2P/6K1/8/8 b - - 1 32",
+        "puzzle_moves": "e4e6 f8f4 g6g5 f4g5",
+        "solved": false,
+        "time_taken": 0.10118389129638672,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009tE",
+        "puzzle_rating": 671,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "6k1/6pp/p1N2p2/1pP2bP1/5P2/8/PPP5/3K4 b - - 1 28",
+        "puzzle_moves": "f6g5 c6e7 g8f7 e7f5",
+        "solved": false,
+        "time_taken": 0.10129714012145996,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "009uB",
+        "puzzle_rating": 1042,
+        "puzzle_themes": "mate mateIn2 middlegame short",
+        "puzzle_fen": "3br2r/5k1p/4p1pQ/P5P1/1B5P/P6q/5R2/6K1 b - - 1 35",
+        "puzzle_moves": "f7g8 f2f8 e8f8 h6f8",
+        "solved": false,
+        "time_taken": 0.10120677947998047,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00A5v",
+        "puzzle_rating": 876,
+        "puzzle_themes": "crushing endgame short",
+        "puzzle_fen": "4r1k1/pp1qr1p1/7p/2pPR3/2P2p2/1PQ2P2/P5PP/4R1K1 w - - 3 33",
+        "puzzle_moves": "c3d2 e7e5 e1e5 e8e5",
+        "solved": false,
+        "time_taken": 0.10102009773254395,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AGs",
+        "puzzle_rating": 909,
+        "puzzle_themes": "mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "rn2k2Q/5p2/2p1p1r1/1q4p1/8/8/4NPPP/3R1K1R b q - 5 23",
+        "puzzle_moves": "e8e7 h8d8",
+        "solved": false,
+        "time_taken": 0.10134029388427734,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AOH",
+        "puzzle_rating": 843,
+        "puzzle_themes": "advancedPawn advantage endgame long",
+        "puzzle_fen": "6k1/1R6/1p2p1pp/4P3/p1N2P2/6PK/7P/1r6 w - - 0 48",
+        "puzzle_moves": "b7b6 b1b6 c4b6 a4a3 b6d7 a3a2",
+        "solved": false,
+        "time_taken": 0.10121870040893555,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Aae",
+        "puzzle_rating": 1020,
+        "puzzle_themes": "advancedPawn clearance crushing endgame long promotion rookEndgame",
+        "puzzle_fen": "1R6/1P6/4pkp1/5p2/3P3p/3KP3/8/1r6 b - - 0 43",
+        "puzzle_moves": "h4h3 b8f8 f6e7 b7b8q b1b8 f8b8",
+        "solved": false,
+        "time_taken": 0.1012270450592041,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Aas",
+        "puzzle_rating": 1054,
+        "puzzle_themes": "crushing fork long middlegame",
+        "puzzle_fen": "3r1rk1/1p2q1pp/5p2/8/1P1n4/6Q1/PPbB1PPP/R2B1RK1 w - - 9 20",
+        "puzzle_moves": "d1c2 d4e2 g1h1 e2g3 f2g3 d8d2",
+        "solved": false,
+        "time_taken": 0.10105037689208984,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AbP",
+        "puzzle_rating": 805,
+        "puzzle_themes": "crushing endgame short",
+        "puzzle_fen": "4r1k1/pp3pp1/2p5/7b/4P2P/2P2N2/PP4K1/3R4 b - - 0 24",
+        "puzzle_moves": "e8e4 d1d8 g8h7 f3g5",
+        "solved": false,
+        "time_taken": 0.10121035575866699,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Af3",
+        "puzzle_rating": 1113,
+        "puzzle_themes": "advancedPawn bishopEndgame crushing endgame short",
+        "puzzle_fen": "8/8/2B2p1p/P4Pp1/3p1kP1/1b1Pb2P/8/4K3 b - - 0 50",
+        "puzzle_moves": "f4g3 a5a6 b3c4 a6a7",
+        "solved": false,
+        "time_taken": 0.1017303466796875,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AfZ",
+        "puzzle_rating": 919,
+        "puzzle_themes": "master mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "2r3kR/Q7/5q2/1brpN3/5Pp1/4P1P1/6K1/1B6 b - - 2 43",
+        "puzzle_moves": "f6h8 a7f7",
+        "solved": false,
+        "time_taken": 0.10120630264282227,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Ahb",
+        "puzzle_rating": 1138,
+        "puzzle_themes": "crushing middlegame short",
+        "puzzle_fen": "1k4nr/pp1r1ppp/4p3/1Nb2q2/2Pp4/6P1/PP3P1P/R1BQR1K1 b - - 2 14",
+        "puzzle_moves": "g8h6 c1f4 f5f4 g3f4",
+        "solved": false,
+        "time_taken": 0.10160446166992188,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00AoZ",
+        "puzzle_rating": 1043,
+        "puzzle_themes": "advantage deflection endgame short",
+        "puzzle_fen": "8/1R6/p1pk4/6bp/1QP5/P7/KP6/3r2q1 b - - 2 44",
+        "puzzle_moves": "g1c5 b7d7 d6d7 b4c5",
+        "solved": false,
+        "time_taken": 0.10134267807006836,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Au2",
+        "puzzle_rating": 961,
+        "puzzle_themes": "advantage endgame short",
+        "puzzle_fen": "r5r1/pp2kp2/2p5/3pQ3/3P4/2NB4/PPP2q2/1K6 b - - 1 28",
+        "puzzle_moves": "e7d7 d3f5 f2f5 e5f5",
+        "solved": false,
+        "time_taken": 0.10171937942504883,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00B2k",
+        "puzzle_rating": 833,
+        "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+        "puzzle_fen": "r4rk1/pbp3pp/1p1pp3/6B1/2PPp2q/3nP2P/PP3P2/R2QKBR1 w Q - 8 16",
+        "puzzle_moves": "f1d3 h4f2",
+        "solved": false,
+        "time_taken": 0.10166168212890625,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BJm",
+        "puzzle_rating": 1078,
+        "puzzle_themes": "advantage fork hangingPiece middlegame short",
+        "puzzle_fen": "r2q1rk1/1Q2bppp/p1N1p3/1p6/2pP1n2/2P5/PP3PPP/R4RK1 b - - 1 18",
+        "puzzle_moves": "d8d5 c6e7 g8h8 e7d5",
+        "solved": false,
+        "time_taken": 0.10161614418029785,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BNd",
+        "puzzle_rating": 946,
+        "puzzle_themes": "advantage fork middlegame short",
+        "puzzle_fen": "1rr3k1/3bppbp/3p1np1/1B1N4/P2BP3/5P2/P2R2PP/R5K1 b - - 0 21",
+        "puzzle_moves": "d7b5 d5e7 g8f8 e7c8",
+        "solved": false,
+        "time_taken": 0.20232391357421875,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00BQD",
+        "puzzle_rating": 806,
+        "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove",
+        "puzzle_fen": "4r3/3R1pkp/6p1/1P6/1b6/5B2/1P1p1PPP/3R2K1 w - - 0 36",
+        "puzzle_moves": "d1d2 e8e1",
+        "solved": false,
+        "time_taken": 0.10177803039550781,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bm8",
+        "puzzle_rating": 1126,
+        "puzzle_themes": "endgame master mate mateIn1 oneMove",
+        "puzzle_fen": "8/6kp/4b1q1/1p6/1PpPp2Q/2P1P3/r2N2P1/5RK1 w - - 7 34",
+        "puzzle_moves": "d2e4 g6g2",
+        "solved": false,
+        "time_taken": 0.10149455070495605,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bn0",
+        "puzzle_rating": 1040,
+        "puzzle_themes": "mate mateIn1 oneMove opening smotheredMate",
+        "puzzle_fen": "r1bqkb1r/pp1pnppp/2n1p3/1N6/5B2/8/PPP1PPPP/R2QKBNR b KQkq - 4 6",
+        "puzzle_moves": "e6e5 b5d6",
+        "solved": false,
+        "time_taken": 0.10184192657470703,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      },
+      {
+        "puzzle_id": "00Bn4",
+        "puzzle_rating": 691,
+        "puzzle_themes": "crushing endgame fork short",
+        "puzzle_fen": "1k6/pp6/4nNp1/P6p/3pr3/7P/3R1PPK/8 b - - 0 40",
+        "puzzle_moves": "e4e5 f6d7 b8c7 d7e5",
+        "solved": false,
+        "time_taken": 0.10159826278686523,
+        "engine_name": "SlowMate_v3.0",
+        "error_type": null
+      }
+    ]
+  },
+  "puzzle_set_info": {
+    "total_puzzles": 100,
+    "themes": [
+      "middlegame",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "mateIn3",
+      "pin",
+      "fork",
+      "skewer",
+      "tactics"
+    ],
+    "min_rating": 400,
+    "max_rating": 1200,
+    "think_time_ms": 5000,
+    "theme_distribution": {
+      "short": 57,
+      "mate": 57,
+      "endgame": 50,
+      "middlegame": 45,
+      "mateIn1": 32,
+      "oneMove": 32,
+      "crushing": 28,
+      "mateIn2": 24,
+      "fork": 19,
+      "advantage": 15,
+      "master": 13,
+      "long": 11,
+      "backRankMate": 10,
+      "advancedPawn": 8,
+      "kingsideAttack": 6,
+      "hangingPiece": 6,
+      "skewer": 6,
+      "rookEndgame": 6,
+      "opening": 5,
+      "promotion": 3,
+      "defensiveMove": 3,
+      "attackingF2F7": 3,
+      "deflection": 3,
+      "bodenMate": 2,
+      "smotheredMate": 2,
+      "masterVsMaster": 2,
+      "queensideAttack": 2,
+      "exposedKing": 2,
+      "pawnEndgame": 1,
+      "zugzwang": 1,
+      "attraction": 1,
+      "mateIn3": 1,
+      "superGM": 1,
+      "queenRookEndgame": 1,
+      "queenEndgame": 1,
+      "discoveredAttack": 1,
+      "hookMate": 1,
+      "clearance": 1,
+      "bishopEndgame": 1
+    },
+    "rating_distribution": {
+      "1000-1200": 45,
+      "400-600": 11,
+      "600-800": 9,
+      "800-1000": 35
+    }
+  },
+  "comparison_metrics": {
+    "overall_winner": "SlowMate_v3.0",
+    "success_rate_difference": -0.06,
+    "time_efficiency": {
+      "V7P3R_v5.1": 0.0,
+      "SlowMate_v3.0": 0.5590443708751973
+    },
+    "theme_performance": {
+      "skewer": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "superGM": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "mateIn3": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "deflection": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "crushing": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "backRankMate": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.2,
+        "difference": -0.2,
+        "winner": "SlowMate_v3.0"
+      },
+      "hangingPiece": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.16666666666666666,
+        "difference": -0.16666666666666666,
+        "winner": "SlowMate_v3.0"
+      },
+      "attackingF2F7": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "pawnEndgame": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "queenRookEndgame": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 1.0,
+        "difference": -1.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "hookMate": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "rookEndgame": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "clearance": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "defensiveMove": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "masterVsMaster": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "queensideAttack": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "endgame": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.1,
+        "difference": -0.1,
+        "winner": "SlowMate_v3.0"
+      },
+      "smotheredMate": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "exposedKing": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "oneMove": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.09375,
+        "difference": -0.09375,
+        "winner": "SlowMate_v3.0"
+      },
+      "long": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "promotion": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "zugzwang": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "attraction": {
+        "V7P3R_v5.1": 0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "discoveredAttack": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "bodenMate": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "middlegame": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "mateIn2": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.125,
+        "difference": -0.125,
+        "winner": "SlowMate_v3.0"
+      },
+      "short": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.05263157894736842,
+        "difference": -0.05263157894736842,
+        "winner": "SlowMate_v3.0"
+      },
+      "fork": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "bishopEndgame": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "opening": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.2,
+        "difference": -0.2,
+        "winner": "SlowMate_v3.0"
+      },
+      "queenEndgame": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "mateIn1": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.09375,
+        "difference": -0.09375,
+        "winner": "SlowMate_v3.0"
+      },
+      "advantage": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "kingsideAttack": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "master": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "mate": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.10526315789473684,
+        "difference": -0.10526315789473684,
+        "winner": "SlowMate_v3.0"
+      },
+      "advancedPawn": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      }
+    },
+    "rating_performance": {
+      "600-800": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.1111111111111111,
+        "difference": -0.1111111111111111,
+        "winner": "SlowMate_v3.0"
+      },
+      "400-600": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.18181818181818182,
+        "difference": -0.18181818181818182,
+        "winner": "SlowMate_v3.0"
+      },
+      "1000-1200": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.0,
+        "difference": 0.0,
+        "winner": "SlowMate_v3.0"
+      },
+      "800-1000": {
+        "V7P3R_v5.1": 0.0,
+        "SlowMate_v3.0": 0.08571428571428572,
+        "difference": -0.08571428571428572,
+        "winner": "SlowMate_v3.0"
+      }
+    },
+    "head_to_head": {
+      "both_solved": 0,
+      "engine_1_only": 0,
+      "engine_2_only": 0,
+      "both_failed": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "puzzle_id": "0009B",
+      "puzzle_rating": 1080,
+      "puzzle_themes": "advantage middlegame short",
+      "puzzle_fen": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+      "puzzle_moves": "b6c5 e2g4 h3g4 d1g4",
+      "engine_1_solved": false,
+      "engine_1_time": 6.019590139389038,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10241389274597168,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "000o3",
+      "puzzle_rating": 891,
+      "puzzle_themes": "crushing endgame pawnEndgame short zugzwang",
+      "puzzle_fen": "8/2p1k3/6p1/1p1P1p2/1P3P2/3K2Pp/7P/8 b - - 1 43",
+      "puzzle_moves": "e7d6 d3d4 g6g5 f4g5",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0217444896698,
+      "engine_2_solved": false,
+      "engine_2_time": 0.20148611068725586,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "000rO",
+      "puzzle_rating": 1110,
+      "puzzle_themes": "crushing endgame fork master short",
+      "puzzle_fen": "3R4/8/K7/pB2b3/1p6/1P2k3/3p4/8 w - - 4 58",
+      "puzzle_moves": "a6a5 e5c7 a5b4 c7d8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.021655797958374,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10157251358032227,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "000rZ",
+      "puzzle_rating": 1076,
+      "puzzle_themes": "kingsideAttack mate mateIn1 oneMove opening",
+      "puzzle_fen": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+      "puzzle_moves": "d4e6 d6h2",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0341997146606445,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10141372680664062,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001Wz",
+      "puzzle_rating": 1120,
+      "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+      "puzzle_fen": "4r1k1/5ppp/r1p5/p1n1RP2/8/2P2N1P/2P3P1/3R2K1 b - - 0 21",
+      "puzzle_moves": "e8e5 d1d8 e5e8 d8e8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.5033619403839111,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10173153877258301,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001gi",
+      "puzzle_rating": 820,
+      "puzzle_themes": "bodenMate hangingPiece mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r6r/1pNk1ppp/2np4/b3p3/4P1b1/N1Q5/P4PPP/R3KB1R w KQ - 3 18",
+      "puzzle_moves": "c7a8 a5c3",
+      "engine_1_solved": false,
+      "engine_1_time": 0.3023538589477539,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10142683982849121,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001om",
+      "puzzle_rating": 1018,
+      "puzzle_themes": "mate mateIn2 middlegame short",
+      "puzzle_fen": "5r1k/pp4pp/5p2/1BbQp1r1/6K1/7P/1PP3P1/3R3R w - - 2 26",
+      "puzzle_moves": "g4h4 c5f2 g2g3 f2g3",
+      "engine_1_solved": false,
+      "engine_1_time": 2.315608024597168,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10137009620666504,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001pC",
+      "puzzle_rating": 788,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove smotheredMate",
+      "puzzle_fen": "r4rk1/pp3ppp/3b4/2p1pPB1/7N/2PP3n/PP4PP/R2Q1RqK w - - 5 18",
+      "puzzle_moves": "f1g1 h3f2",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0338897705078125,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10119962692260742,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001w5",
+      "puzzle_rating": 1049,
+      "puzzle_themes": "advancedPawn attraction mate mateIn2 middlegame promotion short",
+      "puzzle_fen": "1rb2rk1/q5P1/4p2p/3p3p/3P1P2/2P5/2QK3P/3R2R1 b - - 0 29",
+      "puzzle_moves": "f8f7 c2h7 g8h7 g7g8q",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0148162841796875,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10137939453125,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001wR",
+      "puzzle_rating": 1189,
+      "puzzle_themes": "endgame long mate mateIn3",
+      "puzzle_fen": "6nr/pp3p1p/k1p5/8/1QN5/2P1P3/4KPqP/8 b - - 5 26",
+      "puzzle_moves": "b7b5 b4a5 a6b7 c4d6 b7b8 a5d8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.015581130981445,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10119009017944336,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001wb",
+      "puzzle_rating": 1196,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r3k2r/pb1p1ppp/1b4q1/1Q2P3/8/2NP1Pn1/PP4PP/R1B2R1K w kq - 1 17",
+      "puzzle_moves": "h2g3 g6h5",
+      "engine_1_solved": false,
+      "engine_1_time": 6.019865274429321,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10125017166137695,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001wr",
+      "puzzle_rating": 999,
+      "puzzle_themes": "advantage fork master masterVsMaster middlegame short",
+      "puzzle_fen": "r4rk1/p3ppbp/Pp1q1np1/3PpbB1/2B5/2N5/1PPQ1PPP/3RR1K1 w - - 4 18",
+      "puzzle_moves": "f2f3 d6c5 g1h1 c5c4",
+      "engine_1_solved": false,
+      "engine_1_time": 6.016453504562378,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10133123397827148,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "001xl",
+      "puzzle_rating": 1152,
+      "puzzle_themes": "advantage endgame master masterVsMaster short skewer superGM",
+      "puzzle_fen": "8/4R1k1/p5pp/3B4/5q2/8/5P1P/6K1 b - - 5 40",
+      "puzzle_moves": "g7f6 e7f7 f6e5 f7f4",
+      "engine_1_solved": false,
+      "engine_1_time": 2.005404472351074,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10105752944946289,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002CP",
+      "puzzle_rating": 926,
+      "puzzle_themes": "endgame mate mateIn1 oneMove queensideAttack",
+      "puzzle_fen": "r5k1/pp4pp/4p1q1/4p3/3n4/P5P1/1PP2Q1P/2KR1R2 w - - 4 24",
+      "puzzle_moves": "f2e3 g6c2",
+      "engine_1_solved": false,
+      "engine_1_time": 5.817465543746948,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10115170478820801,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002GQ",
+      "puzzle_rating": 655,
+      "puzzle_themes": "crushing endgame fork short",
+      "puzzle_fen": "5rk1/5ppp/4p3/4N3/8/1Pn5/5PPP/5RK1 w - - 0 28",
+      "puzzle_moves": "f1c1 c3e2 g1f1 e2c1",
+      "engine_1_solved": false,
+      "engine_1_time": 6.014052391052246,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10133886337280273,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002O7",
+      "puzzle_rating": 969,
+      "puzzle_themes": "crushing middlegame short",
+      "puzzle_fen": "r3qrk1/2p2pp1/p2bpn1p/2ppNb2/3P1P2/1PP1P1B1/P2N2PP/R2Q1RK1 b - - 0 14",
+      "puzzle_moves": "f5g4 e5g4 f6g4 d1g4",
+      "engine_1_solved": false,
+      "engine_1_time": 4.6165430545806885,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10120105743408203,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002Q2",
+      "puzzle_rating": 988,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "7k/p4R1p/3p3r/2pN1n2/2PbBBb1/3P2P1/P3r3/5R1K w - - 1 28",
+      "puzzle_moves": "f4h6 f5g3",
+      "engine_1_solved": false,
+      "engine_1_time": 6.02289891242981,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10113763809204102,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002bK",
+      "puzzle_rating": 1139,
+      "puzzle_themes": "advantage endgame hangingPiece short",
+      "puzzle_fen": "8/7p/2b1k3/p2p1pPB/1n1P3P/N1p1P3/4K3/8 b - - 1 42",
+      "puzzle_moves": "c6b5 a3b5 c3c2 e2d2",
+      "engine_1_solved": false,
+      "engine_1_time": 6.023788928985596,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10119056701660156,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002p5",
+      "puzzle_rating": 953,
+      "puzzle_themes": "kingsideAttack mate mateIn2 middlegame short",
+      "puzzle_fen": "r1bqr1k1/pp1nbpp1/2p2n2/6P1/2BP4/P7/1PQNNPP1/R3K2R b KQ - 0 13",
+      "puzzle_moves": "f6d5 c2h7 g8f8 h7h8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.8030238151550293,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10115289688110352,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "002vV",
+      "puzzle_rating": 428,
+      "puzzle_themes": "endgame master mate mateIn1 oneMove rookEndgame",
+      "puzzle_fen": "8/6k1/2R4p/5p1P/5P1K/6P1/8/r7 w - - 2 58",
+      "puzzle_moves": "c6b6 a1h1",
+      "engine_1_solved": false,
+      "engine_1_time": 5.112263202667236,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10107064247131348,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0030b",
+      "puzzle_rating": 873,
+      "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+      "puzzle_fen": "6k1/5ppp/5nb1/pp6/6rP/5N1Q/Pq2r1P1/3R2RK b - - 4 32",
+      "puzzle_moves": "g6e4 d1d8 f6e8 d8e8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.017829179763794,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10127067565917969,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0039T",
+      "puzzle_rating": 993,
+      "puzzle_themes": "crushing defensiveMove endgame long rookEndgame skewer",
+      "puzzle_fen": "1r5r/p3kp2/4p2p/4P3/3R1Pp1/6P1/P1P4P/4K2R w K - 1 25",
+      "puzzle_moves": "d4a4 b8b1 e1f2 b1h1 a4a7 e7f8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.019561290740967,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10117936134338379,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003AX",
+      "puzzle_rating": 960,
+      "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "2r2rk1/5ppp/bq2p3/p1ppP1N1/Pb1P2P1/1P2P2P/2QN4/2R1K2R b K - 1 18",
+      "puzzle_moves": "c5d4 c2h7",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0212626457214355,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10116362571716309,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003Jb",
+      "puzzle_rating": 993,
+      "puzzle_themes": "advantage fork master middlegame short",
+      "puzzle_fen": "6k1/3bqr1p/2rpp1pR/p7/Pp1QP3/1B3P2/1PP3P1/2KR4 w - - 6 22",
+      "puzzle_moves": "d4a7 e7g5 c1b1 g5h6",
+      "engine_1_solved": false,
+      "engine_1_time": 6.035923004150391,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10127639770507812,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003YF",
+      "puzzle_rating": 1103,
+      "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r4rk1/1pp2ppp/p2p4/2bPp3/2P1Pn1q/P1N2B2/1P3P2/R1BQK1R1 w Q - 1 15",
+      "puzzle_moves": "c1f4 h4f2",
+      "engine_1_solved": false,
+      "engine_1_time": 3.108567953109741,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10118532180786133,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003eP",
+      "puzzle_rating": 1156,
+      "puzzle_themes": "crushing exposedKing long middlegame skewer",
+      "puzzle_fen": "8/r1b1q2k/2p3p1/2Pp4/1P2p1n1/2B1P3/NQ6/2K4R b - - 1 36",
+      "puzzle_moves": "h7g8 h1h8 g8f7 h8h7 f7e8 h7e7",
+      "engine_1_solved": false,
+      "engine_1_time": 6.024932146072388,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10116791725158691,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003jH",
+      "puzzle_rating": 1067,
+      "puzzle_themes": "crushing fork long middlegame",
+      "puzzle_fen": "rn3rk1/p5pp/3N4/4np1q/5Q2/1P3K2/PB1P2P1/2R4R w - - 0 25",
+      "puzzle_moves": "f3f2 e5d3 f2e3 d3f4 h1h5 f4h5",
+      "engine_1_solved": false,
+      "engine_1_time": 6.014167308807373,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10112690925598145,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003jb",
+      "puzzle_rating": 960,
+      "puzzle_themes": "crushing fork master middlegame short",
+      "puzzle_fen": "r3kb1r/p4ppp/b1p1p3/3q4/3Q4/4BN2/PPP2PPP/R3K2R b KQkq - 0 11",
+      "puzzle_moves": "c6c5 d4a4 a6b5 a4b5",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0193986892700195,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10118937492370605,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003jv",
+      "puzzle_rating": 1006,
+      "puzzle_themes": "crushing endgame fork short",
+      "puzzle_fen": "1R6/1p2k2p/p2n2p1/4K3/8/6P1/P6P/8 w - - 10 37",
+      "puzzle_moves": "b8h8 d6f7 e5e4 f7h8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0162739753723145,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10125851631164551,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003o0",
+      "puzzle_rating": 988,
+      "puzzle_themes": "advantage fork master opening short",
+      "puzzle_fen": "r1bqk2r/pp1nbppp/3p4/1B1p4/3P1B2/8/PPP2PPP/R2QK1NR w KQkq - 2 9",
+      "puzzle_moves": "g1f3 d8a5 d1d2 a5b5",
+      "engine_1_solved": false,
+      "engine_1_time": 0.602806806564331,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10119104385375977,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "003r5",
+      "puzzle_rating": 1107,
+      "puzzle_themes": "crushing fork middlegame short",
+      "puzzle_fen": "r2qr1k1/ppp2ppp/4b3/3P4/1nP2Q2/2N2N1P/PP3KP1/R4R2 w - - 1 15",
+      "puzzle_moves": "d5e6 b4d3 f2g1 d3f4",
+      "engine_1_solved": false,
+      "engine_1_time": 6.013864755630493,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10122346878051758,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0042j",
+      "puzzle_rating": 489,
+      "puzzle_themes": "backRankMate mate mateIn2 middlegame short",
+      "puzzle_fen": "3r2k1/4nppp/pq1p1b2/1p2P3/2r2P2/2P1NR2/PP1Q2BP/3R2K1 b - - 0 24",
+      "puzzle_moves": "d6e5 d2d8 b6d8 d1d8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.014777183532715,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10114145278930664,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00465",
+      "puzzle_rating": 671,
+      "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove queenRookEndgame",
+      "puzzle_fen": "3r1Q1k/pp4pp/2p5/6q1/5R2/2P5/P1P2PPP/3rR1K1 b - - 8 27",
+      "puzzle_moves": "d8f8 f4f8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.0149171352386475,
+      "engine_2_solved": true,
+      "engine_2_time": 0.10110306739807129,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "004JD",
+      "puzzle_rating": 1187,
+      "puzzle_themes": "endgame mate mateIn1 oneMove",
+      "puzzle_fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP6/P2KNP2/8 w - - 3 41",
+      "puzzle_moves": "d2e3 a3c2",
+      "engine_1_solved": false,
+      "engine_1_time": 0.4017333984375,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10123586654663086,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004LZ",
+      "puzzle_rating": 1182,
+      "puzzle_themes": "advancedPawn crushing defensiveMove deflection endgame long promotion",
+      "puzzle_fen": "8/7R/5p2/p7/7P/2p5/3k2r1/1K2N3 w - - 3 48",
+      "puzzle_moves": "e1g2 c3c2 b1a2 c2c1q h7d7 d2e2",
+      "engine_1_solved": false,
+      "engine_1_time": 6.019078969955444,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1010749340057373,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004Lu",
+      "puzzle_rating": 1106,
+      "puzzle_themes": "advancedPawn advantage endgame exposedKing long master",
+      "puzzle_fen": "8/p1p4p/4Pk2/2PP1p1P/1r3r2/5B2/P3RK2/8 b - - 3 38",
+      "puzzle_moves": "f6e7 d5d6 c7d6 c5d6 e7d6 e6e7",
+      "engine_1_solved": false,
+      "engine_1_time": 6.018442392349243,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10144853591918945,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004WZ",
+      "puzzle_rating": 891,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r6k/1b3pp1/p1q1pn1p/2p5/P1B5/1PN4Q/2P1RP1P/R4Kr1 w - - 2 26",
+      "puzzle_moves": "f1g1 c6h1",
+      "engine_1_solved": false,
+      "engine_1_time": 5.013687610626221,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10122227668762207,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004X6",
+      "puzzle_rating": 1152,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "1r4k1/p4ppp/2Q5/3pq3/8/P6P/2PR1PP1/Rr4K1 w - - 1 26",
+      "puzzle_moves": "a1b1 b8b1 d2d1 b1d1",
+      "engine_1_solved": false,
+      "engine_1_time": 2.7112345695495605,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10114288330078125,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004XI",
+      "puzzle_rating": 926,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "8/3kqp2/4p3/p2p4/3P1P2/4P1rP/7r/1QR2K2 b - - 1 34",
+      "puzzle_moves": "e7a3 b1b7 d7e8 c1c8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.806147575378418,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10116410255432129,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004iZ",
+      "puzzle_rating": 400,
+      "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r2r2k1/2q1bpp1/3p1n1p/1ppN4/1P1BP3/P5Q1/4RPPP/R5K1 b - - 1 20",
+      "puzzle_moves": "f6d5 g3g7",
+      "engine_1_solved": false,
+      "engine_1_time": 1.7041995525360107,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10108113288879395,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "004nd",
+      "puzzle_rating": 898,
+      "puzzle_themes": "crushing fork middlegame short",
+      "puzzle_fen": "3q2k1/2r5/pp3p1Q/2b1n3/P3N3/2P5/1P4PP/R6K b - - 0 24",
+      "puzzle_moves": "c7d7 e4f6 d8f6 h6f6",
+      "engine_1_solved": false,
+      "engine_1_time": 4.215556621551514,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10118603706359863,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0050w",
+      "puzzle_rating": 1068,
+      "puzzle_themes": "crushing endgame fork long",
+      "puzzle_fen": "5rk1/1p2p1rp/p2p4/2pPb2R/2P1P3/1P1BKP1R/8/8 b - - 4 30",
+      "puzzle_moves": "g7g3 h3g3 e5g3 h5g5 g8f7 g5g3",
+      "engine_1_solved": false,
+      "engine_1_time": 0.6021301746368408,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10117912292480469,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "005N7",
+      "puzzle_rating": 536,
+      "puzzle_themes": "backRankMate endgame hangingPiece mate mateIn2 short",
+      "puzzle_fen": "r6k/2q3pp/8/2p1n3/R1Qp4/7P/2PB1PP1/6K1 b - - 0 32",
+      "puzzle_moves": "e5c4 a4a8 c7b8 a8b8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.30243945121765137,
+      "engine_2_solved": true,
+      "engine_2_time": 0.20144867897033691,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "005nD",
+      "puzzle_rating": 1005,
+      "puzzle_themes": "fork mate mateIn2 middlegame short",
+      "puzzle_fen": "3rk2r/2qn1pp1/p1Q1R3/3n3p/8/8/PP4PP/5R1K b k - 0 23",
+      "puzzle_moves": "f7e6 c6e6 d5e7 e6f7",
+      "engine_1_solved": false,
+      "engine_1_time": 6.017472982406616,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10204792022705078,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0061g",
+      "puzzle_rating": 802,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "6k1/pp3pp1/2p1q1Pp/3b4/8/6Q1/PB3Pp1/3RrNK1 b - - 2 27",
+      "puzzle_moves": "e1d1 g3b8 e6e8 b8e8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.020349979400635,
+      "engine_2_solved": true,
+      "engine_2_time": 0.20156502723693848,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "00656",
+      "puzzle_rating": 1033,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "7r/ppp2kp1/2nb1pp1/3p3r/3P2q1/2PQB2P/PP3PP1/R3R1K1 w - - 0 18",
+      "puzzle_moves": "h3g4 h5h1",
+      "engine_1_solved": false,
+      "engine_1_time": 0.40189433097839355,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10154128074645996,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "006GK",
+      "puzzle_rating": 1086,
+      "puzzle_themes": "mate mateIn1 oneMove opening queensideAttack",
+      "puzzle_fen": "2kr1br1/ppBb1ppp/8/3P2Q1/3n2n1/5N2/PP3qPP/RN2R2K b - - 0 16",
+      "puzzle_moves": "d4f3 g5d8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.301516056060791,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10174918174743652,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "006HV",
+      "puzzle_rating": 1145,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "1r6/5k2/2p1pNp1/p5Pp/1pQ1P2P/2P4R/KP3P2/3q4 w - - 4 31",
+      "puzzle_moves": "c4c6 b4b3 a2a3 d1a1",
+      "engine_1_solved": false,
+      "engine_1_time": 3.1116349697113037,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10138535499572754,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "006OI",
+      "puzzle_rating": 843,
+      "puzzle_themes": "crushing endgame rookEndgame short skewer",
+      "puzzle_fen": "8/p7/5k2/P5R1/6KP/8/8/5r2 w - - 5 53",
+      "puzzle_moves": "g5g8 f1g1 g4f4 g1g8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.505878210067749,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10173654556274414,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "006yP",
+      "puzzle_rating": 819,
+      "puzzle_themes": "crushing endgame master rookEndgame short skewer",
+      "puzzle_fen": "6R1/8/Kpk1p3/1p1pP3/6P1/PPP1r3/8/8 b - - 3 40",
+      "puzzle_moves": "e3c3 g8c8 c6d7 c8c3",
+      "engine_1_solved": false,
+      "engine_1_time": 1.306422472000122,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1015622615814209,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0071K",
+      "puzzle_rating": 1161,
+      "puzzle_themes": "crushing defensiveMove endgame hangingPiece short",
+      "puzzle_fen": "3N1r2/6R1/kp6/p2pPp1Q/2pP2P1/2q5/2P5/2K5 w - - 0 38",
+      "puzzle_moves": "g7a7 a6a7 h5h7 a7a6",
+      "engine_1_solved": false,
+      "engine_1_time": 3.3097734451293945,
+      "engine_2_solved": false,
+      "engine_2_time": 0.20244097709655762,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0071N",
+      "puzzle_rating": 523,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "6k1/p4pp1/1p5p/4b3/4B3/4P1P1/PpR2PKP/3r4 b - - 1 30",
+      "puzzle_moves": "b2b1q c2c8 d1d8 c8d8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.9063363075256348,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10162806510925293,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007HB",
+      "puzzle_rating": 543,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "rn2q1k1/pp3ppp/2pb4/3p1B2/2Pn4/1Q3N2/PP3PPP/R1B4K w - - 0 15",
+      "puzzle_moves": "f3d4 e8e1",
+      "engine_1_solved": false,
+      "engine_1_time": 6.027937889099121,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10099983215332031,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007Rn",
+      "puzzle_rating": 992,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "4r1k1/p4p1p/1p6/6q1/3P2n1/P4Q2/1P1B2P1/7K w - - 0 34",
+      "puzzle_moves": "d2g5 e8e1 f3f1 e1f1",
+      "engine_1_solved": false,
+      "engine_1_time": 2.3079679012298584,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10114192962646484,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007XE",
+      "puzzle_rating": 645,
+      "puzzle_themes": "backRankMate fork mate mateIn2 middlegame short",
+      "puzzle_fen": "2kr3r/p1p1bpp1/2p2n1p/8/8/1P6/P1P1RPPP/RNB3K1 w - - 1 16",
+      "puzzle_moves": "e2e7 d8d1 e7e1 d1e1",
+      "engine_1_solved": false,
+      "engine_1_time": 5.113667249679565,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1012570858001709,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007c6",
+      "puzzle_rating": 721,
+      "puzzle_themes": "bodenMate mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "2kr3r/pp1n2pp/2QB1bp1/5q2/2B5/8/PPP2PPP/3R1RK1 b - - 0 17",
+      "puzzle_moves": "b7c6 c4a6",
+      "engine_1_solved": false,
+      "engine_1_time": 4.015583038330078,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10121893882751465,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007eS",
+      "puzzle_rating": 1177,
+      "puzzle_themes": "advantage endgame short",
+      "puzzle_fen": "6k1/p4p2/1p5p/4r3/P3B3/1P3P2/2PK2PP/8 w - - 0 29",
+      "puzzle_moves": "d2e3 f7f5 g2g4 f5e4",
+      "engine_1_solved": false,
+      "engine_1_time": 0.4028193950653076,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10103440284729004,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007fJ",
+      "puzzle_rating": 548,
+      "puzzle_themes": "advancedPawn endgame mate mateIn1 oneMove queenEndgame",
+      "puzzle_fen": "8/1P3ppp/8/8/8/2pk3P/3p2P1/3K4 w - - 0 52",
+      "puzzle_moves": "b7b8q c3c2",
+      "engine_1_solved": false,
+      "engine_1_time": 3.516146421432495,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10076189041137695,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "007tv",
+      "puzzle_rating": 1146,
+      "puzzle_themes": "advantage attackingF2F7 long middlegame skewer",
+      "puzzle_fen": "r3k1nr/1pp2ppp/1pnp2q1/4p1B1/2B1P3/3P1Q1P/PPP2PP1/R4RK1 b kq - 0 11",
+      "puzzle_moves": "g6g5 f3f7 e8d8 f7f8 d8d7 f8a8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.023434638977051,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10113215446472168,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0082f",
+      "puzzle_rating": 1018,
+      "puzzle_themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r4rk1/2q2ppp/3pp3/4Pb1N/pp6/1B4Q1/PPP3PP/1K1RR3 b - - 0 21",
+      "puzzle_moves": "a4b3 g3g7",
+      "engine_1_solved": false,
+      "engine_1_time": 3.1121742725372314,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10110235214233398,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0088O",
+      "puzzle_rating": 1108,
+      "puzzle_themes": "crushing deflection endgame short",
+      "puzzle_fen": "7Q/2p5/1p2prp1/p4k1p/P4p1P/8/6RK/3q4 b - - 2 37",
+      "puzzle_moves": "d1a4 g2g5 f5e4 h8f6",
+      "engine_1_solved": false,
+      "engine_1_time": 2.0079851150512695,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10102105140686035,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008GK",
+      "puzzle_rating": 436,
+      "puzzle_themes": "backRankMate endgame mate mateIn2 short",
+      "puzzle_fen": "1k1r4/ppp3p1/8/1P5p/8/P3n2P/2P1r1P1/B3NRK1 b - - 4 31",
+      "puzzle_moves": "d8d1 f1f8 d1d8 f8d8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.40169715881347656,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10111880302429199,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008LD",
+      "puzzle_rating": 411,
+      "puzzle_themes": "endgame mate mateIn1 oneMove",
+      "puzzle_fen": "8/6pp/4N1k1/5p2/5P2/5rPb/4R2P/6K1 w - - 0 35",
+      "puzzle_moves": "e6g5 f3f1",
+      "engine_1_solved": false,
+      "engine_1_time": 0.6021637916564941,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10103178024291992,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008Nz",
+      "puzzle_rating": 457,
+      "puzzle_themes": "backRankMate mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P1bPPR1/r6r/3R2K1 b - - 1 29",
+      "puzzle_moves": "d3e2 d1d8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.10120320320129395,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10122084617614746,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008P4",
+      "puzzle_rating": 648,
+      "puzzle_themes": "crushing endgame fork short",
+      "puzzle_fen": "8/4k3/1p1p4/rP2p1p1/P2nP1P1/3BK3/8/R7 w - - 0 35",
+      "puzzle_moves": "e3d2 d4b3 d2c3 b3a1",
+      "engine_1_solved": false,
+      "engine_1_time": 1.10313081741333,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10117506980895996,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008Y3",
+      "puzzle_rating": 1062,
+      "puzzle_themes": "advantage discoveredAttack kingsideAttack master middlegame short",
+      "puzzle_fen": "r5k1/1p1rqpp1/p3pnp1/2PN4/8/1Q5P/PP3PP1/3RR1K1 b - - 0 24",
+      "puzzle_moves": "e7c5 d5f6 g7f6 d1d7",
+      "engine_1_solved": false,
+      "engine_1_time": 3.312941551208496,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10120606422424316,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008cl",
+      "puzzle_rating": 907,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r3k2r/ppp2p1p/2n1pp2/7q/2PN2b1/2BP1Pb1/PP2B1P1/R2Q1RK1 w kq - 1 16",
+      "puzzle_moves": "f3g4 h5h2",
+      "engine_1_solved": false,
+      "engine_1_time": 2.0050597190856934,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1012275218963623,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "008o6",
+      "puzzle_rating": 471,
+      "puzzle_themes": "endgame mate mateIn1 oneMove",
+      "puzzle_fen": "Q5k1/p1p3p1/5rP1/8/3P4/7P/q3r3/B4RK1 b - - 1 34",
+      "puzzle_moves": "f6f8 a8f8",
+      "engine_1_solved": false,
+      "engine_1_time": 6.013490676879883,
+      "engine_2_solved": true,
+      "engine_2_time": 0.10113167762756348,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "008oX",
+      "puzzle_rating": 978,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "4r1k1/2R3pp/2p4q/1p1p4/3P4/P7/1PP2R2/1K1N4 b - - 3 32",
+      "puzzle_moves": "e8e1 c7c8 e1e8 c8e8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.7087783813476562,
+      "engine_2_solved": true,
+      "engine_2_time": 0.2014913558959961,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "008rw",
+      "puzzle_rating": 983,
+      "puzzle_themes": "mate mateIn1 oneMove opening",
+      "puzzle_fen": "rn2kb1r/pp2pppp/2p2n2/4q3/8/2N4Q/PPPPBPPP/R1B1K2R b KQkq - 2 8",
+      "puzzle_moves": "g7g6 h3c8",
+      "engine_1_solved": false,
+      "engine_1_time": 4.211892604827881,
+      "engine_2_solved": true,
+      "engine_2_time": 0.10120916366577148,
+      "outcome": "engine_2_only"
+    },
+    {
+      "puzzle_id": "008tL",
+      "puzzle_rating": 1062,
+      "puzzle_themes": "advancedPawn crushing endgame master rookEndgame short",
+      "puzzle_fen": "8/7k/pR5p/3p4/5r2/2P1p2P/P5P1/6K1 w - - 0 40",
+      "puzzle_moves": "b6a6 e3e2 a6e6 f4f1",
+      "engine_1_solved": false,
+      "engine_1_time": 6.016988277435303,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10120344161987305,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "0092z",
+      "puzzle_rating": 945,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "2r3k1/2qR1ppp/p7/2p2Q2/P7/7P/5PP1/6K1 b - - 3 26",
+      "puzzle_moves": "c7c6 f5f7 g8h8 f7g7",
+      "engine_1_solved": false,
+      "engine_1_time": 2.607966899871826,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10115528106689453,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009IO",
+      "puzzle_rating": 1165,
+      "puzzle_themes": "hookMate mate mateIn2 middlegame short",
+      "puzzle_fen": "3rk3/5p1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 b - - 4 25",
+      "puzzle_moves": "e8e7 f2f7 h7f7 f1f7",
+      "engine_1_solved": false,
+      "engine_1_time": 0.702521800994873,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10115694999694824,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009L0",
+      "puzzle_rating": 706,
+      "puzzle_themes": "backRankMate hangingPiece mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "6k1/pb2r1pN/1n4Bp/3p4/1P2pR2/P7/3R1PPP/2r3K1 w - - 2 30",
+      "puzzle_moves": "d2d1 c1d1",
+      "engine_1_solved": false,
+      "engine_1_time": 1.205094814300537,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10106372833251953,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009Wc",
+      "puzzle_rating": 1084,
+      "puzzle_themes": "crushing middlegame short",
+      "puzzle_fen": "1r3rk1/1pq2pbp/p1p1pnp1/2N1N3/3P4/1QP5/PP3PPP/3RR1K1 w - - 2 19",
+      "puzzle_moves": "e5d7 f6d7 c5d7 c7d7",
+      "engine_1_solved": false,
+      "engine_1_time": 1.406557321548462,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1011955738067627,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009bR",
+      "puzzle_rating": 1048,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "4r2k/3q2r1/1p4pQ/p1pP4/2P4P/1N4p1/PP3RK1/8 b - - 1 37",
+      "puzzle_moves": "g7h7 f2f8 e8f8 h6f8",
+      "engine_1_solved": false,
+      "engine_1_time": 2.810274362564087,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1015164852142334,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009bn",
+      "puzzle_rating": 954,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "2kr2r1/ppb2ppp/3qbn2/2Np2B1/P7/2P2Q1P/1PB2PP1/R4RK1 w - - 5 18",
+      "puzzle_moves": "c5e6 d6h2",
+      "engine_1_solved": false,
+      "engine_1_time": 2.8080477714538574,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10119175910949707,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009f8",
+      "puzzle_rating": 1078,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "8/1p4p1/pb2ppkp/3n4/3P4/P3BN1P/1P2KPP1/8 b - - 0 26",
+      "puzzle_moves": "g6f5 f3h4 f5e4 f2f3",
+      "engine_1_solved": false,
+      "engine_1_time": 1.9080355167388916,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1012885570526123,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009lk",
+      "puzzle_rating": 918,
+      "puzzle_themes": "mate mateIn2 middlegame short",
+      "puzzle_fen": "1R6/6pk/2p4p/3bP2r/5B1P/2P2qP1/P4P1Q/4R1K1 w - - 2 40",
+      "puzzle_moves": "e1e3 f3d1 e3e1 d1e1",
+      "engine_1_solved": false,
+      "engine_1_time": 6.018545389175415,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10125374794006348,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009oc",
+      "puzzle_rating": 1176,
+      "puzzle_themes": "endgame mate mateIn2 short",
+      "puzzle_fen": "5Q2/pbp3np/1p1pB1pk/1P6/P3q2P/6K1/8/8 b - - 1 32",
+      "puzzle_moves": "e4e6 f8f4 g6g5 f4g5",
+      "engine_1_solved": false,
+      "engine_1_time": 1.2036242485046387,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10118389129638672,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009tE",
+      "puzzle_rating": 671,
+      "puzzle_themes": "crushing endgame fork short",
+      "puzzle_fen": "6k1/6pp/p1N2p2/1pP2bP1/5P2/8/PPP5/3K4 b - - 1 28",
+      "puzzle_moves": "f6g5 c6e7 g8f7 e7f5",
+      "engine_1_solved": false,
+      "engine_1_time": 0.6021575927734375,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10129714012145996,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "009uB",
+      "puzzle_rating": 1042,
+      "puzzle_themes": "mate mateIn2 middlegame short",
+      "puzzle_fen": "3br2r/5k1p/4p1pQ/P5P1/1B5P/P6q/5R2/6K1 b - - 1 35",
+      "puzzle_moves": "f7g8 f2f8 e8f8 h6f8",
+      "engine_1_solved": false,
+      "engine_1_time": 0.7026972770690918,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10120677947998047,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00A5v",
+      "puzzle_rating": 876,
+      "puzzle_themes": "crushing endgame short",
+      "puzzle_fen": "4r1k1/pp1qr1p1/7p/2pPR3/2P2p2/1PQ2P2/P5PP/4R1K1 w - - 3 33",
+      "puzzle_moves": "c3d2 e7e5 e1e5 e8e5",
+      "engine_1_solved": false,
+      "engine_1_time": 0.9050068855285645,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10102009773254395,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00AGs",
+      "puzzle_rating": 909,
+      "puzzle_themes": "mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "rn2k2Q/5p2/2p1p1r1/1q4p1/8/8/4NPPP/3R1K1R b q - 5 23",
+      "puzzle_moves": "e8e7 h8d8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.2034692764282227,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10134029388427734,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00AOH",
+      "puzzle_rating": 843,
+      "puzzle_themes": "advancedPawn advantage endgame long",
+      "puzzle_fen": "6k1/1R6/1p2p1pp/4P3/p1N2P2/6PK/7P/1r6 w - - 0 48",
+      "puzzle_moves": "b7b6 b1b6 c4b6 a4a3 b6d7 a3a2",
+      "engine_1_solved": false,
+      "engine_1_time": 3.011537790298462,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10121870040893555,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Aae",
+      "puzzle_rating": 1020,
+      "puzzle_themes": "advancedPawn clearance crushing endgame long promotion rookEndgame",
+      "puzzle_fen": "1R6/1P6/4pkp1/5p2/3P3p/3KP3/8/1r6 b - - 0 43",
+      "puzzle_moves": "h4h3 b8f8 f6e7 b7b8q b1b8 f8b8",
+      "engine_1_solved": false,
+      "engine_1_time": 2.2144064903259277,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1012270450592041,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Aas",
+      "puzzle_rating": 1054,
+      "puzzle_themes": "crushing fork long middlegame",
+      "puzzle_fen": "3r1rk1/1p2q1pp/5p2/8/1P1n4/6Q1/PPbB1PPP/R2B1RK1 w - - 9 20",
+      "puzzle_moves": "d1c2 d4e2 g1h1 e2g3 f2g3 d8d2",
+      "engine_1_solved": false,
+      "engine_1_time": 2.9065868854522705,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10105037689208984,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00AbP",
+      "puzzle_rating": 805,
+      "puzzle_themes": "crushing endgame short",
+      "puzzle_fen": "4r1k1/pp3pp1/2p5/7b/4P2P/2P2N2/PP4K1/3R4 b - - 0 24",
+      "puzzle_moves": "e8e4 d1d8 g8h7 f3g5",
+      "engine_1_solved": false,
+      "engine_1_time": 2.305776834487915,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10121035575866699,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Af3",
+      "puzzle_rating": 1113,
+      "puzzle_themes": "advancedPawn bishopEndgame crushing endgame short",
+      "puzzle_fen": "8/8/2B2p1p/P4Pp1/3p1kP1/1b1Pb2P/8/4K3 b - - 0 50",
+      "puzzle_moves": "f4g3 a5a6 b3c4 a6a7",
+      "engine_1_solved": false,
+      "engine_1_time": 0.9029319286346436,
+      "engine_2_solved": false,
+      "engine_2_time": 0.1017303466796875,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00AfZ",
+      "puzzle_rating": 919,
+      "puzzle_themes": "master mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "2r3kR/Q7/5q2/1brpN3/5Pp1/4P1P1/6K1/1B6 b - - 2 43",
+      "puzzle_moves": "f6h8 a7f7",
+      "engine_1_solved": false,
+      "engine_1_time": 0.20136427879333496,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10120630264282227,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Ahb",
+      "puzzle_rating": 1138,
+      "puzzle_themes": "crushing middlegame short",
+      "puzzle_fen": "1k4nr/pp1r1ppp/4p3/1Nb2q2/2Pp4/6P1/PP3P1P/R1BQR1K1 b - - 2 14",
+      "puzzle_moves": "g8h6 c1f4 f5f4 g3f4",
+      "engine_1_solved": false,
+      "engine_1_time": 1.5051636695861816,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10160446166992188,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00AoZ",
+      "puzzle_rating": 1043,
+      "puzzle_themes": "advantage deflection endgame short",
+      "puzzle_fen": "8/1R6/p1pk4/6bp/1QP5/P7/KP6/3r2q1 b - - 2 44",
+      "puzzle_moves": "g1c5 b7d7 d6d7 b4c5",
+      "engine_1_solved": false,
+      "engine_1_time": 1.5038094520568848,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10134267807006836,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Au2",
+      "puzzle_rating": 961,
+      "puzzle_themes": "advantage endgame short",
+      "puzzle_fen": "r5r1/pp2kp2/2p5/3pQ3/3P4/2NB4/PPP2q2/1K6 b - - 1 28",
+      "puzzle_moves": "e7d7 d3f5 f2f5 e5f5",
+      "engine_1_solved": false,
+      "engine_1_time": 3.6111111640930176,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10171937942504883,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00B2k",
+      "puzzle_rating": 833,
+      "puzzle_themes": "attackingF2F7 mate mateIn1 middlegame oneMove",
+      "puzzle_fen": "r4rk1/pbp3pp/1p1pp3/6B1/2PPp2q/3nP2P/PP3P2/R2QKBR1 w Q - 8 16",
+      "puzzle_moves": "f1d3 h4f2",
+      "engine_1_solved": false,
+      "engine_1_time": 1.4052963256835938,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10166168212890625,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00BJm",
+      "puzzle_rating": 1078,
+      "puzzle_themes": "advantage fork hangingPiece middlegame short",
+      "puzzle_fen": "r2q1rk1/1Q2bppp/p1N1p3/1p6/2pP1n2/2P5/PP3PPP/R4RK1 b - - 1 18",
+      "puzzle_moves": "d8d5 c6e7 g8h8 e7d5",
+      "engine_1_solved": false,
+      "engine_1_time": 0.20219826698303223,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10161614418029785,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00BNd",
+      "puzzle_rating": 946,
+      "puzzle_themes": "advantage fork middlegame short",
+      "puzzle_fen": "1rr3k1/3bppbp/3p1np1/1B1N4/P2BP3/5P2/P2R2PP/R5K1 b - - 0 21",
+      "puzzle_moves": "d7b5 d5e7 g8f8 e7c8",
+      "engine_1_solved": false,
+      "engine_1_time": 1.3072924613952637,
+      "engine_2_solved": false,
+      "engine_2_time": 0.20232391357421875,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00BQD",
+      "puzzle_rating": 806,
+      "puzzle_themes": "backRankMate endgame mate mateIn1 oneMove",
+      "puzzle_fen": "4r3/3R1pkp/6p1/1P6/1b6/5B2/1P1p1PPP/3R2K1 w - - 0 36",
+      "puzzle_moves": "d1d2 e8e1",
+      "engine_1_solved": false,
+      "engine_1_time": 2.1071853637695312,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10177803039550781,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Bm8",
+      "puzzle_rating": 1126,
+      "puzzle_themes": "endgame master mate mateIn1 oneMove",
+      "puzzle_fen": "8/6kp/4b1q1/1p6/1PpPp2Q/2P1P3/r2N2P1/5RK1 w - - 7 34",
+      "puzzle_moves": "d2e4 g6g2",
+      "engine_1_solved": false,
+      "engine_1_time": 3.911839008331299,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10149455070495605,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Bn0",
+      "puzzle_rating": 1040,
+      "puzzle_themes": "mate mateIn1 oneMove opening smotheredMate",
+      "puzzle_fen": "r1bqkb1r/pp1pnppp/2n1p3/1N6/5B2/8/PPP1PPPP/R2QKBNR b KQkq - 4 6",
+      "puzzle_moves": "e6e5 b5d6",
+      "engine_1_solved": false,
+      "engine_1_time": 3.115591049194336,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10184192657470703,
+      "outcome": "both_failed"
+    },
+    {
+      "puzzle_id": "00Bn4",
+      "puzzle_rating": 691,
+      "puzzle_themes": "crushing endgame fork short",
+      "puzzle_fen": "1k6/pp6/4nNp1/P6p/3pr3/7P/3R1PPK/8 b - - 0 40",
+      "puzzle_moves": "e4e5 f6d7 b8c7 d7e5",
+      "engine_1_solved": false,
+      "engine_1_time": 0.8048920631408691,
+      "engine_2_solved": false,
+      "engine_2_time": 0.10159826278686523,
+      "outcome": "both_failed"
+    }
+  ],
+  "timestamp": "2025-08-22T11:40:44.906287"
+}
