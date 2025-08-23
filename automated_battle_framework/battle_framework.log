@@ -1,0 +1,10 @@
+2025-08-23 13:42:59,050 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 13:42:59,060 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 13:42:59,060 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 13:42:59,060 - BattleFramework - INFO - Created battle session: Quick_Demo_Battle (battle_1755970979)
+2025-08-23 13:42:59,062 - UCI_V7P3R_Current - ERROR - Error starting V7P3R_Current: [WinError 267] The directory name is invalid
+2025-08-23 13:46:12,842 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 13:46:12,843 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 13:46:12,843 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 13:46:12,844 - BattleFramework - INFO - Created battle session: Simple_Test (battle_1755971172)
+2025-08-23 13:46:12,845 - UCI_V7P3R_Current - ERROR - Error starting V7P3R_Current: [WinError 267] The directory name is invalid
