@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """
-🤖 Automated Engine Battle Framework
+🤖 Auto# Add engine paths to Python path for imports
+ENGINE_TESTER_ROOT = Path(__file__).parent.parent
+V7P3R_SRC = Path("S:/Maker Stuff/Programming/Chess Engines/V7P3R Chess Engine/v7p3r-chess-engine/src")
+SLOWMATE_SRC = Path("S:/Maker Stuff/Programming/Chess Engines/SlowMate Chess Engine/slowmate-chess-engine/src")
+
+sys.path.append(str(V7P3R_SRC))
+sys.path.append(str(SLOWMATE_SRC))ngine Battle Framework
 ====================================
 
 A comprehensive automated testing system for chess engines, specifically designed
@@ -36,11 +42,12 @@ import os
 
 # Add engine paths to Python path for imports
 ENGINE_TESTER_ROOT = Path(__file__).parent.parent
-V7P3R_SRC = ENGINE_TESTER_ROOT.parent / "V7P3R Chess Engine" / "v7p3r-chess-engine"
-SLOWMATE_SRC = ENGINE_TESTER_ROOT.parent / "SlowMate Chess Engine" / "slowmate-chess-engine" / "src"
+ENGINES_DIR = ENGINE_TESTER_ROOT / "engines"
 
-sys.path.append(str(V7P3R_SRC))
-sys.path.append(str(SLOWMATE_SRC))
+# Engine executable paths
+V7P3R_EXE = ENGINES_DIR / "V7P3R" / "V7P3R_v7.0.exe"
+SLOWMATE_EXE = ENGINES_DIR / "SlowMate" / "SlowMate_v3.0.exe"
+C0BR4_EXE = ENGINES_DIR / "C0BR4" / "C0BR4_v2.1.exe"
 
 # Configure logging
 logging.basicConfig(
@@ -134,26 +141,30 @@ class UCIEngine:
         """Start the UCI engine process"""
         try:
             if self.config.engine_type == EngineType.PYTHON_V7P3R:
-                # Start V7P3R Python engine
-                cmd = [sys.executable, str(V7P3R_SRC / "v7p3r_uci.py")]
+                # Start V7P3R executable engine
+                cmd = [str(V7P3R_EXE)]
+                cwd = str(V7P3R_EXE.parent)
             elif self.config.engine_type == EngineType.PYTHON_SLOWMATE:
-                # Start SlowMate Python engine
-                cmd = [sys.executable, str(SLOWMATE_SRC / "uci_main.py")]
+                # Start SlowMate executable engine
+                cmd = [str(SLOWMATE_EXE)]
+                cwd = str(SLOWMATE_EXE.parent)
             elif self.config.engine_type in [EngineType.EXE_CONTROL, EngineType.EXE_HISTORICAL]:
-                # Start executable engine
+                # Start other executable engines
                 cmd = [self.config.path] + self.config.executable_args
+                cwd = str(Path(self.config.path).parent)
             else:
                 raise ValueError(f"Unsupported engine type: {self.config.engine_type}")
+            
+            self.logger.info(f"Starting {self.config.name}: {' '.join(cmd)}")
+            self.logger.info(f"Working directory: {cwd}")
             
             self.process = await asyncio.create_subprocess_exec(
                 *cmd,
                 stdin=asyncio.subprocess.PIPE,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
-                cwd=Path(self.config.path).parent if self.config.path else None
-            )
-            
-            # Send UCI handshake
+                cwd=cwd
+            )            # Send UCI handshake
             await self.send_command("uci")
             response = await self.read_until("uciok")
             
@@ -472,30 +483,31 @@ class BattleFramework:
     
     def _setup_default_engines(self):
         """Setup default engine configurations"""
-        # V7P3R Engine
-        self.add_engine(EngineConfig(
-            name="V7P3R_Current",
-            engine_type=EngineType.PYTHON_V7P3R,
-            path=str(V7P3R_SRC),
-            version="current"
-        ))
+        # V7P3R Engine (using executable)
+        if V7P3R_EXE.exists():
+            self.add_engine(EngineConfig(
+                name="V7P3R_Current",
+                engine_type=EngineType.PYTHON_V7P3R,
+                path=str(V7P3R_EXE),
+                version="v7.0"
+            ))
         
-        # SlowMate Engine
-        self.add_engine(EngineConfig(
-            name="SlowMate_Current",
-            engine_type=EngineType.PYTHON_SLOWMATE,
-            path=str(SLOWMATE_SRC),
-            version="current"
-        ))
+        # SlowMate Engine (using executable)  
+        if SLOWMATE_EXE.exists():
+            self.add_engine(EngineConfig(
+                name="SlowMate_Current",
+                engine_type=EngineType.PYTHON_SLOWMATE,
+                path=str(SLOWMATE_EXE),
+                version="v3.0"
+            ))
         
         # C0BR4 Control Engine
-        c0br4_path = ENGINE_TESTER_ROOT / "engines" / "C0BR4" / "C0BR4_v2.0.exe"
-        if c0br4_path.exists():
+        if C0BR4_EXE.exists():
             self.add_engine(EngineConfig(
                 name="C0BR4_Control",
                 engine_type=EngineType.EXE_CONTROL,
-                path=str(c0br4_path),
-                version="2.0"
+                path=str(C0BR4_EXE),
+                version="v2.1"
             ))
     
     def add_engine(self, config: EngineConfig):
