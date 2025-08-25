@@ -1,10 +1,337 @@
-2025-08-23 13:42:59,050 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
-2025-08-23 13:42:59,060 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
-2025-08-23 13:42:59,060 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
-2025-08-23 13:42:59,060 - BattleFramework - INFO - Created battle session: Quick_Demo_Battle (battle_1755970979)
-2025-08-23 13:42:59,062 - UCI_V7P3R_Current - ERROR - Error starting V7P3R_Current: [WinError 267] The directory name is invalid
-2025-08-23 13:46:12,842 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
-2025-08-23 13:46:12,843 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
-2025-08-23 13:46:12,843 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
-2025-08-23 13:46:12,844 - BattleFramework - INFO - Created battle session: Simple_Test (battle_1755971172)
-2025-08-23 13:46:12,845 - UCI_V7P3R_Current - ERROR - Error starting V7P3R_Current: [WinError 267] The directory name is invalid
+2025-08-23 22:18:38,264 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 22:18:38,264 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 22:18:38,264 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 22:19:13,813 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 22:19:13,813 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 22:19:13,813 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:02:36,648 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:02:36,648 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:02:36,648 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:03:04,726 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:03:04,726 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:03:04,726 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:03:04,726 - BattleFramework - INFO - Created battle session: DeadSimple_Test (battle_1756004584)
+2025-08-23 23:03:04,726 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:03:04,726 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:03:04,950 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:03:04,950 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:03:04,950 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:03:07,234 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:03:07,234 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:03:07,234 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:03:07,234 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:03:15,261 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:03:20,891 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:03:30,569 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:03:30,810 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:04:18,216 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:04:18,216 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:04:18,216 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:04:18,232 - BattleFramework - INFO - Added engine: WeakStockfish (exe_control)
+2025-08-23 23:04:18,232 - BattleFramework - INFO - Created battle session: V7P3R_vs_WeakStockfish (battle_1756004658)
+2025-08-23 23:04:18,232 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:04:18,232 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:04:18,461 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:04:18,461 - UCI_WeakStockfish - INFO - Starting WeakStockfish: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:04:18,461 - UCI_WeakStockfish - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:04:18,672 - UCI_WeakStockfish - INFO - Successfully started WeakStockfish
+2025-08-23 23:04:18,672 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs WeakStockfish
+2025-08-23 23:04:18,672 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs WeakStockfish
+2025-08-23 23:04:18,672 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:04:33,702 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:04:39,386 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:04:46,555 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:04:46,575 - UCI_WeakStockfish - INFO - Stopped WeakStockfish
+2025-08-23 23:09:47,658 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:09:47,658 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:09:47,658 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:09:47,658 - BattleFramework - INFO - Added engine: Stockfish_1500 (exe_control)
+2025-08-23 23:09:47,658 - BattleFramework - INFO - Created battle session: V7P3R_vs_Stockfish_1500 (battle_1756004987)
+2025-08-23 23:13:12,060 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:13:12,060 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:13:12,060 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:13:12,060 - BattleFramework - INFO - Added engine: Stockfish_default (exe_control)
+2025-08-23 23:13:12,060 - BattleFramework - INFO - Created battle session: V7P3R_vs_default (battle_1756005192)
+2025-08-23 23:13:12,060 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:13:12,060 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:13:12,299 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:13:12,299 - UCI_Stockfish_default - INFO - Starting Stockfish_default: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:13:12,299 - UCI_Stockfish_default - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:13:12,504 - UCI_Stockfish_default - INFO - Successfully started Stockfish_default
+2025-08-23 23:13:12,504 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:13:12,504 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:13:12,504 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:13:27,599 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:13:32,604 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:13:39,163 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:13:39,179 - UCI_Stockfish_default - INFO - Stopped Stockfish_default
+2025-08-23 23:13:39,179 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:13:39,179 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:13:39,416 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:13:39,416 - UCI_Stockfish_default - INFO - Starting Stockfish_default: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:13:39,416 - UCI_Stockfish_default - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:13:39,581 - UCI_Stockfish_default - INFO - Successfully started Stockfish_default
+2025-08-23 23:13:39,581 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:13:39,581 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:13:39,597 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:13:54,650 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:13:59,653 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:14:32,295 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:14:32,321 - UCI_Stockfish_default - INFO - Stopped Stockfish_default
+2025-08-23 23:14:32,321 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:14:32,321 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:14:32,543 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:14:32,543 - UCI_Stockfish_default - INFO - Starting Stockfish_default: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:14:32,543 - UCI_Stockfish_default - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:14:32,721 - UCI_Stockfish_default - INFO - Successfully started Stockfish_default
+2025-08-23 23:14:32,721 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:14:32,721 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_default
+2025-08-23 23:14:32,721 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:14:47,752 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:14:52,755 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:15:24,052 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:15:24,075 - UCI_Stockfish_default - INFO - Stopped Stockfish_default
+2025-08-23 23:15:26,081 - BattleFramework - INFO - Added engine: Stockfish_fast_weak (exe_control)
+2025-08-23 23:15:26,081 - BattleFramework - INFO - Created battle session: V7P3R_vs_fast_weak (battle_1756005326)
+2025-08-23 23:15:26,081 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:15:26,081 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:15:26,289 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:15:26,289 - UCI_Stockfish_fast_weak - INFO - Starting Stockfish_fast_weak: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:15:26,289 - UCI_Stockfish_fast_weak - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:15:26,470 - UCI_Stockfish_fast_weak - INFO - Successfully started Stockfish_fast_weak
+2025-08-23 23:15:26,470 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:15:26,470 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:15:26,470 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:15:41,532 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:15:46,545 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:16:18,410 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:16:18,433 - UCI_Stockfish_fast_weak - INFO - Stopped Stockfish_fast_weak
+2025-08-23 23:16:18,433 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:16:18,433 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:16:18,656 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:16:18,656 - UCI_Stockfish_fast_weak - INFO - Starting Stockfish_fast_weak: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:16:18,656 - UCI_Stockfish_fast_weak - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:16:18,826 - UCI_Stockfish_fast_weak - INFO - Successfully started Stockfish_fast_weak
+2025-08-23 23:16:18,826 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:16:18,826 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:16:18,826 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:16:33,866 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:16:38,874 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:17:10,018 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:17:10,041 - UCI_Stockfish_fast_weak - INFO - Stopped Stockfish_fast_weak
+2025-08-23 23:17:10,041 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:17:10,041 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:17:10,257 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:17:10,257 - UCI_Stockfish_fast_weak - INFO - Starting Stockfish_fast_weak: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:17:10,257 - UCI_Stockfish_fast_weak - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:17:10,439 - UCI_Stockfish_fast_weak - INFO - Successfully started Stockfish_fast_weak
+2025-08-23 23:17:10,439 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:17:10,439 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_fast_weak
+2025-08-23 23:17:10,439 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:17:25,485 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:17:30,497 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:18:01,796 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:18:01,832 - UCI_Stockfish_fast_weak - INFO - Stopped Stockfish_fast_weak
+2025-08-23 23:19:52,155 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-23 23:19:52,155 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-23 23:19:52,155 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-23 23:19:52,155 - BattleFramework - INFO - Created battle session: V7P3R_vs_SlowMate_Rating (battle_1756005592)
+2025-08-23 23:19:52,155 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:19:52,155 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:19:52,390 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:19:52,390 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:19:52,390 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:19:54,629 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:19:54,629 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:19:54,629 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:19:54,629 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:20:02,647 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:20:08,230 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:20:18,270 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:20:18,522 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:20:18,522 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:20:18,522 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:20:18,742 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:20:18,742 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:20:18,742 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:20:20,940 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:20:20,940 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:20:20,940 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:20:20,940 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:20:29,011 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:20:34,643 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:20:44,496 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:20:44,739 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:20:44,739 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:20:44,739 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:20:44,947 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:20:44,947 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:20:44,947 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:20:47,085 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:20:47,101 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:20:47,101 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:20:47,101 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:20:55,179 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:21:00,432 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:21:10,368 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:21:10,620 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:21:10,620 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:21:10,620 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:21:10,836 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:21:10,836 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:21:10,836 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:21:13,016 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:21:13,016 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:21:13,016 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:21:13,016 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:21:21,030 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:21:26,457 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:21:36,054 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:21:36,292 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:21:36,292 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:21:36,292 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:21:36,505 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:21:36,505 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-23 23:21:36,521 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-23 23:21:38,843 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-23 23:21:38,843 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:21:38,843 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-23 23:21:38,843 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:21:46,896 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:21:52,273 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:01,958 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:02,211 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-23 23:22:02,211 - BattleFramework - INFO - Added engine: Stockfish_Stockfish_1-second_limit (exe_control)
+2025-08-23 23:22:02,211 - BattleFramework - INFO - Created battle session: V7P3R_vs_Stockfish 1-second limit (battle_1756005722)
+2025-08-23 23:22:02,211 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:22:02,211 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:22:02,416 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:22:02,416 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Starting Stockfish_Stockfish_1-second_limit: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:22:02,416 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:22:02,609 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Successfully started Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:02,609 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:02,609 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:02,609 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:22:04,706 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:22:09,313 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:11,586 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:11,612 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Stopped Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:11,612 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:22:11,612 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:22:11,837 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:22:11,837 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Starting Stockfish_Stockfish_1-second_limit: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:22:11,837 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:22:12,039 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Successfully started Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:12,039 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:12,039 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:12,039 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:22:14,374 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:22:19,041 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:21,160 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:21,188 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Stopped Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:21,189 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:22:21,189 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:22:21,399 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:22:21,399 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Starting Stockfish_Stockfish_1-second_limit: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:22:21,399 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:22:21,581 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Successfully started Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:21,581 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:21,581 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:21,581 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:22:23,673 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:22:28,261 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:30,411 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:30,427 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Stopped Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:30,427 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:22:30,427 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:22:30,647 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:22:30,647 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Starting Stockfish_Stockfish_1-second_limit: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:22:30,647 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:22:30,820 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Successfully started Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:30,820 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:30,820 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:30,820 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:22:32,907 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:22:37,565 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:39,682 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:39,709 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Stopped Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:39,709 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-23 23:22:39,709 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-23 23:22:39,926 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-23 23:22:39,926 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Starting Stockfish_Stockfish_1-second_limit: s:/Maker Stuff/Programming/Chess Engines/Chess Engine Playground/engine-tester/engines/Stockfish/stockfish-windows-x86-64-avx2.exe
+2025-08-23 23:22:39,926 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Working directory: s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish
+2025-08-23 23:22:40,120 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Successfully started Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:40,120 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:40,120 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs Stockfish_Stockfish_1-second_limit
+2025-08-23 23:22:40,120 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-23 23:22:42,223 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-23 23:22:47,033 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-23 23:22:49,151 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-23 23:22:49,186 - UCI_Stockfish_Stockfish_1-second_limit - INFO - Stopped Stockfish_Stockfish_1-second_limit
+2025-08-24 00:00:06,742 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-24 00:00:06,742 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-24 00:00:06,742 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-24 00:00:06,742 - BattleFramework - INFO - Created battle session: V7P3R_Diagnostic (battle_1756008006)
+2025-08-24 00:00:06,742 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-24 00:00:06,742 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-24 00:00:06,978 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-24 00:00:06,978 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-24 00:00:06,978 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-24 00:00:09,588 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-24 00:00:09,588 - BattleFramework - INFO - Running speed_challenge: V7P3R_Current vs SlowMate_Current
+2025-08-24 00:00:09,588 - Challenge_speed_challenge - INFO - Starting speed challenge: V7P3R_Current vs SlowMate_Current
+2025-08-24 00:00:09,588 - Challenge_speed_challenge - INFO - Speed test position 1/3
+2025-08-24 00:00:19,642 - Challenge_speed_challenge - INFO - Speed test position 2/3
+2025-08-24 00:00:23,121 - Challenge_speed_challenge - INFO - Speed test position 3/3
+2025-08-24 00:00:58,467 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-24 00:00:58,705 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-24 22:00:47,967 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-24 22:00:47,967 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-24 22:00:47,967 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-24 22:00:47,967 - BattleFramework - INFO - Created battle session: V7P3R_Traditional_Test (battle_1756087247)
+2025-08-24 22:00:47,967 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-24 22:00:47,967 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-24 22:00:48,285 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-24 22:00:48,285 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-24 22:00:48,285 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-24 22:00:51,157 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-24 22:00:51,157 - BattleFramework - INFO - Running traditional_game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:00:51,157 - Challenge_traditional_game - INFO - Starting traditional game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:02:19,101 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-24 22:02:19,333 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-24 22:02:19,333 - BattleFramework - INFO - Added engine: V7P3R_Current (python_v7p3r)
+2025-08-24 22:02:19,333 - BattleFramework - INFO - Added engine: SlowMate_Current (python_slowmate)
+2025-08-24 22:02:19,333 - BattleFramework - INFO - Added engine: C0BR4_Control (exe_control)
+2025-08-24 22:02:19,333 - BattleFramework - INFO - Created battle session: V7P3R_Game_1 (battle_1756087339)
+2025-08-24 22:02:19,333 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-24 22:02:19,333 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-24 22:02:19,560 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-24 22:02:19,560 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-24 22:02:19,560 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-24 22:02:21,761 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-24 22:02:21,761 - BattleFramework - INFO - Running traditional_game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:02:21,761 - Challenge_traditional_game - INFO - Starting traditional game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:03:17,513 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-24 22:03:17,755 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-24 22:03:17,755 - BattleFramework - INFO - Created battle session: V7P3R_Game_2 (battle_1756087397)
+2025-08-24 22:03:17,756 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-24 22:03:17,756 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-24 22:03:20,084 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-24 22:03:20,084 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-24 22:03:20,085 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-24 22:03:20,309 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-24 22:03:20,310 - BattleFramework - INFO - Running traditional_game: SlowMate_Current vs V7P3R_Current
+2025-08-24 22:03:20,310 - Challenge_traditional_game - INFO - Starting traditional game: SlowMate_Current vs V7P3R_Current
+2025-08-24 22:03:48,267 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
+2025-08-24 22:03:48,889 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-24 22:03:48,890 - BattleFramework - INFO - Created battle session: V7P3R_Game_3 (battle_1756087428)
+2025-08-24 22:03:48,890 - UCI_V7P3R_Current - INFO - Starting V7P3R_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe
+2025-08-24 22:03:48,890 - UCI_V7P3R_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R
+2025-08-24 22:03:49,114 - UCI_V7P3R_Current - INFO - Successfully started V7P3R_Current
+2025-08-24 22:03:49,114 - UCI_SlowMate_Current - INFO - Starting SlowMate_Current: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate\SlowMate_v3.0.exe
+2025-08-24 22:03:49,114 - UCI_SlowMate_Current - INFO - Working directory: S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\SlowMate
+2025-08-24 22:03:51,394 - UCI_SlowMate_Current - INFO - Successfully started SlowMate_Current
+2025-08-24 22:03:51,395 - BattleFramework - INFO - Running traditional_game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:03:51,395 - Challenge_traditional_game - INFO - Starting traditional game: V7P3R_Current vs SlowMate_Current
+2025-08-24 22:04:46,707 - UCI_V7P3R_Current - INFO - Stopped V7P3R_Current
+2025-08-24 22:04:46,940 - UCI_SlowMate_Current - INFO - Stopped SlowMate_Current
