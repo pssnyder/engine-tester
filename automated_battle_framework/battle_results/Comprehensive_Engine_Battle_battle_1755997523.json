@@ -1,0 +1,164 @@
+{
+  "session_id": "battle_1755997523",
+  "name": "Comprehensive_Engine_Battle",
+  "description": "Full battle suite between V7P3R and SlowMate engines",
+  "start_time": "2025-08-23T21:05:23.780846",
+  "end_time": "2025-08-23T21:09:40.123093",
+  "total_duration": 256.342247,
+  "status": "completed",
+  "engines": [
+    {
+      "name": "V7P3R_Current",
+      "engine_type": "EngineType.PYTHON_V7P3R",
+      "path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\V7P3R\\V7P3R_v7.0.exe",
+      "version": "v7.0",
+      "executable_args": [],
+      "time_limit": 30.0,
+      "memory_limit": 128
+    },
+    {
+      "name": "SlowMate_Current",
+      "engine_type": "EngineType.PYTHON_SLOWMATE",
+      "path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\SlowMate\\SlowMate_v3.0.exe",
+      "version": "v3.0",
+      "executable_args": [],
+      "time_limit": 30.0,
+      "memory_limit": 128
+    },
+    {
+      "name": "C0BR4_Control",
+      "engine_type": "EngineType.EXE_CONTROL",
+      "path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\C0BR4\\C0BR4_v2.1.exe",
+      "version": "v2.1",
+      "executable_args": [],
+      "time_limit": 30.0,
+      "memory_limit": 128
+    }
+  ],
+  "challenges": [
+    {
+      "challenge_id": "speed_1755997527",
+      "challenge_type": "ChallengeType.SPEED_CHALLENGE",
+      "engine1": "V7P3R_Current",
+      "engine2": "SlowMate_Current",
+      "winner": "SlowMate_Current",
+      "result_details": {
+        "engine1_times": [
+          10.075379848480225,
+          3.331200122833252,
+          10.101085901260376
+        ],
+        "engine2_times": [
+          0.0003654956817626953,
+          0.0,
+          0.0
+        ],
+        "engine1_moves": [
+          null,
+          "g1f3",
+          null
+        ],
+        "engine2_moves": [
+          "g1h3",
+          "c4f7",
+          "h8g8"
+        ],
+        "avg_time_engine1": 7.835888624191284,
+        "avg_time_engine2": 0.00012183189392089844
+      },
+      "execution_time": 23.50859045982361,
+      "timestamp": "2025-08-23 21:05:50.667332",
+      "status": "BattleStatus.COMPLETED",
+      "metrics": {
+        "speed_advantage": 7.835766792297363,
+        "fastest_time": 0.00012183189392089844
+      }
+    },
+    {
+      "challenge_id": "trad_game_1755997579",
+      "challenge_type": "ChallengeType.TRADITIONAL_GAME",
+      "engine1": "V7P3R_Current",
+      "engine2": "SlowMate_Current",
+      "winner": "SlowMate_Current",
+      "result_details": {
+        "result": "0-1",
+        "moves": [
+          "g1f3",
+          "g8h6",
+          "d2d4",
+          "h8g8"
+        ],
+        "move_count": 4
+      },
+      "execution_time": 40.7648651599884,
+      "timestamp": "2025-08-23 21:07:00.493521",
+      "status": "BattleStatus.COMPLETED",
+      "metrics": {
+        "game_length": 4,
+        "avg_time_per_move": 10.1912162899971
+      }
+    },
+    {
+      "challenge_id": "speed_1755997634",
+      "challenge_type": "ChallengeType.SPEED_CHALLENGE",
+      "engine1": "V7P3R_Current",
+      "engine2": "SlowMate_Current",
+      "winner": "SlowMate_Current",
+      "result_details": {
+        "engine1_times": [
+          13.109544277191162,
+          0.6945314407348633,
+          13.100483417510986
+        ],
+        "engine2_times": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "engine1_moves": [
+          null,
+          "g1f3",
+          null
+        ],
+        "engine2_moves": [
+          "g1h3",
+          "c4f7",
+          "h8g8"
+        ],
+        "avg_time_engine1": 8.968186378479004,
+        "avg_time_engine2": 0.0
+      },
+      "execution_time": 26.90455913543701,
+      "timestamp": "2025-08-23 21:07:41.715699",
+      "status": "BattleStatus.COMPLETED",
+      "metrics": {
+        "speed_advantage": 8.968186378479004,
+        "fastest_time": 0.0
+      }
+    },
+    {
+      "challenge_id": "trad_game_1755997727",
+      "challenge_type": "ChallengeType.TRADITIONAL_GAME",
+      "engine1": "V7P3R_Current",
+      "engine2": "SlowMate_Current",
+      "winner": "SlowMate_Current",
+      "result_details": {
+        "result": "0-1",
+        "moves": [
+          "g1f3",
+          "g8h6",
+          "d2d4",
+          "h8g8"
+        ],
+        "move_count": 4
+      },
+      "execution_time": 45.73011565208435,
+      "timestamp": "2025-08-23 21:09:33.194573",
+      "status": "BattleStatus.COMPLETED",
+      "metrics": {
+        "game_length": 4,
+        "avg_time_per_move": 11.432528913021088
+      }
+    }
+  ]
+}

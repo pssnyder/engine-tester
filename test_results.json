@@ -1,0 +1,209 @@
+{
+  "analysis_results": [
+    {
+      "puzzle_id": "0008Q",
+      "fen": "8/4R3/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 w - - 1 64",
+      "rating": 1361,
+      "themes": [
+        "advantage",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ],
+      "v7p3r_move": "e7f7",
+      "v7p3r_score": 0,
+      "v7p3r_rank": 0,
+      "stockfish_top_moves": [
+        [
+          "e7g7",
+          637
+        ],
+        [
+          "f3f4",
+          363
+        ],
+        [
+          "e2d3",
+          8
+        ],
+        [
+          "e2f1",
+          7
+        ],
+        [
+          "e2e3",
+          0
+        ]
+      ],
+      "expected_move": "e7f7",
+      "v7p3r_time_seconds": 5.0,
+      "timestamp": "2025-08-24T23:13:29.954161"
+    },
+    {
+      "puzzle_id": "000Vc",
+      "fen": "8/8/4k1p1/2KpP2p/5PP1/8/8/8 w - - 0 53",
+      "rating": 1615,
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pawnEndgame"
+      ],
+      "v7p3r_move": "g4h5",
+      "v7p3r_score": 0,
+      "v7p3r_rank": 0,
+      "stockfish_top_moves": [
+        [
+          "f4f5",
+          0
+        ],
+        [
+          "g4g5",
+          -1024
+        ],
+        [
+          "c5d4",
+          -993
+        ],
+        [
+          "c5c6",
+          -1039
+        ],
+        [
+          "c5b4",
+          -1039
+        ]
+      ],
+      "expected_move": "g4h5",
+      "v7p3r_time_seconds": 5.0,
+      "timestamp": "2025-08-24T23:13:32.746027"
+    },
+    {
+      "puzzle_id": "000aY",
+      "fen": "r4rk1/pp3ppp/2n1b3/q1pp2B1/8/P1Q2NP1/1PP1PP1P/2KR3R w - - 0 15",
+      "rating": 1436,
+      "themes": [
+        "advantage",
+        "master",
+        "middlegame",
+        "short"
+      ],
+      "v7p3r_move": "c3a5",
+      "v7p3r_score": 5,
+      "v7p3r_rank": 1,
+      "stockfish_top_moves": [
+        [
+          "c3a5",
+          -55
+        ],
+        [
+          "g5f4",
+          -94
+        ],
+        [
+          "g5e3",
+          -125
+        ],
+        [
+          "h2h3",
+          -178
+        ],
+        [
+          "g3g4",
+          -181
+        ]
+      ],
+      "expected_move": "g5e7",
+      "v7p3r_time_seconds": 5.0,
+      "timestamp": "2025-08-24T23:13:49.399878"
+    }
+  ],
+  "report": {
+    "total_puzzles": 3,
+    "total_score": 5,
+    "max_possible_score": 15,
+    "average_score": 1.6666666666666667,
+    "percentage_score": 33.33333333333333,
+    "top5_hits": 1,
+    "top5_hit_rate": 33.33333333333333,
+    "score_distribution": {
+      "0": 2,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 1
+    },
+    "rank_distribution": {
+      "0": 2,
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "theme_performance": {
+      "advantage": {
+        "total": 2,
+        "score_sum": 5,
+        "average_score": 2.5,
+        "percentage": 50.0
+      },
+      "endgame": {
+        "total": 2,
+        "score_sum": 0,
+        "average_score": 0.0,
+        "percentage": 0.0
+      },
+      "rookEndgame": {
+        "total": 1,
+        "score_sum": 0,
+        "average_score": 0.0,
+        "percentage": 0.0
+      },
+      "short": {
+        "total": 2,
+        "score_sum": 5,
+        "average_score": 2.5,
+        "percentage": 50.0
+      },
+      "crushing": {
+        "total": 1,
+        "score_sum": 0,
+        "average_score": 0.0,
+        "percentage": 0.0
+      },
+      "long": {
+        "total": 1,
+        "score_sum": 0,
+        "average_score": 0.0,
+        "percentage": 0.0
+      },
+      "pawnEndgame": {
+        "total": 1,
+        "score_sum": 0,
+        "average_score": 0.0,
+        "percentage": 0.0
+      },
+      "master": {
+        "total": 1,
+        "score_sum": 5,
+        "average_score": 5.0,
+        "percentage": 100.0
+      },
+      "middlegame": {
+        "total": 1,
+        "score_sum": 5,
+        "average_score": 5.0,
+        "percentage": 100.0
+      }
+    },
+    "timestamp": "2025-08-24T23:13:49.402871"
+  },
+  "metadata": {
+    "v7p3r_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\V7P3R\\V7P3R_v7.0.exe",
+    "stockfish_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\engines\\Stockfish\\stockfish-windows-x86-64-avx2.exe",
+    "puzzle_db_path": "S:\\Maker Stuff\\Programming\\Chess Engines\\Chess Engine Playground\\engine-tester\\chess-puzzle-challenger\\puzzles.db",
+    "timestamp": "2025-08-24T23:13:49.402871"
+  }
+}
