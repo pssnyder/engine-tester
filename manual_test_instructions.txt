@@ -1,0 +1,16 @@
+V7P3R Engine Manual Test Instructions
+========================================
+
+Engine Directory: s:\Maker Stuff\Programming\Chess Engines\V7P3R Chess Engine\v7p3r-chess-engine
+UCI File: s:\Maker Stuff\Programming\Chess Engines\V7P3R Chess Engine\v7p3r-chess-engine\src\v7p3r_uci.py
+
+Manual Test Steps:
+1. Open terminal
+2. cd "s:\Maker Stuff\Programming\Chess Engines\V7P3R Chess Engine\v7p3r-chess-engine"
+3. python src/v7p3r_uci.py
+4. uci
+5. position fen r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4
+6. go movetime 3000
+7. quit
+
+Expected: bestmove should be Qxf7 or similar (checkmate)
