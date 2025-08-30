@@ -556,7 +556,7 @@ class HistoricalGameRegressionTester:
                 if engine_analysis:
                     engine_results.append(engine_analysis)
             
-            successful = [r for r in engine_results if not r.error]
+            successful = [r for r in engine_results if r.success]
             
             report['engine_performance'][engine_version] = {
                 'success_rate': len(successful) / len(engine_results) if engine_results else 0,
