@@ -1,0 +1,1 @@
+# V7P3R v9.6 - Unified Search Architecture\n# Built: 2025-08-31\n# Features: Single search function, time management fixes, UCI output cleanup\n# Architecture: Root iterative deepening + recursive alpha-beta\n# Key Fix: Time checking during recursive search prevents timeouts\nexecutable=V7P3R_v9.6.exe\n

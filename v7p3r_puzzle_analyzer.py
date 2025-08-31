@@ -164,6 +164,97 @@ class V7P3RPuzzleAnalyzer:
             print(f"Error getting Stockfish moves: {e}")
             return []
     
+    def get_puzzle_challenge_position(self, puzzle: Puzzle) -> Tuple[str, str, bool, str]:
+        """
+        Get the actual challenge position and expected move for puzzle solving
+        Returns: (challenge_fen, expected_move, is_valid, context_info)
+        """
+        try:
+            # Start with the puzzle FEN (pre-challenge position)
+            board = chess.Board(puzzle.fen)
+            expected_moves = puzzle.moves.split() if puzzle.moves else []
+            
+            if len(expected_moves) < 2:
+                return puzzle.fen, "unknown", False, "Insufficient moves in solution"
+            
+            # Play the first move (opponent's setup move)
+            opponent_move_text = expected_moves[0]
+            try:
+                # Try UCI first
+                opponent_move = chess.Move.from_uci(opponent_move_text)
+                if opponent_move not in board.legal_moves:
+                    raise ValueError("Move not legal")
+            except:
+                try:
+                    # Try SAN notation
+                    opponent_move = board.parse_san(opponent_move_text)
+                except:
+                    return puzzle.fen, "unknown", False, f"Cannot parse opponent move: {opponent_move_text}"
+            
+            # Apply the opponent's move to get challenge position
+            board.push(opponent_move)
+            challenge_fen = board.fen()
+            
+            # The second move is what the engine should find
+            expected_move_text = expected_moves[1]
+            try:
+                # Try UCI first
+                expected_move = chess.Move.from_uci(expected_move_text)
+                if expected_move not in board.legal_moves:
+                    raise ValueError("Move not legal")
+                expected_move_uci = str(expected_move)
+            except:
+                try:
+                    # Try SAN notation
+                    expected_move = board.parse_san(expected_move_text)
+                    expected_move_uci = str(expected_move)
+                except:
+                    return challenge_fen, expected_move_text, False, f"Cannot parse expected move: {expected_move_text}"
+            
+            turn_info = f"{'White' if board.turn else 'Black'} to move (after opponent played {opponent_move_text})"
+            
+            return challenge_fen, expected_move_uci, True, turn_info
+            
+        except Exception as e:
+            return puzzle.fen, "unknown", False, f"Error processing puzzle: {e}"
+
+    def get_correct_expected_move(self, puzzle: Puzzle) -> Tuple[str, bool, str]:
+        """
+        Get the correct expected move for the current position with validation
+        Returns: (move_uci, is_valid, turn_info)
+        """
+        try:
+            board = chess.Board(puzzle.fen)
+            expected_moves = puzzle.moves.split() if puzzle.moves else []
+            
+            if not expected_moves:
+                return "unknown", False, f"{'White' if board.turn else 'Black'} to move"
+            
+            first_move_text = expected_moves[0]
+            turn_info = f"{'White' if board.turn else 'Black'} to move"
+            
+            # Try to parse the move (handle both SAN and UCI notation)
+            try:
+                # Try UCI first
+                move = chess.Move.from_uci(first_move_text)
+                if move in board.legal_moves:
+                    return str(move), True, turn_info
+            except:
+                pass
+            
+            try:
+                # Try SAN notation
+                move = board.parse_san(first_move_text)
+                return str(move), True, turn_info
+            except:
+                pass
+            
+            # If we can't parse it as a legal move, return original but mark as invalid
+            return first_move_text, False, f"{turn_info} (move not valid for current position)"
+            
+        except Exception as e:
+            return "unknown", False, f"Error parsing position: {e}"
+
     def score_v7p3r_move(self, v7p3r_move: str, stockfish_moves: List[Tuple[str, int]]) -> Tuple[int, int]:
         """
         Score V7P3R's move based on Stockfish ranking
@@ -180,15 +271,26 @@ class V7P3RPuzzleAnalyzer:
         return 0, 0  # Not in top 5
     
     def analyze_puzzle(self, puzzle: Puzzle, v7p3r_time: float = 10.0) -> Optional[Dict]:
-        """Analyze a single puzzle"""
+        """Analyze a single puzzle using correct challenge position logic"""
         print(f"Analyzing puzzle {puzzle.id} (Rating: {puzzle.rating})")
         print(f"Themes: {puzzle.themes}")
-        print(f"Position: {puzzle.fen}")
+        print(f"Original FEN: {puzzle.fen}")
+        print(f"Solution sequence: {puzzle.moves}")
         
-        # Get V7P3R's move
-        print(f"Giving V7P3R {v7p3r_time} seconds to think...")
+        # Get the actual challenge position and expected move
+        challenge_fen, expected_move, is_valid, context_info = self.get_puzzle_challenge_position(puzzle)
+        
+        if not is_valid:
+            print(f"❌ Cannot process puzzle: {context_info}")
+            return None
+        
+        print(f"Challenge FEN: {challenge_fen}")
+        print(f"Expected move: {expected_move} ({context_info})")
+        
+        # Get V7P3R's move on the challenge position
+        print(f"Giving V7P3R {v7p3r_time} seconds to solve the challenge...")
         start_analysis = time.time()
-        v7p3r_move = self.get_v7p3r_move(puzzle.fen, v7p3r_time)
+        v7p3r_move = self.get_v7p3r_move(challenge_fen, v7p3r_time)
         analysis_time = time.time() - start_analysis
         
         if not v7p3r_move:
@@ -197,17 +299,18 @@ class V7P3RPuzzleAnalyzer:
         
         print(f"V7P3R chose: {v7p3r_move} (took {analysis_time:.1f}s)")
         
-        # Get Stockfish's top 5 moves
-        print("Getting Stockfish's top 5 moves...")
-        stockfish_moves = self.get_stockfish_top_moves(puzzle.fen, 5, 2.0)
+        # Get Stockfish's top 5 moves on the challenge position
+        print("Getting Stockfish's top 5 moves for the challenge position...")
+        stockfish_moves = self.get_stockfish_top_moves(challenge_fen, 5, 2.0)
         
         if not stockfish_moves:
-            print("❌ Stockfish failed to analyze position")
+            print("❌ Stockfish failed to analyze challenge position")
             return None
         
         print("Stockfish's top 5 moves:")
         for i, (move, score) in enumerate(stockfish_moves, 1):
-            print(f"  {i}. {move} (score: {score:+d})")
+            indicator = "🎯" if move == expected_move else "  "
+            print(f"  {i}. {move} (score: {score:+d}) {indicator}")
         
         # Score V7P3R's performance
         score, rank = self.score_v7p3r_move(v7p3r_move, stockfish_moves)
@@ -217,22 +320,38 @@ class V7P3RPuzzleAnalyzer:
         else:
             print(f"❌ V7P3R's move not in top 5 - Score: 0/5")
         
-        # Expected move from puzzle (for reference)
-        expected_moves = puzzle.moves.split() if puzzle.moves else []
-        expected_move = expected_moves[0] if expected_moves else "unknown"
-        print(f"Expected move: {expected_move}")
+        # Check if V7P3R found the expected tactical move
+        found_solution = v7p3r_move == expected_move
+        if found_solution:
+            print(f"🎯 V7P3R found the puzzle solution!")
+        else:
+            print(f"❌ V7P3R missed the puzzle solution")
+        
+        # Check if expected move is in Stockfish's top moves
+        expected_in_top5 = any(expected_move == sf_move for sf_move, _ in stockfish_moves)
+        if expected_in_top5:
+            expected_rank = next(i for i, (sf_move, _) in enumerate(stockfish_moves, 1) if sf_move == expected_move)
+            print(f"✅ Expected move ranks #{expected_rank} in Stockfish's analysis")
+        else:
+            print(f"⚠️  Expected move not in Stockfish's top 5 (unusual puzzle)")
         
         result = {
             'puzzle_id': puzzle.id,
-            'fen': puzzle.fen,
+            'original_fen': puzzle.fen,
+            'challenge_fen': challenge_fen,
             'rating': puzzle.rating,
             'themes': puzzle.themes.split() if puzzle.themes else [],
+            'solution_sequence': puzzle.moves,
             'v7p3r_move': v7p3r_move,
             'v7p3r_score': score,
             'v7p3r_rank': rank,
+            'v7p3r_found_solution': found_solution,
             'stockfish_top_moves': stockfish_moves,
             'expected_move': expected_move,
+            'expected_in_stockfish_top5': expected_in_top5,
+            'context_info': context_info,
             'v7p3r_time_seconds': v7p3r_time,
+            'analysis_time_actual': analysis_time,
             'timestamp': datetime.now().isoformat()
         }
         
