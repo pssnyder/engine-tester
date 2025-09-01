@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-V7P3R Puzzle Analyzer
+C0BR4 Puzzle Analyzer
 
-Simple but effective puzzle testing system that:
-1. Pulls positions from puzzle database
-2. Gives V7P3R generous time to analyze
-3. Compares V7P3R's choice against Stockfish's top 5 moves
-4. Scores performance and tracks puzzle themes
+Specialized puzzle testing system for C0BR4 engine that focuses on:
+1. Rule compliance and legal move validation (crucial for bitboard system)
+2. Tactical pattern recognition 
+3. Castling rights and special moves validation
+4. Endgame technique testing
+5. Performance comparison against Stockfish
 
 Scoring: 5pts (1st), 4pts (2nd), 3pts (3rd), 2pts (4th), 1pt (5th), 0pts (not in top 5)
+Special focus on detecting illegal moves and rule infractions.
 """
 
 import subprocess
@@ -30,32 +32,58 @@ except ImportError:
     sys.exit(1)
 
 
-class V7P3RPuzzleAnalyzer:
-    """Analyzes V7P3R performance against puzzle database using Stockfish comparison"""
+class C0BR4PuzzleAnalyzer:
+    """Analyzes C0BR4 performance with focus on rule compliance and bitboard validation"""
     
     def __init__(self, 
-                 v7p3r_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe",
+                 c0br4_path: str = r"s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\C0BR4\C0BR4_v2.3.exe",
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
                  puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\chess-puzzle-challenger\puzzles.db"):
         
-        self.v7p3r_path = v7p3r_path
+        self.c0br4_path = c0br4_path
         self.stockfish_path = stockfish_path
         self.puzzle_db_path = puzzle_db_path
         self.results = []
+        self.illegal_moves_detected = []
+        self.rule_infractions = []
         
         # Verify engines exist
-        if not os.path.exists(v7p3r_path):
-            raise FileNotFoundError(f"V7P3R engine not found: {v7p3r_path}")
+        if not os.path.exists(c0br4_path):
+            raise FileNotFoundError(f"C0BR4 engine not found: {c0br4_path}")
         if not os.path.exists(stockfish_path):
             raise FileNotFoundError(f"Stockfish engine not found: {stockfish_path}")
         if not os.path.exists(puzzle_db_path):
             raise FileNotFoundError(f"Puzzle database not found: {puzzle_db_path}")
     
-    def get_v7p3r_move(self, fen: str, time_seconds: float = 10.0) -> Optional[str]:
-        """Get V7P3R's best move for a position with generous time"""
+    def validate_move_legality(self, fen: str, move: str) -> Tuple[bool, str]:
+        """Validate that a move is legal in the given position"""
+        try:
+            board = chess.Board(fen)
+            try:
+                # Try UCI notation first
+                chess_move = chess.Move.from_uci(move)
+                if chess_move in board.legal_moves:
+                    return True, "Legal move"
+                else:
+                    return False, "Move not in legal moves list"
+            except:
+                try:
+                    # Try SAN notation
+                    chess_move = board.parse_san(move)
+                    return True, "Legal move (SAN)"
+                except:
+                    return False, "Invalid move format"
+        except Exception as e:
+            return False, f"Error validating move: {e}"
+    
+    def get_c0br4_move(self, fen: str, time_seconds: float = 10.0) -> Tuple[Optional[str], List[str], bool]:
+        """
+        Get C0BR4's best move for a position with legality validation
+        Returns: (move, output_lines, had_errors)
+        """
         try:
             process = subprocess.Popen(
-                self.v7p3r_path,
+                self.c0br4_path,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
@@ -83,6 +111,7 @@ class V7P3RPuzzleAnalyzer:
             output_lines = []
             start_time = time.time()
             timeout = time_seconds + 3  # Add 3 second buffer
+            had_errors = False
             
             while time.time() - start_time < timeout:
                 if not process.stdout:
@@ -100,6 +129,10 @@ class V7P3RPuzzleAnalyzer:
                         
                     line = line.strip()
                     output_lines.append(line)
+                    
+                    # Check for error indicators
+                    if any(error_word in line.lower() for error_word in ['error', 'illegal', 'invalid', 'exception']):
+                        had_errors = True
                     
                     if line.startswith("bestmove"):
                         parts = line.split()
@@ -120,11 +153,25 @@ class V7P3RPuzzleAnalyzer:
                 except:
                     pass
             
-            return best_move
+            # Validate the move if we got one
+            if best_move:
+                is_legal, validation_msg = self.validate_move_legality(fen, best_move)
+                if not is_legal:
+                    self.illegal_moves_detected.append({
+                        'fen': fen,
+                        'move': best_move,
+                        'reason': validation_msg,
+                        'timestamp': datetime.now().isoformat()
+                    })
+                    had_errors = True
+                    print(f"🚨 ILLEGAL MOVE DETECTED: {best_move} in position {fen}")
+                    print(f"   Reason: {validation_msg}")
+            
+            return best_move, output_lines, had_errors
             
         except Exception as e:
-            print(f"Error getting V7P3R move: {e}")
-            return None
+            print(f"Error getting C0BR4 move: {e}")
+            return None, [], True
     
     def get_stockfish_top_moves(self, fen: str, num_moves: int = 5, time_seconds: float = 2.0) -> List[Tuple[str, int]]:
         """Get Stockfish's top N moves with scores (move, centipawn_score)"""
@@ -132,7 +179,7 @@ class V7P3RPuzzleAnalyzer:
             with chess.engine.SimpleEngine.popen_uci(self.stockfish_path) as engine:
                 board = chess.Board(fen)
                 
-                # Use analyse with multipv parameter instead of configure
+                # Use analyse with multipv parameter
                 result = engine.analyse(
                     board, 
                     chess.engine.Limit(time=time_seconds),
@@ -218,60 +265,23 @@ class V7P3RPuzzleAnalyzer:
         except Exception as e:
             return puzzle.fen, "unknown", False, f"Error processing puzzle: {e}"
 
-    def get_correct_expected_move(self, puzzle: Puzzle) -> Tuple[str, bool, str]:
+    def score_c0br4_move(self, c0br4_move: str, stockfish_moves: List[Tuple[str, int]]) -> Tuple[int, int]:
         """
-        Get the correct expected move for the current position with validation
-        Returns: (move_uci, is_valid, turn_info)
-        """
-        try:
-            board = chess.Board(puzzle.fen)
-            expected_moves = puzzle.moves.split() if puzzle.moves else []
-            
-            if not expected_moves:
-                return "unknown", False, f"{'White' if board.turn else 'Black'} to move"
-            
-            first_move_text = expected_moves[0]
-            turn_info = f"{'White' if board.turn else 'Black'} to move"
-            
-            # Try to parse the move (handle both SAN and UCI notation)
-            try:
-                # Try UCI first
-                move = chess.Move.from_uci(first_move_text)
-                if move in board.legal_moves:
-                    return str(move), True, turn_info
-            except:
-                pass
-            
-            try:
-                # Try SAN notation
-                move = board.parse_san(first_move_text)
-                return str(move), True, turn_info
-            except:
-                pass
-            
-            # If we can't parse it as a legal move, return original but mark as invalid
-            return first_move_text, False, f"{turn_info} (move not valid for current position)"
-            
-        except Exception as e:
-            return "unknown", False, f"Error parsing position: {e}"
-
-    def score_v7p3r_move(self, v7p3r_move: str, stockfish_moves: List[Tuple[str, int]]) -> Tuple[int, int]:
-        """
-        Score V7P3R's move based on Stockfish ranking
+        Score C0BR4's move based on Stockfish ranking
         Returns: (score, rank) where rank is 1-5 or 0 if not in top 5
         """
-        if not v7p3r_move or not stockfish_moves:
+        if not c0br4_move or not stockfish_moves:
             return 0, 0
         
         for rank, (sf_move, _) in enumerate(stockfish_moves, 1):
-            if v7p3r_move == sf_move:
+            if c0br4_move == sf_move:
                 score = 6 - rank  # 5pts for 1st, 4pts for 2nd, ..., 1pt for 5th
                 return score, rank
         
         return 0, 0  # Not in top 5
     
-    def analyze_puzzle(self, puzzle: Puzzle, v7p3r_time: float = 10.0) -> Optional[Dict]:
-        """Analyze a single puzzle using correct challenge position logic"""
+    def analyze_puzzle(self, puzzle: Puzzle, c0br4_time: float = 10.0) -> Optional[Dict]:
+        """Analyze a single puzzle with focus on rule compliance"""
         print(f"Analyzing puzzle {puzzle.id} (Rating: {puzzle.rating})")
         print(f"Themes: {puzzle.themes}")
         print(f"Original FEN: {puzzle.fen}")
@@ -287,17 +297,31 @@ class V7P3RPuzzleAnalyzer:
         print(f"Challenge FEN: {challenge_fen}")
         print(f"Expected move: {expected_move} ({context_info})")
         
-        # Get V7P3R's move on the challenge position
-        print(f"Giving V7P3R {v7p3r_time} seconds to solve the challenge...")
+        # Get C0BR4's move on the challenge position with validation
+        print(f"Giving C0BR4 {c0br4_time} seconds to solve the challenge...")
         start_analysis = time.time()
-        v7p3r_move = self.get_v7p3r_move(challenge_fen, v7p3r_time)
+        c0br4_move, engine_output, had_errors = self.get_c0br4_move(challenge_fen, c0br4_time)
         analysis_time = time.time() - start_analysis
         
-        if not v7p3r_move:
-            print(f"❌ V7P3R failed to return a move (took {analysis_time:.1f}s)")
+        if not c0br4_move:
+            print(f"❌ C0BR4 failed to return a move (took {analysis_time:.1f}s)")
+            if had_errors:
+                print(f"🚨 Engine reported errors during analysis")
             return None
         
-        print(f"V7P3R chose: {v7p3r_move} (took {analysis_time:.1f}s)")
+        # Validate move legality
+        is_legal, validation_msg = self.validate_move_legality(challenge_fen, c0br4_move)
+        if not is_legal:
+            print(f"🚨 ILLEGAL MOVE: {c0br4_move} - {validation_msg}")
+            self.rule_infractions.append({
+                'puzzle_id': puzzle.id,
+                'fen': challenge_fen,
+                'illegal_move': c0br4_move,
+                'reason': validation_msg,
+                'timestamp': datetime.now().isoformat()
+            })
+        
+        print(f"C0BR4 chose: {c0br4_move} (took {analysis_time:.1f}s) {'✅ Legal' if is_legal else '🚨 ILLEGAL'}")
         
         # Get Stockfish's top 5 moves on the challenge position
         print("Getting Stockfish's top 5 moves for the challenge position...")
@@ -312,20 +336,24 @@ class V7P3RPuzzleAnalyzer:
             indicator = "🎯" if move == expected_move else "  "
             print(f"  {i}. {move} (score: {score:+d}) {indicator}")
         
-        # Score V7P3R's performance
-        score, rank = self.score_v7p3r_move(v7p3r_move, stockfish_moves)
+        # Score C0BR4's performance (0 points if illegal move)
+        if is_legal:
+            score, rank = self.score_c0br4_move(c0br4_move, stockfish_moves)
+        else:
+            score, rank = 0, 0  # Illegal moves get 0 points
         
         if rank > 0:
-            print(f"✅ V7P3R's move ranked #{rank} - Score: {score}/5")
+            print(f"✅ C0BR4's move ranked #{rank} - Score: {score}/5")
         else:
-            print(f"❌ V7P3R's move not in top 5 - Score: 0/5")
+            reason = "illegal move" if not is_legal else "not in top 5"
+            print(f"❌ C0BR4's move {reason} - Score: 0/5")
         
-        # Check if V7P3R found the expected tactical move
-        found_solution = v7p3r_move == expected_move
+        # Check if C0BR4 found the expected tactical move
+        found_solution = c0br4_move == expected_move and is_legal
         if found_solution:
-            print(f"🎯 V7P3R found the puzzle solution!")
+            print(f"🎯 C0BR4 found the puzzle solution!")
         else:
-            print(f"❌ V7P3R missed the puzzle solution")
+            print(f"❌ C0BR4 missed the puzzle solution")
         
         # Check if expected move is in Stockfish's top moves
         expected_in_top5 = any(expected_move == sf_move for sf_move, _ in stockfish_moves)
@@ -342,16 +370,20 @@ class V7P3RPuzzleAnalyzer:
             'rating': puzzle.rating,
             'themes': puzzle.themes.split() if puzzle.themes else [],
             'solution_sequence': puzzle.moves,
-            'v7p3r_move': v7p3r_move,
-            'v7p3r_score': score,
-            'v7p3r_rank': rank,
-            'v7p3r_found_solution': found_solution,
+            'c0br4_move': c0br4_move,
+            'c0br4_move_legal': is_legal,
+            'c0br4_move_validation_msg': validation_msg,
+            'c0br4_score': score,
+            'c0br4_rank': rank,
+            'c0br4_found_solution': found_solution,
+            'c0br4_had_errors': had_errors,
             'stockfish_top_moves': stockfish_moves,
             'expected_move': expected_move,
             'expected_in_stockfish_top5': expected_in_top5,
             'context_info': context_info,
-            'v7p3r_time_seconds': v7p3r_time,
+            'c0br4_time_seconds': c0br4_time,
             'analysis_time_actual': analysis_time,
+            'engine_output': engine_output,
             'timestamp': datetime.now().isoformat()
         }
         
@@ -359,21 +391,26 @@ class V7P3RPuzzleAnalyzer:
         return result
     
     def run_analysis(self, 
-                     num_puzzles: int = 100,
+                     num_puzzles: int = 50,
                      rating_min: int = 1200,
-                     rating_max: int = 2000,
-                     v7p3r_time: float = 10.0,
+                     rating_max: int = 1800,
+                     c0br4_time: float = 8.0,
                      themes_filter: Optional[List[str]] = None) -> List[Dict]:
-        """Run analysis on multiple puzzles"""
+        """Run analysis on multiple puzzles with C0BR4-specific focus"""
         
-        print(f"V7P3R Puzzle Analysis - {num_puzzles} puzzles")
+        print(f"C0BR4 Puzzle Analysis - {num_puzzles} puzzles")
         print(f"Rating range: {rating_min}-{rating_max}")
-        print(f"V7P3R thinking time: {v7p3r_time} seconds")
+        print(f"C0BR4 thinking time: {c0br4_time} seconds")
+        print(f"Focus: Rule compliance, bitboard validation, tactical awareness")
         if themes_filter:
             print(f"Theme filter: {themes_filter}")
         print("=" * 60)
         
-        # Get puzzles from database
+        # Get puzzles from database - focus on tactical themes for C0BR4
+        if not themes_filter:
+            # Default themes that test rule compliance and tactics
+            themes_filter = ['castling', 'pin', 'fork', 'skewer', 'discovery', 'endgame']
+        
         db = PuzzleDatabase(self.puzzle_db_path)
         puzzles = db.query_puzzles(
             themes=themes_filter,
@@ -393,7 +430,7 @@ class V7P3RPuzzleAnalyzer:
         results = []
         for i, puzzle in enumerate(puzzles, 1):
             print(f"Puzzle {i}/{len(puzzles)}")
-            result = self.analyze_puzzle(puzzle, v7p3r_time)
+            result = self.analyze_puzzle(puzzle, c0br4_time)
             if result:
                 results.append(result)
                 self.results.append(result)
@@ -401,42 +438,54 @@ class V7P3RPuzzleAnalyzer:
         return results
     
     def generate_report(self, results: List[Dict]) -> Dict:
-        """Generate analysis report"""
+        """Generate C0BR4-specific analysis report"""
         if not results:
             return {}
         
         total_puzzles = len(results)
-        total_score = sum(r['v7p3r_score'] for r in results)
+        total_score = sum(r['c0br4_score'] for r in results)
         max_possible_score = total_puzzles * 5
+        
+        # Legal move analysis
+        legal_moves = sum(1 for r in results if r['c0br4_move_legal'])
+        illegal_moves = total_puzzles - legal_moves
+        legal_move_rate = (legal_moves / total_puzzles) * 100
         
         # Score distribution
         score_dist = {i: 0 for i in range(6)}
         for result in results:
-            score_dist[result['v7p3r_score']] += 1
+            score_dist[result['c0br4_score']] += 1
         
         # Rank distribution
         rank_dist = {i: 0 for i in range(6)}  # 0 = not in top 5, 1-5 = ranks
         for result in results:
-            rank_dist[result['v7p3r_rank']] += 1
+            rank_dist[result['c0br4_rank']] += 1
         
         # Theme analysis
         theme_performance = {}
         for result in results:
             for theme in result['themes']:
                 if theme not in theme_performance:
-                    theme_performance[theme] = {'total': 0, 'score_sum': 0}
+                    theme_performance[theme] = {'total': 0, 'score_sum': 0, 'legal_moves': 0}
                 theme_performance[theme]['total'] += 1
-                theme_performance[theme]['score_sum'] += result['v7p3r_score']
+                theme_performance[theme]['score_sum'] += result['c0br4_score']
+                if result['c0br4_move_legal']:
+                    theme_performance[theme]['legal_moves'] += 1
         
         # Calculate theme averages
         for theme in theme_performance:
             theme_data = theme_performance[theme]
             theme_data['average_score'] = theme_data['score_sum'] / theme_data['total']
             theme_data['percentage'] = (theme_data['score_sum'] / (theme_data['total'] * 5)) * 100
+            theme_data['legal_rate'] = (theme_data['legal_moves'] / theme_data['total']) * 100
         
-        # Top 5 hit rate
-        top5_hits = sum(1 for r in results if r['v7p3r_rank'] > 0)
+        # Top 5 hit rate (only for legal moves)
+        top5_hits = sum(1 for r in results if r['c0br4_rank'] > 0 and r['c0br4_move_legal'])
         top5_rate = (top5_hits / total_puzzles) * 100
+        
+        # Solution finding rate
+        solutions_found = sum(1 for r in results if r['c0br4_found_solution'])
+        solution_rate = (solutions_found / total_puzzles) * 100
         
         report = {
             'total_puzzles': total_puzzles,
@@ -444,27 +493,47 @@ class V7P3RPuzzleAnalyzer:
             'max_possible_score': max_possible_score,
             'average_score': total_score / total_puzzles,
             'percentage_score': (total_score / max_possible_score) * 100,
+            'legal_moves': legal_moves,
+            'illegal_moves': illegal_moves,
+            'legal_move_rate': legal_move_rate,
             'top5_hits': top5_hits,
             'top5_hit_rate': top5_rate,
+            'solutions_found': solutions_found,
+            'solution_rate': solution_rate,
             'score_distribution': score_dist,
             'rank_distribution': rank_dist,
             'theme_performance': theme_performance,
+            'rule_infractions': len(self.rule_infractions),
+            'illegal_moves_detected': len(self.illegal_moves_detected),
             'timestamp': datetime.now().isoformat()
         }
         
         return report
     
     def print_report(self, report: Dict):
-        """Print formatted analysis report"""
+        """Print formatted C0BR4 analysis report"""
         print("\n" + "=" * 80)
-        print("V7P3R PUZZLE ANALYSIS REPORT")
+        print("C0BR4 PUZZLE ANALYSIS REPORT")
         print("=" * 80)
         
         print(f"Puzzles Analyzed: {report['total_puzzles']}")
         print(f"Total Score: {report['total_score']}/{report['max_possible_score']}")
         print(f"Average Score: {report['average_score']:.2f}/5.0")
         print(f"Percentage Score: {report['percentage_score']:.1f}%")
-        print(f"Top-5 Hit Rate: {report['top5_hits']}/{report['total_puzzles']} ({report['top5_hit_rate']:.1f}%)")
+        
+        # Rule compliance section
+        print("\n🔒 RULE COMPLIANCE ANALYSIS:")
+        print(f"Legal Moves: {report['legal_moves']}/{report['total_puzzles']} ({report['legal_move_rate']:.1f}%)")
+        print(f"Illegal Moves: {report['illegal_moves']} ({100-report['legal_move_rate']:.1f}%)")
+        print(f"Rule Infractions Detected: {report['rule_infractions']}")
+        
+        if report['illegal_moves'] > 0:
+            print("🚨 WARNING: Illegal moves detected! Bitboard validation may need improvement.")
+        else:
+            print("✅ No illegal moves detected - bitboard validation working correctly!")
+        
+        print(f"\nTop-5 Hit Rate: {report['top5_hits']}/{report['total_puzzles']} ({report['top5_hit_rate']:.1f}%)")
+        print(f"Solution Finding Rate: {report['solutions_found']}/{report['total_puzzles']} ({report['solution_rate']:.1f}%)")
         
         print("\nScore Distribution:")
         for score in range(5, -1, -1):
@@ -481,30 +550,34 @@ class V7P3RPuzzleAnalyzer:
             bar = "█" * int(percentage / 2)
             print(f"  {rank_labels[rank]:12s}: {count:3d} ({percentage:4.1f}%) {bar}")
         
-        print("\nTheme Performance (Top 10):")
+        print("\nTheme Performance:")
         theme_items = list(report['theme_performance'].items())
         theme_items.sort(key=lambda x: x[1]['average_score'], reverse=True)
         
-        for theme, data in theme_items[:10]:
+        for theme, data in theme_items:
             avg_score = data['average_score']
             percentage = data['percentage']
+            legal_rate = data['legal_rate']
             count = data['total']
-            print(f"  {theme:20s}: {avg_score:.2f}/5.0 ({percentage:4.1f}%) [{count:2d} puzzles]")
+            print(f"  {theme:15s}: {avg_score:.2f}/5.0 ({percentage:4.1f}%) Legal: {legal_rate:4.1f}% [{count:2d} puzzles]")
     
     def save_results(self, filename: Optional[str] = None):
         """Save results to JSON file"""
         if not filename:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"v7p3r_puzzle_analysis_{timestamp}.json"
+            filename = f"c0br4_puzzle_analysis_{timestamp}.json"
         
         data = {
             'analysis_results': self.results,
             'report': self.generate_report(self.results),
+            'rule_infractions': self.rule_infractions,
+            'illegal_moves_detected': self.illegal_moves_detected,
             'metadata': {
-                'v7p3r_path': self.v7p3r_path,
+                'c0br4_path': self.c0br4_path,
                 'stockfish_path': self.stockfish_path,
                 'puzzle_db_path': self.puzzle_db_path,
-                'timestamp': datetime.now().isoformat()
+                'timestamp': datetime.now().isoformat(),
+                'focus': 'Rule compliance and bitboard validation'
             }
         }
         
@@ -517,15 +590,15 @@ class V7P3RPuzzleAnalyzer:
 def main():
     """Main execution function"""
     try:
-        analyzer = V7P3RPuzzleAnalyzer()
+        analyzer = C0BR4PuzzleAnalyzer()
         
-        # Run analysis on 100 puzzles with generous time for V7P3R
+        # Run analysis focusing on rule compliance and tactical awareness
         results = analyzer.run_analysis(
-            num_puzzles=100,
+            num_puzzles=50,
             rating_min=1200,
-            rating_max=2000,
-            v7p3r_time=20.0,  # Give V7P3R 20 seconds per puzzle to avoid timeouts
-            themes_filter=None  # No theme filter for initial broad analysis
+            rating_max=1600,
+            c0br4_time=8.0,  # Give C0BR4 8 seconds per puzzle
+            themes_filter=['castling', 'pin', 'fork', 'skewer', 'discovery', 'endgame', 'mate']
         )
         
         if results:
@@ -535,6 +608,12 @@ def main():
             
             # Save results
             analyzer.save_results()
+            
+            # Print rule infraction summary if any
+            if analyzer.rule_infractions:
+                print("\n🚨 RULE INFRACTIONS DETECTED:")
+                for infraction in analyzer.rule_infractions:
+                    print(f"  Puzzle {infraction['puzzle_id']}: {infraction['illegal_move']} - {infraction['reason']}")
         
     except Exception as e:
         print(f"Error: {e}")

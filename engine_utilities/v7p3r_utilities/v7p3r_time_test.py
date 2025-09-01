@@ -17,7 +17,7 @@ import time
 sys.path.append(os.path.dirname(__file__))
 
 try:
-    from v7p3r_puzzle_analyzer import V7P3RPuzzleAnalyzer
+    from engine_utilities.v7p3r_utilities.v7p3r_puzzle_analyzer import V7P3RPuzzleAnalyzer
     
     print("V7P3R Time Allocation Testing")
     print("=" * 50)
