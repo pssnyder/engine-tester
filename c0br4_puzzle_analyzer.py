@@ -18,6 +18,7 @@ import time
 import json
 import os
 import sys
+import argparse
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple, Union
 import chess
@@ -589,15 +590,35 @@ class C0BR4PuzzleAnalyzer:
 
 def main():
     """Main execution function"""
+    parser = argparse.ArgumentParser(description='C0BR4 Puzzle Analyzer')
+    parser.add_argument('--engine', default=r"s:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\C0BR4\C0BR4_v2.3.exe",
+                        help='Path to C0BR4 engine executable')
+    parser.add_argument('--max-puzzles', type=int, default=50,
+                        help='Maximum number of puzzles to analyze')
+    parser.add_argument('--rating-min', type=int, default=1200,
+                        help='Minimum puzzle rating')
+    parser.add_argument('--rating-max', type=int, default=1600,
+                        help='Maximum puzzle rating')
+    parser.add_argument('--time', type=float, default=8.0,
+                        help='Time allocation per puzzle in seconds')
+    
+    args = parser.parse_args()
+    
     try:
-        analyzer = C0BR4PuzzleAnalyzer()
+        # Use command line arguments
+        analyzer = C0BR4PuzzleAnalyzer(c0br4_path=args.engine)
+        
+        print(f"Using engine: {args.engine}")
+        print(f"Max puzzles: {args.max_puzzles}")
+        print(f"Rating range: {args.rating_min}-{args.rating_max}")
+        print(f"Time per puzzle: {args.time}s")
         
         # Run analysis focusing on rule compliance and tactical awareness
         results = analyzer.run_analysis(
-            num_puzzles=50,
-            rating_min=1200,
-            rating_max=1600,
-            c0br4_time=8.0,  # Give C0BR4 8 seconds per puzzle
+            num_puzzles=args.max_puzzles,
+            rating_min=args.rating_min,
+            rating_max=args.rating_max,
+            c0br4_time=args.time,
             themes_filter=['castling', 'pin', 'fork', 'skewer', 'discovery', 'endgame', 'mate']
         )
         
