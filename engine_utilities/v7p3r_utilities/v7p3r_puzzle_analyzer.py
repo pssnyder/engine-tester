@@ -1,14 +1,26 @@
 #!/usr/bin/env python3
 """
-V7P3R Puzzle Analyzer
+V7P3R Enhanced Puzzle Analyzer
 
-Simple but effective puzzle testing system that:
+Advanced puzzle testing system that:
 1. Pulls positions from puzzle database
-2. Gives V7P3R generous time to analyze
-3. Compares V7P3R's choice against Stockfish's top 5 moves
-4. Scores performance and tracks puzzle themes
+2. Analyzes complete puzzle sequences, not just first position
+3. Plays through entire solution chains with V7P3R
+4. Compares each move against Stockfish's top 5 moves
+5. Calculates weighted accuracy scores (later moves weighted higher)
+6. Estimates V7P3R's puzzle rating based on perfect/high-accuracy performance
+7. Tracks performance degradation through sequence depth
+8. Provides comprehensive theme-based analysis
+
+Enhanced Features:
+- Sequence analysis: Plays opponent moves and challenges V7P3R on each position
+- Weighted scoring: Later positions in sequences count for more
+- Rating estimation: Analyzes puzzle ratings where V7P3R excels
+- Position depth analysis: Shows how performance changes with sequence depth
+- Comprehensive reporting: Theme performance, accuracy distributions, insights
 
 Scoring: 5pts (1st), 4pts (2nd), 3pts (3rd), 2pts (4th), 1pt (5th), 0pts (not in top 5)
+Sequence Accuracy: Weighted exponentially (1, 1.5, 2.25, 3.375, etc.)
 """
 
 import subprocess
@@ -22,7 +34,7 @@ import chess
 import chess.engine
 
 # Add the chess-puzzle-challenger src to path for database access
-sys.path.append(os.path.join(os.path.dirname(__file__), 'chess-puzzle-challenger', 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'chess-puzzle-challenger', 'src'))
 try:
     from database import PuzzleDatabase, Puzzle
 except ImportError:
@@ -34,7 +46,7 @@ class V7P3RPuzzleAnalyzer:
     """Analyzes V7P3R performance against puzzle database using Stockfish comparison"""
     
     def __init__(self, 
-                 v7p3r_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v7.0.exe",
+                 v7p3r_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v10.0.exe",
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
                  puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\chess-puzzle-challenger\puzzles.db"):
         
@@ -270,93 +282,212 @@ class V7P3RPuzzleAnalyzer:
         
         return 0, 0  # Not in top 5
     
-    def analyze_puzzle(self, puzzle: Puzzle, v7p3r_time: float = 10.0) -> Optional[Dict]:
-        """Analyze a single puzzle using correct challenge position logic"""
+    def calculate_weighted_sequence_score(self, sequence_results: List[bool]) -> float:
+        """
+        Calculate weighted accuracy score for puzzle sequence
+        Later moves in the sequence are weighted more heavily
+        Returns: weighted accuracy percentage (0-100)
+        """
+        if not sequence_results:
+            return 0.0
+        
+        total_weight = 0.0
+        weighted_correct = 0.0
+        
+        for i, is_correct in enumerate(sequence_results):
+            # Exponential weighting: later moves are more important
+            # Weight increases exponentially: 1, 1.5, 2.25, 3.375, etc.
+            weight = 1.5 ** i
+            total_weight += weight
+            
+            if is_correct:
+                weighted_correct += weight
+        
+        return (weighted_correct / total_weight) * 100 if total_weight > 0 else 0.0
+    
+    def parse_puzzle_sequence(self, puzzle: Puzzle) -> List[str]:
+        """Parse puzzle moves into sequence of individual moves"""
+        if not puzzle.moves:
+            return []
+        return puzzle.moves.split()
+    
+    def analyze_puzzle_sequence(self, puzzle: Puzzle, v7p3r_time: float = 10.0) -> Optional[Dict]:
+        """
+        Analyze complete puzzle sequence, playing through all moves
+        Returns detailed analysis of V7P3R's performance on each position
+        """
         print(f"Analyzing puzzle {puzzle.id} (Rating: {puzzle.rating})")
         print(f"Themes: {puzzle.themes}")
         print(f"Original FEN: {puzzle.fen}")
-        print(f"Solution sequence: {puzzle.moves}")
         
-        # Get the actual challenge position and expected move
-        challenge_fen, expected_move, is_valid, context_info = self.get_puzzle_challenge_position(puzzle)
-        
-        if not is_valid:
-            print(f"❌ Cannot process puzzle: {context_info}")
+        sequence = self.parse_puzzle_sequence(puzzle)
+        if len(sequence) < 2:
+            print(f"❌ Insufficient moves in sequence: {len(sequence)}")
             return None
         
-        print(f"Challenge FEN: {challenge_fen}")
-        print(f"Expected move: {expected_move} ({context_info})")
+        print(f"Solution sequence ({len(sequence)} moves): {' '.join(sequence)}")
         
-        # Get V7P3R's move on the challenge position
-        print(f"Giving V7P3R {v7p3r_time} seconds to solve the challenge...")
-        start_analysis = time.time()
-        v7p3r_move = self.get_v7p3r_move(challenge_fen, v7p3r_time)
-        analysis_time = time.time() - start_analysis
+        # Initialize tracking variables
+        board = chess.Board(puzzle.fen)
+        sequence_results = []
+        position_analyses = []
+        v7p3r_found_all = True
         
-        if not v7p3r_move:
-            print(f"❌ V7P3R failed to return a move (took {analysis_time:.1f}s)")
+        # Process each position in the sequence
+        for move_index in range(0, len(sequence), 2):
+            position_num = (move_index // 2) + 1
+            
+            # Check if we have both opponent move and expected response
+            if move_index >= len(sequence):
+                break
+                
+            opponent_move_text = sequence[move_index]
+            expected_move_text = sequence[move_index + 1] if move_index + 1 < len(sequence) else None
+            
+            if not expected_move_text:
+                print(f"Position {position_num}: No expected response for opponent move {opponent_move_text}")
+                break
+            
+            print(f"\n--- Position {position_num} ---")
+            current_fen = board.fen()
+            turn_info = f"{'White' if board.turn else 'Black'} to move"
+            print(f"Current position: {turn_info}")
+            
+            # Apply opponent's move
+            try:
+                # Try UCI first, then SAN
+                try:
+                    opponent_move = chess.Move.from_uci(opponent_move_text)
+                    if opponent_move not in board.legal_moves:
+                        raise ValueError("Move not legal")
+                except:
+                    opponent_move = board.parse_san(opponent_move_text)
+                
+                board.push(opponent_move)
+                challenge_fen = board.fen()
+                print(f"After opponent plays {opponent_move_text}: {challenge_fen}")
+                
+            except Exception as e:
+                print(f"❌ Cannot apply opponent move {opponent_move_text}: {e}")
+                break
+            
+            # Parse expected move
+            try:
+                try:
+                    expected_move = chess.Move.from_uci(expected_move_text)
+                    if expected_move not in board.legal_moves:
+                        raise ValueError("Move not legal")
+                    expected_move_uci = str(expected_move)
+                except:
+                    expected_move = board.parse_san(expected_move_text)
+                    expected_move_uci = str(expected_move)
+                
+                print(f"Expected response: {expected_move_uci}")
+                
+            except Exception as e:
+                print(f"❌ Cannot parse expected move {expected_move_text}: {e}")
+                break
+            
+            # Get V7P3R's move for this position
+            print(f"Challenging V7P3R with {v7p3r_time}s...")
+            start_time = time.time()
+            v7p3r_move = self.get_v7p3r_move(challenge_fen, v7p3r_time)
+            analysis_time = time.time() - start_time
+            
+            if not v7p3r_move:
+                print(f"❌ V7P3R failed to return move (took {analysis_time:.1f}s)")
+                sequence_results.append(False)
+                v7p3r_found_all = False
+                # Continue to next position anyway
+                try:
+                    board.push(expected_move)
+                except:
+                    break
+                continue
+            
+            print(f"V7P3R chose: {v7p3r_move} (took {analysis_time:.1f}s)")
+            
+            # Get Stockfish analysis for this position
+            stockfish_moves = self.get_stockfish_top_moves(challenge_fen, 5, 2.0)
+            if stockfish_moves:
+                print("Stockfish's top 5:")
+                for i, (move, score) in enumerate(stockfish_moves, 1):
+                    indicator = "🎯" if move == expected_move_uci else "  "
+                    v7_indicator = "👑" if move == v7p3r_move else "  "
+                    print(f"  {i}. {move} (score: {score:+d}) {indicator}{v7_indicator}")
+            
+            # Score V7P3R's move
+            score, rank = self.score_v7p3r_move(v7p3r_move, stockfish_moves)
+            found_solution = v7p3r_move == expected_move_uci
+            sequence_results.append(found_solution)
+            
+            if found_solution:
+                print(f"✅ V7P3R found the correct move! (Stockfish rank: #{rank if rank > 0 else 'not in top 5'})")
+            else:
+                print(f"❌ V7P3R missed the correct move (chose rank #{rank if rank > 0 else 'not in top 5'})")
+                v7p3r_found_all = False
+            
+            # Store position analysis
+            position_analysis = {
+                'position_number': position_num,
+                'challenge_fen': challenge_fen,
+                'opponent_move': opponent_move_text,
+                'expected_move': expected_move_uci,
+                'v7p3r_move': v7p3r_move,
+                'v7p3r_found_solution': found_solution,
+                'v7p3r_stockfish_score': score,
+                'v7p3r_stockfish_rank': rank,
+                'stockfish_top_moves': stockfish_moves,
+                'analysis_time': analysis_time,
+                'turn_info': f"{'White' if not board.turn else 'Black'} to move after opponent's {opponent_move_text}"
+            }
+            position_analyses.append(position_analysis)
+            
+            # Apply the expected move to continue sequence
+            try:
+                board.push(expected_move)
+            except Exception as e:
+                print(f"❌ Cannot continue sequence after {expected_move_text}: {e}")
+                break
+        
+        # Calculate sequence metrics
+        if not sequence_results:
+            print("❌ No positions were successfully analyzed")
             return None
         
-        print(f"V7P3R chose: {v7p3r_move} (took {analysis_time:.1f}s)")
+        sequence_accuracy = (sum(sequence_results) / len(sequence_results)) * 100
+        weighted_accuracy = self.calculate_weighted_sequence_score(sequence_results)
         
-        # Get Stockfish's top 5 moves on the challenge position
-        print("Getting Stockfish's top 5 moves for the challenge position...")
-        stockfish_moves = self.get_stockfish_top_moves(challenge_fen, 5, 2.0)
+        print(f"\n🎯 SEQUENCE SUMMARY:")
+        print(f"Positions analyzed: {len(sequence_results)}")
+        print(f"Correct solutions: {sum(sequence_results)}/{len(sequence_results)}")
+        print(f"Linear accuracy: {sequence_accuracy:.1f}%")
+        print(f"Weighted accuracy: {weighted_accuracy:.1f}%")
+        print(f"Perfect sequence: {'Yes' if v7p3r_found_all else 'No'}")
         
-        if not stockfish_moves:
-            print("❌ Stockfish failed to analyze challenge position")
-            return None
-        
-        print("Stockfish's top 5 moves:")
-        for i, (move, score) in enumerate(stockfish_moves, 1):
-            indicator = "🎯" if move == expected_move else "  "
-            print(f"  {i}. {move} (score: {score:+d}) {indicator}")
-        
-        # Score V7P3R's performance
-        score, rank = self.score_v7p3r_move(v7p3r_move, stockfish_moves)
-        
-        if rank > 0:
-            print(f"✅ V7P3R's move ranked #{rank} - Score: {score}/5")
-        else:
-            print(f"❌ V7P3R's move not in top 5 - Score: 0/5")
-        
-        # Check if V7P3R found the expected tactical move
-        found_solution = v7p3r_move == expected_move
-        if found_solution:
-            print(f"🎯 V7P3R found the puzzle solution!")
-        else:
-            print(f"❌ V7P3R missed the puzzle solution")
-        
-        # Check if expected move is in Stockfish's top moves
-        expected_in_top5 = any(expected_move == sf_move for sf_move, _ in stockfish_moves)
-        if expected_in_top5:
-            expected_rank = next(i for i, (sf_move, _) in enumerate(stockfish_moves, 1) if sf_move == expected_move)
-            print(f"✅ Expected move ranks #{expected_rank} in Stockfish's analysis")
-        else:
-            print(f"⚠️  Expected move not in Stockfish's top 5 (unusual puzzle)")
-        
+        # Compile comprehensive result
         result = {
             'puzzle_id': puzzle.id,
             'original_fen': puzzle.fen,
-            'challenge_fen': challenge_fen,
             'rating': puzzle.rating,
             'themes': puzzle.themes.split() if puzzle.themes else [],
-            'solution_sequence': puzzle.moves,
-            'v7p3r_move': v7p3r_move,
-            'v7p3r_score': score,
-            'v7p3r_rank': rank,
-            'v7p3r_found_solution': found_solution,
-            'stockfish_top_moves': stockfish_moves,
-            'expected_move': expected_move,
-            'expected_in_stockfish_top5': expected_in_top5,
-            'context_info': context_info,
+            'solution_sequence': sequence,
+            'positions_analyzed': len(sequence_results),
+            'sequence_results': sequence_results,
+            'sequence_accuracy_linear': sequence_accuracy,
+            'sequence_accuracy_weighted': weighted_accuracy,
+            'perfect_sequence': v7p3r_found_all,
+            'position_analyses': position_analyses,
             'v7p3r_time_seconds': v7p3r_time,
-            'analysis_time_actual': analysis_time,
             'timestamp': datetime.now().isoformat()
         }
         
         print("-" * 60)
         return result
+    
+    def analyze_puzzle(self, puzzle: Puzzle, v7p3r_time: float = 10.0) -> Optional[Dict]:
+        """Analyze a puzzle using the enhanced sequence-based approach"""
+        return self.analyze_puzzle_sequence(puzzle, v7p3r_time)
     
     def run_analysis(self, 
                      num_puzzles: int = 100,
@@ -401,95 +532,213 @@ class V7P3RPuzzleAnalyzer:
         return results
     
     def generate_report(self, results: List[Dict]) -> Dict:
-        """Generate analysis report"""
+        """Generate enhanced analysis report with sequence-based metrics"""
         if not results:
             return {}
         
         total_puzzles = len(results)
-        total_score = sum(r['v7p3r_score'] for r in results)
-        max_possible_score = total_puzzles * 5
         
-        # Score distribution
-        score_dist = {i: 0 for i in range(6)}
+        # Legacy single-position metrics (for backward compatibility)
+        total_positions = sum(r.get('positions_analyzed', 1) for r in results)
+        
+        # Sequence-based metrics
+        linear_accuracies = [r.get('sequence_accuracy_linear', 0) for r in results if 'sequence_accuracy_linear' in r]
+        weighted_accuracies = [r.get('sequence_accuracy_weighted', 0) for r in results if 'sequence_accuracy_weighted' in r]
+        perfect_sequences = sum(1 for r in results if r.get('perfect_sequence', False))
+        
+        avg_linear_accuracy = sum(linear_accuracies) / len(linear_accuracies) if linear_accuracies else 0
+        avg_weighted_accuracy = sum(weighted_accuracies) / len(weighted_accuracies) if weighted_accuracies else 0
+        perfect_sequence_rate = (perfect_sequences / total_puzzles) * 100
+        
+        # Rating analysis for estimation
+        perfect_puzzle_ratings = [r['rating'] for r in results if r.get('perfect_sequence', False)]
+        high_accuracy_ratings = [r['rating'] for r in results if r.get('sequence_accuracy_weighted', 0) >= 80]
+        
+        # Calculate estimated rating range where V7P3R performs well
+        estimated_rating_range = {
+            'perfect_sequences': {
+                'count': len(perfect_puzzle_ratings),
+                'min_rating': min(perfect_puzzle_ratings) if perfect_puzzle_ratings else 0,
+                'max_rating': max(perfect_puzzle_ratings) if perfect_puzzle_ratings else 0,
+                'avg_rating': sum(perfect_puzzle_ratings) / len(perfect_puzzle_ratings) if perfect_puzzle_ratings else 0
+            },
+            'high_accuracy': {
+                'count': len(high_accuracy_ratings),
+                'min_rating': min(high_accuracy_ratings) if high_accuracy_ratings else 0,
+                'max_rating': max(high_accuracy_ratings) if high_accuracy_ratings else 0,
+                'avg_rating': sum(high_accuracy_ratings) / len(high_accuracy_ratings) if high_accuracy_ratings else 0
+            }
+        }
+        
+        # Position-by-position performance analysis
+        position_performance = {}
         for result in results:
-            score_dist[result['v7p3r_score']] += 1
+            if 'position_analyses' in result:
+                for pos_analysis in result['position_analyses']:
+                    pos_num = pos_analysis['position_number']
+                    if pos_num not in position_performance:
+                        position_performance[pos_num] = {'total': 0, 'correct': 0, 'stockfish_scores': []}
+                    
+                    position_performance[pos_num]['total'] += 1
+                    if pos_analysis['v7p3r_found_solution']:
+                        position_performance[pos_num]['correct'] += 1
+                    position_performance[pos_num]['stockfish_scores'].append(pos_analysis['v7p3r_stockfish_score'])
         
-        # Rank distribution
-        rank_dist = {i: 0 for i in range(6)}  # 0 = not in top 5, 1-5 = ranks
-        for result in results:
-            rank_dist[result['v7p3r_rank']] += 1
+        # Calculate position accuracy rates
+        for pos_num in position_performance:
+            data = position_performance[pos_num]
+            data['accuracy_rate'] = (data['correct'] / data['total']) * 100
+            data['avg_stockfish_score'] = sum(data['stockfish_scores']) / len(data['stockfish_scores'])
         
-        # Theme analysis
+        # Theme analysis with sequence metrics
         theme_performance = {}
         for result in results:
-            for theme in result['themes']:
+            for theme in result.get('themes', []):
                 if theme not in theme_performance:
-                    theme_performance[theme] = {'total': 0, 'score_sum': 0}
-                theme_performance[theme]['total'] += 1
-                theme_performance[theme]['score_sum'] += result['v7p3r_score']
+                    theme_performance[theme] = {
+                        'total': 0, 
+                        'perfect_sequences': 0,
+                        'linear_accuracy_sum': 0,
+                        'weighted_accuracy_sum': 0,
+                        'ratings': []
+                    }
+                
+                theme_data = theme_performance[theme]
+                theme_data['total'] += 1
+                theme_data['linear_accuracy_sum'] += result.get('sequence_accuracy_linear', 0)
+                theme_data['weighted_accuracy_sum'] += result.get('sequence_accuracy_weighted', 0)
+                theme_data['ratings'].append(result['rating'])
+                
+                if result.get('perfect_sequence', False):
+                    theme_data['perfect_sequences'] += 1
         
         # Calculate theme averages
         for theme in theme_performance:
-            theme_data = theme_performance[theme]
-            theme_data['average_score'] = theme_data['score_sum'] / theme_data['total']
-            theme_data['percentage'] = (theme_data['score_sum'] / (theme_data['total'] * 5)) * 100
+            data = theme_performance[theme]
+            data['avg_linear_accuracy'] = data['linear_accuracy_sum'] / data['total']
+            data['avg_weighted_accuracy'] = data['weighted_accuracy_sum'] / data['total']
+            data['perfect_sequence_rate'] = (data['perfect_sequences'] / data['total']) * 100
+            data['avg_rating'] = sum(data['ratings']) / len(data['ratings'])
         
-        # Top 5 hit rate
-        top5_hits = sum(1 for r in results if r['v7p3r_rank'] > 0)
-        top5_rate = (top5_hits / total_puzzles) * 100
+        # Accuracy distribution
+        accuracy_buckets = {'0-20%': 0, '20-40%': 0, '40-60%': 0, '60-80%': 0, '80-100%': 0}
+        for accuracy in weighted_accuracies:
+            if accuracy < 20:
+                accuracy_buckets['0-20%'] += 1
+            elif accuracy < 40:
+                accuracy_buckets['20-40%'] += 1
+            elif accuracy < 60:
+                accuracy_buckets['40-60%'] += 1
+            elif accuracy < 80:
+                accuracy_buckets['60-80%'] += 1
+            else:
+                accuracy_buckets['80-100%'] += 1
         
         report = {
             'total_puzzles': total_puzzles,
-            'total_score': total_score,
-            'max_possible_score': max_possible_score,
-            'average_score': total_score / total_puzzles,
-            'percentage_score': (total_score / max_possible_score) * 100,
-            'top5_hits': top5_hits,
-            'top5_hit_rate': top5_rate,
-            'score_distribution': score_dist,
-            'rank_distribution': rank_dist,
+            'total_positions_analyzed': total_positions,
+            'sequence_metrics': {
+                'avg_linear_accuracy': avg_linear_accuracy,
+                'avg_weighted_accuracy': avg_weighted_accuracy,
+                'perfect_sequences': perfect_sequences,
+                'perfect_sequence_rate': perfect_sequence_rate
+            },
+            'estimated_rating_analysis': estimated_rating_range,
+            'position_performance': position_performance,
             'theme_performance': theme_performance,
+            'accuracy_distribution': accuracy_buckets,
             'timestamp': datetime.now().isoformat()
         }
         
         return report
     
     def print_report(self, report: Dict):
-        """Print formatted analysis report"""
+        """Print enhanced analysis report with sequence-based metrics"""
         print("\n" + "=" * 80)
-        print("V7P3R PUZZLE ANALYSIS REPORT")
+        print("V7P3R ENHANCED PUZZLE ANALYSIS REPORT")
         print("=" * 80)
         
         print(f"Puzzles Analyzed: {report['total_puzzles']}")
-        print(f"Total Score: {report['total_score']}/{report['max_possible_score']}")
-        print(f"Average Score: {report['average_score']:.2f}/5.0")
-        print(f"Percentage Score: {report['percentage_score']:.1f}%")
-        print(f"Top-5 Hit Rate: {report['top5_hits']}/{report['total_puzzles']} ({report['top5_hit_rate']:.1f}%)")
+        print(f"Total Positions: {report['total_positions_analyzed']}")
         
-        print("\nScore Distribution:")
-        for score in range(5, -1, -1):
-            count = report['score_distribution'][score]
+        # Sequence Performance Metrics
+        seq_metrics = report['sequence_metrics']
+        print(f"\n🎯 SEQUENCE PERFORMANCE:")
+        print(f"Average Linear Accuracy: {seq_metrics['avg_linear_accuracy']:.1f}%")
+        print(f"Average Weighted Accuracy: {seq_metrics['avg_weighted_accuracy']:.1f}%")
+        print(f"Perfect Sequences: {seq_metrics['perfect_sequences']}/{report['total_puzzles']} ({seq_metrics['perfect_sequence_rate']:.1f}%)")
+        
+        # Rating Analysis for V7P3R Estimation
+        rating_analysis = report['estimated_rating_analysis']
+        print(f"\n📊 ESTIMATED V7P3R RATING ANALYSIS:")
+        
+        perfect_data = rating_analysis['perfect_sequences']
+        if perfect_data['count'] > 0:
+            print(f"Perfect Sequences ({perfect_data['count']} puzzles):")
+            print(f"  Rating Range: {perfect_data['min_rating']}-{perfect_data['max_rating']}")
+            print(f"  Average Rating: {perfect_data['avg_rating']:.0f}")
+        
+        high_acc_data = rating_analysis['high_accuracy']
+        if high_acc_data['count'] > 0:
+            print(f"High Accuracy ≥80% ({high_acc_data['count']} puzzles):")
+            print(f"  Rating Range: {high_acc_data['min_rating']}-{high_acc_data['max_rating']}")
+            print(f"  Average Rating: {high_acc_data['avg_rating']:.0f}")
+        
+        # V7P3R Estimated Rating Range
+        if perfect_data['count'] > 0 and high_acc_data['count'] > 0:
+            estimated_min = min(perfect_data['min_rating'], high_acc_data['min_rating'])
+            estimated_max = max(perfect_data['max_rating'], high_acc_data['max_rating'])
+            estimated_avg = (perfect_data['avg_rating'] + high_acc_data['avg_rating']) / 2
+            print(f"\n🎲 ESTIMATED V7P3R RATING: {estimated_min}-{estimated_max} (avg: {estimated_avg:.0f})")
+        
+        # Accuracy Distribution
+        print(f"\nAccuracy Distribution:")
+        for bucket, count in report['accuracy_distribution'].items():
             percentage = (count / report['total_puzzles']) * 100
             bar = "█" * int(percentage / 2)
-            print(f"  {score} pts: {count:3d} ({percentage:4.1f}%) {bar}")
+            print(f"  {bucket:8s}: {count:3d} ({percentage:4.1f}%) {bar}")
         
-        print("\nRank Distribution:")
-        rank_labels = {0: "Not in top 5", 1: "1st (best)", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
-        for rank in range(0, 6):
-            count = report['rank_distribution'][rank]
-            percentage = (count / report['total_puzzles']) * 100
-            bar = "█" * int(percentage / 2)
-            print(f"  {rank_labels[rank]:12s}: {count:3d} ({percentage:4.1f}%) {bar}")
+        # Position-by-Position Performance
+        if report['position_performance']:
+            print(f"\n📍 POSITION PERFORMANCE (Sequence Depth Analysis):")
+            for pos_num in sorted(report['position_performance'].keys()):
+                data = report['position_performance'][pos_num]
+                print(f"  Position {pos_num}: {data['correct']}/{data['total']} ({data['accuracy_rate']:.1f}%) - Avg SF Score: {data['avg_stockfish_score']:.1f}")
         
-        print("\nTheme Performance (Top 10):")
+        # Theme Performance (Top 15)
+        print(f"\n🎨 THEME PERFORMANCE (Top 15 by Weighted Accuracy):")
         theme_items = list(report['theme_performance'].items())
-        theme_items.sort(key=lambda x: x[1]['average_score'], reverse=True)
+        theme_items.sort(key=lambda x: x[1]['avg_weighted_accuracy'], reverse=True)
         
-        for theme, data in theme_items[:10]:
-            avg_score = data['average_score']
-            percentage = data['percentage']
+        for theme, data in theme_items[:15]:
+            perfect_rate = data['perfect_sequence_rate']
+            weighted_acc = data['avg_weighted_accuracy']
             count = data['total']
-            print(f"  {theme:20s}: {avg_score:.2f}/5.0 ({percentage:4.1f}%) [{count:2d} puzzles]")
+            avg_rating = data['avg_rating']
+            print(f"  {theme:20s}: {weighted_acc:4.1f}% weighted ({perfect_rate:4.1f}% perfect) [{count:2d} puzzles, avg {avg_rating:.0f}]")
+        
+        # Performance Insights
+        print(f"\n💡 PERFORMANCE INSIGHTS:")
+        
+        # Calculate performance degradation through sequence
+        if report['position_performance']:
+            pos_data = report['position_performance']
+            if 1 in pos_data and len(pos_data) > 1:
+                first_pos_acc = pos_data[1]['accuracy_rate']
+                later_pos_accs = [pos_data[i]['accuracy_rate'] for i in pos_data if i > 1]
+                if later_pos_accs:
+                    avg_later_acc = sum(later_pos_accs) / len(later_pos_accs)
+                    degradation = first_pos_acc - avg_later_acc
+                    print(f"  Sequence Degradation: {degradation:+.1f}% (first pos: {first_pos_acc:.1f}%, later avg: {avg_later_acc:.1f}%)")
+        
+        # Theme strengths and weaknesses
+        if theme_items:
+            strongest_theme = theme_items[0]
+            weakest_theme = theme_items[-1]
+            print(f"  Strongest Theme: {strongest_theme[0]} ({strongest_theme[1]['avg_weighted_accuracy']:.1f}%)")
+            print(f"  Weakest Theme: {weakest_theme[0]} ({weakest_theme[1]['avg_weighted_accuracy']:.1f}%)")
+        
+        print("=" * 80)
     
     def save_results(self, filename: Optional[str] = None):
         """Save results to JSON file"""
@@ -519,22 +768,24 @@ def main():
     try:
         analyzer = V7P3RPuzzleAnalyzer()
         
-        # Run analysis on 100 puzzles with generous time for V7P3R
+        # Run enhanced sequence analysis on puzzles
         results = analyzer.run_analysis(
-            num_puzzles=100,
+            num_puzzles=50,  # Start with 50 for testing the enhanced system
             rating_min=1200,
-            rating_max=2000,
-            v7p3r_time=20.0,  # Give V7P3R 20 seconds per puzzle to avoid timeouts
-            themes_filter=None  # No theme filter for initial broad analysis
+            rating_max=2200,  # Increased upper range to test V7P3R's limits
+            v7p3r_time=15.0,  # Generous time for sequence analysis
+            themes_filter=None  # No theme filter for comprehensive analysis
         )
         
         if results:
-            # Generate and print report
+            # Generate and print enhanced report
             report = analyzer.generate_report(results)
             analyzer.print_report(report)
             
-            # Save results
-            analyzer.save_results()
+            # Save results with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"v7p3r_enhanced_sequence_analysis_{timestamp}.json"
+            analyzer.save_results(filename)
         
     except Exception as e:
         print(f"Error: {e}")
