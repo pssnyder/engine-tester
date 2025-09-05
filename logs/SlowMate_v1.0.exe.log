@@ -1,7 +1,7 @@
 info string init complete
 SlowMate UCI ready. Type 'uci' to begin.
 id name SlowMate
-id author Pat Snyder
+id author Github Copilot
 option name Hash type spin default 64 min 1 max 1024
 option name Debug type check default false
 uciok
