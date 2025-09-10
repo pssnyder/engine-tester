@@ -468,30 +468,80 @@ class UniversalPuzzleAnalyzer:
         """Analyze a puzzle using the enhanced sequence-based approach"""
         return self.analyze_puzzle_sequence(puzzle, engine_time)
     
+    def extract_puzzle_ids_from_results(self, results_file: str) -> List[str]:
+        """Extract puzzle IDs from a previous analysis results file"""
+        try:
+            with open(results_file, 'r') as f:
+                data = json.load(f)
+            
+            puzzle_ids = []
+            
+            # Try to extract from analysis_results
+            if 'analysis_results' in data:
+                puzzle_ids = [result['puzzle_id'] for result in data['analysis_results'] if 'puzzle_id' in result]
+            # Fallback: try direct list of results
+            elif isinstance(data, list):
+                puzzle_ids = [result['puzzle_id'] for result in data if 'puzzle_id' in result]
+            
+            print(f"Extracted {len(puzzle_ids)} puzzle IDs from {results_file}")
+            return puzzle_ids
+            
+        except Exception as e:
+            print(f"Error extracting puzzle IDs from {results_file}: {e}")
+            return []
+    
     def run_analysis(self, 
                      num_puzzles: int = 100,
                      rating_min: int = 1200,
                      rating_max: int = 2000,
                      engine_time: float = 10.0,
-                     themes_filter: Optional[List[str]] = None) -> List[Dict]:
-        """Run analysis on multiple puzzles"""
+                     themes_filter: Optional[List[str]] = None,
+                     force_puzzle_ids: Optional[List[str]] = None,
+                     comparison_file: Optional[str] = None) -> List[Dict]:
+        """Run analysis on multiple puzzles with optional puzzle ID forcing for comparison"""
         
-        print(f"{self.engine_name} Universal Puzzle Analysis - {num_puzzles} puzzles")
-        print(f"Engine: {self.engine_name}")
-        print(f"Rating range: {rating_min}-{rating_max}")
-        print(f"Engine thinking time: {engine_time} seconds")
-        if themes_filter:
-            print(f"Theme filter: {themes_filter}")
+        # Handle comparison file input
+        if comparison_file and not force_puzzle_ids:
+            force_puzzle_ids = self.extract_puzzle_ids_from_results(comparison_file)
+            if not force_puzzle_ids:
+                print(f"Warning: Could not extract puzzle IDs from {comparison_file}, proceeding with normal analysis")
+        
+        if force_puzzle_ids:
+            print(f"{self.engine_name} Universal Puzzle Analysis - {len(force_puzzle_ids)} forced puzzles")
+            print(f"Engine: {self.engine_name}")
+            print(f"Puzzle forcing mode: Using specific puzzle IDs")
+            print(f"Engine thinking time: {engine_time} seconds")
+            if comparison_file:
+                print(f"Comparison file: {comparison_file}")
+        else:
+            print(f"{self.engine_name} Universal Puzzle Analysis - {num_puzzles} puzzles")
+            print(f"Engine: {self.engine_name}")
+            print(f"Rating range: {rating_min}-{rating_max}")
+            print(f"Engine thinking time: {engine_time} seconds")
+            if themes_filter:
+                print(f"Theme filter: {themes_filter}")
         print("=" * 60)
         
         # Get puzzles from database
         db = PuzzleDatabase(self.puzzle_db_path)
-        puzzles = db.query_puzzles(
-            themes=themes_filter,
-            min_rating=rating_min,
-            max_rating=rating_max,
-            quantity=num_puzzles
-        )
+        
+        if force_puzzle_ids:
+            # Get specific puzzles by ID
+            puzzles = []
+            for puzzle_id in force_puzzle_ids:
+                puzzle = db.get_puzzle_by_id(puzzle_id)
+                if puzzle:
+                    puzzles.append(puzzle)
+                else:
+                    print(f"Warning: Puzzle ID {puzzle_id} not found in database")
+        else:
+            # Normal puzzle query
+            puzzles = db.query_puzzles(
+                themes=themes_filter,
+                min_rating=rating_min,
+                max_rating=rating_max,
+                quantity=num_puzzles
+            )
         
         if not puzzles:
             print("No puzzles found matching criteria!")
@@ -755,30 +805,34 @@ class UniversalPuzzleAnalyzer:
 
 
 def main():
-    """Main execution function with engine selection"""
+    """Main execution function with engine selection and comparison support"""
     import argparse
     
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer')
+    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Comparison Support')
     parser.add_argument('--engine', required=True, help='Path to the UCI chess engine to test')
     parser.add_argument('--puzzles', type=int, default=50, help='Number of puzzles to analyze (default: 50)')
     parser.add_argument('--time', type=float, default=15.0, help='Time per position in seconds (default: 15.0)')
     parser.add_argument('--min-rating', type=int, default=1200, help='Minimum puzzle rating (default: 1200)')
     parser.add_argument('--max-rating', type=int, default=2200, help='Maximum puzzle rating (default: 2200)')
     parser.add_argument('--themes', nargs='*', help='Filter by puzzle themes (optional)')
+    parser.add_argument('--comparison-file', type=str, help='JSON file from previous analysis to use same puzzle IDs for comparison')
+    parser.add_argument('--force-puzzle-ids', nargs='*', help='Specific puzzle IDs to analyze (optional)')
     
     args = parser.parse_args()
     
     try:
         analyzer = UniversalPuzzleAnalyzer(engine_path=args.engine)
         
-        # Run enhanced sequence analysis
+        # Run enhanced sequence analysis with comparison support
         results = analyzer.run_analysis(
             num_puzzles=args.puzzles,
             rating_min=args.min_rating,
             rating_max=args.max_rating,
             engine_time=args.time,
-            themes_filter=args.themes
+            themes_filter=args.themes,
+            force_puzzle_ids=args.force_puzzle_ids,
+            comparison_file=args.comparison_file
         )
         
         if results:

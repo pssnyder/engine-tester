@@ -1,0 +1,70 @@
+2025-09-07 13:43:36,248 - INFO - Found 18 V7P3R engines to analyze
+2025-09-07 13:43:36,248 - INFO - Analyzing V7P3R_v4.1.exe (1/18)
+2025-09-07 13:43:36,248 - INFO - Starting comprehensive analysis of V7P3R_v4.1.exe
+2025-09-07 13:43:42,567 - INFO - Running perft depth 4 on V7P3R_v4.1.exe
+2025-09-07 13:43:56,297 - INFO - Running perft depth 5 on V7P3R_v4.1.exe
+2025-09-07 13:44:10,192 - INFO - Running perft depth 6 on V7P3R_v4.1.exe
+2025-09-07 13:44:23,518 - INFO - Testing search performance on Starting Position for V7P3R_v4.1.exe
+2025-09-07 13:44:36,876 - INFO - Testing search performance on Kiwipete for V7P3R_v4.1.exe
+2025-09-07 13:44:48,981 - INFO - Testing search performance on Position 3 for V7P3R_v4.1.exe
+2025-09-07 13:44:52,848 - INFO - Testing search performance on Position 4 for V7P3R_v4.1.exe
+2025-09-07 13:44:56,638 - INFO - Testing search performance on Position 5 for V7P3R_v4.1.exe
+2025-09-07 13:45:00,698 - INFO - Testing tactical accuracy for V7P3R_v4.1.exe
+2025-09-07 13:45:00,698 - INFO - Testing search performance on Tactical Puzzle 1 for V7P3R_v4.1.exe
+2025-09-07 13:45:12,718 - INFO - Testing search performance on Tactical Puzzle 2 for V7P3R_v4.1.exe
+2025-09-07 13:45:16,427 - INFO - Testing search performance on Tactical Puzzle 3 for V7P3R_v4.1.exe
+2025-09-07 13:45:27,975 - INFO - Testing search performance on Tactical Puzzle 4 for V7P3R_v4.1.exe
+2025-09-07 13:45:37,042 - INFO - Testing search performance on Tactical Puzzle 5 for V7P3R_v4.1.exe
+2025-09-07 13:45:49,399 - INFO - Testing time management for V7P3R_v4.1.exe
+2025-09-07 13:46:12,934 - INFO - Analyzing V7P3R_v4.2.exe (2/18)
+2025-09-07 13:46:12,934 - INFO - Starting comprehensive analysis of V7P3R_v4.2.exe
+2025-09-07 13:46:16,138 - INFO - Running perft depth 4 on V7P3R_v4.2.exe
+2025-09-07 13:46:30,111 - INFO - Running perft depth 5 on V7P3R_v4.2.exe
+2025-09-07 13:46:43,777 - INFO - Running perft depth 6 on V7P3R_v4.2.exe
+2025-09-07 13:46:57,768 - INFO - Testing search performance on Starting Position for V7P3R_v4.2.exe
+2025-09-07 13:47:11,215 - INFO - Testing search performance on Kiwipete for V7P3R_v4.2.exe
+2025-09-07 13:47:31,237 - WARNING - Search test timed out for V7P3R_v4.2.exe
+2025-09-07 13:47:31,237 - INFO - Testing search performance on Position 3 for V7P3R_v4.2.exe
+2025-09-07 13:47:33,758 - INFO - Testing search performance on Position 4 for V7P3R_v4.2.exe
+2025-09-07 13:47:36,248 - INFO - Testing search performance on Position 5 for V7P3R_v4.2.exe
+2025-09-07 13:47:38,737 - INFO - Testing tactical accuracy for V7P3R_v4.2.exe
+2025-09-07 13:47:38,737 - INFO - Testing search performance on Tactical Puzzle 1 for V7P3R_v4.2.exe
+2025-09-07 13:47:58,756 - WARNING - Search test timed out for V7P3R_v4.2.exe
+2025-09-07 13:47:58,756 - INFO - Testing search performance on Tactical Puzzle 2 for V7P3R_v4.2.exe
+2025-09-07 13:48:02,059 - INFO - Testing search performance on Tactical Puzzle 3 for V7P3R_v4.2.exe
+2025-09-07 13:48:22,076 - WARNING - Search test timed out for V7P3R_v4.2.exe
+2025-09-07 13:48:22,076 - INFO - Testing search performance on Tactical Puzzle 4 for V7P3R_v4.2.exe
+2025-09-07 13:48:38,728 - INFO - Testing search performance on Tactical Puzzle 5 for V7P3R_v4.2.exe
+2025-09-07 13:48:58,737 - WARNING - Search test timed out for V7P3R_v4.2.exe
+2025-09-07 13:48:58,738 - INFO - Testing time management for V7P3R_v4.2.exe
+2025-09-07 13:49:22,280 - INFO - Analyzing V7P3R_v4.3.exe (3/18)
+2025-09-07 13:49:22,280 - INFO - Starting comprehensive analysis of V7P3R_v4.3.exe
+2025-09-07 13:49:25,427 - INFO - Running perft depth 4 on V7P3R_v4.3.exe
+2025-09-07 13:49:31,084 - INFO - Running perft depth 5 on V7P3R_v4.3.exe
+2025-09-07 13:49:36,578 - INFO - Running perft depth 6 on V7P3R_v4.3.exe
+2025-09-07 13:49:42,026 - INFO - Testing search performance on Starting Position for V7P3R_v4.3.exe
+2025-09-07 13:49:44,958 - INFO - Testing search performance on Kiwipete for V7P3R_v4.3.exe
+2025-09-07 13:49:48,152 - INFO - Testing search performance on Position 3 for V7P3R_v4.3.exe
+2025-09-07 13:49:50,812 - INFO - Testing search performance on Position 4 for V7P3R_v4.3.exe
+2025-09-07 13:49:53,778 - INFO - Testing search performance on Position 5 for V7P3R_v4.3.exe
+2025-09-07 13:49:56,519 - INFO - Testing tactical accuracy for V7P3R_v4.3.exe
+2025-09-07 13:49:56,519 - INFO - Testing search performance on Tactical Puzzle 1 for V7P3R_v4.3.exe
+2025-09-07 13:49:59,252 - INFO - Testing search performance on Tactical Puzzle 2 for V7P3R_v4.3.exe
+2025-09-07 13:50:02,171 - INFO - Testing search performance on Tactical Puzzle 3 for V7P3R_v4.3.exe
+2025-09-07 13:50:04,890 - INFO - Testing search performance on Tactical Puzzle 4 for V7P3R_v4.3.exe
+2025-09-07 13:50:07,669 - INFO - Testing search performance on Tactical Puzzle 5 for V7P3R_v4.3.exe
+2025-09-07 13:50:10,308 - INFO - Testing time management for V7P3R_v4.3.exe
+2025-09-07 13:50:22,156 - INFO - Analyzing V7P3R_v5.0.exe (4/18)
+2025-09-07 13:50:22,156 - INFO - Starting comprehensive analysis of V7P3R_v5.0.exe
+2025-09-07 13:50:22,498 - INFO - Running perft depth 4 on V7P3R_v5.0.exe
+2025-09-07 13:50:24,318 - INFO - Running perft depth 5 on V7P3R_v5.0.exe
+2025-09-07 13:50:26,117 - INFO - Running perft depth 6 on V7P3R_v5.0.exe
+2025-09-07 13:50:27,948 - INFO - Testing search performance on Starting Position for V7P3R_v5.0.exe
+2025-09-07 13:50:33,288 - INFO - Testing search performance on Kiwipete for V7P3R_v5.0.exe
+2025-09-07 13:50:37,438 - INFO - Testing search performance on Position 3 for V7P3R_v5.0.exe
+2025-09-07 13:50:40,361 - INFO - Testing search performance on Position 4 for V7P3R_v5.0.exe
+2025-09-07 13:50:45,560 - INFO - Testing search performance on Position 5 for V7P3R_v5.0.exe
+2025-09-07 13:50:49,528 - INFO - Testing tactical accuracy for V7P3R_v5.0.exe
+2025-09-07 13:50:49,528 - INFO - Testing search performance on Tactical Puzzle 1 for V7P3R_v5.0.exe
+2025-09-07 13:51:08,713 - INFO - Testing search performance on Tactical Puzzle 2 for V7P3R_v5.0.exe
+2025-09-07 13:51:11,868 - INFO - Testing search performance on Tactical Puzzle 3 for V7P3R_v5.0.exe

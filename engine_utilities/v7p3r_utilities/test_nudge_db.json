@@ -1,0 +1,30 @@
+{
+  "d0ba5e258ffc": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -",
+    "moves": {
+      "b1c3": {
+        "eval": 0.44,
+        "frequency": 4,
+        "games": [
+          "2025.09.06-V7P3R_V10.2-vs-SLOWMATE_V3.1",
+          "2025.09.06-V7P3R_V10.2-vs-C0BR4_V2.9",
+          "2025.09.06-V7P3R_V10.2-vs-STOCKFISH 1%",
+          "2025.09.06-V7P3R_V10.2-vs-RANDOM_OPPONENT"
+        ]
+      }
+    }
+  },
+  "84a6d815464b": {
+    "fen": "4k2r/p2pppbp/7p/2rPP3/8/5N1P/2K2PP1/2RR4 w k -",
+    "moves": {
+      "c2b1": {
+        "eval": 0.6499999999999999,
+        "frequency": 2,
+        "games": [
+          "2025.09.06-V7P3R_V10.2-vs-SLOWMATE_V3.1",
+          "2025.09.06-V7P3R_V10.2-vs-SLOWMATE_V3.1"
+        ]
+      }
+    }
+  }
+}
