@@ -46,9 +46,9 @@ class V7P3RPuzzleAnalyzer:
     """Analyzes V7P3R performance against puzzle database using Stockfish comparison"""
     
     def __init__(self, 
-                 v7p3r_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v10.0.exe",
+                 v7p3r_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\V7P3R\V7P3R_v10.8.exe",
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
-                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\chess-puzzle-challenger\puzzles.db"):
+                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engine_utilities\utility_resources\puzzles.db"):
         
         self.v7p3r_path = v7p3r_path
         self.stockfish_path = stockfish_path
@@ -770,10 +770,10 @@ def main():
         
         # Run enhanced sequence analysis on puzzles
         results = analyzer.run_analysis(
-            num_puzzles=50,  # Start with 50 for testing the enhanced system
-            rating_min=1200,
-            rating_max=2200,  # Increased upper range to test V7P3R's limits
-            v7p3r_time=15.0,  # Generous time for sequence analysis
+            num_puzzles=1000,  # Start with 1000 for comprehensive testing
+            rating_min=400,  # Lowered to include easier puzzles
+            rating_max=9999,  # Max upper range to test V7P3R's limits
+            v7p3r_time=20.0,  # Generous time for sequence analysis
             themes_filter=None  # No theme filter for comprehensive analysis
         )
         
@@ -784,7 +784,7 @@ def main():
             
             # Save results with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"v7p3r_enhanced_sequence_analysis_{timestamp}.json"
+            filename = f"v7p3r_puzzle_analysis_{timestamp}.json"
             analyzer.save_results(filename)
         
     except Exception as e:
