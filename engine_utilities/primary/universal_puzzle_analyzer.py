@@ -30,13 +30,16 @@ import time
 import json
 import os
 import sys
-from datetime import datetime
+import signal
+import gc
+import threading
+from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Tuple, Union
 import chess
 import chess.engine
 
 # Add the chess-puzzle-challenger src to path for database access
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'chess-puzzle-challenger', 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'chess-puzzle-challenger', 'src'))
 try:
     from database import PuzzleDatabase, Puzzle
 except ImportError:
@@ -50,12 +53,27 @@ class UniversalPuzzleAnalyzer:
     def __init__(self, 
                  engine_path: str,
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
-                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\chess-puzzle-challenger\puzzles.db"):
+                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engine_utilities\utility_resources\puzzles.db"):
         
         self.engine_path = engine_path
         self.stockfish_path = stockfish_path
         self.puzzle_db_path = puzzle_db_path
         self.results = []
+        
+        # Extended session controls
+        self.session_start_time = None
+        self.session_duration_hours = None
+        self.progress_save_interval = 300  # Save progress every 5 minutes
+        self.report_interval = 1800  # Generate reports every 30 minutes
+        self.last_progress_save = 0
+        self.last_report_time = 0
+        self.checkpoint_file = None
+        self.session_active = False
+        self.interrupted = False
+        
+        # Threading for periodic tasks
+        self.progress_thread = None
+        self.stop_event = threading.Event()
         
         # Verify engines exist
         if not os.path.exists(engine_path):
@@ -69,6 +87,205 @@ class UniversalPuzzleAnalyzer:
         self.engine_info = self.get_engine_info()
         self.engine_name = self.engine_info.get('name', os.path.basename(engine_path))
         print(f"Initialized Universal Puzzle Analyzer for: {self.engine_name}")
+        
+        # Set up signal handlers for graceful shutdown
+        self.setup_signal_handlers()
+    
+    def setup_signal_handlers(self):
+        """Set up signal handlers for graceful shutdown"""
+        def signal_handler(signum, frame):
+            print(f"\n🛑 Received signal {signum}, initiating graceful shutdown...")
+            self.interrupted = True
+            self.session_active = False
+            if self.stop_event:
+                self.stop_event.set()
+        
+        try:
+            signal.signal(signal.SIGINT, signal_handler)
+            signal.signal(signal.SIGTERM, signal_handler)
+        except Exception as e:
+            print(f"Warning: Could not set up signal handlers: {e}")
+    
+    def create_checkpoint_filename(self) -> str:
+        """Create checkpoint filename based on engine and timestamp"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        engine_safe_name = self.engine_name.replace(' ', '_').replace('.', '_')
+        return f"checkpoint_{engine_safe_name}_{timestamp}.json"
+    
+    def save_progress_checkpoint(self, puzzles_processed: int, current_puzzle_id: Optional[str] = None):
+        """Save current progress to checkpoint file"""
+        if not self.checkpoint_file:
+            self.checkpoint_file = self.create_checkpoint_filename()
+        
+        elapsed_time = time.time() - self.session_start_time if self.session_start_time else 0
+        
+        checkpoint_data = {
+            'metadata': {
+                'engine_path': self.engine_path,
+                'engine_name': self.engine_name,
+                'engine_info': self.engine_info,
+                'session_start_time': self.session_start_time,
+                'last_checkpoint_time': time.time(),
+                'elapsed_hours': elapsed_time / 3600,
+                'puzzles_processed': puzzles_processed,
+                'current_puzzle_id': current_puzzle_id,
+                'session_duration_hours': self.session_duration_hours
+            },
+            'results': self.results,
+            'partial_report': self.generate_report(self.results) if self.results else {}
+        }
+        
+        try:
+            with open(self.checkpoint_file, 'w') as f:
+                json.dump(checkpoint_data, f, indent=2)
+            print(f"📁 Progress saved to checkpoint: {self.checkpoint_file}")
+        except Exception as e:
+            print(f"❌ Failed to save checkpoint: {e}")
+    
+    def load_checkpoint(self, checkpoint_file: str) -> bool:
+        """Load progress from checkpoint file"""
+        try:
+            with open(checkpoint_file, 'r') as f:
+                data = json.load(f)
+            
+            self.results = data.get('results', [])
+            metadata = data.get('metadata', {})
+            
+            self.session_start_time = metadata.get('session_start_time')
+            self.session_duration_hours = metadata.get('session_duration_hours')
+            self.checkpoint_file = checkpoint_file
+            
+            elapsed = metadata.get('elapsed_hours', 0)
+            puzzles_processed = metadata.get('puzzles_processed', 0)
+            
+            print(f"📂 Loaded checkpoint from {checkpoint_file}")
+            print(f"   Previous session: {elapsed:.1f} hours, {puzzles_processed} puzzles")
+            print(f"   Results loaded: {len(self.results)} puzzle analyses")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Failed to load checkpoint {checkpoint_file}: {e}")
+            return False
+    
+    def should_continue_session(self) -> bool:
+        """Check if session should continue based on time and interruption status"""
+        if self.interrupted or not self.session_active:
+            return False
+        
+        if self.session_duration_hours and self.session_start_time:
+            elapsed_hours = (time.time() - self.session_start_time) / 3600
+            if elapsed_hours >= self.session_duration_hours:
+                print(f"⏰ Session duration reached: {elapsed_hours:.1f}/{self.session_duration_hours} hours")
+                return False
+        
+        return True
+    
+    def start_progress_monitoring_thread(self):
+        """Start background thread for periodic progress saving and reporting"""
+        def monitor_progress():
+            while not self.stop_event.is_set() and self.session_active:
+                current_time = time.time()
+                
+                # Save progress checkpoint
+                if current_time - self.last_progress_save >= self.progress_save_interval:
+                    self.save_progress_checkpoint(len(self.results))
+                    self.last_progress_save = current_time
+                
+                # Generate intermediate report
+                if current_time - self.last_report_time >= self.report_interval:
+                    if self.results:
+                        print(f"\n📊 INTERMEDIATE REPORT ({len(self.results)} puzzles analyzed)")
+                        print("-" * 50)
+                        report = self.generate_report(self.results)
+                        self.print_intermediate_report(report)
+                        print("-" * 50)
+                    self.last_report_time = current_time
+                
+                # Clean up memory periodically
+                if len(self.results) % 100 == 0 and len(self.results) > 0:
+                    gc.collect()
+                
+                self.stop_event.wait(30)  # Check every 30 seconds
+        
+        self.progress_thread = threading.Thread(target=monitor_progress, daemon=True)
+        self.progress_thread.start()
+    
+    def print_intermediate_report(self, report: Dict):
+        """Print condensed intermediate report during long sessions"""
+        if not report:
+            return
+        
+        elapsed_hours = (time.time() - self.session_start_time) / 3600 if self.session_start_time else 0
+        remaining_hours = max(0, self.session_duration_hours - elapsed_hours) if self.session_duration_hours else float('inf')
+        
+        seq_metrics = report.get('sequence_metrics', {})
+        puzzles_per_hour = len(self.results) / elapsed_hours if elapsed_hours > 0 else 0
+        
+        print(f"Engine: {report.get('engine_name', 'Unknown')}")
+        print(f"Time: {elapsed_hours:.1f}h elapsed" + (f", {remaining_hours:.1f}h remaining" if remaining_hours != float('inf') else ""))
+        print(f"Progress: {len(self.results)} puzzles ({puzzles_per_hour:.1f} puzzles/hour)")
+        print(f"Performance: {seq_metrics.get('avg_weighted_accuracy', 0):.1f}% weighted accuracy")
+        print(f"Perfect sequences: {seq_metrics.get('perfect_sequences', 0)}/{report['total_puzzles']} ({seq_metrics.get('perfect_sequence_rate', 0):.1f}%)")
+        
+        # Show top 3 themes
+        theme_items = list(report.get('theme_performance', {}).items())
+        if theme_items:
+            theme_items.sort(key=lambda x: x[1]['avg_weighted_accuracy'], reverse=True)
+            print("Top themes: " + ", ".join([f"{t[0]}({t[1]['avg_weighted_accuracy']:.0f}%)" for t in theme_items[:3]]))
+    
+    def unlimited_puzzle_generator(self, rating_min: int = 800, rating_max: int = 3000, 
+                                   themes_filter: Optional[List[str]] = None, 
+                                   batch_size: int = 1000):
+        """
+        Generator that yields puzzles continuously without running out
+        Queries database in batches and cycles through different rating ranges
+        """
+        db = PuzzleDatabase(self.puzzle_db_path)
+        
+        # Define rating ranges to cycle through
+        rating_ranges = [
+            (800, 1200), (1200, 1600), (1600, 2000), (2000, 2400), (2400, 3000),
+            (rating_min, rating_max)  # User specified range
+        ]
+        
+        range_index = 0
+        processed_ids = set()
+        
+        while self.should_continue_session():
+            # Get current rating range
+            current_min, current_max = rating_ranges[range_index % len(rating_ranges)]
+            
+            # Query puzzles in current range
+            puzzles = db.query_puzzles(
+                themes=themes_filter,
+                min_rating=current_min,
+                max_rating=current_max,
+                quantity=batch_size
+            )
+            
+            # Filter out already processed puzzles
+            new_puzzles = [p for p in puzzles if p.id not in processed_ids]
+            
+            if not new_puzzles:
+                # Move to next rating range if no new puzzles
+                range_index += 1
+                if range_index >= len(rating_ranges) * 2:  # Prevent infinite loop
+                    print("🔄 Cycling through all rating ranges again...")
+                    processed_ids.clear()  # Allow re-analysis of puzzles
+                    range_index = 0
+                continue
+            
+            # Yield puzzles from current batch
+            for puzzle in new_puzzles:
+                if not self.should_continue_session():
+                    return
+                
+                processed_ids.add(puzzle.id)
+                yield puzzle
+            
+            # Move to next rating range
+            range_index += 1
     
     def get_engine_info(self) -> Dict[str, str]:
         """Get engine information via UCI protocol"""
@@ -497,8 +714,27 @@ class UniversalPuzzleAnalyzer:
                      engine_time: float = 10.0,
                      themes_filter: Optional[List[str]] = None,
                      force_puzzle_ids: Optional[List[str]] = None,
-                     comparison_file: Optional[str] = None) -> List[Dict]:
-        """Run analysis on multiple puzzles with optional puzzle ID forcing for comparison"""
+                     comparison_file: Optional[str] = None,
+                     duration_hours: Optional[float] = None,
+                     resume_checkpoint: Optional[str] = None) -> List[Dict]:
+        """Run analysis on multiple puzzles with extended session support"""
+        
+        # Handle checkpoint resume
+        if resume_checkpoint:
+            if not self.load_checkpoint(resume_checkpoint):
+                print("Failed to load checkpoint, starting fresh session")
+            else:
+                print("Resumed from checkpoint, continuing analysis...")
+        
+        # Set up extended session parameters
+        if duration_hours:
+            self.session_duration_hours = duration_hours
+            self.session_active = True
+            self.session_start_time = time.time()
+            print(f"🕐 Starting extended session: {duration_hours} hours")
+            
+            # Start progress monitoring for extended sessions
+            self.start_progress_monitoring_thread()
         
         # Handle comparison file input
         if comparison_file and not force_puzzle_ids:
@@ -506,6 +742,7 @@ class UniversalPuzzleAnalyzer:
             if not force_puzzle_ids:
                 print(f"Warning: Could not extract puzzle IDs from {comparison_file}, proceeding with normal analysis")
         
+        # Print session header
         if force_puzzle_ids:
             print(f"{self.engine_name} Universal Puzzle Analysis - {len(force_puzzle_ids)} forced puzzles")
             print(f"Engine: {self.engine_name}")
@@ -513,6 +750,14 @@ class UniversalPuzzleAnalyzer:
             print(f"Engine thinking time: {engine_time} seconds")
             if comparison_file:
                 print(f"Comparison file: {comparison_file}")
+        elif duration_hours:
+            print(f"{self.engine_name} Extended Puzzle Analysis - {duration_hours} hour session")
+            print(f"Engine: {self.engine_name}")
+            print(f"Rating range: {rating_min}-{rating_max}")
+            print(f"Engine thinking time: {engine_time} seconds")
+            print(f"Unlimited puzzle streaming: Enabled")
+            if themes_filter:
+                print(f"Theme filter: {themes_filter}")
         else:
             print(f"{self.engine_name} Universal Puzzle Analysis - {num_puzzles} puzzles")
             print(f"Engine: {self.engine_name}")
@@ -522,11 +767,10 @@ class UniversalPuzzleAnalyzer:
                 print(f"Theme filter: {themes_filter}")
         print("=" * 60)
         
-        # Get puzzles from database
-        db = PuzzleDatabase(self.puzzle_db_path)
-        
+        # Get puzzles based on mode
         if force_puzzle_ids:
             # Get specific puzzles by ID
+            db = PuzzleDatabase(self.puzzle_db_path)
             puzzles = []
             for puzzle_id in force_puzzle_ids:
                 puzzle = db.get_puzzle_by_id(puzzle_id)
@@ -534,30 +778,84 @@ class UniversalPuzzleAnalyzer:
                     puzzles.append(puzzle)
                 else:
                     print(f"Warning: Puzzle ID {puzzle_id} not found in database")
+            puzzle_source = iter(puzzles)
+            total_expected = len(puzzles)
+            
+        elif duration_hours:
+            # Use unlimited puzzle generator for extended sessions
+            puzzle_source = self.unlimited_puzzle_generator(rating_min, rating_max, themes_filter)
+            total_expected = "unlimited"
+            
         else:
             # Normal puzzle query
+            db = PuzzleDatabase(self.puzzle_db_path)
             puzzles = db.query_puzzles(
                 themes=themes_filter,
                 min_rating=rating_min,
                 max_rating=rating_max,
                 quantity=num_puzzles
             )
+            puzzle_source = iter(puzzles)
+            total_expected = len(puzzles)
         
-        if not puzzles:
+        if not force_puzzle_ids and total_expected != "unlimited" and total_expected == 0:
             print("No puzzles found matching criteria!")
             return []
         
-        print(f"Found {len(puzzles)} puzzles to analyze")
+        if total_expected != "unlimited":
+            print(f"Found {total_expected} puzzles to analyze")
+        else:
+            print("Using unlimited puzzle streaming for extended session")
         print("-" * 60)
         
-        # Analyze each puzzle
+        # Analyze puzzles
         results = []
-        for i, puzzle in enumerate(puzzles, 1):
-            print(f"Puzzle {i}/{len(puzzles)}")
-            result = self.analyze_puzzle(puzzle, engine_time)
-            if result:
-                results.append(result)
-                self.results.append(result)
+        puzzles_analyzed = len(self.results)  # Account for resumed sessions
+        
+        try:
+            for puzzle in puzzle_source:
+                if not self.should_continue_session():
+                    print("\n🛑 Session stopping...")
+                    break
+                
+                puzzle_num = puzzles_analyzed + 1
+                if total_expected != "unlimited":
+                    print(f"Puzzle {puzzle_num}/{total_expected}")
+                else:
+                    elapsed_hours = (time.time() - self.session_start_time) / 3600 if self.session_start_time else 0
+                    remaining_hours = max(0, self.session_duration_hours - elapsed_hours) if self.session_duration_hours else float('inf')
+                    remaining_str = f", {remaining_hours:.1f}h remaining" if remaining_hours != float('inf') else ""
+                    print(f"Puzzle #{puzzle_num} ({elapsed_hours:.1f}h elapsed{remaining_str})")
+                
+                result = self.analyze_puzzle(puzzle, engine_time)
+                if result:
+                    results.append(result)
+                    self.results.append(result)
+                    puzzles_analyzed += 1
+                
+                # Save checkpoint periodically during long runs
+                if duration_hours and puzzles_analyzed % 10 == 0:
+                    self.save_progress_checkpoint(puzzles_analyzed, puzzle.id)
+        
+        except KeyboardInterrupt:
+            print("\n🛑 Analysis interrupted by user")
+            self.interrupted = True
+        except Exception as e:
+            print(f"\n❌ Analysis error: {e}")
+            self.interrupted = True
+        finally:
+            # Clean up extended session
+            if duration_hours:
+                self.session_active = False
+                if self.stop_event:
+                    self.stop_event.set()
+                if self.progress_thread and self.progress_thread.is_alive():
+                    self.progress_thread.join(timeout=2)
+                
+                # Final checkpoint save
+                if self.results:
+                    self.save_progress_checkpoint(len(self.results))
+                    print(f"\n💾 Final checkpoint saved with {len(self.results)} results")
         
         return results
     
@@ -805,13 +1103,13 @@ class UniversalPuzzleAnalyzer:
 
 
 def main():
-    """Main execution function with engine selection and comparison support"""
+    """Main execution function with engine selection, comparison support, and extended sessions"""
     import argparse
     
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Comparison Support')
+    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Extended Session Support')
     parser.add_argument('--engine', required=True, help='Path to the UCI chess engine to test')
-    parser.add_argument('--puzzles', type=int, default=50, help='Number of puzzles to analyze (default: 50)')
+    parser.add_argument('--puzzles', type=int, default=50, help='Number of puzzles to analyze (default: 50, ignored if --duration used)')
     parser.add_argument('--time', type=float, default=15.0, help='Time per position in seconds (default: 15.0)')
     parser.add_argument('--min-rating', type=int, default=1200, help='Minimum puzzle rating (default: 1200)')
     parser.add_argument('--max-rating', type=int, default=2200, help='Maximum puzzle rating (default: 2200)')
@@ -819,12 +1117,24 @@ def main():
     parser.add_argument('--comparison-file', type=str, help='JSON file from previous analysis to use same puzzle IDs for comparison')
     parser.add_argument('--force-puzzle-ids', nargs='*', help='Specific puzzle IDs to analyze (optional)')
     
+    # Extended session arguments
+    parser.add_argument('--duration', type=float, help='Session duration in hours for extended testing (enables unlimited puzzle streaming)')
+    parser.add_argument('--resume', type=str, help='Resume from checkpoint file')
+    parser.add_argument('--progress-interval', type=int, default=300, help='Progress save interval in seconds (default: 300)')
+    parser.add_argument('--report-interval', type=int, default=1800, help='Intermediate report interval in seconds (default: 1800)')
+    
     args = parser.parse_args()
     
     try:
         analyzer = UniversalPuzzleAnalyzer(engine_path=args.engine)
         
-        # Run enhanced sequence analysis with comparison support
+        # Set custom intervals if provided
+        if args.progress_interval:
+            analyzer.progress_save_interval = args.progress_interval
+        if args.report_interval:
+            analyzer.report_interval = args.report_interval
+        
+        # Run enhanced sequence analysis with extended session support
         results = analyzer.run_analysis(
             num_puzzles=args.puzzles,
             rating_min=args.min_rating,
@@ -832,16 +1142,32 @@ def main():
             engine_time=args.time,
             themes_filter=args.themes,
             force_puzzle_ids=args.force_puzzle_ids,
-            comparison_file=args.comparison_file
+            comparison_file=args.comparison_file,
+            duration_hours=args.duration,
+            resume_checkpoint=args.resume
         )
         
-        if results:
+        if results or analyzer.results:
+            # Use all results (including resumed ones)
+            all_results = analyzer.results
+            
             # Generate and print enhanced report
-            report = analyzer.generate_report(results)
+            report = analyzer.generate_report(all_results)
             analyzer.print_report(report)
             
             # Save results with timestamp
             analyzer.save_results()
+            
+            # Print session summary for extended runs
+            if args.duration and analyzer.session_start_time:
+                total_time = time.time() - analyzer.session_start_time
+                puzzles_per_hour = len(all_results) / (total_time / 3600) if total_time > 0 else 0
+                print(f"\n📈 EXTENDED SESSION SUMMARY:")
+                print(f"Total runtime: {total_time / 3600:.1f} hours")
+                print(f"Puzzles analyzed: {len(all_results)}")
+                print(f"Analysis rate: {puzzles_per_hour:.1f} puzzles/hour")
+                if analyzer.checkpoint_file:
+                    print(f"Checkpoint file: {analyzer.checkpoint_file}")
         
     except Exception as e:
         print(f"Error: {e}")
