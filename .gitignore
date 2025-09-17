@@ -2,6 +2,9 @@
 *.pyc
 __pycache__/
 
+# Database files
+*.db
+
 # Project specific
 /downloaded_engines/*
 /source_repos/*
