@@ -7,4 +7,4 @@ __pycache__/
 
 # Project specific
 */downloaded_engines/*
-*/source_repos/*
+/source_repos/*
