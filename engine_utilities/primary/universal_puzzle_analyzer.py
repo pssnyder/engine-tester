@@ -726,15 +726,19 @@ class UniversalPuzzleAnalyzer:
             else:
                 print("Resumed from checkpoint, continuing analysis...")
         
-        # Set up extended session parameters
+        # Set up session parameters
+        self.session_active = True  # Always activate session for any analysis
+        
         if duration_hours:
             self.session_duration_hours = duration_hours
-            self.session_active = True
             self.session_start_time = time.time()
             print(f"🕐 Starting extended session: {duration_hours} hours")
             
             # Start progress monitoring for extended sessions
             self.start_progress_monitoring_thread()
+        else:
+            # For normal analysis, still set session as active but no time limits
+            self.session_start_time = time.time()
         
         # Handle comparison file input
         if comparison_file and not force_puzzle_ids:

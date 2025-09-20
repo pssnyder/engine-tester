@@ -6,5 +6,5 @@ __pycache__/
 *.db
 
 # Project specific
-/downloaded_engines/*
-/source_repos/*
+*/downloaded_engines/*
+*/source_repos/*
