@@ -1,1 +1,0 @@
-# V7P3R v10.0 - Tournament Ready Release\n# Built: 2025-08-31\n# Architecture: Unified search with all advanced features\n# Features: Time management, quiescence search, transposition table\n# Tactical: Bitboard evaluation, move ordering, PV following\n# Performance: 94.8% puzzle accuracy, timeout issues resolved\nexecutable=V7P3R_v10.0.exe\n
