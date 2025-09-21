@@ -38,12 +38,12 @@ from typing import List, Dict, Optional, Tuple, Union
 import chess
 import chess.engine
 
-# Add the chess-puzzle-challenger src to path for database access
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'chess-puzzle-challenger', 'src'))
+# Add the databases directory to path for database access
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'databases'))
 try:
     from database import PuzzleDatabase, Puzzle
 except ImportError:
-    print("Error: Could not import puzzle database. Make sure chess-puzzle-challenger is available.")
+    print("Error: Could not import puzzle database. Make sure databases directory is available.")
     sys.exit(1)
 
 
@@ -53,7 +53,7 @@ class UniversalPuzzleAnalyzer:
     def __init__(self, 
                  engine_path: str,
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
-                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engine_utilities\utility_resources\puzzles.db"):
+                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\databases\puzzles.db"):
         
         self.engine_path = engine_path
         self.stockfish_path = stockfish_path
