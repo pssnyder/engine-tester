@@ -4,6 +4,7 @@ __pycache__/
 
 # Database files
 *.db
+*.csv
 
 # Project specific
 */downloaded_engines/*
