@@ -47,13 +47,47 @@ except ImportError:
     sys.exit(1)
 
 
+class TimeControl:
+    """Manages chess time controls for realistic engine testing"""
+    
+    def __init__(self, base_time_minutes: float = 30.0, increment_seconds: float = 2.0):
+        self.base_time_ms = int(base_time_minutes * 60 * 1000)
+        self.increment_ms = int(increment_seconds * 1000)
+        self.white_time_remaining = self.base_time_ms
+        self.black_time_remaining = self.base_time_ms
+    
+    def get_time_for_move(self, is_white: bool) -> int:
+        """Get remaining time in milliseconds for the moving side"""
+        return self.white_time_remaining if is_white else self.black_time_remaining
+    
+    def consume_time(self, is_white: bool, time_used_ms: int):
+        """Update remaining time after a move, including increment"""
+        if is_white:
+            self.white_time_remaining = max(0, self.white_time_remaining - time_used_ms + self.increment_ms)
+        else:
+            self.black_time_remaining = max(0, self.black_time_remaining - time_used_ms + self.increment_ms)
+    
+    def is_time_trouble(self, is_white: bool) -> bool:
+        """Check if side is in time trouble (less than 10% of base time)"""
+        remaining = self.white_time_remaining if is_white else self.black_time_remaining
+        return remaining < (self.base_time_ms * 0.1)
+    
+    def format_time(self, time_ms: int) -> str:
+        """Format time in milliseconds to readable format"""
+        total_seconds = time_ms / 1000
+        minutes = int(total_seconds // 60)
+        seconds = int(total_seconds % 60)
+        return f"{minutes}:{seconds:02d}"
+
+
 class UniversalPuzzleAnalyzer:
     """Analyzes any UCI chess engine's performance against puzzle database using Stockfish comparison"""
     
     def __init__(self, 
                  engine_path: str,
                  stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
-                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\databases\puzzles.db"):
+                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\databases\puzzles.db",
+                 time_control: Optional[TimeControl] = None):
         
         self.engine_path = engine_path
         self.stockfish_path = stockfish_path
@@ -90,6 +124,9 @@ class UniversalPuzzleAnalyzer:
         
         # Set up signal handlers for graceful shutdown
         self.setup_signal_handlers()
+        
+        # Time control management
+        self.default_time_control = time_control or TimeControl(30.0, 2.0)  # 30+2 default
     
     def setup_signal_handlers(self):
         """Set up signal handlers for graceful shutdown"""
@@ -507,10 +544,141 @@ class UniversalPuzzleAnalyzer:
             return []
         return puzzle.moves.split()
     
-    def analyze_puzzle_sequence(self, puzzle: Puzzle, engine_time: float = 10.0) -> Optional[Dict]:
+    def get_engine_move_with_time_control(self, fen: str, time_control: TimeControl, 
+                                         suggested_time_seconds: float = 20.0) -> Tuple[Optional[str], float, Dict]:
         """
-        Analyze complete puzzle sequence, playing through all moves
-        Returns detailed analysis of engine's performance on each position
+        Get engine move using proper time control with realistic time management
+        Always accepts the move regardless of time taken
+        
+        Returns: (move, actual_time_used_seconds, time_analysis)
+        """
+        try:
+            board = chess.Board(fen)
+            is_white = board.turn
+            
+            process = subprocess.Popen(
+                self.engine_path,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                bufsize=0
+            )
+            
+            # Calculate time allocation
+            remaining_time_ms = time_control.get_time_for_move(is_white)
+            increment_ms = time_control.increment_ms
+            
+            # UCI commands with proper time control
+            commands = [
+                "uci",
+                "isready",
+                f"position fen {fen}",
+                f"go wtime {time_control.white_time_remaining} btime {time_control.black_time_remaining} "
+                f"winc {increment_ms} binc {increment_ms}"
+            ]
+            
+            for cmd in commands:
+                if process.stdin:
+                    process.stdin.write(f"{cmd}\n")
+                    process.stdin.flush()
+                if cmd == "uci" or cmd == "isready":
+                    time.sleep(0.2)
+            
+            # Track actual thinking time
+            start_time = time.time()
+            best_move = None
+            output_lines = []
+            
+            # Give engine generous maximum time (suggested_time * 3) but don't enforce strictly
+            max_wait_time = suggested_time_seconds * 3
+            
+            while time.time() - start_time < max_wait_time:
+                if not process.stdout:
+                    break
+                
+                if process.poll() is not None:
+                    break
+                    
+                try:
+                    line = process.stdout.readline()
+                    if not line:
+                        time.sleep(0.1)
+                        continue
+                        
+                    line = line.strip()
+                    output_lines.append(line)
+                    
+                    if line.startswith("bestmove"):
+                        parts = line.split()
+                        if len(parts) > 1:
+                            best_move = parts[1]
+                        break
+                except:
+                    break
+            
+            actual_time_used = time.time() - start_time
+            actual_time_used_ms = int(actual_time_used * 1000)
+            
+            # Update time control
+            time_control.consume_time(is_white, actual_time_used_ms)
+            
+            # Analyze time usage
+            time_analysis = {
+                'suggested_time_seconds': suggested_time_seconds,
+                'actual_time_seconds': actual_time_used,
+                'remaining_time_before_ms': remaining_time_ms,
+                'remaining_time_after_ms': time_control.get_time_for_move(is_white),
+                'increment_ms': increment_ms,
+                'time_pressure': time_control.is_time_trouble(is_white),
+                'time_efficiency': min(1.0, suggested_time_seconds / actual_time_used) if actual_time_used > 0 else 1.0,
+                'exceeded_suggestion': actual_time_used > suggested_time_seconds,
+                'time_management_score': self._calculate_time_management_score(suggested_time_seconds, actual_time_used)
+            }
+            
+            # Ensure process is terminated
+            try:
+                process.terminate()
+                process.wait(timeout=2)
+            except:
+                try:
+                    process.kill()
+                    process.wait(timeout=1)
+                except:
+                    pass
+            
+            return best_move, actual_time_used, time_analysis
+            
+        except Exception as e:
+            print(f"Error getting {self.engine_name} move: {e}")
+            return None, 0.0, {}
+    
+    def _calculate_time_management_score(self, suggested_time: float, actual_time: float) -> float:
+        """
+        Calculate time management score (0-1)
+        1.0 = used exactly suggested time
+        0.8+ = used reasonable time (within 50% of suggestion)
+        0.5-0.8 = used too much or too little time
+        0.0-0.5 = poor time management
+        """
+        if actual_time <= 0 or suggested_time <= 0:
+            return 0.0
+        
+        ratio = actual_time / suggested_time
+        
+        if 0.8 <= ratio <= 1.2:  # Within 20% of suggestion
+            return 1.0
+        elif 0.5 <= ratio <= 1.5:  # Within 50% of suggestion
+            return 0.8
+        elif 0.2 <= ratio <= 2.0:  # Within reasonable bounds
+            return 0.6
+        else:
+            return 0.3  # Poor time management
+    
+    def analyze_puzzle_sequence(self, puzzle: Puzzle, suggested_time_seconds: float = 20.0) -> Optional[Dict]:
+        """
+        Analyze complete puzzle sequence with proper time control management
+        Always accepts engine moves and analyzes time usage separately
         """
         print(f"Analyzing puzzle {puzzle.id} (Rating: {puzzle.rating})")
         print(f"Themes: {puzzle.themes}")
@@ -523,11 +691,19 @@ class UniversalPuzzleAnalyzer:
         
         print(f"Solution sequence ({len(sequence)} moves): {' '.join(sequence)}")
         
+        # Initialize time control for this puzzle
+        puzzle_time_control = TimeControl(
+            self.default_time_control.base_time_ms / 60000,  # Convert back to minutes
+            self.default_time_control.increment_ms / 1000    # Convert back to seconds
+        )
+        
         # Initialize tracking variables
         board = chess.Board(puzzle.fen)
         sequence_results = []
         position_analyses = []
         engine_found_all = True
+        total_time_used = 0.0
+        time_analyses = []
         
         # Process each position in the sequence
         for move_index in range(0, len(sequence), 2):
@@ -549,15 +725,18 @@ class UniversalPuzzleAnalyzer:
             turn_info = f"{'White' if board.turn else 'Black'} to move"
             print(f"Current position: {turn_info}")
             
-            # Apply opponent's move
+            # Apply opponent's move (simulate time usage for opponent)
             try:
-                # Try UCI first, then SAN
                 try:
                     opponent_move = chess.Move.from_uci(opponent_move_text)
                     if opponent_move not in board.legal_moves:
                         raise ValueError("Move not legal")
                 except:
                     opponent_move = board.parse_san(opponent_move_text)
+                
+                # Simulate opponent thinking time (half of suggested time)
+                opponent_time_ms = int((suggested_time_seconds / 2) * 1000)
+                puzzle_time_control.consume_time(board.turn, opponent_time_ms)
                 
                 board.push(opponent_move)
                 challenge_fen = board.fen()
@@ -584,14 +763,20 @@ class UniversalPuzzleAnalyzer:
                 print(f"❌ Cannot parse expected move {expected_move_text}: {e}")
                 break
             
-            # Get engine's move for this position
-            print(f"Challenging {self.engine_name} with {engine_time}s...")
-            start_time = time.time()
-            engine_move = self.get_engine_move(challenge_fen, engine_time)
-            analysis_time = time.time() - start_time
+            # Get engine's move with proper time control
+            remaining_time = puzzle_time_control.get_time_for_move(board.turn)
+            print(f"Challenging {self.engine_name} (Time remaining: {puzzle_time_control.format_time(remaining_time)}, suggested: {suggested_time_seconds}s)...")
             
+            engine_move, actual_time, time_analysis = self.get_engine_move_with_time_control(
+                challenge_fen, puzzle_time_control, suggested_time_seconds
+            )
+            
+            total_time_used += actual_time
+            time_analyses.append(time_analysis)
+            
+            # Always report move, never skip analysis
             if not engine_move:
-                print(f"❌ {self.engine_name} failed to return move (took {analysis_time:.1f}s)")
+                print(f"❌ {self.engine_name} failed to return any move (took {actual_time:.1f}s)")
                 sequence_results.append(False)
                 engine_found_all = False
                 # Continue to next position anyway
@@ -601,7 +786,14 @@ class UniversalPuzzleAnalyzer:
                     break
                 continue
             
-            print(f"{self.engine_name} chose: {engine_move} (took {analysis_time:.1f}s)")
+            # Report engine's move with time analysis
+            time_status = ""
+            if time_analysis.get('exceeded_suggestion', False):
+                time_status = f" [exceeded suggested time by {actual_time - suggested_time_seconds:.1f}s]"
+            elif time_analysis.get('time_pressure', False):
+                time_status = f" [time pressure]"
+            
+            print(f"{self.engine_name} chose: {engine_move} (took {actual_time:.1f}s{time_status})")
             
             # Get Stockfish analysis for this position
             stockfish_moves = self.get_stockfish_top_moves(challenge_fen, 5, 2.0)
@@ -623,7 +815,7 @@ class UniversalPuzzleAnalyzer:
                 print(f"❌ {self.engine_name} missed the correct move (chose rank #{rank if rank > 0 else 'not in top 5'})")
                 engine_found_all = False
             
-            # Store position analysis
+            # Store enhanced position analysis
             position_analysis = {
                 'position_number': position_num,
                 'challenge_fen': challenge_fen,
@@ -634,7 +826,7 @@ class UniversalPuzzleAnalyzer:
                 'engine_stockfish_score': score,
                 'engine_stockfish_rank': rank,
                 'stockfish_top_moves': stockfish_moves,
-                'analysis_time': analysis_time,
+                'time_analysis': time_analysis,
                 'turn_info': f"{'White' if not board.turn else 'Black'} to move after opponent's {opponent_move_text}"
             }
             position_analyses.append(position_analysis)
@@ -642,6 +834,9 @@ class UniversalPuzzleAnalyzer:
             # Apply the expected move to continue sequence
             try:
                 board.push(expected_move)
+                # Simulate expected move time consumption
+                expected_time_ms = int((actual_time if found_solution else suggested_time_seconds) * 1000)
+                puzzle_time_control.consume_time(board.turn, expected_time_ms)
             except Exception as e:
                 print(f"❌ Cannot continue sequence after {expected_move_text}: {e}")
                 break
@@ -654,14 +849,23 @@ class UniversalPuzzleAnalyzer:
         sequence_accuracy = (sum(sequence_results) / len(sequence_results)) * 100
         weighted_accuracy = self.calculate_weighted_sequence_score(sequence_results)
         
+        # Time management analysis
+        avg_time_per_move = total_time_used / len(time_analyses) if time_analyses else 0
+        time_efficiency_scores = [ta.get('time_management_score', 0) for ta in time_analyses if ta]
+        avg_time_management = sum(time_efficiency_scores) / len(time_efficiency_scores) if time_efficiency_scores else 0
+        total_time_exceeded = sum(1 for ta in time_analyses if ta.get('exceeded_suggestion', False))
+        
         print(f"\n🎯 SEQUENCE SUMMARY:")
         print(f"Positions analyzed: {len(sequence_results)}")
         print(f"Correct solutions: {sum(sequence_results)}/{len(sequence_results)}")
         print(f"Linear accuracy: {sequence_accuracy:.1f}%")
         print(f"Weighted accuracy: {weighted_accuracy:.1f}%")
         print(f"Perfect sequence: {'Yes' if engine_found_all else 'No'}")
+        print(f"Time management: {avg_time_management:.1f}/1.0 avg score")
+        print(f"Average time per move: {avg_time_per_move:.1f}s")
+        print(f"Exceeded suggestions: {total_time_exceeded}/{len(time_analyses)}")
         
-        # Compile comprehensive result
+        # Compile comprehensive result with time analysis
         result = {
             'puzzle_id': puzzle.id,
             'original_fen': puzzle.fen,
@@ -674,7 +878,12 @@ class UniversalPuzzleAnalyzer:
             'sequence_accuracy_weighted': weighted_accuracy,
             'perfect_sequence': engine_found_all,
             'position_analyses': position_analyses,
-            'engine_time_seconds': engine_time,
+            'suggested_time_seconds': suggested_time_seconds,
+            'total_time_used': total_time_used,
+            'avg_time_per_move': avg_time_per_move,
+            'time_management_score': avg_time_management,
+            'time_exceeded_count': total_time_exceeded,
+            'time_analyses': time_analyses,
             'timestamp': datetime.now().isoformat()
         }
         
@@ -711,13 +920,18 @@ class UniversalPuzzleAnalyzer:
                      num_puzzles: int = 100,
                      rating_min: int = 1200,
                      rating_max: int = 2000,
-                     engine_time: float = 10.0,
+                     suggested_time: float = 20.0,  # Changed from engine_time
                      themes_filter: Optional[List[str]] = None,
                      force_puzzle_ids: Optional[List[str]] = None,
                      comparison_file: Optional[str] = None,
                      duration_hours: Optional[float] = None,
-                     resume_checkpoint: Optional[str] = None) -> List[Dict]:
-        """Run analysis on multiple puzzles with extended session support"""
+                     resume_checkpoint: Optional[str] = None,
+                     time_control: Optional[TimeControl] = None) -> List[Dict]:
+        """Run analysis with proper time control management"""
+        
+        # Set time control for this session
+        if time_control:
+            self.default_time_control = time_control
         
         # Handle checkpoint resume
         if resume_checkpoint:
@@ -751,14 +965,14 @@ class UniversalPuzzleAnalyzer:
             print(f"{self.engine_name} Universal Puzzle Analysis - {len(force_puzzle_ids)} forced puzzles")
             print(f"Engine: {self.engine_name}")
             print(f"Puzzle forcing mode: Using specific puzzle IDs")
-            print(f"Engine thinking time: {engine_time} seconds")
+            print(f"Engine thinking time: {suggested_time} seconds")
             if comparison_file:
                 print(f"Comparison file: {comparison_file}")
         elif duration_hours:
             print(f"{self.engine_name} Extended Puzzle Analysis - {duration_hours} hour session")
             print(f"Engine: {self.engine_name}")
             print(f"Rating range: {rating_min}-{rating_max}")
-            print(f"Engine thinking time: {engine_time} seconds")
+            print(f"Engine thinking time: {suggested_time} seconds")
             print(f"Unlimited puzzle streaming: Enabled")
             if themes_filter:
                 print(f"Theme filter: {themes_filter}")
@@ -766,7 +980,7 @@ class UniversalPuzzleAnalyzer:
             print(f"{self.engine_name} Universal Puzzle Analysis - {num_puzzles} puzzles")
             print(f"Engine: {self.engine_name}")
             print(f"Rating range: {rating_min}-{rating_max}")
-            print(f"Engine thinking time: {engine_time} seconds")
+            print(f"Engine thinking time: {suggested_time} seconds")
             if themes_filter:
                 print(f"Theme filter: {themes_filter}")
         print("=" * 60)
@@ -831,7 +1045,7 @@ class UniversalPuzzleAnalyzer:
                     remaining_str = f", {remaining_hours:.1f}h remaining" if remaining_hours != float('inf') else ""
                     print(f"Puzzle #{puzzle_num} ({elapsed_hours:.1f}h elapsed{remaining_str})")
                 
-                result = self.analyze_puzzle(puzzle, engine_time)
+                result = self.analyze_puzzle(puzzle, suggested_time)
                 if result:
                     results.append(result)
                     self.results.append(result)
@@ -864,7 +1078,7 @@ class UniversalPuzzleAnalyzer:
         return results
     
     def generate_report(self, results: List[Dict]) -> Dict:
-        """Generate enhanced analysis report with sequence-based metrics"""
+        """Generate enhanced analysis report with time management metrics"""
         if not results:
             return {}
         
@@ -966,6 +1180,20 @@ class UniversalPuzzleAnalyzer:
             else:
                 accuracy_buckets['80-100%'] += 1
         
+        # Time management analysis
+        time_management_scores = [r.get('time_management_score', 0) for r in results if 'time_management_score' in r]
+        time_exceeded_total = sum(r.get('time_exceeded_count', 0) for r in results)
+        total_moves = sum(r.get('positions_analyzed', 0) for r in results)
+        avg_time_per_move = sum(r.get('avg_time_per_move', 0) for r in results) / len(results) if results else 0
+        
+        time_metrics = {
+            'avg_time_management_score': sum(time_management_scores) / len(time_management_scores) if time_management_scores else 0,
+            'time_exceeded_rate': (time_exceeded_total / total_moves) * 100 if total_moves > 0 else 0,
+            'avg_time_per_move': avg_time_per_move,
+            'total_time_exceeded': time_exceeded_total,
+            'total_moves': total_moves
+        }
+        
         report = {
             'engine_name': self.engine_name,
             'engine_info': self.engine_info,
@@ -981,13 +1209,14 @@ class UniversalPuzzleAnalyzer:
             'position_performance': position_performance,
             'theme_performance': theme_performance,
             'accuracy_distribution': accuracy_buckets,
+            'time_management_metrics': time_metrics,
             'timestamp': datetime.now().isoformat()
         }
         
         return report
     
     def print_report(self, report: Dict):
-        """Print enhanced analysis report with sequence-based metrics"""
+        """Print enhanced analysis report with time management insights"""
         engine_name = report.get('engine_name', 'Unknown Engine')
         
         print("\n" + "=" * 80)
@@ -1078,6 +1307,14 @@ class UniversalPuzzleAnalyzer:
             print(f"  Strongest Theme: {strongest_theme[0]} ({strongest_theme[1]['avg_weighted_accuracy']:.1f}%)")
             print(f"  Weakest Theme: {weakest_theme[0]} ({weakest_theme[1]['avg_weighted_accuracy']:.1f}%)")
         
+        # Time Management Performance
+        if 'time_management_metrics' in report:
+            time_metrics = report['time_management_metrics']
+            print(f"\n⏱️  TIME MANAGEMENT PERFORMANCE:")
+            print(f"Average Time Management Score: {time_metrics['avg_time_management_score']:.2f}/1.00")
+            print(f"Average Time Per Move: {time_metrics['avg_time_per_move']:.1f} seconds")
+            print(f"Exceeded Suggestions: {time_metrics['total_time_exceeded']}/{time_metrics['total_moves']} ({time_metrics['time_exceeded_rate']:.1f}%)")
+        
         print("=" * 80)
     
     def save_results(self, filename: Optional[str] = None):
@@ -1107,19 +1344,22 @@ class UniversalPuzzleAnalyzer:
 
 
 def main():
-    """Main execution function with engine selection, comparison support, and extended sessions"""
+    """Main execution function with time control options"""
     import argparse
     
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Extended Session Support')
+    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Realistic Time Controls')
     parser.add_argument('--engine', required=True, help='Path to the UCI chess engine to test')
     parser.add_argument('--puzzles', type=int, default=100, help='Number of puzzles to analyze (default: 100, ignored if --duration used)')
-    parser.add_argument('--time', type=float, default=20.0, help='Time per position in seconds (default: 20.0)')
+    parser.add_argument('--time', type=float, default=20.0, help='Suggested time per position in seconds (default: 20.0)')
     parser.add_argument('--min-rating', type=int, default=1, help='Minimum puzzle rating (default: 1)')
     parser.add_argument('--max-rating', type=int, default=9999, help='Maximum puzzle rating (default: 9999)')
     parser.add_argument('--themes', nargs='*', help='Filter by puzzle themes (optional)')
     parser.add_argument('--comparison-file', type=str, help='JSON file from previous analysis to use same puzzle IDs for comparison')
     parser.add_argument('--force-puzzle-ids', nargs='*', help='Specific puzzle IDs to analyze (optional)')
+    
+    # Time control arguments
+    parser.add_argument('--time-control', type=str, default='30+2', help='Time control format: "base_minutes+increment_seconds" (default: 30+2)')
     
     # Extended session arguments
     parser.add_argument('--duration', type=float, help='Session duration in hours for extended testing (enables unlimited puzzle streaming)')
@@ -1129,8 +1369,25 @@ def main():
     
     args = parser.parse_args()
     
+    # Parse time control
     try:
-        analyzer = UniversalPuzzleAnalyzer(engine_path=args.engine)
+        if '+' in args.time_control:
+            base_str, inc_str = args.time_control.split('+')
+            base_minutes = float(base_str)
+            increment_seconds = float(inc_str)
+        else:
+            base_minutes = float(args.time_control)
+            increment_seconds = 0.0
+        
+        time_control = TimeControl(base_minutes, increment_seconds)
+        print(f"Using time control: {base_minutes}+{increment_seconds}")
+        
+    except:
+        print(f"Invalid time control format: {args.time_control}, using default 30+2")
+        time_control = TimeControl(30.0, 2.0)
+    
+    try:
+        analyzer = UniversalPuzzleAnalyzer(engine_path=args.engine, time_control=time_control)
         
         # Set custom intervals if provided
         if args.progress_interval:
@@ -1138,17 +1395,18 @@ def main():
         if args.report_interval:
             analyzer.report_interval = args.report_interval
         
-        # Run enhanced sequence analysis with extended session support
+        # Run analysis with suggested time instead of enforced time
         results = analyzer.run_analysis(
             num_puzzles=args.puzzles,
             rating_min=args.min_rating,
             rating_max=args.max_rating,
-            engine_time=args.time,
+            suggested_time=args.time,
             themes_filter=args.themes,
             force_puzzle_ids=args.force_puzzle_ids,
             comparison_file=args.comparison_file,
             duration_hours=args.duration,
-            resume_checkpoint=args.resume
+            resume_checkpoint=args.resume,
+            time_control=time_control
         )
         
         if results or analyzer.results:
