@@ -22,13 +22,13 @@
 - **Perfect Sequences**: 776/1,000 (77.6%)
 
 ### Rating Analysis
-- **Estimated Rating Range**: 399-2,712
-- **Average Rating**: 1,334
+- **Estimated Rating Range**: 399-2712
+- **Average Rating**: 1334
 
 | Category | Count | Rating Range | Average Rating |
 |----------|-------|--------------|----------------|
-| Perfect Sequences | 776 puzzles | 399-2,673 | 1,319 |
-| High Accuracy (≥80%) | 805 puzzles | 399-2,712 | 1,349 |
+| Perfect Sequences | 776 puzzles | 399-2673 | 1319 |
+| High Accuracy (≥80%) | 805 puzzles | 399-2712 | 1349 |
 
 ---
 
