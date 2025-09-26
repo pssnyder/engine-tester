@@ -39,7 +39,7 @@ import chess
 import chess.engine
 
 # Add the databases directory to path for database access
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'databases'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'databases'))
 try:
     from database import PuzzleDatabase, Puzzle
 except ImportError:
