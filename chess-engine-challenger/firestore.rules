@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Game records - public read, controlled write
+    match /games/{gameId} {
+      allow read: if true;
+      allow create: if isValidGameRecord(request.resource.data) 
+                   && request.resource.data.keys().hasAll(['result', 'pgn', 'timestamp'])
+                   && request.resource.data.result != null;
+      allow update: if false; // Prevent data tampering
+      allow delete: if false; // Preserve game history
+    }
+    
+    // Engine statistics - public read, functions write
+    match /engine_stats/{engineName} {
+      allow read: if true;
+      allow write: if false; // Cloud Functions only
+    }
+    
+    // Rate limiting data - functions only
+    match /rate_limits/{clientId} {
+      allow read, write: if false; // Internal use only
+    }
+    
+    // System metrics - admin only
+    match /admin/{document} {
+      allow read, write: if false; // Admin console only
+    }
+    
+    // Helper function to validate game records
+    function isValidGameRecord(data) {
+      return data.keys().hasAll(['white_player', 'black_player', 'time_control']) &&
+             data.white_player is string &&
+             data.black_player is string &&
+             data.time_control is string &&
+             data.pgn is string &&
+             data.result is string;
+    }
+  }
+}

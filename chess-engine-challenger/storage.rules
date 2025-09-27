@@ -1,0 +1,21 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Engine executables - public download only
+    match /engines/{engineFile} {
+      allow read: if true;
+      allow write: if false; // Admin uploads via console only
+    }
+    
+    // Game PGN archives - public read only
+    match /game_records/{gameFile} {
+      allow read: if true;
+      allow write: if false; // Functions write only
+    }
+    
+    // Temporary files (auto-deleted)
+    match /temp/{tempFile} {
+      allow read, write: if false; // Functions only
+    }
+  }
+}
