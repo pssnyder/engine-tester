@@ -13,7 +13,8 @@ Advanced puzzle testing system that works with any UCI-compatible chess engine:
 8. Provides comprehensive theme-based analysis
 
 Enhanced Features:
-- Universal UCI engine support: V7P3R, C0BR4, SlowMate, or any UCI engine
+- Universal UCI engine support: V7P3R, C0BR4, SlowMate, or any UCI engine (.exe or .bat)
+- Supports both executable engines (.exe) and Python source engines (.bat)
 - Sequence analysis: Plays opponent moves and challenges engine on each position
 - Weighted scoring: Later positions in sequences count for more
 - Rating estimation: Analyzes puzzle ratings where engine excels
@@ -94,6 +95,10 @@ class UniversalPuzzleAnalyzer:
         self.puzzle_db_path = puzzle_db_path
         self.results = []
         
+        # Determine engine type and command
+        self.engine_type = self._detect_engine_type(engine_path)
+        self.engine_command = self._build_engine_command(engine_path)
+        
         # Extended session controls
         self.session_start_time = None
         self.session_duration_hours = None
@@ -127,6 +132,26 @@ class UniversalPuzzleAnalyzer:
         
         # Time control management
         self.default_time_control = time_control or TimeControl(30.0, 2.0)  # 30+2 default
+    
+    def _detect_engine_type(self, engine_path: str) -> str:
+        """Detect whether engine is .exe or .bat file"""
+        path_lower = engine_path.lower()
+        if path_lower.endswith('.bat'):
+            return 'bat'
+        elif path_lower.endswith('.exe'):
+            return 'exe'
+        else:
+            # Default to treating as executable
+            return 'exe'
+    
+    def _build_engine_command(self, engine_path: str) -> List[str]:
+        """Build the command to launch the engine based on file type"""
+        if self.engine_type == 'bat':
+            # For .bat files, use cmd.exe to execute them
+            return ['cmd.exe', '/c', engine_path]
+        else:
+            # For .exe files, launch directly
+            return [engine_path]
     
     def setup_signal_handlers(self):
         """Set up signal handlers for graceful shutdown"""
@@ -328,12 +353,13 @@ class UniversalPuzzleAnalyzer:
         """Get engine information via UCI protocol"""
         try:
             process = subprocess.Popen(
-                self.engine_path,
+                self.engine_command,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                bufsize=0
+                bufsize=0,
+                cwd=os.path.dirname(self.engine_path) if self.engine_type == 'bat' else None
             )
             
             engine_info = {}
@@ -391,12 +417,13 @@ class UniversalPuzzleAnalyzer:
         """Get the test engine's best move for a position with generous time"""
         try:
             process = subprocess.Popen(
-                self.engine_path,
+                self.engine_command,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                bufsize=0
+                bufsize=0,
+                cwd=os.path.dirname(self.engine_path) if self.engine_type == 'bat' else None
             )
             
             # UCI commands
@@ -557,12 +584,13 @@ class UniversalPuzzleAnalyzer:
             is_white = board.turn
             
             process = subprocess.Popen(
-                self.engine_path,
+                self.engine_command,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                bufsize=0
+                bufsize=0,
+                cwd=os.path.dirname(self.engine_path) if self.engine_type == 'bat' else None
             )
             
             # Calculate time allocation
@@ -1348,8 +1376,8 @@ def main():
     import argparse
     
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Realistic Time Controls')
-    parser.add_argument('--engine', required=True, help='Path to the UCI chess engine to test')
+    parser = argparse.ArgumentParser(description='Universal Chess Engine Puzzle Analyzer with Realistic Time Controls - Supports .exe and .bat engines')
+    parser.add_argument('--engine', required=True, help='Path to the UCI chess engine to test (.exe or .bat file)')
     parser.add_argument('--puzzles', type=int, default=100, help='Number of puzzles to analyze (default: 100, ignored if --duration used)')
     parser.add_argument('--time', type=float, default=20.0, help='Suggested time per position in seconds (default: 20.0)')
     parser.add_argument('--min-rating', type=int, default=1, help='Minimum puzzle rating (default: 1)')
