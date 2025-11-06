@@ -1,0 +1,2 @@
+S:\Maker Stuff\Programming\Chess Engines\C0BR4 Chess Engine\cobra-chess-engine\dist\v2.4\VERSION
+S:\Maker Stuff\Programming\Chess Engines\C0BR4 Chess Engine\cobra-chess-engine\dist\v2.4\C0BR4_v2.4.exe

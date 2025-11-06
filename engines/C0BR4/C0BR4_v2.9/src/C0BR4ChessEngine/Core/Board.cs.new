@@ -1,0 +1,448 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C0BR4ChessEngine.Core
+{
+    /// <summary>
+    /// Board state for undo operations - updated for bitboard compatibility
+    /// </summary>
+    public struct BoardState
+    {
+        public BitboardPosition Position;
+        public Move LastMove;
+
+        public BoardState(BitboardPosition position, Move lastMove)
+        {
+            Position = position;
+            LastMove = lastMove;
+        }
+    }
+
+    /// <summary>
+    /// Board representation that internally uses bitboards for efficiency and accuracy
+    /// Maintains compatibility with existing UCI interface while using fast bitboard operations
+    /// </summary>
+    public class Board
+    {
+        private BitboardPosition position;
+        private BitboardMoveGenerator moveGenerator;
+        private Stack<BoardState> moveHistory;
+
+        public bool IsWhiteToMove => position.IsWhiteToMove;
+        public int FullMoveNumber => position.FullMoveNumber;
+        public int HalfMoveClock => position.HalfMoveClock;
+
+        public Board()
+        {
+            moveGenerator = new BitboardMoveGenerator();
+            moveHistory = new Stack<BoardState>();
+            LoadStartPosition();
+        }
+
+        public Board(string fen)
+        {
+            moveGenerator = new BitboardMoveGenerator();
+            moveHistory = new Stack<BoardState>();
+            LoadPosition(fen);
+        }
+
+        /// <summary>
+        /// Load the standard starting position
+        /// </summary>
+        public void LoadStartPosition()
+        {
+            LoadPosition("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+        }
+
+        /// <summary>
+        /// Load a position from FEN notation
+        /// </summary>
+        public void LoadPosition(string fen)
+        {
+            position = BitboardPosition.FromFEN(fen);
+            moveHistory.Clear();
+        }
+
+        /// <summary>
+        /// Get the piece on a square (for backward compatibility)
+        /// </summary>
+        public Piece GetPiece(Square square)
+        {
+            var (pieceType, isWhite) = position.GetPieceAt(square.Index);
+            return new Piece(pieceType, isWhite, square);
+        }
+
+        /// <summary>
+        /// Generate all legal moves for the current position
+        /// Now uses the efficient bitboard move generator
+        /// </summary>
+        public Move[] GetLegalMoves()
+        {
+            return moveGenerator.GenerateLegalMoves(position);
+        }
+
+        /// <summary>
+        /// Generate all pseudo-legal moves (may include moves that leave king in check)
+        /// </summary>
+        public Move[] GetPseudoLegalMoves()
+        {
+            return moveGenerator.GeneratePseudoLegalMoves(position);
+        }
+
+        /// <summary>
+        /// Make a move on the board
+        /// </summary>
+        public void MakeMove(Move move)
+        {
+            // Save current state for undo
+            moveHistory.Push(new BoardState(position.Clone(), move));
+
+            // Apply the move using bitboard operations
+            ApplyMove(ref position, move);
+        }
+
+        /// <summary>
+        /// Undo the last move
+        /// </summary>
+        public void UnmakeMove()
+        {
+            if (moveHistory.Count == 0)
+                throw new InvalidOperationException("No moves to undo");
+
+            var state = moveHistory.Pop();
+            position = state.Position;
+        }
+
+        /// <summary>
+        /// Apply a move to the bitboard position
+        /// </summary>
+        private void ApplyMove(ref BitboardPosition pos, Move move)
+        {
+            int fromSquare = move.StartSquare.Index;
+            int toSquare = move.TargetSquare.Index;
+            
+            // Update halfmove clock
+            if (move.MovePieceType == PieceType.Pawn || move.IsCapture)
+            {
+                pos.HalfMoveClock = 0;
+            }
+            else
+            {
+                pos.HalfMoveClock++;
+            }
+
+            // Update en passant
+            pos.EnPassantSquare = -1; // Clear previous en passant
+
+            // Handle special moves
+            switch (move.Flag)
+            {
+                case MoveFlag.PawnTwoForward:
+                    // Set en passant square
+                    pos.EnPassantSquare = pos.IsWhiteToMove ? toSquare - 8 : toSquare + 8;
+                    break;
+
+                case MoveFlag.EnPassant:
+                    // Remove the captured pawn
+                    int capturedPawnSquare = pos.IsWhiteToMove ? toSquare - 8 : toSquare + 8;
+                    pos.RemovePiece(capturedPawnSquare);
+                    break;
+
+                case MoveFlag.Castling:
+                    // Move the rook for castling
+                    HandleCastlingRookMove(ref pos, move);
+                    break;
+            }
+
+            // Update castling rights
+            UpdateCastlingRights(ref pos, move);
+
+            // Move the piece
+            pos.MovePiece(fromSquare, toSquare);
+
+            // Handle promotion
+            if (move.IsPromotion)
+            {
+                pos.RemovePiece(toSquare);
+                pos.SetPiece(toSquare, move.PromotionPieceType, pos.IsWhiteToMove);
+            }
+
+            // Switch turns
+            pos.IsWhiteToMove = !pos.IsWhiteToMove;
+            
+            // Update full move number
+            if (pos.IsWhiteToMove) // If it's white's turn again, increment full move number
+            {
+                pos.FullMoveNumber++;
+            }
+        }
+
+        private void HandleCastlingRookMove(ref BitboardPosition pos, Move move)
+        {
+            int toSquare = move.TargetSquare.Index;
+            
+            // Move the rook based on castling type
+            if (toSquare == 6) // White kingside castling (e1-g1)
+            {
+                pos.MovePiece(7, 5); // h1 to f1
+            }
+            else if (toSquare == 2) // White queenside castling (e1-c1)
+            {
+                pos.MovePiece(0, 3); // a1 to d1
+            }
+            else if (toSquare == 62) // Black kingside castling (e8-g8)
+            {
+                pos.MovePiece(63, 61); // h8 to f8
+            }
+            else if (toSquare == 58) // Black queenside castling (e8-c8)
+            {
+                pos.MovePiece(56, 59); // a8 to d8
+            }
+        }
+
+        private void UpdateCastlingRights(ref BitboardPosition pos, Move move)
+        {
+            // If king moves, lose both castling rights
+            if (move.MovePieceType == PieceType.King)
+            {
+                if (pos.IsWhiteToMove)
+                {
+                    pos.WhiteCanCastleKingside = false;
+                    pos.WhiteCanCastleQueenside = false;
+                }
+                else
+                {
+                    pos.BlackCanCastleKingside = false;
+                    pos.BlackCanCastleQueenside = false;
+                }
+            }
+
+            // If rook moves from starting square, lose that side's castling rights
+            if (move.MovePieceType == PieceType.Rook)
+            {
+                if (pos.IsWhiteToMove)
+                {
+                    if (move.StartSquare.Index == 0) // a1
+                        pos.WhiteCanCastleQueenside = false;
+                    else if (move.StartSquare.Index == 7) // h1
+                        pos.WhiteCanCastleKingside = false;
+                }
+                else
+                {
+                    if (move.StartSquare.Index == 56) // a8
+                        pos.BlackCanCastleQueenside = false;
+                    else if (move.StartSquare.Index == 63) // h8
+                        pos.BlackCanCastleKingside = false;
+                }
+            }
+
+            // If rook is captured, lose that side's castling rights
+            if (move.CapturePieceType == PieceType.Rook)
+            {
+                if (move.TargetSquare.Index == 0) // a1
+                    pos.WhiteCanCastleQueenside = false;
+                else if (move.TargetSquare.Index == 7) // h1
+                    pos.WhiteCanCastleKingside = false;
+                else if (move.TargetSquare.Index == 56) // a8
+                    pos.BlackCanCastleQueenside = false;
+                else if (move.TargetSquare.Index == 63) // h8
+                    pos.BlackCanCastleKingside = false;
+            }
+        }
+
+        /// <summary>
+        /// Check if the current player is in check
+        /// </summary>
+        public bool IsInCheck()
+        {
+            return position.IsInCheck();
+        }
+
+        /// <summary>
+        /// Check if the position is checkmate
+        /// </summary>
+        public bool IsCheckmate()
+        {
+            return IsInCheck() && GetLegalMoves().Length == 0;
+        }
+
+        /// <summary>
+        /// Check if the position is stalemate
+        /// </summary>
+        public bool IsStalemate()
+        {
+            return !IsInCheck() && GetLegalMoves().Length == 0;
+        }
+
+        /// <summary>
+        /// Check if the game is drawn
+        /// </summary>
+        public bool IsDraw()
+        {
+            return IsStalemate() || position.HalfMoveClock >= 100; // 50-move rule
+        }
+
+        /// <summary>
+        /// Get the current position as FEN
+        /// </summary>
+        public string GetFEN()
+        {
+            return position.ToFEN();
+        }
+
+        /// <summary>
+        /// Get the internal bitboard position (for advanced operations)
+        /// </summary>
+        public BitboardPosition GetBitboardPosition()
+        {
+            return position;
+        }
+
+        /// <summary>
+        /// Validate the current position state and return detailed diagnostics
+        /// </summary>
+        /// <returns>A tuple containing (bool isValid, string diagnostics)</returns>
+        public (bool isValid, string diagnostics) ValidatePositionWithDiagnostics()
+        {
+            // Get detailed validation from the position
+            var (isValid, details) = position.ValidateStateDetailed();
+            
+            // If position is valid, include additional Board-level validation
+            if (isValid)
+            {
+                // Verify move history consistency
+                bool historyValid = true;
+                string historyDiagnostics = "";
+                if (moveHistory.Count > 0)
+                {
+                    // Check that the last move in history matches current position
+                    var lastState = moveHistory.Peek();
+                    if (lastState.Position.ToFEN() != position.ToFEN())
+                    {
+                        historyValid = false;
+                        historyDiagnostics = "Move history inconsistency: Last recorded position does not match current position.";
+                    }
+                }
+
+                if (!historyValid)
+                {
+                    isValid = false;
+                    details += "\n" + historyDiagnostics;
+                }
+            }
+
+            return (isValid, details);
+        }
+
+        /// <summary>
+        /// Validate the current position state
+        /// </summary>
+        /// <returns>true if the position is valid, false otherwise</returns>
+        public bool ValidatePosition()
+        {
+            return ValidatePositionWithDiagnostics().isValid;
+        }
+
+        /// <summary>
+        /// Get detailed diagnostics about the current position
+        /// </summary>
+        public string GetPositionDiagnostics()
+        {
+            bool isValid;
+            string error;
+            (isValid, error) = position.ValidateStateDetailed();
+            
+            var diagnostics = new StringBuilder();
+            diagnostics.AppendLine($"Position Validation: {(isValid ? "VALID" : "INVALID")}");
+            if (!isValid)
+            {
+                diagnostics.AppendLine($"Error: {error}");
+            }
+            
+            // Current state
+            diagnostics.AppendLine($"\nGame State:");
+            diagnostics.AppendLine($"Active Color: {(position.IsWhiteToMove ? "White" : "Black")}");
+            diagnostics.AppendLine($"Fullmove Number: {position.FullMoveNumber}");
+            diagnostics.AppendLine($"Halfmove Clock: {position.HalfMoveClock}");
+            
+            // Castling rights
+            diagnostics.AppendLine($"\nCastling Rights:");
+            diagnostics.AppendLine($"White: {(position.WhiteCanCastleKingside ? "K" : "-")}{(position.WhiteCanCastleQueenside ? "Q" : "-")}");
+            diagnostics.AppendLine($"Black: {(position.BlackCanCastleKingside ? "k" : "-")}{(position.BlackCanCastleQueenside ? "q" : "-")}");
+            
+            // En passant
+            diagnostics.AppendLine($"\nEn Passant Square: {(position.EnPassantSquare == -1 ? "-" : new Square(position.EnPassantSquare).ToString())}");
+            
+            // Piece counts
+            diagnostics.AppendLine($"\nPiece Counts:");
+            diagnostics.AppendLine($"White Pawns: {Bitboard.PopCount(position.WhitePawns)}");
+            diagnostics.AppendLine($"White Knights: {Bitboard.PopCount(position.WhiteKnights)}");
+            diagnostics.AppendLine($"White Bishops: {Bitboard.PopCount(position.WhiteBishops)}");
+            diagnostics.AppendLine($"White Rooks: {Bitboard.PopCount(position.WhiteRooks)}");
+            diagnostics.AppendLine($"White Queens: {Bitboard.PopCount(position.WhiteQueens)}");
+            diagnostics.AppendLine($"White King: {Bitboard.PopCount(position.WhiteKing)}");
+            diagnostics.AppendLine($"Black Pawns: {Bitboard.PopCount(position.BlackPawns)}");
+            diagnostics.AppendLine($"Black Knights: {Bitboard.PopCount(position.BlackKnights)}");
+            diagnostics.AppendLine($"Black Bishops: {Bitboard.PopCount(position.BlackBishops)}");
+            diagnostics.AppendLine($"Black Rooks: {Bitboard.PopCount(position.BlackRooks)}");
+            diagnostics.AppendLine($"Black Queens: {Bitboard.PopCount(position.BlackQueens)}");
+            diagnostics.AppendLine($"Black King: {Bitboard.PopCount(position.BlackKing)}");
+            
+            // Bitboard consistency
+            ulong whitePieces = position.WhitePawns | position.WhiteKnights | position.WhiteBishops |
+                               position.WhiteRooks | position.WhiteQueens | position.WhiteKing;
+            ulong blackPieces = position.BlackPawns | position.BlackKnights | position.BlackBishops |
+                               position.BlackRooks | position.BlackQueens | position.BlackKing;
+                               
+            diagnostics.AppendLine($"\nBitboard Consistency:");
+            diagnostics.AppendLine($"White Pieces Match: {(whitePieces == position.AllWhitePieces ? "Yes" : "No")}");
+            diagnostics.AppendLine($"Black Pieces Match: {(blackPieces == position.AllBlackPieces ? "Yes" : "No")}");
+            diagnostics.AppendLine($"All Pieces Match: {((whitePieces | blackPieces) == position.AllPieces ? "Yes" : "No")}");
+            
+            // Move generation
+            var legalMoves = GetLegalMoves();
+            var pseudoLegalMoves = GetPseudoLegalMoves();
+            diagnostics.AppendLine($"\nMove Generation:");
+            diagnostics.AppendLine($"Pseudo-legal Moves: {pseudoLegalMoves.Length}");
+            diagnostics.AppendLine($"Legal Moves: {legalMoves.Length}");
+            
+            // Game state
+            diagnostics.AppendLine($"\nGame Status:");
+            diagnostics.AppendLine($"In Check: {IsInCheck()}");
+            diagnostics.AppendLine($"Checkmate: {IsCheckmate()}");
+            diagnostics.AppendLine($"Stalemate: {IsStalemate()}");
+            diagnostics.AppendLine($"Draw: {IsDraw()}");
+            
+            return diagnostics.ToString();
+        }
+
+        /// <summary>
+        /// Validate that a move is legal before applying it
+        /// This prevents the rule infractions that occurred in v2.0
+        /// </summary>
+        public bool IsLegalMove(Move move)
+        {
+            return moveGenerator.IsLegalMove(position, move);
+        }
+
+        /// <summary>
+        /// Find a legal move from a UCI move string (e.g., "e2e4")
+        /// Returns null if the move is not legal
+        /// </summary>
+        public Move? FindLegalMove(string moveString)
+        {
+            var legalMoves = GetLegalMoves();
+            
+            foreach (var move in legalMoves)
+            {
+                if (move.ToString() == moveString)
+                {
+                    return move;
+                }
+            }
+            
+            return null; // Move not found or not legal
+        }
+    }
+}

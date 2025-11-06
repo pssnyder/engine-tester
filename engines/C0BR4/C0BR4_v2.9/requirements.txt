@@ -1,0 +1,229 @@
+# C0BR4 Engine Requirements
+
+## Runtime Requirements
+
+### .NET Runtime
+- .NET 6.0 or later (tested on .NET 6.0, 7.0, 8.0)
+- Windows: Download from https://dotnet.microsoft.com/download
+- Linux: Install via package manager (apt install dotnet-runtime-6.0)
+- macOS: Install via Homebrew (brew install dotnet)
+
+### Operating System Support
+- Windows 10+ (x64, ARM64)
+- Linux distributions with glibc 2.17+ (Ubuntu 18.04+, CentOS 7+)
+- macOS 10.15+ (Catalina and later)
+
+### Hardware Requirements
+- **Minimum**: 1 CPU core, 100MB RAM
+- **Recommended**: 2+ CPU cores, 512MB+ RAM
+- **Storage**: ~10MB for engine executable
+
+## Development Requirements
+
+### Build Tools
+- .NET 6.0 SDK or later
+- Git (for version control)
+- Text editor or IDE (Visual Studio, VS Code, Rider)
+
+### Dependencies
+All dependencies are built into the .NET runtime - no external packages required.
+
+### Build Environment
+```bash
+# Verify .NET SDK installation
+dotnet --version
+
+# Should return 6.0.x or later
+```
+
+## Chess GUI Compatibility
+
+### Verified Compatible GUIs
+- **Arena Chess GUI** (Windows) - Free
+  - Download: http://www.playwitharena.de/
+  - UCI support: Full
+  - Tournament mode: Yes
+
+- **Cute Chess** (Cross-platform) - Free/Open Source
+  - Download: https://github.com/cutechess/cutechess
+  - UCI support: Full
+  - Engine vs Engine testing: Yes
+
+### Likely Compatible GUIs
+- **ChessBase/Fritz** (Commercial)
+- **Tarrasch Chess GUI** (Free)
+- **BanksiaGUI** (Tournament management)
+- **Scid vs. PC** (Database with UCI support)
+- **PyChess** (Linux)
+
+### UCI Protocol Support
+The engine implements UCI (Universal Chess Interface) standard:
+- UCI commands: uci, isready, position, go, stop, quit
+- Position formats: startpos, FEN strings
+- Search modes: depth-limited, time-limited
+- Engine info: name, author, options
+
+## Performance Expectations
+
+### Search Performance
+Based on standard test position (depth 4):
+- **Nodes per second**: 20,000-50,000 (hardware dependent)
+- **Transposition table hits**: 5-15% typical
+- **Memory usage**: <50MB during search
+
+### Hardware Scaling
+- **Single-threaded**: Scales with CPU clock speed
+- **Memory bandwidth**: Affects transposition table performance
+- **Cache size**: Improves search efficiency
+
+### Time Controls
+Recommended time controls for testing:
+- **Blitz**: 3+2 (3 minutes + 2 second increment)
+- **Rapid**: 10+5 (10 minutes + 5 second increment)
+- **Engine testing**: 1+0.1 (1 minute + 0.1 second increment)
+
+## Version History
+
+### v0.6 (Current) - Zobrist Transposition Table
+- Added Zobrist hashing for position keys
+- Transposition table with 100K entries
+- ~23K nodes/second at depth 4
+- 6.5% transposition table hit rate
+
+### v0.5 - Quiescence Search
+- Extended search in tactical positions
+- Handles captures and checks beyond horizon
+- Improved tactical accuracy
+- ~23K nodes/second at depth 4
+
+### v0.4 - Move Ordering
+- MVV-LVA (Most Valuable Victim - Least Valuable Attacker)
+- Captures prioritized over quiet moves
+- 43% node reduction vs pure alpha-beta
+- ~219K nodes/second at depth 4
+
+### v0.3 - Alpha-Beta Pruning
+- Fail-soft negamax with alpha-beta
+- 354x speedup over simple negamax
+- ~343K nodes/second at depth 4
+- Massive search tree pruning
+
+### v0.2 - Simple Search
+- Basic negamax search
+- Legal move validation
+- Simple material evaluation
+- Baseline: 1.37M nodes/second (simple positions)
+
+### v0.1 - Move Generation
+- Complete move generation
+- Board representation
+- UCI interface foundation
+
+### v0.0 - Random Bot
+- Project structure established
+- Random move selection
+- UCI command parsing
+
+## Testing & Validation
+
+### Built-in Test Positions
+```bash
+# Standard benchmark position
+position fen r3k2r/p1ppqpb1/Bn2pnp1/3PN3/1p2P3/2N2Q2/PPPB1PpP/R3K2R w KQkq - 0 1
+
+# Starting position
+position startpos
+
+# Tactical position (pins and forks)
+position fen rnbqkb1r/pp1p1ppp/5n2/2p1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 4
+```
+
+### Performance Benchmarks
+Run automated benchmarks to verify performance:
+```bash
+echo -e "uci\nposition fen r3k2r/p1ppqpb1/Bn2pnp1/3PN3/1p2P3/2N2Q2/PPPB1PpP/R3K2R w KQkq - 0 1\ngo depth 4\nquit" | ./C0BR4_v0.6.exe
+```
+
+### Engine vs Engine Testing
+Compare versions using Cute Chess CLI:
+```bash
+cutechess-cli -engine cmd=./dist/v0.5/C0BR4_v0.5.exe -engine cmd=./dist/v0.6/C0BR4_v0.6.exe -each tc=10+0.1 -games 100
+```
+
+## Known Limitations
+
+### Current Engine Limitations
+- **Single-threaded**: No parallel search
+- **Fixed evaluation**: No adaptive evaluation weights
+- **No opening book**: Relies on search from move 1
+- **No endgame tables**: Limited perfect endgame knowledge
+- **Basic time management**: Simple depth-based search
+
+### UCI Limitations
+- **Pondering**: Not implemented (think on opponent's time)
+- **Multi-PV**: Single best line only
+- **Analysis mode**: Basic analysis output
+- **Custom options**: Limited engine configuration
+
+### Performance Limitations
+- **Search depth**: Practical limit ~6-8 ply
+- **Position complexity**: Tactical positions slower
+- **Memory usage**: Fixed 100K transposition table entries
+
+## Troubleshooting
+
+### Common Issues
+
+1. **".NET runtime not found"**
+   - Install .NET 6.0 runtime from Microsoft
+   - Verify: `dotnet --version`
+
+2. **"Command not recognized" in chess GUI**
+   - Ensure engine path is correct
+   - Try absolute path to .exe file
+   - Check GUI UCI configuration
+
+3. **Poor performance**
+   - Close unnecessary applications
+   - Ensure adequate RAM available
+   - Try lower depth settings
+
+4. **Engine doesn't respond**
+   - Send "uci" command first
+   - Wait for "uciok" response
+   - Check for error messages
+
+### Debug Information
+Enable debug output in UCI:
+```bash
+uci
+setoption name Debug value true
+isready
+```
+
+## Support & Contributing
+
+### Getting Help
+- Check README.md for usage examples
+- Review CHECKLIST.md for development priorities
+- Open GitHub issues for bugs or questions
+
+### Contributing Guidelines
+1. Test changes against existing benchmarks
+2. Maintain backwards compatibility
+3. Update documentation for new features
+4. Follow existing code style and patterns
+
+### Development Environment Setup
+```bash
+# Clone repository
+git clone <repository-url>
+cd chess-ai/src
+
+# Verify build environment
+dotnet --version  # Should be 6.0+
+
+# Build and test
+dotnet build
+dotnet run
+```
