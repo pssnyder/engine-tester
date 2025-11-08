@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-V7P3R v12.6 UCI Interface - Clean Performance Build
+V7P3R v14.1 UCI Interface - Smart Time Management Build
 """
 
 import sys
@@ -27,7 +27,7 @@ def main():
                 break
                 
             elif command == "uci":
-                print("id name V7P3R v12.6")
+                print("id name V7P3R v14.1")
                 print("id author Pat Snyder")
                 print("uciok")
                 
@@ -103,57 +103,121 @@ def main():
                     elif part == "wtime" and i + 1 < len(parts):
                         try:
                             if board.turn == chess.WHITE:
-                                # V12.2: Balanced aggressive time management
+                                # V14.1: IMPROVED time management with increment awareness
                                 remaining_time = int(parts[i + 1]) / 1000.0
-                                # Skip tactical detector for simplified version
+                                increment = 0.0
                                 
-                                # V12.2: Reasonable time usage - aim for using time but not burning it
+                                # Check for increment (winc)
+                                for j, p in enumerate(parts):
+                                    if p == "winc" and j + 1 < len(parts):
+                                        try:
+                                            increment = int(parts[j + 1]) / 1000.0
+                                        except:
+                                            pass
+                                
                                 moves_played = len(board.move_stack)
-                                if moves_played < 10:
-                                    time_factor = 30.0  # Opening: use 1/30th (10min game = 20s/move)
-                                elif moves_played < 20:
-                                    time_factor = 25.0  # Early game: use 1/25th  
-                                elif moves_played < 40:
-                                    time_factor = 20.0  # Mid game: use 1/20th (more time for complex positions)
-                                else:
-                                    time_factor = 15.0  # End game: use 1/15th (precision matters)
                                 
-                                # Apply reasonable time cap to prevent burning too much time
-                                calculated_time = remaining_time / time_factor
-                                if remaining_time > 120:  # More than 2 minutes remaining
-                                    time_limit = min(calculated_time, 30.0)  # Max 30s per move
-                                elif remaining_time > 60:   # 1-2 minutes remaining
-                                    time_limit = min(calculated_time, 15.0)  # Max 15s per move  
-                                else:  # Less than 1 minute - be more careful
-                                    time_limit = min(calculated_time, 8.0)   # Max 8s per move
+                                # V14.1: Smarter time allocation
+                                if moves_played < 8:
+                                    # Very early opening - play FAST
+                                    time_factor = 40.0  # Use 1/40th of time
+                                elif moves_played < 15:
+                                    # Opening - still quick
+                                    time_factor = 30.0  # Use 1/30th
+                                elif moves_played < 25:
+                                    # Early middlegame - starting to matter
+                                    time_factor = 25.0  # Use 1/25th
+                                elif moves_played < 40:
+                                    # Critical middlegame - use more time
+                                    time_factor = 18.0  # Use 1/18th
+                                else:
+                                    # Endgame - moderate time
+                                    time_factor = 20.0  # Use 1/20th
+                                
+                                # V14.1: Increment-aware calculation
+                                # If we have increment, we can afford to use more time early
+                                if increment > 0.5:  # Meaningful increment
+                                    # Add some increment to our thinking budget
+                                    effective_time = remaining_time + (increment * 10)  # Future increments
+                                    calculated_time = effective_time / time_factor
+                                else:
+                                    # No increment - be more conservative
+                                    calculated_time = remaining_time / time_factor
+                                
+                                # V14.1: HARD CAPS based on remaining time
+                                if remaining_time > 180:  # More than 3 minutes
+                                    time_limit = min(calculated_time, 30.0)  # Max 30s
+                                elif remaining_time > 120:  # 2-3 minutes
+                                    time_limit = min(calculated_time, 20.0)  # Max 20s
+                                elif remaining_time > 60:  # 1-2 minutes
+                                    time_limit = min(calculated_time, 12.0)  # Max 12s
+                                elif remaining_time > 30:  # 30s-1min
+                                    time_limit = min(calculated_time, 6.0)   # Max 6s
+                                else:  # Critical time
+                                    time_limit = min(calculated_time, 3.0)   # Max 3s
+                                
+                                # V14.1: ABSOLUTE SAFETY - never exceed 60s
+                                time_limit = min(time_limit, 60.0)
                         except:
                             pass
                     elif part == "btime" and i + 1 < len(parts):
                         try:
                             if board.turn == chess.BLACK:
-                                # V12.2: Balanced aggressive time management
+                                # V14.1: IMPROVED time management with increment awareness
                                 remaining_time = int(parts[i + 1]) / 1000.0
-                                # Skip tactical detector for simplified version
+                                increment = 0.0
                                 
-                                # V12.2: Reasonable time usage - aim for using time but not burning it
+                                # Check for increment (binc)
+                                for j, p in enumerate(parts):
+                                    if p == "binc" and j + 1 < len(parts):
+                                        try:
+                                            increment = int(parts[j + 1]) / 1000.0
+                                        except:
+                                            pass
+                                
                                 moves_played = len(board.move_stack)
-                                if moves_played < 10:
-                                    time_factor = 30.0  # Opening: use 1/30th (10min game = 20s/move)
-                                elif moves_played < 20:
-                                    time_factor = 25.0  # Early game: use 1/25th  
-                                elif moves_played < 40:
-                                    time_factor = 20.0  # Mid game: use 1/20th (more time for complex positions)
-                                else:
-                                    time_factor = 15.0  # End game: use 1/15th (precision matters)
                                 
-                                # Apply reasonable time cap to prevent burning too much time
-                                calculated_time = remaining_time / time_factor
-                                if remaining_time > 120:  # More than 2 minutes remaining
-                                    time_limit = min(calculated_time, 30.0)  # Max 30s per move
-                                elif remaining_time > 60:   # 1-2 minutes remaining
-                                    time_limit = min(calculated_time, 15.0)  # Max 15s per move  
-                                else:  # Less than 1 minute - be more careful
-                                    time_limit = min(calculated_time, 8.0)   # Max 8s per move
+                                # V14.1: Smarter time allocation
+                                if moves_played < 8:
+                                    # Very early opening - play FAST
+                                    time_factor = 40.0  # Use 1/40th of time
+                                elif moves_played < 15:
+                                    # Opening - still quick
+                                    time_factor = 30.0  # Use 1/30th
+                                elif moves_played < 25:
+                                    # Early middlegame - starting to matter
+                                    time_factor = 25.0  # Use 1/25th
+                                elif moves_played < 40:
+                                    # Critical middlegame - use more time
+                                    time_factor = 18.0  # Use 1/18th
+                                else:
+                                    # Endgame - moderate time
+                                    time_factor = 20.0  # Use 1/20th
+                                
+                                # V14.1: Increment-aware calculation
+                                # If we have increment, we can afford to use more time early
+                                if increment > 0.5:  # Meaningful increment
+                                    # Add some increment to our thinking budget
+                                    effective_time = remaining_time + (increment * 10)  # Future increments
+                                    calculated_time = effective_time / time_factor
+                                else:
+                                    # No increment - be more conservative
+                                    calculated_time = remaining_time / time_factor
+                                
+                                # V14.1: HARD CAPS based on remaining time
+                                if remaining_time > 180:  # More than 3 minutes
+                                    time_limit = min(calculated_time, 30.0)  # Max 30s
+                                elif remaining_time > 120:  # 2-3 minutes
+                                    time_limit = min(calculated_time, 20.0)  # Max 20s
+                                elif remaining_time > 60:  # 1-2 minutes
+                                    time_limit = min(calculated_time, 12.0)  # Max 12s
+                                elif remaining_time > 30:  # 30s-1min
+                                    time_limit = min(calculated_time, 6.0)   # Max 6s
+                                else:  # Critical time
+                                    time_limit = min(calculated_time, 3.0)   # Max 3s
+                                
+                                # V14.1: ABSOLUTE SAFETY - never exceed 60s
+                                time_limit = min(time_limit, 60.0)
                         except:
                             pass
                 

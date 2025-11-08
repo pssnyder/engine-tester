@@ -1,97 +1,257 @@
-# V7P3R Chess Engine - Performance Builds
+# V7P3R v14.0 Production Performance Summary
 
-**V12.6 Released:** October 4, 2025 - Tournament Ready ✅  
-**V14.0 Released:** October 25, 2025 - Consolidated Performance Build ✅
+**Performance Period:** After ~24 Hours of Live Operation
 
-## 🚀 Latest: V14.0 Consolidated Performance Build
+## 📊 Game Results
 
-Built on V12.6 stability foundation with comprehensive code consolidation for enhanced performance and maintainability.
+| Metric | Count | Percentage |
+|--------|-------|------------|
+| **Wins** | 16 | 61.5% |
+| **Losses** | 6 | 23.1% |
+| **Draws** | 4 | 15.4% |
+| **Total Games** | 26 | 100% |
 
-### 🔧 V14.0 Consolidation Improvements
-- **Unified Bitboard Evaluation** - All evaluation logic consolidated into single high-performance system
-- **Tactical Detection Integration** - Bitboard tactical analysis integrated with move ordering
-- **Pawn Structure Consolidation** - Streamlined pawn evaluation with reduced overhead
-- **King Safety Unification** - Consolidated king safety evaluation for efficiency
-- **Eliminated Redundancies** - Removed duplicate bitboard operations and function calls
-- **Enhanced Maintainability** - Cleaner architecture with unified evaluation pipeline
+**Overall Win Rate: 61.5%** ✅
 
-### 📊 V14.0 Performance Results
-- **Equivalent Performance** to V12.6 baseline (0.5% variance within margin of error)
-- **Preserved Functionality** - All chess heuristics and evaluation logic maintained
-- **Cleaner Codebase** - Reduced complexity through consolidation
-- **Memory Efficiency** - Reduced function call overhead
+## 🎯 Matchmaking Performance
 
-### 📁 V14.0 Contents
-- `src/v7p3r.py` - Main engine with consolidated evaluation calls
-- `src/v7p3r_bitboard_evaluator.py` - Unified bitboard evaluation system (1200+ lines)
-- `src/v7p3r_uci.py` - Standard UCI protocol interface
-- `test_v14_consolidated.py` - Functionality verification tests
-- `test_v14_performance.py` - Performance comparison vs V12.6
+- **Status:** ✅ Active and Working Well
+- **Total Challenges Initiated:** 33
+- **Cancelled/Rejected:** 5 (15% rejection rate)
+- **Success Rate:** ~85% of matchmaking challenges accepted
 
-## 🏆 V12.6 Tournament Performance
-- **Engine Battle 20251004:** 7.0/10 points (2nd place vs multiple engines)
-- **Regression Battle 20251004:** 9.0/12 points (1st place vs all V7P3R versions)
-- **vs V12.2 Baseline:** Consistently superior performance
+## ⏱️ Time Controls Distribution
 
-## 🚀 V12.6 Performance Improvements
-- **30x faster evaluation** (152ms → 5ms)
-- **Complete nudge system removal** for clean performance
-- **Optimized search algorithm** with efficient hash caching
-- **Fast bitboard evaluation** without overhead
+| Time Control | Games Played | Percentage |
+|--------------|--------------|------------|
+| **Blitz** | 18 | 55% |
+| **Rapid** | 15 | 45% |
 
-## 📁 V12.6 Deployment Contents
-- `V7P3R_v12.6.exe` - Tournament-ready executable (8.2MB)
-- `src/` - Clean source code directory
-  - `v7p3r.py` - Main engine with optimized search
-  - `v7p3r_bitboard_evaluator.py` - High-performance evaluation
-  - `v7p3r_uci.py` - Standard UCI protocol interface
-- `V7P3R_v12.6.spec` - PyInstaller build specification
+## 🤖 Recent Opponents
 
-## 🔧 V12.6 Technical Highlights
-- **No nudge system dependencies** - Clean codebase for future development
-- **Efficient transposition table** using chess library's built-in hash
-- **Optimized evaluation caching** with minimal overhead
-- **Standard UCI compliance** for tournament compatibility
+V7P3R v14.0 has been actively competing against various bots:
 
-## 🎯 V12.6 Deployment Notes
-- Ready for immediate Lichess bot deployment
-- Significantly stronger than V12.2 baseline
-- Clean foundation prepared for V12.7 development
-- Tournament-tested and performance-validated
+**Tier 1 Opponents:**
+- NexaStrat, R0bspierre, c0br4_bot, joshsbot, ai-con
 
-## 📊 V12.6 Key Metrics
-- **Build Size:** 8,213,300 bytes
-- **Search Speed:** ~3,400 nodes/second
-- **Time Management:** Accurate within milliseconds
-- **Memory Usage:** Optimized for tournament conditions
+**Tier 2 Opponents:**
+- UltraBrick, FlowBot, lelek2, natto-bot, plynder_r6
 
----
+**Advanced Opponents:**
+- THANATOS_ENGINE_V7, DavidsGuterBot, usunfish variants
+- Bernstein variants, Bot5551, mechasoleil
 
-## 🔄 Version Comparison
+## 🏥 System Health Status
 
-| Feature | V12.6 | V14.0 |
-|---------|-------|--------|
-| **Architecture** | Separate evaluators | Consolidated bitboard system |
-| **Performance** | Tournament ready | Equivalent performance |
-| **Maintainability** | Good | Enhanced through consolidation |
-| **Codebase** | ~2000+ lines across files | Unified evaluation (~1200 lines) |
-| **Function Calls** | Multiple evaluator instances | Single bitboard evaluator |
-| **Memory Overhead** | Standard | Reduced through consolidation |
-| **Chess Strength** | Proven tournament performance | Preserved V12.6 strength |
+| Component | Status | Details |
+|-----------|--------|---------|
+| **Time Control** | ✅ Healthy | No flagging or time-related losses detected |
+| **Engine Stability** | ✅ Excellent | Consistent operation, 1-2 seconds/move |
+| **Matchmaking** | ✅ Active | Regular challenges every 20-30 minutes |
+| **Connectivity** | ✅ Stable | Reliable Lichess connection and game maintenance |
 
-## 🎯 Development Strategy
+## 📈 Overall Assessment
 
-- **V12.6**: Stable tournament baseline - maintain for deployment
-- **V14.0**: Performance-optimized foundation for future development
-- **Future**: V14.x builds will use consolidated architecture for enhanced features
+### Performance Highlights
+- ✅ **Strong Win Rate:** 61.5% against diverse opponents
+- ✅ **Excellent Matchmaking:** 85% challenge acceptance rate
+- ✅ **Time Management:** No time-related issues despite earlier concerns
+- ✅ **Engine Stability:** Consistent and competitive performance
+- ✅ **Versatility:** Successfully handling both blitz and rapid formats
 
-## 🧪 Testing & Verification
+### Conclusion
+**The V7P3R v14.0 deployment has been a complete success!** 🎉
 
-V14.0 underwent comprehensive testing:
-- ✅ **Functionality Tests**: All chess logic preserved after consolidation
-- ✅ **Performance Comparison**: 0.5% variance (within margin of error)  
-- ✅ **Component Integration**: Tactical, pawn, and king safety evaluation unified
-- ✅ **Move Generation**: Identical move selection and search behavior
+The engine demonstrates robust performance across all key metrics, with particularly strong results in win rate and system stability. The matchmaking system is functioning optimally, ensuring consistent gameplay opportunities.
 
 ---
-*V12.6 represents proven tournament stability. V14.0 provides an optimized foundation with consolidated architecture for future enhancements while preserving all chess functionality.*
+
+# 🎯 V7P3R V14.1 Step-by-Step Workflow
+
+## 1. Engine Initialization
+```
+When V7P3R starts up:
+→ Creates main V7P3REngine instance
+→ Initializes unified bitboard evaluator system
+→ Sets up transposition table for move caching
+→ Configures search parameters (default depth, time limits)
+→ Loads dynamic piece valuation system (V14.1)
+→ Ready to receive UCI commands
+```
+
+## 2. Position Setup
+```
+When given a chess position:
+→ Receives FEN string or move sequence from UCI
+→ Creates python-chess Board object
+→ Validates position legality
+→ Ready for move search
+```
+
+## 3. Move Search Process (The Core Engine Loop)
+
+### Step 3a: Move Generation
+```
+→ Generate all legal moves for current position
+→ Typically 20-40 moves in opening/middlegame
+→ Each move represents a possible choice
+```
+
+### Step 3b: Enhanced Move Ordering (V14.1 - Critical Performance Step)
+```
+→ Calls _order_moves_advanced() function
+→ V14.1 ENHANCED priority order:
+   1. **Threats (NEW!)** - Defend valuable pieces, create counter-threats
+   2. **Castling (NEW!)** - King safety moves (high priority)
+   3. **Checks** - Putting opponent king in check  
+   4. **Captures** - Taking opponent pieces (MVV-LVA with dynamic values)
+   5. **Development (NEW!)** - Moving pieces from starting squares
+   6. **Pawn Advances (NEW!)** - Safe pawn movement
+   7. **Tactical Patterns** - Bitboard-detected tactics
+   8. **Killer Moves** - Previously successful moves
+   9. **Quiet Moves** - Other positional improvements
+→ This enhanced ordering examines the most promising moves first
+```
+
+### Step 3c: Recursive Search (The "Thinking" Process)
+```
+For each move (starting with highest priority):
+→ Make the move on the board temporarily
+→ Ask: "How would opponent respond to this?"
+→ Generate opponent's legal moves
+→ For each opponent response:
+   → Make opponent's move temporarily  
+   → Ask: "How would we respond to that?"
+   → Continue this process to target depth (usually 4-6 moves ahead)
+→ Unmake all temporary moves (board returns to original state)
+→ Score each complete variation using evaluation function
+```
+
+## 4. Position Evaluation (The "Judgment" System)
+
+### Step 4a: Unified Bitboard Evaluation
+```
+For each position reached in search:
+→ Calls the consolidated bitboard evaluator
+→ Analyzes position using multiple factors:
+```
+
+### Step 4b: Enhanced Material Evaluation (V14.1)
+```
+→ Count pieces with DYNAMIC VALUES:
+   • Queen = 900 points
+   • Rook = 500 points  
+   • Bishop = 325 points (with pair) OR 275 points (single)
+   • Knight = 300 points (constant)
+   • Pawn = 100 points
+→ Calculate material balance (our pieces - opponent pieces)
+→ Dynamic bishop philosophy: 2 bishops > 2 knights, 1 bishop < 1 knight
+```
+
+### Step 4c: Positional Evaluation
+```
+→ Piece placement scoring:
+   • Knights prefer center squares (more mobility)
+   • Bishops prefer long diagonals  
+   • Rooks prefer open files
+   • Queen prefers active central positions
+   • King prefers safety in opening/middlegame
+```
+
+### Step 4d: Pawn Structure Analysis (Consolidated)
+```
+→ Analyzes pawn formation strengths/weaknesses:
+   • Passed pawns (can advance to promotion)
+   • Doubled pawns (weakness - two pawns same file)
+   • Isolated pawns (no pawn support)
+   • Pawn chains (mutual protection)
+   • Center pawn control (e4, d4, e5, d5 squares)
+```
+
+### Step 4e: King Safety Evaluation (Consolidated)
+```
+→ Measures king protection:
+   • Castling completed (safety bonus)
+   • Pawn shield around king
+   • Open files near king (danger penalty)
+   • Enemy pieces attacking king zone
+   • Escape squares available
+```
+
+### Step 4f: Enhanced Tactical Detection (V14.1)
+```
+→ Identifies immediate tactical patterns:
+   • Pins (piece cannot move without exposing king/valuable piece)
+   • Forks (one piece attacks two targets)
+   • Skewers (forcing valuable piece to move, exposing less valuable)
+   • Discovered attacks (moving one piece reveals another's attack)
+   • **Threats (NEW!)** - Valuable pieces attacked by lower-value pieces
+```
+
+## 5. Score Calculation and Move Selection
+```
+→ Each complete variation gets a numerical score
+→ Higher positive scores = better for us
+→ Negative scores = better for opponent
+→ Engine selects move leading to highest-scoring variation
+→ Accounts for opponent playing their best response
+→ V14.1: Enhanced with threat-aware evaluation
+```
+
+## 6. Time Management
+```
+→ Monitors time spent thinking
+→ Deeper search if time allows
+→ Emergency quick move if time running low
+→ Balances search depth vs available time
+```
+
+## 7. UCI Communication
+```
+→ Returns selected move in UCI format (e.g., "e2e4")
+→ Optionally provides analysis info:
+   • Principal variation (expected move sequence)
+   • Evaluation score  
+   • Search depth achieved
+   • Nodes searched
+```
+
+## 🔧 Key V14.1 Enhancements
+
+### Enhanced Move Ordering:
+```
+→ NEW: Threat detection prioritizes defending valuable pieces
+→ NEW: Castling moves get high priority for king safety
+→ NEW: Development moves identified and prioritized
+→ NEW: Safe pawn advances categorized separately
+→ Captures use dynamic piece values for better MVV-LVA
+→ All categories include threat-awareness scoring
+```
+
+### Dynamic Bishop Valuation:
+```
+→ Two bishops present: 325 points each (pair bonus)
+→ One bishop remaining: 275 points (single penalty)
+→ Philosophy: Bishop pair > knight pair, single bishop < single knight
+→ Applied in move ordering, captures, and material evaluation
+```
+
+### Consolidated Architecture Benefits:
+```
+→ All bitboard operations unified in single evaluator
+→ Reduced function call overhead between components
+→ Eliminated duplicate calculations between evaluators
+→ Streamlined evaluation pipeline
+→ Enhanced tactical awareness through threat detection
+```
+
+### Performance Characteristics:
+```
+→ Typical search: 400-500 nodes per second
+→ Usual depth: 4-6 moves ahead
+→ Response time: 0.5-2.0 seconds per move
+→ Evaluation factors: 15+ different position aspects
+→ Enhanced move ordering improves search efficiency
+```
+
+This workflow represents how V7P3R V14.1 "thinks" about chess - it systematically examines possibilities with enhanced prioritization, evaluates resulting positions using consolidated chess knowledge with dynamic piece values, and selects moves that lead to the most favorable outcomes while maintaining superior tactical awareness.

@@ -236,12 +236,7 @@ class V7P3RBitboardEvaluator:
             score -= self._popcount(black_extended_pieces) * 8
         
         # 3. PIECE DEVELOPMENT (V12.1: Enhanced development evaluation)
-        white_knight_outposts = white_knights & self.KNIGHT_OUTPOSTS
-        black_knight_outposts = black_knights & self.KNIGHT_OUTPOSTS
-        score += self._popcount(white_knight_outposts) * 15
-        score -= self._popcount(black_knight_outposts) * 15
-        
-        # V12.1: Opening development penalty - punish undeveloped pieces
+        # V14.2: Removed knight outposts (3.9% overhead) - tactical analysis detects fork opportunities
         if total_material >= 18:  # Opening phase
             # Count pieces still on starting squares
             white_undeveloped = 0
@@ -271,10 +266,8 @@ class V7P3RBitboardEvaluator:
             score -= white_undeveloped * 12  # Penalty for undeveloped White pieces
             score += black_undeveloped * 12  # Penalty for undeveloped Black pieces
         
-        # 4. ENHANCED KING SAFETY & CASTLING EVALUATION (V12.4)
-        score += self._evaluate_enhanced_castling(board, color)
-        
-        # 5. PAWN STRUCTURE (passed pawns - ultra-fast)
+        # 4. PAWN STRUCTURE (passed pawns - ultra-fast)
+        # V14.2: Removed castling evaluation (41.7% overhead) - castling handled by move ordering
         score += self._count_passed_pawns(white_pawns, black_pawns, True) * 20
         score -= self._count_passed_pawns(black_pawns, white_pawns, False) * 20
         
@@ -298,14 +291,7 @@ class V7P3RBitboardEvaluator:
         # causing massive performance degradation. Commenting out for tournament performance.
         # TODO: Implement fast repetition detection using zobrist hashing
         
-
-        # Encourage piece activity: penalty for pieces on back ranks in middlegame
-        if total_material >= 12:  # Middlegame
-            white_back_rank_pieces = (white_knights | white_bishops | white_rooks | white_queens) & (self.RANK_1 | self.RANK_2)
-            black_back_rank_pieces = (black_knights | black_bishops | black_rooks | black_queens) & (self.RANK_7 | self.RANK_8)
-            
-            activity_penalty = (self._popcount(white_back_rank_pieces) - self._popcount(black_back_rank_pieces)) * 3
-            score -= activity_penalty if color == chess.WHITE else -activity_penalty
+        # V14.2: Removed activity penalties (5.7% overhead) - depth will find active moves naturally
 
         return score if color == chess.WHITE else -score
     

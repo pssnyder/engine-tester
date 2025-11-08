@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-V7P3R Chess Engine v14.1 - Enhanced Move Ordering & Dynamic Evaluation
+V7P3R Chess Engine v14.1 - Smart Time Management Build
 
-Enhanced through code consolidation and refined heuristics for improved playing strength.
-Built on V14.0 stability with enhanced move ordering and dynamic piece valuation.
+Enhanced time management to fix inconsistent tournament performance across time controls.
+
+KEY IMPROVEMENTS (v14.1):
+- Hard 60-second cap on all moves (never exceed)
+- Smarter opening play (faster, less wasteful thinking)
+- Early return from incomplete depth iterations (save time for later)
+- Better time distribution across game phases
+- Increment-aware time management
 
 ARCHITECTURE:
 - Phase 1: Core search (alpha-beta, TT, iterative deepening)
-- Phase 2: Consolidated evaluation (unified bitboard system)  
-- Phase 3: Enhanced move ordering with threat detection
-
-V14.1 IMPROVEMENTS:
-- NEW: Threat detection in move ordering (defend valuable pieces)
-- NEW: Dynamic bishop valuation (pair bonus/penalty)
-- Enhanced move priority: Threats, Castling, Checks, Captures, Development, Pawns, Quiet
-- Refined evaluation pipeline for better tactical awareness
+- Phase 2: Consolidated evaluation (unified bitboard system)
+- Phase 3: Performance optimized through code consolidation
+- Phase 4: Smart time management (v14.1)
 
 VERSION LINEAGE:
-- v14.1: Enhanced move ordering with threat detection and dynamic bishop values
+- v14.1: Smart time management fixes for tournament consistency
 - v14.0: Consolidated performance build with unified evaluators
 - v12.6: Nudge system removed for clean performance build
 - v12.5: Intelligent nudge system experiments
@@ -216,15 +217,14 @@ class ZobristHashing:
 
 
 class V7P3REngine:
-    """V7P3R Chess Engine v14.1 - Enhanced Move Ordering & Dynamic Evaluation"""
+    """V7P3R Chess Engine v14.0 - Consolidated Performance Build"""
     
     def __init__(self):
         # Basic configuration
-        # Base piece values (V14.1: Dynamic bishop valuation implemented separately)
         self.piece_values = {
             chess.PAWN: 100,
             chess.KNIGHT: 300, 
-            chess.BISHOP: 300,  # Base value - adjusted dynamically
+            chess.BISHOP: 300,
             chess.ROOK: 500,
             chess.QUEEN: 900,
             chess.KING: 0  # King safety handled separately
@@ -297,19 +297,25 @@ class V7P3REngine:
             # Iterative deepening
             best_move = legal_moves[0]
             best_score = -99999
+            last_iteration_time = 0.0
+            stable_best_count = 0  # V14.1: Track how many iterations returned same best move
             
             for current_depth in range(1, self.default_depth + 1):
                 iteration_start = time.time()
                 
-                # V11 ENHANCEMENT: Improved time checking with adaptive limits
+                # V14.1: CRITICAL - Check elapsed time BEFORE starting iteration
                 elapsed = time.time() - self.search_start_time
-                if elapsed > target_time:
+                
+                # V14.1: Early exit if we've used target time
+                if elapsed >= target_time:
                     break
                 
-                # Predict if next iteration will exceed max time
-                if current_depth > 1:
-                    last_iteration_time = time.time() - iteration_start
-                    if elapsed + (last_iteration_time * 2) > max_time:
+                # V14.1: Predict if next iteration will complete before max_time
+                # Use 3x factor (conservative) instead of 2x
+                if current_depth > 1 and last_iteration_time > 0:
+                    predicted_completion = elapsed + (last_iteration_time * 3.0)
+                    if predicted_completion >= max_time:
+                        # V14.1: Don't start iteration we can't complete
                         break
                 
                 try:
@@ -320,8 +326,17 @@ class V7P3REngine:
                     # Call recursive search for this depth
                     score, move = self._recursive_search(board, current_depth, -99999, 99999, time_limit)
                     
+                    # Calculate iteration time IMMEDIATELY
+                    last_iteration_time = time.time() - iteration_start
+                    
                     # Update best move if we got a valid result
                     if move and move != chess.Move.null():
+                        # V14.1: Track stability of best move
+                        if move == best_move:
+                            stable_best_count += 1
+                        else:
+                            stable_best_count = 1
+                        
                         best_move = move
                         best_score = score
                         
@@ -343,14 +358,18 @@ class V7P3REngine:
                         best_move = previous_best
                         best_score = previous_score
                     
-                    # V11 ENHANCEMENT: Better time management for next iteration
-                    elapsed = time.time() - self.search_start_time
-                    iteration_time = time.time() - iteration_start
+                    # V14.1: SMART EARLY EXIT - if best move has been stable for 3+ iterations at depth 4+
+                    # This prevents wasteful thinking when the position is clear
+                    if current_depth >= 4 and stable_best_count >= 3:
+                        elapsed = time.time() - self.search_start_time
+                        if elapsed >= target_time * 0.5:  # Used at least half our target time
+                            # Position is stable, return early to save time
+                            break
                     
-                    if elapsed > target_time:
+                    # V14.1: Check time AFTER completing iteration
+                    elapsed = time.time() - self.search_start_time
+                    if elapsed >= target_time:
                         break
-                    elif elapsed + (iteration_time * 1.5) > max_time:
-                        break  # Don't start next iteration if likely to exceed max time
                         
                 except Exception as e:
                     print(f"info string Search interrupted at depth {current_depth}: {e}")
@@ -464,20 +483,16 @@ class V7P3REngine:
     
     def _order_moves_advanced(self, board: chess.Board, moves: List[chess.Move], depth: int, 
                               tt_move: Optional[chess.Move] = None) -> List[chess.Move]:
-        """V14.1 ENHANCED move ordering - TT, Threats, Castling, Checks, Captures, Development, Pawns, Quiet"""
+        """V14.0 CONSOLIDATED move ordering - TT, MVV-LVA, Checks, Killers, Quiet moves"""
         if len(moves) <= 2:
             return moves
         
         # Pre-calculate move categories for efficiency
-        threats = []          # NEW: Defend valuable pieces / create counter-threats
-        castling = []         # NEW: Castling moves for king safety
         captures = []
         checks = []
         killers = []
-        development = []      # Piece development moves
-        pawn_advances = []    # Safe pawn advances
         quiet_moves = []
-        tactical_moves = []   # Bitboard tactical moves
+        tactical_moves = []  # Bitboard tactical moves
         tt_moves = []
         
         # Performance optimization: Pre-create sets for fast lookups
@@ -487,102 +502,57 @@ class V7P3REngine:
             # 1. Transposition table move (highest priority)
             if tt_move and move == tt_move:
                 tt_moves.append(move)
-                continue
             
-            # 2. NEW: Threat detection (defend valuable pieces, create counter-threats)
-            threat_score = self._detect_threats(board, move)
-            
-            # 3. Castling moves (king safety priority)
-            if board.is_castling(move):
-                castling.append((threat_score + 100.0, move))  # High base priority for castling
-                continue
-            
-            # 4. Captures (will be sorted by MVV-LVA + dynamic values)
-            if board.is_capture(move):
+            # 2. Captures (will be sorted by MVV-LVA)
+            elif board.is_capture(move):
                 victim = board.piece_at(move.to_square)
-                victim_value = self._get_dynamic_piece_value(board, victim.piece_type, not board.turn) if victim else 0
+                victim_value = self.piece_values.get(victim.piece_type, 0) if victim else 0
                 attacker = board.piece_at(move.from_square)
-                attacker_value = self._get_dynamic_piece_value(board, attacker.piece_type, board.turn) if attacker else 0
+                attacker_value = self.piece_values.get(attacker.piece_type, 0) if attacker else 0
                 # MVV-LVA: Most Valuable Victim - Least Valuable Attacker
                 mvv_lva_score = victim_value * 100 - attacker_value
                 
                 # Add tactical bonus using bitboards
                 tactical_bonus = self.bitboard_evaluator.detect_bitboard_tactics(board, move)
-                total_score = mvv_lva_score + tactical_bonus + threat_score
+                total_score = mvv_lva_score + tactical_bonus
                 
                 captures.append((total_score, move))
-                continue
             
-            # 5. Checks (high priority for tactical play)
-            if board.gives_check(move):
+            # 4. Checks (high priority for tactical play)
+            elif board.gives_check(move):
                 # Add tactical bonus for checking moves too
                 tactical_bonus = self.bitboard_evaluator.detect_bitboard_tactics(board, move)
-                checks.append((tactical_bonus + threat_score, move))
-                continue
+                checks.append((tactical_bonus, move))
             
-            # 6. Killer moves
-            if move in killer_set:
+            # 5. Killer moves
+            elif move in killer_set:
                 killers.append(move)
                 self.search_stats['killer_hits'] += 1
-                continue
             
-            # 7. Development and tactical patterns
-            piece = board.piece_at(move.from_square)
-            if piece:
-                # Check for significant threats first
-                if threat_score > 15.0:  # Significant threat-related move
-                    threats.append((threat_score, move))
-                    continue
-                
-                # Development moves (knights, bishops moving from starting squares)
-                if piece.piece_type in [chess.KNIGHT, chess.BISHOP]:
-                    starting_squares = {
-                        chess.KNIGHT: [chess.B1, chess.G1, chess.B8, chess.G8],
-                        chess.BISHOP: [chess.C1, chess.F1, chess.C8, chess.F8]
-                    }
-                    if move.from_square in starting_squares.get(piece.piece_type, []):
-                        development_score = 50.0 + threat_score
-                        development.append((development_score, move))
-                        continue
-                
-                # Pawn advances (safe pawn moves)
-                if piece.piece_type == chess.PAWN:
-                    # Basic pawn advance bonus
-                    pawn_score = 10.0 + threat_score
-                    pawn_advances.append((pawn_score, move))
-                    continue
-            
-            # 8. Remaining quiet moves
-            history_score = self.history_heuristic.get_history_score(move)
-            tactical_bonus = self.bitboard_evaluator.detect_bitboard_tactics(board, move)
-            
-            if tactical_bonus > 20.0:  # Significant tactical move
-                tactical_moves.append((tactical_bonus + history_score + threat_score, move))
+            # 6. Check for tactical patterns in quiet moves
             else:
-                quiet_moves.append((history_score + threat_score, move))
+                history_score = self.history_heuristic.get_history_score(move)
+                tactical_bonus = self.bitboard_evaluator.detect_bitboard_tactics(board, move)
+                
+                if tactical_bonus > 20.0:  # Significant tactical move
+                    tactical_moves.append((tactical_bonus + history_score, move))
+                else:
+                    quiet_moves.append((history_score, move))
         
         # Sort all move categories by their scores
-        threats.sort(key=lambda x: x[0], reverse=True)
-        castling.sort(key=lambda x: x[0], reverse=True)
         captures.sort(key=lambda x: x[0], reverse=True)
         checks.sort(key=lambda x: x[0], reverse=True)
-        development.sort(key=lambda x: x[0], reverse=True)
-        pawn_advances.sort(key=lambda x: x[0], reverse=True)
         tactical_moves.sort(key=lambda x: x[0], reverse=True)
         quiet_moves.sort(key=lambda x: x[0], reverse=True)
         
-        # V14.1 ENHANCED ORDER: TT, Threats, Castling, Checks, Captures, Development, Pawns, Tactical, Killers, Quiet
+        # Combine in optimized order
         ordered = []
-        ordered.extend(tt_moves)  # 1. TT move first
-        ordered.extend([move for _, move in threats])  # 2. NEW: Threat-related moves
-        ordered.extend([move for _, move in castling])  # 3. NEW: Castling moves
-        ordered.extend([move for _, move in checks])  # 4. Checks (with tactical bonus)
-        ordered.extend([move for _, move in captures])  # 5. Captures (with dynamic values)
-        ordered.extend([move for _, move in development])  # 6. NEW: Development moves
-        ordered.extend([move for _, move in pawn_advances])  # 7. NEW: Pawn advances
-        ordered.extend([move for _, move in tactical_moves])  # 8. Tactical patterns
-        ordered.extend(killers)  # 9. Killers
-        ordered.extend([move for _, move in quiet_moves])  # 10. Quiet moves
+        ordered.extend(tt_moves)  # TT move first
+        ordered.extend([move for _, move in captures])  # Then captures (with tactical bonus)
+        ordered.extend([move for _, move in checks])  # Then checks (with tactical bonus)
+        ordered.extend([move for _, move in tactical_moves])  # Then tactical patterns
+        ordered.extend(killers)  # Then killers
+        ordered.extend([move for _, move in quiet_moves])  # Then quiet moves
         
         return ordered
     
@@ -762,14 +732,14 @@ class V7P3REngine:
         if not tactical_moves:
             return stand_pat
         
-        # Sort tactical moves by MVV-LVA for better ordering (V14.1: Dynamic values)
+        # Sort tactical moves by MVV-LVA for better ordering
         capture_scores = []
         for move in tactical_moves:
             if board.is_capture(move):
                 victim = board.piece_at(move.to_square)
-                victim_value = self._get_dynamic_piece_value(board, victim.piece_type, not board.turn) if victim else 0
+                victim_value = self.piece_values.get(victim.piece_type, 0) if victim else 0
                 attacker = board.piece_at(move.from_square)
-                attacker_value = self._get_dynamic_piece_value(board, attacker.piece_type, board.turn) if attacker else 0
+                attacker_value = self.piece_values.get(attacker.piece_type, 0) if attacker else 0
                 mvv_lva = victim_value * 100 - attacker_value
                 capture_scores.append((mvv_lva, move))
             else:
@@ -887,132 +857,81 @@ class V7P3REngine:
 
     def _calculate_adaptive_time_allocation(self, board: chess.Board, base_time_limit: float) -> Tuple[float, float]:
         """
-        V11 ENHANCEMENT: Adaptive time management based on position complexity
+        V14.1: IMPROVED adaptive time management - prevents wasteful thinking
         
         Returns: (target_time, max_time)
+        
+        PHILOSOPHY:
+        - Opening: Play fast (book knowledge, simple positions)
+        - Middlegame: Use more time (complex tactics)
+        - Endgame: Moderate time (technique matters, but positions simpler)
+        - NEVER exceed 60 seconds per move
         """
         moves_played = len(board.move_stack)
         legal_moves = list(board.legal_moves)
         num_legal_moves = len(legal_moves)
         
-        # Base time factor
+        # V14.1: HARD CAP - never exceed 60 seconds
+        absolute_max = min(base_time_limit, 60.0)
+        
+        # Base time factor - more conservative than v14.0
         time_factor = 1.0
         
-        # Game phase adjustment
-        if moves_played < 15:  # Opening
-            time_factor *= 0.8  # Faster in opening
-        elif moves_played < 40:  # Middle game
-            time_factor *= 1.2  # More time in complex middle game
-        else:  # Endgame
-            time_factor *= 0.9  # Moderate time in endgame
+        # V14.1: MORE AGGRESSIVE OPENING TIME REDUCTION
+        if moves_played < 8:  # Very early opening
+            time_factor *= 0.5  # Use HALF time (wasteful to think long here)
+        elif moves_played < 15:  # Opening
+            time_factor *= 0.6  # Still fast
+        elif moves_played < 25:  # Early middlegame
+            time_factor *= 0.9  # Starting to matter more
+        elif moves_played < 40:  # Complex middlegame
+            time_factor *= 1.1  # Peak thinking time
+        elif moves_played < 60:  # Late middlegame/early endgame
+            time_factor *= 0.9  # Simplifying
+        else:  # Deep endgame
+            time_factor *= 0.7  # Technique matters but simpler
         
         # Position complexity factors
         if board.is_check():
-            time_factor *= 1.3  # More time when in check
+            time_factor *= 1.2  # More time when in check (not 1.3)
         
-        if num_legal_moves <= 5:
-            time_factor *= 0.7  # Less time with few options
+        # V14.1: Simplified move count logic
+        if num_legal_moves <= 3:
+            time_factor *= 0.5  # Very few options - decide quickly
+        elif num_legal_moves <= 8:
+            time_factor *= 0.8  # Few options
         elif num_legal_moves >= 35:
-            time_factor *= 1.4  # More time with many options
+            time_factor *= 1.2  # Many options (not 1.4 - too aggressive)
         
-        # Material balance consideration
+        # Material balance consideration - simplified
         our_material = self._count_material(board, board.turn)
         their_material = self._count_material(board, not board.turn)
         material_diff = our_material - their_material
         
         if material_diff < -300:  # We're behind
-            time_factor *= 1.2  # Take more time when behind
-        elif material_diff > 300:  # We're ahead
-            time_factor *= 0.9  # Play faster when ahead
+            time_factor *= 1.1  # Slightly more time (not 1.2)
+        elif material_diff > 500:  # We're significantly ahead
+            time_factor *= 0.8  # Play faster when winning
         
-        # Calculate final times
-        target_time = min(base_time_limit * time_factor * 0.8, base_time_limit * 0.9)
-        max_time = min(base_time_limit * time_factor, base_time_limit)
+        # V14.1: Calculate final times with CONSERVATIVE approach
+        # Target time: aim to use this much (usually hit this and return)
+        # Max time: absolute limit (rarely hit, only complex positions)
+        target_time = min(absolute_max * time_factor * 0.7, absolute_max * 0.75)
+        max_time = min(absolute_max * time_factor * 0.9, absolute_max * 0.95)
+        
+        # V14.1: SAFETY - ensure target < max < absolute_max
+        target_time = min(target_time, max_time * 0.85)
+        max_time = min(max_time, absolute_max)
         
         return target_time, max_time
     
     def _count_material(self, board: chess.Board, color: bool) -> int:
-        """Count total material for a color (V14.1: Dynamic piece values)"""
+        """Count total material for a color"""
         total = 0
         for piece_type in [chess.PAWN, chess.KNIGHT, chess.BISHOP, chess.ROOK, chess.QUEEN]:
             pieces = board.pieces(piece_type, color)
-            piece_value = self._get_dynamic_piece_value(board, piece_type, color)
-            total += len(pieces) * piece_value
+            total += len(pieces) * self.piece_values[piece_type]
         return total
-
-    def _get_dynamic_piece_value(self, board: chess.Board, piece_type: int, color: bool) -> int:
-        """V14.1: Dynamic piece valuation - bishops gain/lose value based on pair presence"""
-        base_value = self.piece_values[piece_type]
-        
-        if piece_type == chess.BISHOP:
-            bishops = board.pieces(chess.BISHOP, color)
-            bishop_count = len(bishops)
-            
-            if bishop_count >= 2:
-                # Bishop pair bonus: 325 each (two bishops > two knights)
-                return 325
-            elif bishop_count == 1:
-                # Single bishop penalty: 275 (one bishop < one knight)
-                return 275
-            else:
-                # No bishops remaining
-                return base_value
-        
-        return base_value
-
-    def _detect_threats(self, board: chess.Board, move: chess.Move) -> float:
-        """V14.1: NEW - Detect if move defends against threats or creates counter-threats"""
-        threat_score = 0.0
-        our_color = board.turn
-        
-        # Check if this move defends a valuable piece under attack
-        piece_being_moved = board.piece_at(move.from_square)
-        if piece_being_moved:
-            # Test if moving this piece defends something valuable
-            temp_board = board.copy()
-            temp_board.push(move)
-            
-            # Look for our pieces under attack in current position
-            for square in chess.SQUARES:
-                piece = board.piece_at(square)
-                if piece and piece.color == our_color:
-                    # Check if this piece is under attack by lower-value pieces
-                    attackers = board.attackers(not our_color, square)
-                    if attackers:
-                        piece_value = self._get_dynamic_piece_value(board, piece.piece_type, our_color)
-                        
-                        for attacker_square in attackers:
-                            attacker_piece = board.piece_at(attacker_square)
-                            if attacker_piece:
-                                attacker_value = self._get_dynamic_piece_value(board, attacker_piece.piece_type, not our_color)
-                                
-                                # Threat: valuable piece attacked by less valuable piece
-                                if piece_value > attacker_value:
-                                    # Check if our move defends this piece
-                                    temp_attackers = temp_board.attackers(not our_color, square)
-                                    if len(temp_attackers) < len(attackers):
-                                        # Our move reduced threats to this piece
-                                        threat_score += (piece_value - attacker_value) / 10.0
-            
-            # Check if our move creates counter-threats
-            target_square = move.to_square
-            our_new_attackers = temp_board.attackers(our_color, target_square)
-            
-            for target_sq in chess.SQUARES:
-                target_piece = temp_board.piece_at(target_sq)
-                if target_piece and target_piece.color != our_color:
-                    new_attacks = temp_board.attackers(our_color, target_sq)
-                    old_attacks = board.attackers(our_color, target_sq)
-                    
-                    if len(new_attacks) > len(old_attacks):
-                        # We're creating new threats
-                        target_value = self._get_dynamic_piece_value(temp_board, target_piece.piece_type, not our_color)
-                        our_piece_value = self._get_dynamic_piece_value(temp_board, piece_being_moved.piece_type, our_color)
-                        
-                        if target_value > our_piece_value:
-                            threat_score += (target_value - our_piece_value) / 20.0
-        
-        return threat_score
 
     def _calculate_lmr_reduction(self, move: chess.Move, moves_searched: int, search_depth: int, board: chess.Board) -> int:
         """
