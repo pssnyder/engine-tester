@@ -1,0 +1,1 @@
+S:\Maker Stuff\Programming\Chess Engines\C0BR4 Chess Engine\cobra-chess-engine\src\bin\Release\net6.0\win-x64\publish\C0BR4_v2.8.exe

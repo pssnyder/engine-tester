@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "zJAAAVnI7EE=",
+  "success": true,
+  "projectFilePath": "S:\\Maker Stuff\\Programming\\Chess Engines\\C0BR4 Chess Engine\\cobra-chess-engine\\src\\C0BR4ChessEngine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23401.1\\microsoft.net.illink.analyzers.7.0.100-1.23401.1.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23401.1\\microsoft.net.illink.tasks.7.0.100-1.23401.1.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.36\\microsoft.netcore.app.runtime.linux-x64.6.0.36.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.36\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.36.nupkg.sha512",
+    "C:\\Users\\patss\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.36\\microsoft.netcore.app.host.linux-x64.6.0.36.nupkg.sha512"
+  ],
+  "logs": []
+}

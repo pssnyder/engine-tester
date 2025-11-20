@@ -859,8 +859,10 @@ CAPTURE_PIECE_VALUES = {
 MAX_TRADE_LOSS = 1
 
 # Evaluation bonuses (in centipawns)
-MATERIAL_REMOVAL_BONUS = 50
-TRADE_OPPORTUNITY_BONUS = 100
+MATERIAL_REMOVAL_BONUS = 100
+CAPTURE_MOVE_BONUS = 5000  # Huge bonus for making a capture
+NO_CAPTURE_PENALTY = 10000  # Massive penalty for positions without captures
+TRADE_OPPORTUNITY_BONUS = 2000
 CHECKMATE_BONUS = 999999
 
 
@@ -1027,9 +1029,10 @@ class CaptureOpponent(ChessEngineTemplate):
         
         Evaluation factors:
         1. Checkmate detection (always highest priority)
-        2. Total material on board (LOWER is better - our main goal!)
-        3. Material balance (don't fall too far behind)
-        4. Capture opportunities available
+        2. MASSIVE penalty if no captures available (forces seeking captures)
+        3. Total material on board (LOWER is better - our main goal!)
+        4. Material balance (don't fall too far behind)
+        5. Capture opportunities available
         """
         # Check for checkmate
         if board.is_checkmate():
@@ -1040,6 +1043,19 @@ class CaptureOpponent(ChessEngineTemplate):
             return 0
         
         score = 0
+        
+        # Get all captures and good captures
+        capture_moves = [m for m in board.legal_moves if board.is_capture(m)]
+        good_captures = [m for m in capture_moves if self._is_good_trade(board, m)]
+        
+        # CRITICAL: Massively penalize positions with NO captures available
+        # This forces the engine to seek out positions with capture opportunities
+        if len(capture_moves) == 0:
+            score -= NO_CAPTURE_PENALTY
+        else:
+            # Reward having many capture opportunities
+            score += len(capture_moves) * TRADE_OPPORTUNITY_BONUS
+            score += len(good_captures) * TRADE_OPPORTUNITY_BONUS * 2
         
         # PRIMARY GOAL: Reward LOW total material on board
         total_material = self._calculate_total_material(board)
@@ -1054,11 +1070,6 @@ class CaptureOpponent(ChessEngineTemplate):
         else:
             score += material_balance * 10
         
-        # TERTIARY GOAL: Reward positions with capture opportunities
-        capture_moves = [m for m in board.legal_moves if board.is_capture(m)]
-        good_captures = [m for m in capture_moves if self._is_good_trade(board, m)]
-        score += len(good_captures) * TRADE_OPPORTUNITY_BONUS
-        
         # Small bonus for having fewer pieces
         our_pieces = sum(len(board.pieces(pt, board.turn)) for pt in chess.PIECE_TYPES if pt != chess.KING)
         score -= our_pieces * 5
@@ -1068,47 +1079,71 @@ class CaptureOpponent(ChessEngineTemplate):
     def _order_moves(self, board: chess.Board, moves: List[chess.Move], ply: int,
                      tt_move: Optional[chess.Move] = None) -> List[chess.Move]:
         """
-        Order moves with extreme bias toward captures
+        Order moves with ABSOLUTE PRIORITY to captures
         
         Priority:
         1. Checkmate (always take mate!)
-        2. TT move
-        3. Good captures (passing SEE test)
-        4. All other captures (we're aggressive!)
-        5. Everything else (but we rarely want these)
+        2. Good captures (passing SEE test) - THIS IS OUR LIFE
+        3. All other captures (we take everything!)
+        4. TT move if it's a capture
+        5. Non-capture moves (only if forced, heavily discouraged)
         """
-        scored_moves = []
+        capture_moves = []
+        non_capture_moves = []
         
         for move in moves:
-            score = 0
-            
-            # Check for checkmate
+            # Check for checkmate first
             board.push(move)
             is_checkmate = board.is_checkmate()
             board.pop()
             
             if is_checkmate:
-                score = 10000000
-            elif tt_move and move == tt_move:
-                score = 9000000
-            elif board.is_capture(move):
-                # This is what we live for - CAPTURES!
-                if self._is_good_trade(board, move):
-                    score = 5000000 + self._mvv_lva_score(board, move)
-                else:
-                    score = 3000000 + self._mvv_lva_score(board, move)
-            else:
-                # Non-captures are boring, but might be necessary
-                if ply < len(self.killer_moves) and move in self.killer_moves[ply]:
-                    score = 100000
-                else:
-                    key = (move.from_square, move.to_square)
-                    score = self.history_table.get(key, 0)
+                # Checkmate always comes first
+                return [move] + [m for m in moves if m != move]
             
-            scored_moves.append((score, move))
+            if board.is_capture(move):
+                capture_moves.append(move)
+            else:
+                non_capture_moves.append(move)
         
-        scored_moves.sort(key=lambda x: x[0], reverse=True)
-        return [move for _, move in scored_moves]
+        # Score captures (we want ALL captures first)
+        scored_captures = []
+        for move in capture_moves:
+            if self._is_good_trade(board, move):
+                score = 10000000 + self._mvv_lva_score(board, move)
+            else:
+                # Even "bad" captures are better than non-captures
+                score = 5000000 + self._mvv_lva_score(board, move)
+            scored_captures.append((score, move))
+        
+        scored_captures.sort(key=lambda x: x[0], reverse=True)
+        ordered_captures = [move for _, move in scored_captures]
+        
+        # Score non-captures (only as last resort)
+        scored_non_captures = []
+        for move in non_capture_moves:
+            score = 0
+            # Check if this move leads to a capture next turn
+            board.push(move)
+            next_captures = [m for m in board.legal_moves if board.is_capture(m)]
+            board.pop()
+            
+            if next_captures:
+                # Moves that set up captures are better
+                score = 100000 + len(next_captures) * 1000
+            elif ply < len(self.killer_moves) and move in self.killer_moves[ply]:
+                score = 10000
+            else:
+                key = (move.from_square, move.to_square)
+                score = self.history_table.get(key, 0)
+            
+            scored_non_captures.append((score, move))
+        
+        scored_non_captures.sort(key=lambda x: x[0], reverse=True)
+        ordered_non_captures = [move for _, move in scored_non_captures]
+        
+        # CAPTURES ALWAYS COME FIRST, then non-captures
+        return ordered_captures + ordered_non_captures
     
     def get_best_move(self, time_left: float = 0, increment: float = 0) -> Optional[chess.Move]:
         """Find the best move (most likely a capture!)"""
