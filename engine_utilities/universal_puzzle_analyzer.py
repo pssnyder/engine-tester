@@ -86,8 +86,8 @@ class UniversalPuzzleAnalyzer:
     
     def __init__(self, 
                  engine_path: str,
-                 stockfish_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
-                 puzzle_db_path: str = r"S:\Maker Stuff\Programming\Chess Engines\Chess Engine Playground\engine-tester\databases\puzzles.db",
+                 stockfish_path: str = r"S:\Programming\Chess Engines\Tournament Engines\Stockfish\stockfish-windows-x86-64-avx2.exe",
+                 puzzle_db_path: str = r"S:\Programming\Chess Engines\Chess Engine Playground\engine-tester\databases\puzzles.db",
                  time_control: Optional[TimeControl] = None):
         
         self.engine_path = engine_path
