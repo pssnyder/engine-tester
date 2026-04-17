@@ -1,0 +1,55 @@
+{
+  "tournament_name": "V7P3R Version Comparison",
+  "time_control": "5+3",
+  "games_per_pairing": 4,
+  "parallel_games": 6,
+  
+  "engines": [
+    {
+      "name": "V7P3R v18.4",
+      "path": "e:\\Programming Stuff\\Chess Engines\\V7P3R Chess Engine\\v7p3r-chess-engine\\lichess\\engines\\V7P3R_v18.4_20260415\\V7P3R_v18.4.bat",
+      "short_name": "v18.4",
+      "expected_elo": 1500
+    },
+    {
+      "name": "V7P3R v18.3",
+      "path": "e:\\Programming Stuff\\Chess Engines\\V7P3R Chess Engine\\v7p3r-chess-engine\\lichess\\engines\\V7P3R_v18.3_20251229\\V7P3R_v18.3.bat",
+      "short_name": "v18.3",
+      "expected_elo": 1500
+    },
+    {
+      "name": "V7P3R v18.0",
+      "path": "e:\\Programming Stuff\\Chess Engines\\V7P3R Chess Engine\\v7p3r-chess-engine\\lichess\\engines\\V7P3R_v18.0_20251220\\V7P3R_v18.0.bat",
+      "short_name": "v18.0",
+      "expected_elo": 1450
+    },
+    {
+      "name": "V7P3R v17.4",
+      "path": "e:\\Programming Stuff\\Chess Engines\\V7P3R Chess Engine\\v7p3r-chess-engine\\lichess\\engines\\V7P3R_v17.4_20251126\\V7P3R_v17.4.bat",
+      "short_name": "v17.4",
+      "expected_elo": 1400
+    }
+  ],
+  
+  "starting_positions": {
+    "pgn_directory": "e:\\Programming Stuff\\Chess Engines\\Chess PGNs\\training_data\\pgn_data_important_games",
+    "move_range": [5, 10]
+  },
+  
+  "resignation_rules": {
+    "enabled": true,
+    "score_threshold_cp": -800,
+    "consecutive_moves": 3,
+    "min_move_number": 10
+  },
+  
+  "adjudication_rules": {
+    "enabled": true,
+    "win_score_cp": 1000,
+    "draw_score_cp": 10,
+    "consecutive_moves": 5,
+    "min_move_number": 40,
+    "fifty_move_rule": true,
+    "threefold_repetition": true
+  }
+}
